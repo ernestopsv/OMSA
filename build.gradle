@@ -24,9 +24,6 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 
-task stage{
-	dependsOn installApp
-}
 repositories {
 	mavenCentral()
 }
@@ -46,4 +43,9 @@ dependencies {
 	compile group: 'postgresql', name: 'postgresql', version: '9.4.1208-jdbc42-atlassian-hosted'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.4.RELEASE'
+}
+
+
+task stage{
+    dependsOn installDist
 }
