@@ -15,13 +15,13 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'application'
 
-archivesBaseName ="OMSA"
+archivesBaseName ="app"
 mainClassName = 'com.proyectoFinal.OMSA.OmsaApplication'
-applicationName = 'OMSA'
+applicationName = 'app'
 defaultTasks=['stage']
 
 jar{
-	baseName ='OMSA'
+	baseName ='app'
 	version = '0.0.1-SNAPSHOT'
 
 }
@@ -31,7 +31,7 @@ targetCompatibility =1.8
 
 
 task wrapper(type: wrapper){
-	gradleVersion="3.5.1"
+	gradleVersion="2.7"
 }
 
 repositories {
