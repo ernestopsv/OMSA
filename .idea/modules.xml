@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OMSA.iml" filepath="$PROJECT_DIR$/OMSA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OMSA_main.iml" filepath="$PROJECT_DIR$/.idea/modules/OMSA_main.iml" group="OMSA" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OMSA_test.iml" filepath="$PROJECT_DIR$/.idea/modules/OMSA_test.iml" group="OMSA" />
+    </modules>
+  </component>
+</project>
