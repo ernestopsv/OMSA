@@ -1,1 +1,1 @@
-web: build/install/OMSA/bin/OMSA
+web: build/install/app/bin/app
