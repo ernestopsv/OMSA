@@ -205,6 +205,6 @@ public class RestApiController {
     }
 
     private Ruta rutaReal(Coordenada coordenada, Autobus autobus){
-
+        return new Ruta();
     }
 }

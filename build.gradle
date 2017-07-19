@@ -12,21 +12,30 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
+apply plugin: 'spring-boot'
 apply plugin: 'application'
 
-
+archivesBaseName = "app"
 mainClassName = 'com.proyectoFinal.OMSA.OmsaApplication'
-applicationName = 'OMSA'
+applicationName = 'app'
+defaultTasks = ['stage']
 
-
-version = '0.0.1-SNAPSHOT'
+jar {
+	baseName = 'ProyectoFinalServer'
+	version = '0.0.1-SNAPSHOT'
+}
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.7'
+}
 
-task stage{
+task stage {
 	dependsOn installApp
 }
+
+
 repositories {
 	mavenCentral()
 }
@@ -46,4 +55,5 @@ dependencies {
 	compile group: 'postgresql', name: 'postgresql', version: '9.4.1208-jdbc42-atlassian-hosted'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.4.RELEASE'
+	compile('postgresql:postgresql:9.1-901-1.jdbc4')
 }
