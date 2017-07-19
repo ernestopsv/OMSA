@@ -204,4 +204,7 @@ public class RestApiController {
         return paradas.get(indexes);
     }
 
+    private Ruta rutaReal(Coordenada coordenada, Autobus autobus){
+        return new Ruta();
+    }
 }

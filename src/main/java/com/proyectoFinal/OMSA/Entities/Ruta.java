@@ -24,7 +24,7 @@ public class Ruta implements Serializable{
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List <Coordenada> coordenadas;
 
-    private Ruta(){
+    public Ruta(){
 
     }
 
