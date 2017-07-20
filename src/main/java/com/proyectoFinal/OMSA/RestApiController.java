@@ -3,6 +3,8 @@ package com.proyectoFinal.OMSA; /**
  */
 import com.proyectoFinal.OMSA.Entities.*;
 import com.proyectoFinal.OMSA.Repository.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.google.gson.Gson;
 import com.proyectoFinal.OMSA.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +12,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RequestMapping("/api")
 @RestController
+
 public class RestApiController {
+    public static final Logger logger = LoggerFactory.getLogger(RestApiController.class);
+    private static final String ACCECPT_TYPE= "application/json";
     @Autowired
     private AutobusServices autobusServices;
     @Autowired
@@ -31,7 +36,7 @@ public class RestApiController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/api/autobus/buscar/{id}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/autobus/buscar/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public String autobus(@PathVariable Long id){
         Autobus autobus = autobusServices.buscarUnAutobus(id);
         if (autobus==null){
@@ -46,10 +51,11 @@ public class RestApiController {
      * @param id
      * @return
      */
-    @RequestMapping(value ="/api/autobuses/buscar/rutas", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value ="/autobuses/buscar/rutas", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public String obetenerAutobusPorRuta(@RequestParam("id_ruta")Long id){
         Ruta ruta =rutaServices.buscarRutaPorId(id);
         if(ruta==null){
+            logger.error("No se encuentra el autobus buscado.", id);
             return new Gson().toJson("Esta ruta no existe");
         }
         List <Autobus> autobuses = autobusServices.buscarTodosLosAutobusporRuta(ruta.getId());
@@ -61,7 +67,7 @@ public class RestApiController {
      * guardar un autobus
      * @return
      */
-    @RequestMapping(value ="/api/autobus/guardar", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value ="/autobus/guardar", method = RequestMethod.POST, consumes = ACCECPT_TYPE)
     public String guardarAutobus(@RequestBody Autobus autobus){
         Autobus autobus1 = autobusServices.guardarAutobus(autobus);
         if(autobus1!=null){
@@ -79,7 +85,7 @@ public class RestApiController {
      * @param fechaRegistrada
      * @return
      */
-    @RequestMapping(value = "/api/autobus/modificar/posicion/", method =RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+    @RequestMapping(value = "/autobus/modificar/posicion/", method =RequestMethod.PUT, produces = ACCECPT_TYPE, consumes = ACCECPT_TYPE)
     public String modificarCoordenadaAutobus(@RequestParam("numeroSerial")String numeroSerial, @RequestParam("latitud") double latitud,
                                              @RequestParam("longitud")double longitud , @RequestParam("fecha") Long fechaRegistrada) {
         Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial);
@@ -107,7 +113,7 @@ public class RestApiController {
      * @param longitud
      * @return
      */
-    @RequestMapping(value = "/api/autobus/modificar/estado", method =RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+    @RequestMapping(value = "/autobus/modificar/estado", method =RequestMethod.PUT, produces = ACCECPT_TYPE, consumes =ACCECPT_TYPE)
     public String modificarEstadoAutobus(@RequestParam("estadoActual") Boolean estadoActual, @RequestParam("numeroSerial")String numeroSerial, @RequestParam("fecha") Long fechaRegistrada,
                                          @RequestParam("longitud")Double longitud, @RequestParam("latitud")Double latitud){
         Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial);
@@ -136,7 +142,7 @@ public class RestApiController {
      * @param  fechaRegistrada
      * @return
      */
-    @RequestMapping(value = "/api/autobus/modificar/cantidadPasajeros", method =RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+    @RequestMapping(value = "/autobus/modificar/cantidadPasajeros", method =RequestMethod.PUT, produces = ACCECPT_TYPE, consumes = ACCECPT_TYPE)
     public String modificarCantiddadPasajerosAutobus( @RequestParam("numeroSerial") String numeroSerial,@RequestParam("cantidadPasajeros") Integer cantidadPasajeros, @RequestParam("fecha") Long fechaRegistrada){
         Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial);
         if(autobus == null){
@@ -151,7 +157,7 @@ public class RestApiController {
 
     }
 //----------------------------------------Parada---------------------------------------
-    @RequestMapping(value = "/api/paradas/ruta/{id}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/paradas/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public String buscarParadasPorRuta(@PathVariable Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
         if(ruta==null){
@@ -164,7 +170,7 @@ public class RestApiController {
         return new Gson().toJson(paradas);
     }
 //---------------------------------------Ruta-------------------------------------------
-    @RequestMapping(value = "/api/ruta/{id}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public String buscarRuta(@PathVariable Long id){
         Ruta ruta =rutaServices.buscarRutaPorId(id);
         if(ruta==null){
@@ -174,13 +180,23 @@ public class RestApiController {
     }
 //-------------------------------------Chequeo-----------------------------------------------
 
-    @RequestMapping(value="/api/chequeo/guardar", method = RequestMethod.GET, consumes = "application/json")
+    @RequestMapping(value="/chequeo/guardar", method = RequestMethod.GET, consumes = ACCECPT_TYPE)
     public String guardarChequeo(@RequestBody Chequeo chequeo){
         //obteniendo la parada mas cerca a ese punto
         chequeo.setParada(getParadaReal(chequeo));
 
         chequeo.setRaspberryPiAPI(raspberryPiServices.buscarRaspberryPiPorNumeroSerial(chequeo.getRaspberryPiAPI().getNumeroSerial()));
         return new Gson().toJson(chequeoServices.guardarChequeo(chequeo));
+    }
+
+
+    @RequestMapping(value="/guardar/ruta/", method =RequestMethod.POST, consumes = ACCECPT_TYPE)
+    public String guardarRuta(@RequestBody Ruta ruta){
+        Ruta ruta1  = rutaServices.guardarRuta(ruta);
+        if(ruta1!=null){
+            return  new Gson().toJson("Ruta guardadda exitosamente");
+        }
+        return new Gson().toJson("no se pudo guardar la ruta especificada");
     }
 
     private Parada getParadaReal(Chequeo chequeo){
