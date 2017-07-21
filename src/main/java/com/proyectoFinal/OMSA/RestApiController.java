@@ -181,7 +181,8 @@ public class RestApiController {
         Ruta ruta = rutaServices.buscarRutaPorId(id);
         if(ruta!=null){
             parada.setRuta(ruta);
-            return  new Gson().toJson(paradaServices.guardarParada(parada));
+            paradaServices.guardarParada(parada);
+            return new Gson().toJson("Parada guardada exitosamente");
         }
         return new Gson().toJson("no se pudo guardar la parada");
     }
