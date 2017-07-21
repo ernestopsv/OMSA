@@ -13,7 +13,7 @@ public class Parada implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     private Ruta ruta;
     private Long paradaAnterior;
     private Long paradaSiguiente;
