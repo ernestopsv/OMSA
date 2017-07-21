@@ -15,9 +15,7 @@ public class Parada implements Serializable {
     private String nombre;
     @ManyToOne
     private Ruta ruta;
-
     private Long paradaAnterior;
-    @OneToOne
     private Long paradaSiguiente;
     @OneToOne
     private Coordenada coordenada;
