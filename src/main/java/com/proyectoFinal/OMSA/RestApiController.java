@@ -171,6 +171,19 @@ public class RestApiController {
         }
         return new Gson().toJson(paradas);
     }
+    /** buscar una parada
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/parada/buscar/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public String buscarParada(@PathVariable Long id){
+        Parada parada =paradaServices.buscarParada(id);
+
+        if(parada==null){
+            return new Gson().toJson("esta parada aun no existe");
+        }
+       return new Gson().toJson(paradaServices.buscarParada(id));
+    }
     /** Guardar una parada
      * @param id
      * @param parada

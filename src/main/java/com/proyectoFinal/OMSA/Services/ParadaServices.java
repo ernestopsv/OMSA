@@ -37,6 +37,9 @@ public class ParadaServices {
         return paradaRepository.findAllByRutaId(id);
     }
 
+    public Parada buscarParada(Long id){
+        return paradaRepository.findById(id);
+    }
     Boolean modificarParadaPorId(Parada parada){
         return paradaRepository.modifyParadaById(parada.getCoordenada(),parada.getNombre(),parada.getRuta(),parada.getParadaAnterior(),parada.getParadaSiguiente(),parada.getId());
     }
