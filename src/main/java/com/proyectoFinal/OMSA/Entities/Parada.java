@@ -17,9 +17,10 @@ public class Parada implements Serializable {
     private Ruta ruta;
     private Long paradaAnterior;
     private Long paradaSiguiente;
-    @OneToOne
-    private Coordenada coordenada;
 
+    @OneToOne (cascade=CascadeType.ALL)
+    @JoinColumn(name="COORDENADA_ID",nullable=false)
+    private Coordenada coordenada;
 
     public Parada(){
 
