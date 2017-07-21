@@ -156,7 +156,9 @@ public class RestApiController {
         return new Gson().toJson("no se pudo guardar el autobus");
 
     }
-//----------------------------------------Parada---------------------------------------
+
+
+    //----------------------------------------Parada---------------------------------------
     @RequestMapping(value = "/paradas/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public String buscarParadasPorRuta(@PathVariable Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
@@ -169,7 +171,29 @@ public class RestApiController {
         }
         return new Gson().toJson(paradas);
     }
-//---------------------------------------Ruta-------------------------------------------
+    /** Guardar una parada
+     * @param id
+     * @param parada
+     * @return
+     */
+    @RequestMapping(value = "/paradas/guardar/{ruta_id}", method = RequestMethod.POST, produces = ACCECPT_TYPE)
+    public String guardarParada(@RequestBody Parada parada, @PathVariable("ruta_id") Long id ){
+        Ruta ruta = rutaServices.buscarRutaPorId(id);
+        if(ruta!=null){
+            parada.setRuta(ruta);
+            return  new Gson().toJson(paradaServices.guardarParada(parada));
+        }
+        return new Gson().toJson("no se pudo guardar la parada");
+    }
+//---------------------------------------Ruta-------------------------------------------//--------------------------------------Ruta----------------------------------------------------------
+@RequestMapping(value="/guardar/ruta/", method =RequestMethod.POST, consumes = ACCECPT_TYPE)
+public String guardarRuta(@RequestBody Ruta ruta){
+    Ruta ruta1  = rutaServices.guardarRuta(ruta);
+    if(ruta1!=null){
+        return  new Gson().toJson("Ruta guardada exitosamente");
+    }
+    return new Gson().toJson("no se pudo guardar la ruta especificada");
+}
     @RequestMapping(value = "/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public String buscarRuta(@PathVariable Long id){
         Ruta ruta =rutaServices.buscarRutaPorId(id);
@@ -190,14 +214,6 @@ public class RestApiController {
     }
 
 
-    @RequestMapping(value="/guardar/ruta/", method =RequestMethod.POST, consumes = ACCECPT_TYPE)
-    public String guardarRuta(@RequestBody Ruta ruta){
-        Ruta ruta1  = rutaServices.guardarRuta(ruta);
-        if(ruta1!=null){
-            return  new Gson().toJson("Ruta guardadda exitosamente");
-        }
-        return new Gson().toJson("no se pudo guardar la ruta especificada");
-    }
 
     private Parada getParadaReal(Chequeo chequeo){
         String numeroSerial = chequeo.getRaspberryPiAPI().getNumeroSerial();

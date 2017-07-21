@@ -35,5 +35,5 @@ public interface ParadaRepository extends CrudRepository<Parada, Long> {
     //modificar una parada
     @Modifying
     @Query("UPDATE Parada p SET p.coordenada = :coordenada, p.nombre=:nombre, p.ruta=:ruta,p.paradaAnterior=:paradaAnterior, p.paradaSiguiente=:paradaSiguiente WHERE p.id=:id")
-    Boolean modifyParadaById(@Param("coordenada")Coordenada coordenada, @Param("nombre")String nombre, @Param("ruta") Ruta ruta, @Param("paradaAnterior")Parada paradaAnterior, @Param("paradaSiguiente")Parada paradaSiguiente, @Param("id")Long id);
+    Boolean modifyParadaById(@Param("coordenada")Coordenada coordenada, @Param("nombre")String nombre, @Param("ruta") Ruta ruta, @Param("paradaAnterior")Long paradaAnterior, @Param("paradaSiguiente")Long paradaSiguiente, @Param("id")Long id);
 }

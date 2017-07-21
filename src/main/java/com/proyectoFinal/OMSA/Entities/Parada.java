@@ -15,10 +15,10 @@ public class Parada implements Serializable {
     private String nombre;
     @ManyToOne
     private Ruta ruta;
+
+    private Long paradaAnterior;
     @OneToOne
-    private Parada paradaAnterior;
-    @OneToOne
-    private Parada paradaSiguiente;
+    private Long paradaSiguiente;
     @OneToOne
     private Coordenada coordenada;
 
@@ -27,7 +27,7 @@ public class Parada implements Serializable {
 
     }
 
-    public Parada(String nombre, Ruta ruta, Parada paradaAnterior, Parada paradaSiguiente, Coordenada coordenada) {
+    public Parada(String nombre, Ruta ruta, Long paradaAnterior, Long paradaSiguiente, Coordenada coordenada) {
         this.nombre = nombre;
         this.ruta = ruta;
         this.paradaAnterior = paradaAnterior;
@@ -59,19 +59,19 @@ public class Parada implements Serializable {
         this.ruta = ruta;
     }
 
-    public Parada getParadaAnterior() {
+    public Long getParadaAnterior() {
         return paradaAnterior;
     }
 
-    public void setParadaAnterior(Parada paradaAnterior) {
+    public void setParadaAnterior(Long paradaAnterior) {
         this.paradaAnterior = paradaAnterior;
     }
 
-    public Parada getParadaSiguiente() {
+    public Long getParadaSiguiente() {
         return this.paradaSiguiente;
     }
 
-    public void setParadaSiguiente(Parada paradaSiguiente) {
+    public void setParadaSiguiente(Long paradaSiguiente) {
         this.paradaSiguiente = paradaSiguiente;
     }
 
