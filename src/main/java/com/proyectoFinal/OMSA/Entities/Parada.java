@@ -1,6 +1,7 @@
 package com.proyectoFinal.OMSA.Entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 /**
@@ -12,6 +13,7 @@ public class Parada implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(min=2 , max = 25)
     private String nombre;
     @ManyToOne(fetch=FetchType.LAZY)
     private Ruta ruta;

@@ -1,6 +1,7 @@
 package com.proyectoFinal.OMSA.Entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
@@ -17,7 +18,9 @@ public class Ruta implements Serializable{
     private Float distanciaTotal;
     private Long fechaCreada;
     private Long fechaUltimaModificacion;
+    @Size(min=2, max = 100)
     private String ciudad;
+    @Size(min=2, max = 100)
     private String nombreCorredor;
     private Boolean esDireccionSubida;
 

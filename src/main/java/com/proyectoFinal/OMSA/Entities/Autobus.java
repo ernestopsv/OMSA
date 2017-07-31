@@ -1,6 +1,9 @@
 package com.proyectoFinal.OMSA.Entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 import java.io.DataInput;
 import java.io.Serializable;
 import java.sql.Date;
@@ -16,7 +19,9 @@ public class Autobus implements  Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(min = 2, max = 35)
     private String modelo;
+    @Max(100)
     private Integer cantidadDeAsientos;
     private Float peso;
     @ManyToOne
@@ -28,8 +33,10 @@ public class Autobus implements  Serializable {
     private String conductor;
     private Long fechaCreada; //fecha agregada en la base de datos
     private Long ultimaFechaModificada; // Updatable
+    @Min(10)
     private Integer precio;
     private Boolean tieneAireAcondicionado;
+    @Max(100)
     private Integer cantidadDePasajerosActual; //Updatable
     @OneToOne
     private Coordenada coordenada; //Updatable
