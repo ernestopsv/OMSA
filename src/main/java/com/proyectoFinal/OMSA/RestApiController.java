@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 @RequestMapping("/api")
 @RestController
@@ -169,7 +170,12 @@ public class RestApiController {
         if(paradas.isEmpty()){
             return new Gson().toJson("no se encontro ninguna parada para esta ruta");
         }
-        return new Gson().toJson(paradas);
+        List<Parada> paradasTemp= new ArrayList<>();
+        for(Parada parada: paradas){
+            parada.setRuta(null);
+            paradasTemp.add(parada);
+        }
+        return new Gson().toJson(paradasTemp);
     }
     /** buscar una parada
      * @param id
