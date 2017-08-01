@@ -17,7 +17,7 @@ public class  RaspberryPiAPI implements Serializable {
     @OneToOne
     private Autobus autobus;
 
-    private RaspberryPiAPI() {
+    public RaspberryPiAPI() {
 
     }
 

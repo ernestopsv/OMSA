@@ -22,7 +22,7 @@ public class RaspberryPiServices {
     public Boolean eliminarRaspberryPiPorId(Long id){
         return reaspberryPiRepository.deleteRaspberryPiAPIById(id);
     }
-    public Boolean eliminarRapsberryPorMacAddress(String numeroSerial){
+    public Boolean eliminarRapsberryPorNumeroSerial(String numeroSerial){
         return reaspberryPiRepository.deleteRaspberryPiAPIByNumeroSerial(numeroSerial);
     }
     public RaspberryPiAPI guardarRaspberryPi(RaspberryPiAPI raspberryPiAPI){
