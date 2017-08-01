@@ -66,11 +66,16 @@ public class RestApiController {
     /**
      *
      * guardar un autobus
+     * @param id
      * @return
      */
-    @RequestMapping(value ="/autobus/guardar", method = RequestMethod.POST, consumes = ACCECPT_TYPE)
-    public String guardarAutobus(@RequestBody Autobus autobus){
+    @RequestMapping(value ="/autobus/guardar/{id_ruta}", method = RequestMethod.POST, consumes = ACCECPT_TYPE)
+    public String guardarAutobus(@RequestBody Autobus autobus, @PathVariable("id_ruta")Long id){
         Autobus autobus1 = autobusServices.guardarAutobus(autobus);
+        Ruta ruta = rutaServices.buscarRutaPorId(id);
+        if(ruta==null){
+          return new Gson().toJson("La ruta no existe");
+        }
         if(autobus1!=null){
             return new Gson().toJson("Autobus guardado satisfactoriamentete");
         }
@@ -95,7 +100,7 @@ public class RestApiController {
             return "El autobus que quieres modificar no existe";
         }
         autobus.setUltimaFechaModificada(fechaRegistrada);
-        Coordenada coordenada = new Coordenada();
+        Coordenada coordenada = autobus.getCoordenada();
         coordenada.setLatitude(latitud);
         coordenada.setLongitud(longitud);
         autobus.setCoordenada(coordenada);

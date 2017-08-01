@@ -43,7 +43,7 @@ public class Autobus implements  Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     private RaspberryPiAPI raspberryPi;
 
-    private Autobus() {
+    public Autobus() {
 
     }
 

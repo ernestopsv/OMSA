@@ -12,8 +12,6 @@ public class  RaspberryPiAPI implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String numeroSerial;
-    private String ipAddress;
-    private Integer puerto;
     private String macAddress;
 
     @OneToOne
@@ -23,10 +21,8 @@ public class  RaspberryPiAPI implements Serializable {
 
     }
 
-    public RaspberryPiAPI(String numeroSerial, String ipAddress, Integer puerto, String macAddress, Autobus autobus) {
+    public RaspberryPiAPI(String numeroSerial, String macAddress, Autobus autobus) {
         this.numeroSerial = numeroSerial;
-        this.ipAddress = ipAddress;
-        this.puerto = puerto;
         this.macAddress = macAddress;
         this.autobus = autobus;
     }
@@ -45,22 +41,6 @@ public class  RaspberryPiAPI implements Serializable {
 
     public void setNumeroSerial(String numeroSerial) {
         this.numeroSerial = numeroSerial;
-    }
-
-    public String getIpAddress() {
-        return ipAddress;
-    }
-
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
-
-    public Integer getPuerto() {
-        return puerto;
-    }
-
-    public void setPuerto(Integer puerto) {
-        this.puerto = puerto;
     }
 
     public String getMacAddress() {

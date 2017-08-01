@@ -32,8 +32,8 @@ public interface ReaspberryPiRepository extends CrudRepository<RaspberryPiAPI, L
     RaspberryPiAPI findRaspberryPiAPIByAutobusId(Long id);
 
     @Modifying
-    @Query("UPDATE RaspberryPiAPI r SET r.ipAddress = :ipAddress, r.macAddress=:macAddress, r.numeroSerial=:numeroSerial, r.puerto=:puerto WHERE r.id = :id")
-    Boolean modifyRutaById(@Param("ipAddress")String ipAddress, @Param("macAddress")String macAddress, @Param("numeroSerial")String numeroSerial, @Param("puerto")Integer puerto , @Param("id") Long id);
+    @Query("UPDATE RaspberryPiAPI r SET r.ipAddress = :ipAddress, r.macAddress=:macAddress, r.numeroSerial=:numeroSerial WHERE r.id = :id")
+    Boolean modifyRutaById(@Param("ipAddress")String ipAddress, @Param("macAddress")String macAddress, @Param("numeroSerial")String numeroSerial, @Param("id") Long id);
 
 
 }
