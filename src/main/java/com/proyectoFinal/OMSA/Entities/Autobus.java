@@ -38,7 +38,7 @@ public class Autobus implements  Serializable {
     private Boolean tieneAireAcondicionado;
     @Max(100)
     private Integer cantidadDePasajerosActual; //Updatable
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Coordenada coordenada; //Updatable
     @OneToOne(cascade = CascadeType.ALL)
     private RaspberryPiAPI raspberryPi;

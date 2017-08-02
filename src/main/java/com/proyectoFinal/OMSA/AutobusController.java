@@ -68,6 +68,6 @@ public class AutobusController {
     public String eliminarAutobus(@RequestParam("id") Long id){
         Autobus autobus = autobusServices.buscarUnAutobus(id);
         autobusServices.eliminarAutobusporId(id);
-        return "redirect:/autobus";
+        return "redirect:/autobus/";
     }
 }

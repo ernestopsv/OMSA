@@ -15,9 +15,9 @@ public class Chequeo implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id; //to be thinking
     private Long fechaRegistrada;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private RaspberryPiAPI raspberryPiAPI;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)  // to be thought
     private Parada parada;
     private Boolean esEntrada;
 

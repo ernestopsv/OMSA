@@ -180,7 +180,7 @@ public class RestApiController {
             parada.setRuta(null);
             paradasTemp.add(parada);
         }
-        return new Gson().toJson(paradasTemp);
+        return new Gson().toJson("{"+"paradas:"+paradasTemp+"}");
     }
     /** buscar una parada
      * @param id

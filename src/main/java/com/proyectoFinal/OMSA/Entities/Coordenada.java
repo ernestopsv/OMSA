@@ -1,13 +1,14 @@
 package com.proyectoFinal.OMSA.Entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by anyderre on 28/06/17.
  */
 @Entity
 @Table(name = "coordenada")
-public class Coordenada {
+public class Coordenada implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
