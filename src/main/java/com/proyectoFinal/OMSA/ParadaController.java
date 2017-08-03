@@ -34,7 +34,6 @@ public class ParadaController {
         return "";
     }
 
-
     @RequestMapping("/crear")
     public String crearParada(Model model){
         model.addAttribute("parada", new Parada());
@@ -63,5 +62,11 @@ public class ParadaController {
             parada.setRuta(ruta);
             paradaServices.guardarParada(parada);
             return "redirect:/";
+    }
+
+    @RequestMapping("/eliminar")
+    public String eliminarParada(@RequestParam("id")Long id){
+        paradaServices.eliminarParadaPor(id);
+        return "redirect:/parada/";
     }
 }
