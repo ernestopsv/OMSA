@@ -31,9 +31,8 @@ public class RestApiController {
     private RaspberryPiServices raspberryPiServices;
     @Autowired
     private RutaServices rutaServices;
-    /*
-     /**
-     * Recuperando información desde la URL
+    /**
+     * Buscar un autobus por su id
      * @param id
      * @return
      */
@@ -97,8 +96,9 @@ public class RestApiController {
         Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial);
 
         if(autobus == null){
-            return "El autobus que quieres modificar no existe";
+            return new Gson().toJson("Este autobus no existe");
         }
+
         autobus.setUltimaFechaModificada(fechaRegistrada);
         Coordenada coordenada = autobus.getCoordenada();
         coordenada.setLatitude(latitud);
@@ -106,9 +106,9 @@ public class RestApiController {
         autobus.setCoordenada(coordenada);
 
         if(autobusServices.modifcarCoordenadaAutobus(autobus)){
-            return new Gson().toJson("Autobus modificado exitosamente");
+            return new Gson().toJson("Posicion autobus modificado exitosamente");
         };
-        return new Gson().toJson("no se pudo guardar el autobus");
+        return new Gson().toJson("no se pudo modificar la posicion el autobus");
     }
     /**
      *
@@ -133,10 +133,10 @@ public class RestApiController {
         coordenada.setLatitude(latitud);
         //Parada parada = getParadaReal()
         if(autobusServices.modificarEstadoAutobus(autobus)){
-            return new Gson().toJson( "Autobus modificado exitosamente");
-        };
+            return new Gson().toJson( "Estado Autobus modificado exitosamente");
+        }
         return new Gson().toJson(
-        "no se pudo guardar el autobus");
+        "No se pudo modificar el estado del autobus");
 
     }
 
@@ -149,7 +149,7 @@ public class RestApiController {
      * @return
      */
     @RequestMapping(value = "/autobus/modificar/cantidadPasajeros", method =RequestMethod.PUT, produces = ACCECPT_TYPE, consumes = ACCECPT_TYPE)
-    public String modificarCantiddadPasajerosAutobus( @RequestParam("numeroSerial") String numeroSerial,@RequestParam("cantidadPasajeros") Integer cantidadPasajeros, @RequestParam("fecha") Long fechaRegistrada){
+    public String modificarCantidadPasajerosAutobus( @RequestParam("numeroSerial") String numeroSerial,@RequestParam("cantidadPasajeros") Integer cantidadPasajeros, @RequestParam("fecha") Long fechaRegistrada){
         Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial);
         if(autobus == null){
             return new Gson().toJson("El autobus que quieres modificar no existe");
@@ -162,7 +162,6 @@ public class RestApiController {
         return new Gson().toJson("no se pudo guardar el autobus");
 
     }
-
 
     //----------------------------------------Parada---------------------------------------
     @RequestMapping(value = "/paradas/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
