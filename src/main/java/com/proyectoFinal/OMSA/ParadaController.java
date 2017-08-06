@@ -31,17 +31,17 @@ public class ParadaController {
     public String index(Model model, @RequestParam(value = "id", required = false, defaultValue = "1")Long id ){
         List<Parada> paradas = paradaServices.buscarParadaPorRutaId(id);
         model.addAttribute("paradas", paradas);
-        return "";
+        return "ver_parada";
     }
 
-    @RequestMapping("/crear")
+    @RequestMapping("/crear_parada")
     public String crearParada(Model model){
         model.addAttribute("parada", new Parada());
-        return "/crear";
+        return "/crear_parada";
     }
 
     @Transactional
-    @PostMapping("/crear")
+    @PostMapping("/crear_parada")
     public String guardarParadaCreada(@ModelAttribute Parada parada, @RequestParam("id")Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
             parada.setRuta(ruta);
@@ -49,14 +49,14 @@ public class ParadaController {
             return "redirect:/";
     }
 
-    @RequestMapping("/editar")
+    @RequestMapping("/editar_parada")
     public String modificarParada(Model model, @RequestParam("id")Long id){
         Parada parada = paradaServices.buscarParada(id);
         model.addAttribute("parada", parada);
-        return "/editar";
+        return "/editar_parada";
     }
 
-    @PostMapping("/editar")
+    @PostMapping("/editar_parada")
     public String guardarParadaModificada(@ModelAttribute Parada parada, @RequestParam("id")Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
             parada.setRuta(ruta);
@@ -64,7 +64,7 @@ public class ParadaController {
             return "redirect:/";
     }
 
-    @RequestMapping("/eliminar")
+    @RequestMapping("/eliminar_parada")
     public String eliminarParada(@RequestParam("id")Long id){
         paradaServices.eliminarParadaPor(id);
         return "redirect:/parada/";

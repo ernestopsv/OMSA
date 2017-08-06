@@ -38,21 +38,21 @@ public class RutaController {
     public String index(Model model){
         List<Ruta> rutas = rutaServices.buscarTodasLasRutas();
         model.addAttribute("rutas", rutas);
-        return "";
+        return "ver_ruta";
     }
 
-    @RequestMapping("/listar/paradas")
+    @RequestMapping("/listar_paradas")
     public String mostrarParadas(Model model, @RequestParam("id") Long id_ruta){
         List<Parada>paradas = paradaServices.buscarParadaPorRutaId(id_ruta);
         model.addAttribute("paradas",paradas);
-        return "/listar/paradas";
+        return "/listar_paradas";
     }
 
-    @RequestMapping("/listar/autobus")
+    @RequestMapping("/listar_autobus")
     public String mostrarAutobus(Model model, @RequestParam("id")Long id_ruta){
         List<Autobus> autobuses = autobusServices.buscarTodosLosAutobusporRuta(id_ruta);
         model.addAttribute("autobuses", autobuses);
-        return "/listar/autobus";
+        return "/listar_autobus";
     }
 
     @RequestMapping("/buscar")
@@ -61,17 +61,17 @@ public class RutaController {
         return "/buscar";
     }
 
-    @RequestMapping("/editar")
+    @RequestMapping("/editar_ruta")
     public String editarRuta(Model model , @RequestParam("nombre_corredor")String nombre_Corredor){
         List<Ruta> ruta = rutaServices.buscarRutaPorNombreCorredor(nombre_Corredor);
         model.addAttribute("ruta", ruta.get(0));
         if(ruta.size()>1){
             model.addAttribute("idSegRuta", ruta.get(1).getId());
         }
-        return "/editar";
+        return "/editar_ruta";
     }
 
-    @PostMapping("/editar")
+    @PostMapping("/editar_ruta")
     public String guardarRutaEditada(@ModelAttribute Ruta ruta, @RequestParam("idSegRuta")Long id){
 
         Ruta ruta1 = rutaServices.buscarRutaPorId(id);
@@ -87,12 +87,12 @@ public class RutaController {
        return "redirect:/ruta/";
     }
 
-    @RequestMapping("/crear")
+    @RequestMapping("/crear_ruta")
     public String crearRuta(Model model){
         model.addAttribute("ruta", new Ruta());
-        return "/crar";
+        return "/crear_ruta";
     }
-    @PostMapping("/crear")
+    @PostMapping("/crear_ruta")
     public String guardarRutaCreada(@ModelAttribute Ruta ruta){
         ruta.setEsDireccionSubida(true);
         rutaServices.guardarRuta(ruta);
@@ -101,7 +101,7 @@ public class RutaController {
         return "redirect:/ruta/";
     }
 
-    @RequestMapping("/eliminar")
+    @RequestMapping("/eliminar_ruta")
     public String eliminarRuta(@RequestParam("id")String nombreCorredor){
         for(Ruta ruta: rutaServices.buscarRutaPorNombreCorredor(nombreCorredor)){
             rutaServices.eliminarRutaPorId(ruta.getId());

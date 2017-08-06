@@ -25,7 +25,7 @@ public class AutobusController {
     public String index(Model model){
         List<Autobus> autobuses = autobusServices.buscarTodoLosAutobus();
         model.addAttribute("autobuses", autobuses);
-        return "";
+        return "ver_autobus";
     }
 
     /**
@@ -34,25 +34,25 @@ public class AutobusController {
      * @param id
      * @return
      */
-    @RequestMapping("/editar")
+    @RequestMapping("/editar_autobus")
     public String editarAutobus(Model model, @RequestParam("id")Long id){
         Autobus autobus =autobusServices.buscarUnAutobus(id);
         model.addAttribute(autobus);
-        return "/editar";
+        return "/editar_autobus";
     }
 
-    @PostMapping("/editar")
+    @PostMapping("/editar_autobus")
     public String guardarAutobusEditado(@ModelAttribute Autobus autobus){
         autobusServices.guardarAutobus(autobus);
         return "redirect:/autobus/";
     }
 
-    @RequestMapping("/crear")
+    @RequestMapping("/crear_autobus")
     public String crearAutobus(Model model){
         model.addAttribute("autobus", new Autobus());
-        return "/crear";
+        return "/crear_autobus";
     }
-    @PostMapping("/crear")
+    @PostMapping("/crear_autobus")
     @Transactional
     public String guardarAutobusCreado(@ModelAttribute Autobus autobus){
         autobusServices.guardarAutobus(autobus);
@@ -64,7 +64,7 @@ public class AutobusController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/eliminar")
+    @RequestMapping(value = "/eliminar_autobus")
     public String eliminarAutobus(@RequestParam("id") Long id){
 
         autobusServices.eliminarAutobusporId(id);
