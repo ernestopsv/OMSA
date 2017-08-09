@@ -213,13 +213,13 @@ public class RestApiController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/parada/eliminar/{id}", method = RequestMethod.DELETE, produces = ACCECPT_TYPE)
-    public String borrarParada(@PathVariable("id") Long id ){
+    @RequestMapping(value = "/parada/eliminar/{id}", method = RequestMethod.DELETE)
+    public Boolean borrarParada(@PathVariable("id") Long id ){
         Parada parada = paradaServices.buscarParada(id);
-        if(parada==null){
-            return new Gson().toJson("Esta parada no existe");
+        if(parada!=null){
+        return paradaServices.eliminarParadaPor(id);
         }
-        return new Gson().toJson(paradaServices.eliminarParadaPor(id));
+        return false;
     }
 
 //---------------------------------------Ruta-------------------------------------------//--------------------------------------Ruta----------------------------------------------------------

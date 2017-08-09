@@ -17,7 +17,7 @@ public class ParadaServices {
     @Autowired
     ParadaRepository paradaRepository;
 
-    public Parada eliminarParadaPor(Long id){
+    public Boolean eliminarParadaPor(Long id){
         return paradaRepository.deleteById(id);
     }
     public Boolean eliminarParadaPorRutaId(Long id){
