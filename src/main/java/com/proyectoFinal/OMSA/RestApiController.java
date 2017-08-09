@@ -209,6 +209,19 @@ public class RestApiController {
         }
         return new Gson().toJson("no se pudo guardar la parada");
     }
+    /** Guardar una parada
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/parada/eliminar/{id}", method = RequestMethod.POST, produces = ACCECPT_TYPE)
+    public String borrarParada(@PathVariable("id") Long id ){
+        Parada parada = paradaServices.buscarParada(id);
+        if(parada==null){
+            return new Gson().toJson("Esta parada no existe");
+        }
+        return new Gson().toJson(paradaServices.eliminarParadaPor(id));
+    }
+
 //---------------------------------------Ruta-------------------------------------------//--------------------------------------Ruta----------------------------------------------------------
 @RequestMapping(value="/guardar/ruta/", method =RequestMethod.POST, consumes = ACCECPT_TYPE)
 public String guardarRuta(@RequestBody Ruta ruta){

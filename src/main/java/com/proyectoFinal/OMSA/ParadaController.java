@@ -68,5 +68,5 @@ public class ParadaController {
     public String eliminarParada(@RequestParam("id")Long id){
         paradaServices.eliminarParadaPor(id);
         return "redirect:/parada/";
-    }
-}
+                }
+                }
