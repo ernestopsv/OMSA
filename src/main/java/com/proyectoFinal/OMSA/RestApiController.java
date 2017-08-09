@@ -218,6 +218,7 @@ public class RestApiController {
         Parada parada = paradaServices.buscarParada(id);
         if(parada!=null){
         return paradaServices.eliminarParadaPor(id);
+
         }
         return false;
     }
