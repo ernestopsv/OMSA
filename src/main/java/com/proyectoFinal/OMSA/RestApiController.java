@@ -192,7 +192,7 @@ public class RestApiController {
         if(parada==null){
             return new Gson().toJson("esta parada aun no existe");
         }
-       return new Gson().toJson(paradaServices.buscarParada(id));
+       return new Gson().toJson(parada);
     }
     /** Guardar una parada
      * @param id
