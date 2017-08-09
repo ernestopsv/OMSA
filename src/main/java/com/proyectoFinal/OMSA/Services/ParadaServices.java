@@ -13,11 +13,12 @@ import java.util.List;
  * Created by anyderre on 01/07/17.
  */
 @Service
+@Transactional
 public class ParadaServices {
     @Autowired
     ParadaRepository paradaRepository;
 
-    @Transactional
+
     public Boolean eliminarParadaPor(Long id){
         return paradaRepository.deleteById(id);
     }
@@ -29,7 +30,6 @@ public class ParadaServices {
         return paradaRepository.findById(id);
     }
 
-    @Transactional
     public Parada guardarParada(Parada parada){
         return paradaRepository.save(parada);
     }
