@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -1148,7 +1147,7 @@
       <workItem from="1501817565518" duration="1009000" />
       <workItem from="1501962905302" duration="1330000" />
       <workItem from="1501989158515" duration="1247000" />
-      <workItem from="1502289509749" duration="1301000" />
+      <workItem from="1502289509749" duration="1339000" />
     </task>
     <task id="LOCAL-00001" summary="preparing aplication deployment">
       <created>1500390391871</created>
@@ -1171,11 +1170,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501991008547</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixing templates name">
+      <created>1502291593396</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1502291593396</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94406000" />
+    <option name="totallyTimeSpent" value="94444000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
