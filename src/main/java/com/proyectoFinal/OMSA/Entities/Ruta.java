@@ -1,5 +1,8 @@
 package com.proyectoFinal.OMSA.Entities;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -29,6 +32,7 @@ public class Ruta implements Serializable{
     private List <Coordenada> coordenadas;
 
     @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL, orphanRemoval = true)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Parada> paradas = new ArrayList<>();
 
     public Ruta(){
