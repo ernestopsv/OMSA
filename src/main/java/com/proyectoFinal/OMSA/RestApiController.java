@@ -213,11 +213,11 @@ public class RestApiController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/parada/eliminar/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/parada/eliminar/{id}", method = RequestMethod.POST)
     public Boolean borrarParada(@PathVariable("id") Long id ){
         Parada parada = paradaServices.buscarParada(id);
         if(parada!=null){
-        paradaServices.eliminarParadaPor(id);
+             paradaServices.eliminarParadaPor(id);
         return true;
         }
         return false;
