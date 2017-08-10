@@ -220,7 +220,7 @@ public class RestApiController {
         if(ruta!=null){
             List<Parada> paradasTemp = new ArrayList<>();
             for(Parada parada: ruta.getParadas()){
-                if(parada.getId()!=idParada){
+                if(parada.getId().equals(idParada)){
                     paradasTemp.add(parada);
                 }
             }
