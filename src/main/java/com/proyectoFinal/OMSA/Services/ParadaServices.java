@@ -19,7 +19,7 @@ public class ParadaServices {
 
     @Transactional
     public void eliminarParadaPor(Long id){
-         paradaRepository.deleteParadaBy(id);
+         paradaRepository.deleteById(id);
     }
     public Boolean eliminarParadaPorRutaId(Long id){
         return paradaRepository.deleteAllByRutaId(id);

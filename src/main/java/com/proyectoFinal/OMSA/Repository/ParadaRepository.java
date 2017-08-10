@@ -15,7 +15,7 @@ import java.util.List;
 
 public interface ParadaRepository extends CrudRepository<Parada, Long> {
     //Eliminar una parada
-    Boolean deleteById(Long id);
+    void deleteById(Long id);
 
     //mostrar todas las paradas
     List<Parada> findAll();
