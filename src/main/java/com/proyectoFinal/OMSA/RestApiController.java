@@ -217,8 +217,8 @@ public class RestApiController {
     public Boolean borrarParada(@PathVariable("id") Long id ){
         Parada parada = paradaServices.buscarParada(id);
         if(parada!=null){
-        return paradaServices.eliminarParadaPor(id);
-
+        paradaServices.eliminarParadaPor(id);
+        return true;
         }
         return false;
     }

@@ -16,9 +16,9 @@ import java.util.List;
 public class ParadaServices {
     @Autowired
     ParadaRepository paradaRepository;
-
-    public Boolean eliminarParadaPor(Long id){
-        return paradaRepository.deleteById(id);
+    @Transactional
+    public void eliminarParadaPor(Long id){
+         paradaRepository.deleteParadaBy(id);
     }
     public Boolean eliminarParadaPorRutaId(Long id){
         return paradaRepository.deleteAllByRutaId(id);
