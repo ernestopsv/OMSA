@@ -213,12 +213,19 @@ public class RestApiController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/parada/eliminar/{id}", method = RequestMethod.POST)
-    public Boolean borrarParada(@PathVariable("id") Long id ){
-        Parada parada = paradaServices.buscarParada(id);
+    @RequestMapping(value = "/parada/{id_parada}/eliminar/ruta/{id_ruta}", method = RequestMethod.POST)
+    public Boolean borrarParada(@PathVariable("id_ruta") Long id, @PathVariable("id_parada") Long idParada  ){
+        Ruta ruta = rutaServices.buscarRutaPorId(id);
 
-        if(parada!=null){
-             paradaServices.eliminarParadaPor(id);
+        if(ruta!=null){
+            List<Parada> paradasTemp = new ArrayList<>();
+            for(Parada parada: ruta.getParadas()){
+                if(parada.getId()!=idParada){
+                    paradasTemp.add(parada);
+                }
+            }
+            ruta.setParadas(paradasTemp);
+            rutaServices.guardarRuta(ruta);
         return true;
         }
         return false;

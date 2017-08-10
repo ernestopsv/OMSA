@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,11 +28,14 @@ public class Ruta implements Serializable{
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List <Coordenada> coordenadas;
 
+    @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL, orphanRemoval = true)
+    private List<Parada> paradas = new ArrayList<>();
+
     public Ruta(){
 
     }
 
-    public Ruta(Float distanciaTotal, Long fechaCreada, Long fechaUltimaModificacion, String ciudad, String nombreCorredor, Boolean esDireccionSubida, List<Coordenada> coordenadas) {
+    public Ruta(Float distanciaTotal, Long fechaCreada, Long fechaUltimaModificacion, String ciudad, String nombreCorredor, Boolean esDireccionSubida, List<Coordenada> coordenadas, List<Parada> paradas) {
         this.distanciaTotal = distanciaTotal;
         this.fechaCreada = fechaCreada;
         this.fechaUltimaModificacion = fechaUltimaModificacion;
@@ -39,6 +43,15 @@ public class Ruta implements Serializable{
         this.nombreCorredor = nombreCorredor;
         this.esDireccionSubida = esDireccionSubida;
         this.coordenadas = coordenadas;
+        this.paradas = paradas;
+    }
+
+    public List<Parada> getParadas() {
+        return paradas;
+    }
+
+    public void setParadas(List<Parada> paradas) {
+        this.paradas = paradas;
     }
 
     public Long getId() {
