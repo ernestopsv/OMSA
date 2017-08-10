@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by anyderre on 30/06/17.
  */
-@Transactional
+
 public interface ParadaRepository extends CrudRepository<Parada, Long> {
     //Eliminar una parada
     Boolean deleteById(Long id);
