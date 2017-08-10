@@ -25,10 +25,6 @@ public class ParadaServices {
         return paradaRepository.deleteAllByRutaId(id);
     }
 
-    public Parada encontrarParadaPorId(Long id){
-        return paradaRepository.findById(id);
-    }
-
     public Parada guardarParada(Parada parada){
         return paradaRepository.save(parada);
     }

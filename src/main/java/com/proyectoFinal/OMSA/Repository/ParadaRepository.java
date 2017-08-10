@@ -40,7 +40,8 @@ public interface ParadaRepository extends CrudRepository<Parada, Long> {
     Boolean modifyParadaById(@Param("coordenada")Coordenada coordenada, @Param("nombre")String nombre, @Param("ruta") Ruta ruta, @Param("paradaAnterior")Long paradaAnterior, @Param("paradaSiguiente")Long paradaSiguiente, @Param("id")Long id);
 
     @Modifying
-    @Query("delete from Parada p where p.id = :id")
+    @Transactional
+    @Query(value = "delete from Parada p where p.id = :id")
     void deleteParadaBy(@Param("id")Long id);
 
 }

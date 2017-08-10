@@ -216,6 +216,7 @@ public class RestApiController {
     @RequestMapping(value = "/parada/eliminar/{id}", method = RequestMethod.POST)
     public Boolean borrarParada(@PathVariable("id") Long id ){
         Parada parada = paradaServices.buscarParada(id);
+
         if(parada!=null){
              paradaServices.eliminarParadaPor(id);
         return true;
