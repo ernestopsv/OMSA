@@ -165,21 +165,21 @@ public class RestApiController {
 
     //----------------------------------------Parada---------------------------------------
     @RequestMapping(value = "/paradas/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
-    public String buscarParadasPorRuta(@PathVariable Long id){
+    public ArrayList<Parada> buscarParadasPorRuta(@PathVariable Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
         if(ruta==null){
-            return new Gson().toJson("esta ruta no existe");
+            return new ArrayList<>();
         }
         List<Parada> paradas = paradaServices.buscarParadaPorRutaId(id);
         if(paradas.isEmpty()){
-            return new Gson().toJson("no se encontro ninguna parada para esta ruta");
+            return new ArrayList<>();
         }
         List<Parada> paradasTemp= new ArrayList<>();
         for(Parada parada: paradas){
             parada.setRuta(null);
             paradasTemp.add(parada);
         }
-        return new Gson().toJson(paradasTemp);
+        return new ArrayList<>(paradasTemp);
     }
     /** buscar una parada
      * @param id
