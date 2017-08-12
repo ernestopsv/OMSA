@@ -214,7 +214,7 @@ public class RestApiController {
      * @return
      */
     @RequestMapping(value = "/parada/eliminar", method = RequestMethod.POST, produces = ACCECPT_TYPE)
-    public Boolean borrarParada(@RequestParam("id_ruta") Long id, @RequestParam("id_parada") Long idParada){
+    public Boolean borrarParada(@RequestParam(value="id_ruta",required=false) Long id, @RequestParam(value="id_parada",required = false) Long idParada){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
 
         if(ruta!=null){
