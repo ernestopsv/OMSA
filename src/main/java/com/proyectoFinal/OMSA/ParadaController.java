@@ -31,6 +31,7 @@ public class ParadaController {
     public String index(Model model, @RequestParam(value = "id", required = false, defaultValue = "1")Long id ){
         List<Parada> paradas = paradaServices.buscarParadaPorRutaId(id);
         model.addAttribute("paradas", paradas);
+        model.addAttribute("id_ruta", id);
         return "ver_parada";
     }
 
@@ -61,12 +62,12 @@ public class ParadaController {
         Ruta ruta = rutaServices.buscarRutaPorId(id);
             parada.setRuta(ruta);
             paradaServices.guardarParada(parada);
-            return "redirect:/";
+            return "redirect:/parada?id="+id;
     }
 
     @RequestMapping("/eliminar_parada")
     public String eliminarParada(@RequestParam("id")Long id){
         paradaServices.eliminarParadaPor(id);
         return "redirect:/parada/";
-                }
-                }
+    }
+}
