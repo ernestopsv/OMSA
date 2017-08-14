@@ -40,14 +40,13 @@ public class Autobus implements  Serializable {
     private Integer cantidadDePasajerosActual; //Updatable
     @OneToOne(cascade = CascadeType.ALL)
     private Coordenada coordenada; //Updatable
-    @OneToOne(cascade = CascadeType.ALL)
-    private RaspberryPiAPI raspberryPi;
+    private String raspberryPiNumeroSerial;
 
     public Autobus() {
 
     }
 
-    public Autobus(String modelo, Integer cantidadDeAsientos, Float peso, Ruta ruta, Parada ultimaParada, Integer anoFabricacion, Boolean activo, String conductor, Long fechaCreada, Long ultimaFechaModificada, Integer precio, Boolean tieneAireAcondicionado, Integer cantidadDePasajerosActual, Coordenada coordenada, RaspberryPiAPI raspberryPi) {
+    public Autobus(String modelo, Integer cantidadDeAsientos, Float peso, Ruta ruta, Parada ultimaParada, Integer anoFabricacion, Boolean activo, String conductor, Long fechaCreada, Long ultimaFechaModificada, Integer precio, Boolean tieneAireAcondicionado, Integer cantidadDePasajerosActual, Coordenada coordenada, String raspberryPiNumeroSerial) {
         this.modelo = modelo;
         this.cantidadDeAsientos = cantidadDeAsientos;
         this.peso = peso;
@@ -62,7 +61,15 @@ public class Autobus implements  Serializable {
         this.tieneAireAcondicionado = tieneAireAcondicionado;
         this.cantidadDePasajerosActual = cantidadDePasajerosActual;
         this.coordenada = coordenada;
-        this.raspberryPi = raspberryPi;
+        this.raspberryPiNumeroSerial = raspberryPiNumeroSerial;
+    }
+
+    public String getRaspberryPiNumeroSerial() {
+        return raspberryPiNumeroSerial;
+    }
+
+    public void setRaspberryPiNumeroSerial(String raspberryPiNumeroSerial) {
+        this.raspberryPiNumeroSerial = raspberryPiNumeroSerial;
     }
 
     public Long getId() {
@@ -185,13 +192,6 @@ public class Autobus implements  Serializable {
         this.coordenada = coordenada;
     }
 
-    public RaspberryPiAPI getRaspberryPi() {
-        return raspberryPi;
-    }
-
-    public void setRaspberryPi(RaspberryPiAPI raspberryPi) {
-        this.raspberryPi = raspberryPi;
-    }
 
 
 }

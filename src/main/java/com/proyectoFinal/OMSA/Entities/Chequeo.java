@@ -16,14 +16,14 @@ public class Chequeo implements Serializable{
     private BigInteger id; //to be thinking
     private Long fechaRegistrada;
     @ManyToOne(cascade = CascadeType.ALL)
-    private RaspberryPiAPI raspberryPiAPI;
+    private Autobus autobus;
     @ManyToOne(cascade = CascadeType.ALL)  // to be thought
     private Parada parada;
     private Boolean esEntrada;
 
-    public Chequeo(Long fechaRegistrada, RaspberryPiAPI raspberryPiAPI, Parada parada, Boolean esEntrada) {
+    public Chequeo(Long fechaRegistrada, Autobus autobus, Parada parada, Boolean esEntrada) {
         this.fechaRegistrada = fechaRegistrada;
-        this.raspberryPiAPI = raspberryPiAPI;
+        this.autobus = autobus;
         this.parada = parada;
         this.esEntrada = esEntrada;
     }
@@ -48,12 +48,12 @@ public class Chequeo implements Serializable{
         this.fechaRegistrada = fechaRegistrada;
     }
 
-    public RaspberryPiAPI getRaspberryPiAPI() {
-        return raspberryPiAPI;
+    public Autobus getAutobus() {
+        return autobus;
     }
 
-    public void setRaspberryPiAPI(RaspberryPiAPI raspberryPiAPI) {
-        this.raspberryPiAPI = raspberryPiAPI;
+    public void setAutobus(Autobus autobus) {
+        this.autobus = autobus;
     }
 
     public Parada getParada() {

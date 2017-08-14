@@ -13,7 +13,7 @@ public class Parada implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Size(min=2 , max = 25)
+    @Size(min=2 , max = 100)
     private String nombre;
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "RUTA_ID")
