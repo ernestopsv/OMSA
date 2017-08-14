@@ -30,9 +30,9 @@ public interface ChequeoRepository extends CrudRepository<Chequeo, BigInteger> {
     List<Chequeo> findChequeoByParadaIdAndEsEntradaAndFechaRegistrada(Long id, Boolean esEntrada, Long fechaRegistrada);
 
 
-    Boolean deleteChequeoByFechaRegistrada(Long fechaRegistrada);
+    void deleteChequeoByFechaRegistrada(Long fechaRegistrada);
 
-    Boolean deleteChequeoByFechaRegistradaGreaterThan(Long fechaRegistrada);
+    void deleteChequeoByFechaRegistradaGreaterThan(Long fechaRegistrada);
 
-    Boolean deleteChequeoByFechaRegistradaBetween(Long fecha1, Long fecha2);
+    void deleteChequeoByFechaRegistradaBetween(Long fecha1, Long fecha2);
 }

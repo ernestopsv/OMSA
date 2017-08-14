@@ -101,11 +101,9 @@ public class RestApiController {
         coordenada.setLatitude(latitud);
         coordenada.setLongitud(longitud);
         autobus.setCoordenada(coordenada);
+        autobusServices.modifcarCoordenadaAutobus(autobus);
 
-        if(autobusServices.modifcarCoordenadaAutobus(autobus)){
-            return new Gson().toJson("Posicion autobus modificado exitosamente");
-        };
-        return new Gson().toJson("no se pudo modificar la posicion el autobus");
+        return new Gson().toJson("Posicion autobus modificado exitosamente");
     }
     /**
      *
@@ -129,11 +127,10 @@ public class RestApiController {
         coordenada.setLongitud(longitud);
         coordenada.setLatitude(latitud);
         //Parada parada = getParadaReal()
-        if(autobusServices.modificarEstadoAutobus(autobus)){
-            return new Gson().toJson( "Estado Autobus modificado exitosamente");
-        }
-        return new Gson().toJson(
-        "No se pudo modificar el estado del autobus");
+
+        autobusServices.modificarEstadoAutobus(autobus);
+
+        return new Gson().toJson( "Estado Autobus modificado exitosamente");
 
     }
     /**
@@ -151,13 +148,20 @@ public class RestApiController {
         }
         autobus.setCantidadDePasajerosActual(cantidadPasajeros);
         autobus.setUltimaFechaModificada(fechaRegistrada);
-        if(autobusServices.modificarCantidadPasajeros(autobus)){
-            return new Gson().toJson("Autobus modificado exitosamente");
-        };
-        return new Gson().toJson("no se pudo guardar el autobus");
+        autobusServices.modificarCantidadPasajeros(autobus);
+        return new Gson().toJson("Autobus modificado exitosamente");
 
     }
 
+    @RequestMapping(value = "/autobus/eliminar/{id}", method = RequestMethod.POST)
+    public Boolean eliminarAutobus(@PathVariable("id")Long id){
+        Autobus autobus = autobusServices.buscarUnAutobus(id);
+        if(autobus==null){
+            return false;
+        }
+        autobusServices.eliminarAutobusporId(id);
+        return true;
+    }
     //----------------------------------------Parada---------------------------------------
     @RequestMapping(value = "/paradas/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public ArrayList<Parada> buscarParadasPorRuta(@PathVariable Long id){
@@ -208,23 +212,7 @@ public class RestApiController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/parada/eliminar", method = RequestMethod.POST, produces = ACCECPT_TYPE)
-    public Boolean borrarParada(@RequestParam(value="id_ruta",required=true) Long id, @RequestParam(value="id_parada",required = true) Long idParada){
-        Ruta ruta = rutaServices.buscarRutaPorId(id);
 
-        if(ruta!=null){
-            List<Parada> paradasTemp = new ArrayList<>();
-            for(Parada parada: ruta.getParadas()){
-                if(parada.getId().equals(idParada)){
-                    paradasTemp.add(parada);
-                }
-            }
-            ruta.setParadas(paradasTemp);
-            rutaServices.guardarRuta(ruta);
-        return true;
-        }
-        return false;
-    }
 
 //---------------------------------------Ruta-------------------------------------------//--------------------------------------Ruta----------------------------------------------------------
 @RequestMapping(value="/guardar/ruta/", method =RequestMethod.POST, consumes = ACCECPT_TYPE)
@@ -242,6 +230,16 @@ public String guardarRuta(@RequestBody Ruta ruta){
             return new Ruta();
         }
         return  ruta;
+    }
+    @RequestMapping(value = "/ruta/eliminar/{id}", method = RequestMethod.POST, produces = ACCECPT_TYPE)
+    public Boolean borrarParada(@PathVariable("id")Long id){
+        Ruta ruta = rutaServices.buscarRutaPorId(id);
+        if(ruta!=null){
+            paradaServices.eliminarParadaPorRutaId(id);
+            rutaServices.eliminarRutaPorId(id);
+            return true;
+        }
+        return false;
     }
 //-------------------------------------Chequeo-----------------------------------------------
 

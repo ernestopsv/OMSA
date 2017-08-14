@@ -4,6 +4,7 @@ import com.proyectoFinal.OMSA.Entities.Usuario;
 import com.proyectoFinal.OMSA.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,10 +15,13 @@ import java.util.List;
 public class UsuarioService {
     @Autowired
     UsuarioRepository usuarioRepository;
+
+    @Transactional
     public void  eliminarUsuario(Long id){
         usuarioRepository.deleteById(id);
     }
 
+    @Transactional
     public Usuario guardarUsuario(Usuario usuario){
         return usuarioRepository.save(usuario);
     }
@@ -28,12 +32,16 @@ public class UsuarioService {
     public List<Usuario> buscarUsuarios(){
         return usuarioRepository.findAll();
     }
+
     public List<Usuario> buscarUsuariosPorRoles(Boolean isadmin){
         return usuarioRepository.findByAdmin(isadmin);
     }
+
+    @Transactional
     public void eliminarUsuarioPorId(Long id){
         usuarioRepository.deleteById(id);
     }
+
     public Usuario buscarUnUsuario(Long id){
         return usuarioRepository.findById(id);
     }

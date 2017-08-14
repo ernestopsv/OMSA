@@ -5,6 +5,7 @@ import com.proyectoFinal.OMSA.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -31,11 +32,13 @@ public class RutaServices {
         return rutaRepository.save(ruta);
     }
 
-    public Ruta eliminarRutaPorId(Long id){
-        return rutaRepository.deleteById(id);
+    @Transactional
+    public void eliminarRutaPorId(Long id){
+         rutaRepository.deleteById(id);
     }
 
-    public Boolean modificarRutaPorId(Ruta ruta){
-        return rutaRepository.modifyRutaById(ruta.getDistanciaTotal(), ruta.getEsDireccionSubida(),ruta.getFechaUltimaModificacion(),ruta.getNombreCorredor(),ruta.getId());
+    @Transactional
+    public void modificarRutaPorId(Ruta ruta){
+         rutaRepository.modifyRutaById(ruta.getDistanciaTotal(), ruta.getEsDireccionSubida(),ruta.getFechaUltimaModificacion(),ruta.getNombreCorredor(),ruta.getId());
     }
 }

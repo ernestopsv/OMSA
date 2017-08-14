@@ -25,11 +25,11 @@ public interface RutaRepository extends CrudRepository<Ruta, Long> {
     Ruta save(Ruta ruta);
 
     //eliminar una ruta por su id
-    Ruta deleteById(Long id);
+    void deleteById(Long id);
 
     @Modifying
     @Query("UPDATE Ruta r SET r.distanciaTotal = :distanciaTotal, r.esDireccionSubida=:esDireccionSubida, r.fechaUltimaModificacion=:fechaUltimaModificacion, r.nombreCorredor=:nombreCorredor WHERE r.id = :id")
-    Boolean modifyRutaById(@Param("distanciaTotal")Float distanciaTotal, @Param("esDireccionSubida")Boolean esDireccionSubida, @Param("fechaUltimaModificacion")Long fechaUltimaModificacion , @Param("nombreCorredor") String nombreCorredor, @Param("id") Long id);
+    void modifyRutaById(@Param("distanciaTotal")Float distanciaTotal, @Param("esDireccionSubida")Boolean esDireccionSubida, @Param("fechaUltimaModificacion")Long fechaUltimaModificacion , @Param("nombreCorredor") String nombreCorredor, @Param("id") Long id);
 
 
 

@@ -34,26 +34,28 @@ public interface AutobusRepository extends CrudRepository<Autobus,Long> {
     List<Autobus> findAllByActivoAndRuta(Boolean esActivo, Ruta ruta);
 
     //eliminando un autobus
-    Boolean deleteAutobusById(Long id);
+    void deleteAutobusById(Long id);
+
+    //
 
     //Modificando el estado del autobus
     @Modifying
     @Query("UPDATE Autobus a SET a.activo = :activo, a.ultimaFechaModificada=:ultimaFechaModificada WHERE a.id = :id")
-    Boolean modifyEstadoAutobusById(@Param("activo") Boolean activo, @Param("ultimaFechaModificada") Long ultimaModificacion, @Param("id") Long id);
+    void modifyEstadoAutobusById(@Param("activo") Boolean activo, @Param("ultimaFechaModificada") Long ultimaModificacion, @Param("id") Long id);
 
     //Modificando posicion actual del autobus
     @Modifying
     @Query("UPDATE Autobus a SET a.coordenada = :coordenada, a.ultimaFechaModificada=:ultimaFechaModificada WHERE a.id = :id")
-    Boolean modifyCoordenadaAutobusById(@Param("coordenada") Coordenada coordenada, @Param("ultimaFechaModificada") Long ultimaModificacion, @Param("id") Long id);
+    void modifyCoordenadaAutobusById(@Param("coordenada") Coordenada coordenada, @Param("ultimaFechaModificada") Long ultimaModificacion, @Param("id") Long id);
 
     //Modificando cantidad de pasajeros actual actual del autobus
     @Modifying
     @Query("UPDATE Autobus a SET a.cantidadDePasajerosActual = :cantidadActual,a.ultimaParada=:ultimaParada, a.ultimaFechaModificada=:ultimaFechaModificada WHERE a.id = :id")
-    Boolean modifyCantidadPasajerosActualDelAutobusById(@Param("cantidadActual") Integer cantidadActual, @Param("ultimaParada") Parada ultimaParada, @Param("ultimaFechaModificada") Long ultimaModificacion, @Param("id") Long id);
+    void modifyCantidadPasajerosActualDelAutobusById(@Param("cantidadActual") Integer cantidadActual, @Param("ultimaParada") Parada ultimaParada, @Param("ultimaFechaModificada") Long ultimaModificacion, @Param("id") Long id);
 
     //Modificando cantidad de pasajeros actual actual del autobus
     @Modifying
     @Query("UPDATE Autobus a SET a.ruta = :ruta WHERE a.id = :id")
-    Boolean modifyRutaActualAutobus(@Param("ruta") Ruta ruta, @Param("id") Long id);
+    void modifyRutaActualAutobus(@Param("ruta") Ruta ruta, @Param("id") Long id);
 
 }

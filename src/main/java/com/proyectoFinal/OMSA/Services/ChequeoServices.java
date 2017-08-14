@@ -44,16 +44,19 @@ public class ChequeoServices {
     public List<Chequeo> buscarChequeoPorParadaIdAndCaracteristicas(Chequeo chequeo){
         return chequeoRepository.findChequeoByParadaIdAndEsEntradaAndFechaRegistrada(chequeo.getParada().getId(), chequeo.getEsEntrada(), chequeo.getFechaRegistrada());
     }
-    public Boolean eliminarChequeoPorFecha(Long fecha){
-        return chequeoRepository.deleteChequeoByFechaRegistrada(fecha);
+    @Transactional
+    public void eliminarChequeoPorFecha(Long fecha){
+        chequeoRepository.deleteChequeoByFechaRegistrada(fecha);
     }
 
-    public Boolean eliminarChequeoPorRangoDeFecha(Long fecha1, Long fecha2){
-        return chequeoRepository.deleteChequeoByFechaRegistradaBetween(fecha1, fecha2);
+    @Transactional
+    public void eliminarChequeoPorRangoDeFecha(Long fecha1, Long fecha2){
+         chequeoRepository.deleteChequeoByFechaRegistradaBetween(fecha1, fecha2);
     }
 
-    public Boolean eliminarChequeoDespuesDeUnaFecha(Long fecha){
-        return chequeoRepository.deleteChequeoByFechaRegistradaGreaterThan(fecha);
+    @Transactional
+    public void eliminarChequeoDespuesDeUnaFecha(Long fecha){
+         chequeoRepository.deleteChequeoByFechaRegistradaGreaterThan(fecha);
     }
 }
 

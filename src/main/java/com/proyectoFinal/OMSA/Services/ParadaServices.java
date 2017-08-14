@@ -17,14 +17,17 @@ public class ParadaServices {
     @Autowired
     ParadaRepository paradaRepository;
 
-
+    @Transactional
     public void eliminarParadaPor(Long id){
          paradaRepository.deleteById(id);
     }
-    public Boolean eliminarParadaPorRutaId(Long id){
-        return paradaRepository.deleteAllByRutaId(id);
+
+    @Transactional
+    public void eliminarParadaPorRutaId(Long id){
+        paradaRepository.deleteAllByRutaId(id);
     }
 
+    @Transactional
     public Parada guardarParada(Parada parada){
         return paradaRepository.save(parada);
     }
@@ -36,7 +39,9 @@ public class ParadaServices {
     public Parada buscarParada(Long id){
         return paradaRepository.findById(id);
     }
-    Boolean modificarParadaPorId(Parada parada){
-        return paradaRepository.modifyParadaById(parada.getCoordenada(),parada.getNombre(),parada.getRuta(),parada.getParadaAnterior(),parada.getParadaSiguiente(),parada.getId());
+
+    @Transactional
+    void modificarParadaPorId(Parada parada){
+        paradaRepository.modifyParadaById(parada.getCoordenada(),parada.getNombre(),parada.getRuta(),parada.getParadaAnterior(),parada.getParadaSiguiente(),parada.getId());
     }
 }

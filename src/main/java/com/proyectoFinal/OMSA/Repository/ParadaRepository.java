@@ -29,7 +29,7 @@ public interface ParadaRepository extends CrudRepository<Parada, Long> {
     List<Parada> findAllByRutaId(Long id);
 
     //Eliminar las paradas de una ruta
-    Boolean deleteAllByRutaId(Long id);
+    void deleteAllByRutaId(Long id);
 
     //Mostrar una parada
     Parada findById(Long id);
@@ -37,7 +37,7 @@ public interface ParadaRepository extends CrudRepository<Parada, Long> {
     //modificar una parada
     @Modifying
     @Query("UPDATE Parada p SET p.coordenada = :coordenada, p.nombre=:nombre, p.ruta=:ruta,p.paradaAnterior=:paradaAnterior, p.paradaSiguiente=:paradaSiguiente WHERE p.id=:id")
-    Boolean modifyParadaById(@Param("coordenada")Coordenada coordenada, @Param("nombre")String nombre, @Param("ruta") Ruta ruta, @Param("paradaAnterior")Long paradaAnterior, @Param("paradaSiguiente")Long paradaSiguiente, @Param("id")Long id);
+    void modifyParadaById(@Param("coordenada")Coordenada coordenada, @Param("nombre")String nombre, @Param("ruta") Ruta ruta, @Param("paradaAnterior")Long paradaAnterior, @Param("paradaSiguiente")Long paradaSiguiente, @Param("id")Long id);
 
     @Modifying
     @Transactional

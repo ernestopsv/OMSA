@@ -34,23 +34,24 @@ public class AutobusServices {
         return autobusRepository.findAutobusById(id);
     }
 
-    public Boolean eliminarAutobusporId(Long id){
-        return autobusRepository.deleteAutobusById(id);
+    @Transactional
+    public void eliminarAutobusporId(Long id){
+        autobusRepository.deleteAutobusById(id);
     }
 
     @Transactional
-    public Boolean modificarEstadoAutobus(Autobus autobus){
-       return autobusRepository.modifyEstadoAutobusById(autobus.getActivo(), autobus.getUltimaFechaModificada(), autobus.getId());
+    public void modificarEstadoAutobus(Autobus autobus){
+         autobusRepository.modifyEstadoAutobusById(autobus.getActivo(), autobus.getUltimaFechaModificada(), autobus.getId());
     }
 
     @Transactional
-    public Boolean modifcarCoordenadaAutobus(Autobus autobus){
-        return  autobusRepository.modifyCoordenadaAutobusById(autobus.getCoordenada(), autobus.getUltimaFechaModificada(), autobus.getId());
+    public void modifcarCoordenadaAutobus(Autobus autobus){
+         autobusRepository.modifyCoordenadaAutobusById(autobus.getCoordenada(), autobus.getUltimaFechaModificada(), autobus.getId());
     }
 
     @Transactional
-    public Boolean modificarCantidadPasajeros(Autobus autobus){
-        return autobusRepository.modifyCantidadPasajerosActualDelAutobusById(autobus.getCantidadDePasajerosActual(), autobus.getUltimaParada()
+    public void modificarCantidadPasajeros(Autobus autobus){
+        autobusRepository.modifyCantidadPasajerosActualDelAutobusById(autobus.getCantidadDePasajerosActual(), autobus.getUltimaParada()
         ,autobus.getUltimaFechaModificada(), autobus.getId());
     }
 
@@ -66,7 +67,8 @@ public class AutobusServices {
         return  autobusRepository.findAllByActivoAndRuta(activo, ruta);
     }
 
-    public Boolean modificarRutaAutobus(Autobus autobus){
-        return autobusRepository.modifyRutaActualAutobus(autobus.getRuta(),autobus.getId());
+    @Transactional
+    public void modificarRutaAutobus(Autobus autobus){
+         autobusRepository.modifyRutaActualAutobus(autobus.getRuta(),autobus.getId());
     }
 }
