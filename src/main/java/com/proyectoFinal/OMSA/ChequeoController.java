@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * Created by anyderre on 31/07/17.
  */
-@Controller()
+@Controller
 @RequestMapping("/chequeo")
 public class ChequeoController {
     @Autowired

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by anyderre on 11/08/17.
  */
-@Controller()
+@Controller
 @RequestMapping("/")
 public class IndexController {
     @Autowired
@@ -33,7 +33,7 @@ public class IndexController {
     @Autowired
     ChequeoServices chequeoServices;
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
      public ModelAndView paginaPrincipal(HttpServletRequest request){
         Usuario usuario = (Usuario) request.getSession(true).getAttribute("usario");
         if(usuario==null){

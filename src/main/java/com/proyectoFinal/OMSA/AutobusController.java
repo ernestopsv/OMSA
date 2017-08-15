@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by anyderre on 04/07/17.
  */
-@Controller()
+@Controller
 @RequestMapping("/autobus")
 public class AutobusController {
     @Autowired

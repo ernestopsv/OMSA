@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Created by anyderre on 31/07/17.
  */
-@Controller()
+@Controller
 @RequestMapping("/parada")
 public class ParadaController {
     @Autowired

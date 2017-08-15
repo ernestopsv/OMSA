@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * Created by anyderre on 31/07/17.
  */
-@Controller()
+@Controller
 @RequestMapping("/ruta")
 public class RutaController {
     @Autowired

@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-@RequestMapping("/api")
-@RestController
 
+@RestController
+@RequestMapping("/api")
 public class RestApiController {
     public static final Logger logger = LoggerFactory.getLogger(RestApiController.class);
     private static final String ACCECPT_TYPE= "application/json";
@@ -208,11 +208,6 @@ public class RestApiController {
         }
         return new Gson().toJson("no se pudo guardar la parada");
     }
-    /** Guardar una parada
-     * @param id
-     * @return
-     */
-
 
 //---------------------------------------Ruta-------------------------------------------//--------------------------------------Ruta----------------------------------------------------------
 @RequestMapping(value="/guardar/ruta/", method =RequestMethod.POST, consumes = ACCECPT_TYPE)

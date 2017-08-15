@@ -16,7 +16,7 @@ import javax.management.monitor.MonitorSettingException;
 /**
  * Created by anyderre on 11/08/17.
  */
-@Controller()
+@Controller
 @RequestMapping("/zonaAdmin")
 public class AdminController {
     @Autowired
