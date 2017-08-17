@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.management.monitor.MonitorSettingException;
 
@@ -17,12 +18,13 @@ import javax.management.monitor.MonitorSettingException;
  * Created by anyderre on 11/08/17.
  */
 @Controller
+//@EnableWebMvc
 @RequestMapping("/zonaAdmin")
 public class AdminController {
     @Autowired
     UsuarioService usuarioService;
 
-    @RequestMapping("/ver_usuarios")
+    @RequestMapping("/verUsuarios")
     public String index(Model model){
         model.addAttribute("",usuarioService.buscarUsuarios());
         return "ver_usuarios";
@@ -31,7 +33,7 @@ public class AdminController {
     @RequestMapping("/registrar")
     public  String agregar(Model model){
         model.addAttribute("usuario",new Usuario());
-        return "/registrar";
+        return "crear_usuarios";
     }
     @PostMapping("/registrar")
     public ModelAndView agregar(@ModelAttribute Usuario usuario, Model model){
@@ -40,27 +42,27 @@ public class AdminController {
             return new ModelAndView( "redirect:/");
         }
         model.addAttribute("error", "no se pudo guardar el usuario");
-        return new ModelAndView("/registrar");
+        return new ModelAndView("crear_usuarios");
     }
 
     @RequestMapping("/editar")
     public  String modificar(Model model, @RequestParam("id")Long id){
         model.addAttribute("usuario",usuarioService.buscarUnUsuario(id));
-        return "/editar";
+        return "editar_usuarios";
     }
 
     @PostMapping("/editar")
     public ModelAndView modificar(@ModelAttribute Usuario usuario, Model model){
         if (usuarioService.guardarUsuario(usuario)!=null){
-            return new ModelAndView( "redirect:/ver_usuarios");
+            return new ModelAndView( "redirect:/verUsuarios");
         }
         model.addAttribute("error", "Averigua bien los campos");
-        return new ModelAndView("/editar");
+        return new ModelAndView("editar_usuarios");
     }
     @RequestMapping("/eliminar_usuario")
     public String eliminarUsuario(@RequestParam("id")Long id){
         usuarioService.eliminarUsuario(id);
-        return "redirect:/ver_usuarios";
+        return "redirect:/verUsuarios";
     }
 
 }

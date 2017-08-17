@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import sun.awt.ModalExclude;
 
 import javax.transaction.Transactional;
@@ -20,6 +21,7 @@ import java.util.List;
  * Created by anyderre on 31/07/17.
  */
 @Controller
+//@EnableWebMvc
 @RequestMapping("/parada")
 public class ParadaController {
     @Autowired
