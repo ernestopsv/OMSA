@@ -5,10 +5,7 @@ import com.proyectoFinal.OMSA.Services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -24,9 +21,9 @@ public class AdminController {
     @Autowired
     UsuarioService usuarioService;
 
-    @RequestMapping("/verUsuarios")
+    @RequestMapping("/ver/usuarios")
     public String index(Model model){
-        model.addAttribute("",usuarioService.buscarUsuarios());
+        model.addAttribute("usuarios",usuarioService.buscarUsuarios());
         return "ver_usuarios";
     }
 
@@ -45,8 +42,8 @@ public class AdminController {
         return new ModelAndView("crear_usuarios");
     }
 
-    @RequestMapping("/editar")
-    public  String modificar(Model model, @RequestParam("id")Long id){
+    @RequestMapping("/editar/{id}")
+    public  String modificar(Model model, @PathVariable("id")Long id){
         model.addAttribute("usuario",usuarioService.buscarUnUsuario(id));
         return "editar_usuarios";
     }
@@ -54,15 +51,15 @@ public class AdminController {
     @PostMapping("/editar")
     public ModelAndView modificar(@ModelAttribute Usuario usuario, Model model){
         if (usuarioService.guardarUsuario(usuario)!=null){
-            return new ModelAndView( "redirect:/verUsuarios");
+            return new ModelAndView( "redirect:/ver/usuarios");
         }
-        model.addAttribute("error", "Averigua bien los campos");
+        model.addAttribute("error", "Averigue bien los campos!");
         return new ModelAndView("editar_usuarios");
     }
-    @RequestMapping("/eliminar_usuario")
-    public String eliminarUsuario(@RequestParam("id")Long id){
+    @RequestMapping("/eliminar/usuario/{id}")
+    public String eliminarUsuario(@PathVariable("id")Long id){
         usuarioService.eliminarUsuario(id);
-        return "redirect:/verUsuarios";
+        return "redirect:/ver/usuarios";
     }
 
 }

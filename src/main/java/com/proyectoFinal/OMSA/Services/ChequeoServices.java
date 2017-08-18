@@ -40,7 +40,9 @@ public class ChequeoServices {
     public List<Chequeo> buscarChequoPorParadaId(Long id){
         return chequeoRepository.findChequeoByParadaIdOrderByFechaRegistrada(id);
     }
-
+    public List<Chequeo> buscarChequeoPorAutobusId(Long id){
+        return chequeoRepository.findAllByAutobusId(id);
+    }
     public List<Chequeo> buscarChequeoPorParadaIdAndCaracteristicas(Chequeo chequeo){
         return chequeoRepository.findChequeoByParadaIdAndEsEntradaAndFechaRegistrada(chequeo.getParada().getId(), chequeo.getEsEntrada(), chequeo.getFechaRegistrada());
     }

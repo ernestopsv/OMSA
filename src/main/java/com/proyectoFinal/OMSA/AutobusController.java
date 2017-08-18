@@ -40,8 +40,8 @@ public class AutobusController {
      * @param id
      * @return
      */
-    @RequestMapping("/editar")
-    public String editarAutobus(Model model, @RequestParam("id")Long id){
+    @RequestMapping("/editar/{id}")
+    public String editarAutobus(Model model, @PathVariable("id")Long id){
         Autobus autobus =autobusServices.buscarUnAutobus(id);
         model.addAttribute(autobus);
         return "editar_autobus";
@@ -72,8 +72,8 @@ public class AutobusController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/eliminar")
-    public String eliminarAutobus(@RequestParam("id") Long id){
+    @RequestMapping(value = "/eliminar/{id}")
+    public String eliminarAutobus(@PathVariable("id") Long id){
 
         autobusServices.eliminarAutobusporId(id);
             return "redirect:/autobus/";

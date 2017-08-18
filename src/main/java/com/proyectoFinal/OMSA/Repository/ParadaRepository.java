@@ -1,6 +1,7 @@
 package com.proyectoFinal.OMSA.Repository;
 
 import com.proyectoFinal.OMSA.Entities.*;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -27,6 +28,8 @@ public interface ParadaRepository extends CrudRepository<Parada, Long> {
 
     //mostrar las paradas de una ruta dada
     List<Parada> findAllByRutaId(Long id);
+
+    List<Parada> findParadaByRutaId(Long id, Pageable pagin);
 
     //Eliminar las paradas de una ruta
     void deleteAllByRutaId(Long id);

@@ -17,6 +17,8 @@ public interface ChequeoRepository extends CrudRepository<Chequeo, BigInteger> {
 
     List<Chequeo> findAllByEsEntradaAndFechaRegistrada(Boolean esEntrada, Long fechaRegistrada);
 
+    List<Chequeo> findAllByAutobusId(Long id);
+
     List<Chequeo> findAllByFechaRegistradaBetween(Long fecha1, Long fecha2);
 
     List<Chequeo> findAllByFechaRegistradaGreaterThan(Long fechaRegistrada);

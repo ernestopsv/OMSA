@@ -18,6 +18,8 @@ public interface RutaRepository extends CrudRepository<Ruta, Long> {
     //Encontrar todas las rutas
     List<Ruta> findAll();
 
+    List<Ruta> findAllByCiudad(String ciudad);
+
     //encontrar ruta con id
     Ruta findRutaById(Long id);
 

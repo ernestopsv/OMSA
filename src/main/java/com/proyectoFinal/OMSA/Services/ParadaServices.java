@@ -4,6 +4,8 @@ import com.proyectoFinal.OMSA.Entities.*;
 import com.proyectoFinal.OMSA.Repository.*;
 import org.hibernate.loader.collection.PaddedBatchingCollectionInitializerBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +28,10 @@ public class ParadaServices {
     public void eliminarParadaPorRutaId(Long id){
         paradaRepository.deleteAllByRutaId(id);
     }
-
+    public  List<Parada> getTopParadas(Long id, int startPosition, int cantToRead){
+        Pageable pageable = new PageRequest(startPosition, cantToRead);
+        return paradaRepository.findParadaByRutaId(id, pageable);
+    }
     @Transactional
     public Parada guardarParada(Parada parada){
         return paradaRepository.save(parada);

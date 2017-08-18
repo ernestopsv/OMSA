@@ -12,10 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.List;
@@ -43,37 +40,40 @@ public class RutaController {
         return "ver_ruta";
     }
 
-    @RequestMapping("/listar_paradas")
-    public String mostrarParadas(Model model, @RequestParam("id") Long id_ruta){
+
+    @RequestMapping("/listar/paradas/{id}")
+    public String mostrarParadas(Model model, @PathVariable("id") Long id_ruta){
         List<Parada>paradas = paradaServices.buscarParadaPorRutaId(id_ruta);
         model.addAttribute("paradas",paradas);
-        return "/listar_paradas";
+        model.addAttribute("id_ruta", id_ruta);
+        model.addAttribute("nombreCorredor", rutaServices.buscarRutaPorId(id_ruta).getNombreCorredor());
+        return "ver_ruta_pintada";
     }
 
-    @RequestMapping("/listar_autobus")
+    @RequestMapping("/listar/autobus")
     public String mostrarAutobus(Model model, @RequestParam("id")Long id_ruta){
         List<Autobus> autobuses = autobusServices.buscarTodosLosAutobusporRuta(id_ruta);
         model.addAttribute("autobuses", autobuses);
-        return "/listar_autobus";
+        return "ver_autobus";
     }
 
-    @RequestMapping("/buscar")
-    public String buscarRuta(Model model, @RequestParam("nombre_corredor")String nombre_Corredor){
-        model.addAttribute("ruta", rutaServices.buscarRutaPorNombreCorredor(nombre_Corredor));
-        return "/buscar";
+    @RequestMapping(value = "/buscar", method = RequestMethod.GET, produces = "application/json")
+    public List<Ruta> buscarRuta(Model model, @RequestParam("nombre_corredor")String nombre_Corredor){
+        //model.addAttribute("ruta", rutaServices.buscarRutaPorNombreCorredor(nombre_Corredor));
+        return rutaServices.buscarRutaPorNombreCorredor(nombre_Corredor);
     }
 
-    @RequestMapping("/editar_ruta")
+    @RequestMapping("/editar")
     public String editarRuta(Model model , @RequestParam("nombre_corredor")String nombre_Corredor){
         List<Ruta> ruta = rutaServices.buscarRutaPorNombreCorredor(nombre_Corredor);
         model.addAttribute("ruta", ruta.get(0));
         if(ruta.size()>1){
             model.addAttribute("idSegRuta", ruta.get(1).getId());
         }
-        return "/editar_ruta";
+        return "editar_ruta";
     }
 
-    @PostMapping("/editar_ruta")
+    @PostMapping("/editar")
     public String guardarRutaEditada(@ModelAttribute Ruta ruta, @RequestParam("idSegRuta")Long id){
 
         Ruta ruta1 = rutaServices.buscarRutaPorId(id);
@@ -89,12 +89,12 @@ public class RutaController {
        return "redirect:/ruta/";
     }
 
-    @RequestMapping("/crear_ruta")
+    @RequestMapping("/crear")
     public String crearRuta(Model model){
         model.addAttribute("ruta", new Ruta());
-        return "/crear_ruta";
+        return "crear_ruta";
     }
-    @PostMapping("/crear_ruta")
+    @PostMapping("/crear")
     public String guardarRutaCreada(@ModelAttribute Ruta ruta){
         ruta.setEsDireccionSubida(true);
         rutaServices.guardarRuta(ruta);
@@ -103,11 +103,10 @@ public class RutaController {
         return "redirect:/ruta/";
     }
 
-    @RequestMapping("/eliminar_ruta")
-    public String eliminarRuta(@RequestParam("id")String nombreCorredor){
-        for(Ruta ruta: rutaServices.buscarRutaPorNombreCorredor(nombreCorredor)){
-            rutaServices.eliminarRutaPorId(ruta.getId());
-        }
+    @RequestMapping("/eliminar/{id}")
+    public String eliminarRuta(@PathVariable("id")Long id){
+        paradaServices.eliminarParadaPorRutaId(id);
+        rutaServices.eliminarRutaPorId(id);
         return "redirect:/ruta/";
     }
 }

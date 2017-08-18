@@ -209,6 +209,21 @@ public class RestApiController {
         return new Gson().toJson("no se pudo guardar la parada");
     }
 
+    /** Buscar rango de paradas
+     * @param id_ruta
+     * @param end
+     * @param start
+     * @return
+     */
+  @RequestMapping(value = "/paradas/buscar/{start}/{end}/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+  public List<Parada> buscarTopParadas(@PathVariable("start")int start, @PathVariable("end")int end, @PathVariable("id")Long id_ruta){
+      List<Parada> paradas = paradaServices.getTopParadas(id_ruta, start, end);
+      if(paradas==null){
+          return new ArrayList<>();
+      }
+      return paradas;
+  }
+
 //---------------------------------------Ruta-------------------------------------------//--------------------------------------Ruta----------------------------------------------------------
 @RequestMapping(value="/guardar/ruta/", method =RequestMethod.POST, consumes = ACCECPT_TYPE)
 public String guardarRuta(@RequestBody Ruta ruta){
@@ -238,13 +253,23 @@ public String guardarRuta(@RequestBody Ruta ruta){
     }
 //-------------------------------------Chequeo-----------------------------------------------
 
-    @RequestMapping(value="/chequeo/guardar", method = RequestMethod.GET, consumes = ACCECPT_TYPE)
+
+    @RequestMapping(value="/chequeo/guardar", method = RequestMethod.POST, consumes = ACCECPT_TYPE)
     public String guardarChequeo(@RequestBody Chequeo chequeo, @RequestParam("numero_serial")String numeroSerial){
         //obteniendo la parada mas cerca a ese punto
         chequeo.setParada(getParadaReal(chequeo, numeroSerial));
+        chequeo.setAutobus(autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial));
         return new Gson().toJson(chequeoServices.guardarChequeo(chequeo));
     }
 
+    @RequestMapping(value="/chequeo/buscar/{id_autobus}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public List<Chequeo> buscarChequeos(@PathVariable("id_autobus")Long id){
+       List<Chequeo> chequeos = chequeoServices.buscarChequeoPorAutobusId(id);
+        if(chequeos== null){
+            return new ArrayList<>();
+        }
+        return chequeos;
+    }
     private Parada getParadaReal(Chequeo chequeo,String numeroSerial){
         Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial);
         Ruta ruta = autobus.getRuta();
