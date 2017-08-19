@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="angularTable">
 <#include "header.ftl">
 <body>
 <div id="wrapper">
@@ -23,6 +23,8 @@
                                 <i class="fa fa-table"></i> Tabla de Cooredenadas
                             </li>
                         </ol>
+
+
                     </div>
                 </div>
                 <!-- /.row -->
@@ -30,8 +32,9 @@
                 <div class="row">
                     <div class="col-lg-12">
 
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped">
+                        <div class="table-responsive" ng-controller="paradaTableController">
+                            <table class="table table-bordered table-hover table-striped"  <#if id_ruta??>  ng-init="getData(pageno,${id_ruta})"</#if>>
+
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -39,35 +42,54 @@
                                         <th>Latitud</th>
                                         <th>Longitud</th>
                                         <th></th>
-                                        <th></th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <#if paradas??>
-                                        <#list paradas as parada>
-                                        <tr>
-                                            <th scope="row">${parada?index}</th>
-                                            <td><#if parada.nombre??>${parada.nombre}</#if></td>
-                                            <td><#if parada.coordenada??>${parada.coordenada.longitud}</#if></td>
-                                            <td><#if parada.coordenada??>${parada.coordenada.longitud}</#if></td>
-                                            <td>
-                                                <a href="/">
-                                                    <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="/">
-                                                    <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Eliminar" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>
-                                                </a>
-                                            </td>
+                                <tr ng-show="paradas.length <= 0"><td colspan="6" style="text-align:center;">Leyendo Nuevos Datos!!</td></tr>
+                                <tr dir-paginate="parada in paradas|itemsPerPage:itemsPerPage" total-items="${size}">
+                                    <td>{{parada.id}}</td>
+                                    <td>{{parada.nombre}}</td>
+                                    <td>{{parada.coordenada.latitude}}</td>
+                                    <td>{{parada.coordenada.longitud}}</td>
+                                    <td> <a href="/">
+                                        <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>
+                                    </a></td>
 
-                                        </tr>
-                                        </#list>
-                                    </#if>
+                                </tr>
+
+
+                                <#--<#if paradas??>-->
+                                        <#--<#list paradas as parada>-->
+                                        <#--<tr>-->
+                                            <#--<th scope="row">${parada?index}</th>-->
+                                            <#--<td><#if parada.nombre??>${parada.nombre}</#if></td>-->
+                                            <#--<td><#if parada.coordenada??>${parada.coordenada.longitud}</#if></td>-->
+                                            <#--<td><#if parada.coordenada??>${parada.coordenada.longitud}</#if></td>-->
+                                            <#--<td>-->
+                                                <#--<a href="/">-->
+                                                    <#--<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>-->
+                                                <#--</a>-->
+                                            <#--</td>-->
+                                            <#--<td>-->
+                                                <#--<a href="/">-->
+                                                    <#--<p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Eliminar" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>-->
+                                                <#--</a>-->
+                                            <#--</td>-->
+
+                                        <#--</tr>-->
+                                        <#--</#list>-->
+                                    <#--</#if>-->
 
 
                                 </tbody>
                             </table>
+                            <center><dir-pagination-controls
+                                    max-size="10"
+                                    direction-links="true"
+                                    boundary-links="true"
+                                    on-page-change="getData(newPageNumber, ${id_ruta})" >
+                            </dir-pagination-controls></center>
                         </div>
                     </div>
                 </div>
@@ -115,7 +137,7 @@
 
 
             $.getJSON( "/api/ruta/${id_ruta}", function( data ) {
-                var coor = []
+                var coor = [];
                 $.each(data["coordenadas"], function (k, v) {
 
                     var obj ={lat:v.latitude, lng:v.longitud}
@@ -181,14 +203,16 @@
                     });
                 });
             });
-
-
-
-
             }
     </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABtO1OiHaJnWDo29kaUUOm06HBU6GjAUA&callback=initMap">
 </script>
+
+<script src="/js/dirPagination.js"></script>
+<script src="/js/appTable.js"></script>
+<script src="/js/tableControllers/paradaTableController.js"></script>
+
+
 
 </body>
 

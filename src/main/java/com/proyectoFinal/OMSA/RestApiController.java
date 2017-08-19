@@ -216,12 +216,12 @@ public class RestApiController {
      * @return
      */
   @RequestMapping(value = "/paradas/buscar/{start}/{end}/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
-  public List<Parada> buscarTopParadas(@PathVariable("start")int start, @PathVariable("end")int end, @PathVariable("id")Long id_ruta){
+  public ArrayList<Parada> buscarTopParadas(@PathVariable("start")int start, @PathVariable("end")int end, @PathVariable("id")Long id_ruta){
       List<Parada> paradas = paradaServices.getTopParadas(id_ruta, start, end);
       if(paradas==null){
           return new ArrayList<>();
       }
-      return paradas;
+      return (ArrayList<Parada>) paradas;
   }
 
 //---------------------------------------Ruta-------------------------------------------//--------------------------------------Ruta----------------------------------------------------------

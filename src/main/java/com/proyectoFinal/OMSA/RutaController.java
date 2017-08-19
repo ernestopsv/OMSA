@@ -45,6 +45,7 @@ public class RutaController {
     public String mostrarParadas(Model model, @PathVariable("id") Long id_ruta){
         List<Parada>paradas = paradaServices.buscarParadaPorRutaId(id_ruta);
         model.addAttribute("paradas",paradas);
+        model.addAttribute("size", paradas.size());
         model.addAttribute("id_ruta", id_ruta);
         model.addAttribute("nombreCorredor", rutaServices.buscarRutaPorId(id_ruta).getNombreCorredor());
         return "ver_ruta_pintada";
