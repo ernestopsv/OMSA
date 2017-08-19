@@ -73,6 +73,7 @@ public class RestApiController {
           return "La ruta no existe";
         }
         if(autobus1!=null){
+            autobus.setRuta(ruta);
             return "autobus guardada";
         }
         return "Error al guardar el autobus";
