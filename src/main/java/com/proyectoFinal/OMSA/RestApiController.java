@@ -67,13 +67,15 @@ public class RestApiController {
      */
     @RequestMapping(value ="/autobus/guardar/{id_ruta}", method = RequestMethod.POST, produces =ACCECPT_TYPE, consumes = ACCECPT_TYPE)
     public String guardarAutobus(@RequestBody Autobus autobus, @PathVariable("id_ruta")Long id){
-        Autobus autobus1 = autobusServices.guardarAutobus(autobus);
+
         Ruta ruta = rutaServices.buscarRutaPorId(id);
+        autobus.setRuta(ruta);
+        Autobus autobus1 = autobusServices.guardarAutobus(autobus);
         if(ruta==null){
           return "La ruta no existe";
         }
         if(autobus1!=null){
-            autobus.setRuta(ruta);
+
             return "autobus guardada";
         }
         return "Error al guardar el autobus";
