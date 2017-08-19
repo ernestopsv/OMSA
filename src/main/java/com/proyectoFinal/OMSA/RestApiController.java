@@ -65,7 +65,7 @@ public class RestApiController {
      * @param id
      * @return
      */
-    @RequestMapping(value ="/autobus/guardar/{id_ruta}", method = RequestMethod.POST, consumes = ACCECPT_TYPE)
+    @RequestMapping(value ="/autobus/guardar/{id_ruta}", method = RequestMethod.POST, produces =ACCECPT_TYPE, consumes = ACCECPT_TYPE)
     public String guardarAutobus(@RequestBody Autobus autobus, @PathVariable("id_ruta")Long id){
         Autobus autobus1 = autobusServices.guardarAutobus(autobus);
         Ruta ruta = rutaServices.buscarRutaPorId(id);

@@ -97,8 +97,8 @@
       <file leaf-file-name="RestApiController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/RestApiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="77" column="9" lean-forward="true" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+            <state relative-caret-position="80">
+              <caret line="67" column="109" lean-forward="false" selection-start-line="67" selection-start-column="109" selection-end-line="67" selection-end-column="109" />
               <folding />
             </state>
           </provider>
@@ -1269,7 +1269,7 @@
       <workItem from="1502992041309" duration="29860000" />
       <workItem from="1503058514673" duration="4237000" />
       <workItem from="1503112056268" duration="14853000" />
-      <workItem from="1503153503548" duration="11938000" />
+      <workItem from="1503153503548" duration="12073000" />
     </task>
     <task id="LOCAL-00001" summary="preparing aplication deployment">
       <created>1500390391871</created>
@@ -1418,11 +1418,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503168463817</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="parada pagination">
+      <created>1503175881965</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1503175881965</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308899000" />
+    <option name="totallyTimeSpent" value="309034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1876,8 +1883,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/RestApiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="77" column="9" lean-forward="true" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+        <state relative-caret-position="80">
+          <caret line="67" column="109" lean-forward="false" selection-start-line="67" selection-start-column="109" selection-end-line="67" selection-end-column="109" />
           <folding />
         </state>
       </provider>
