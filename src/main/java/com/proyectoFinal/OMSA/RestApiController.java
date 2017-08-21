@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import com.proyectoFinal.OMSA.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.List;
 public class RestApiController {
     public static final Logger logger = LoggerFactory.getLogger(RestApiController.class);
     private static final String ACCECPT_TYPE= "application/json";
+    private static final String CONTENT_TYPE= "application/json";
     @Autowired
     private AutobusServices autobusServices;
     @Autowired
@@ -41,6 +43,21 @@ public class RestApiController {
             return new Autobus();
         }
         return autobus;
+    }
+
+    @RequestMapping(value = "/autobus/buscar/ruta/size/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public int getCantdeAutobusPorRuta(@PathVariable("id")Long id){
+        return autobusServices.buscarTodosLosAutobusporRuta(id).size();
+    }
+
+
+    @RequestMapping(value = "/autobus/buscar/{page}/{items}/corredor/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Autobus> buscarAutobusPorRutaId(@PathVariable ("page") int page, @PathVariable ("items") int itemsPerPage, @PathVariable ("id")Long corredor){
+        List<Autobus> autobuses = autobusServices.buscarAutobusPorRutaId(corredor, page, itemsPerPage);
+        if (autobuses==null){
+            return new ArrayList<>();
+        }
+        return (ArrayList<Autobus>) autobuses;
     }
     /**
      *
@@ -165,7 +182,7 @@ public class RestApiController {
         autobusServices.eliminarAutobusporId(id);
         return true;
     }
-    //----------------------------------------Parada---------------------------------------
+//----------------------------------------Parada---------------------------------------
     @RequestMapping(value = "/paradas/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public ArrayList<Parada> buscarParadasPorRuta(@PathVariable Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
@@ -214,13 +231,13 @@ public class RestApiController {
 
     /** Buscar rango de paradas
      * @param id_ruta
-     * @param end
-     * @param start
+     * @param page
+     * @param numberOfItems
      * @return
      */
-  @RequestMapping(value = "/paradas/buscar/{start}/{end}/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
-  public ArrayList<Parada> buscarTopParadas(@PathVariable("start")int start, @PathVariable("end")int end, @PathVariable("id")Long id_ruta){
-      List<Parada> paradas = paradaServices.getTopParadas(id_ruta, start, end);
+  @RequestMapping(value = "/paradas/buscar/{page}/{items}/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+  public ArrayList<Parada> buscarTopParadas(@PathVariable("page")int page, @PathVariable("items")int numberOfItems, @PathVariable("id")Long id_ruta){
+      List<Parada> paradas = paradaServices.getTopParadas(id_ruta, page, numberOfItems);
       if(paradas==null){
           return new ArrayList<>();
       }
@@ -244,7 +261,7 @@ public String guardarRuta(@RequestBody Ruta ruta){
         }
         return  ruta;
     }
-    @RequestMapping(value = "/ruta/eliminar/{id}", method = RequestMethod.POST, produces = ACCECPT_TYPE)
+    @RequestMapping(value = "/ruta/eliminar/{id}", method = RequestMethod.POST, produces = CONTENT_TYPE)
     public Boolean borrarParada(@PathVariable("id")Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
         if(ruta!=null){
@@ -253,6 +270,15 @@ public String guardarRuta(@RequestBody Ruta ruta){
             return true;
         }
         return false;
+    }
+
+    @RequestMapping(value = "/ruta/buscar/pagina/{numero}/item/{items}", method = RequestMethod.GET, produces = ACCECPT_TYPE )
+    public ArrayList<Ruta> buscarRutasPorPagina(@PathVariable("numero")int page, @PathVariable("items")int numberOfItems ){
+        List<Ruta> rutas = rutaServices.buscarRutasPorPagina(page, numberOfItems);
+        if(rutas==null){
+            return new ArrayList<>();
+        }
+        return (ArrayList<Ruta>) rutas;
     }
 //-------------------------------------Chequeo-----------------------------------------------
 

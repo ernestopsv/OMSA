@@ -26,13 +26,6 @@ public class ParadaController {
     @Autowired
     RutaServices rutaServices;
 
-    @RequestMapping("/")
-    public String index(Model model, @RequestParam(value = "id", required = false, defaultValue = "1")Long id ){
-        List<Parada> paradas = paradaServices.buscarParadaPorRutaId(id);
-        model.addAttribute("paradas", paradas);
-        model.addAttribute("id_ruta", id);
-        return "ver_parada";
-    }
 
     @RequestMapping("/ver/{id}")
     public String ver(Model model, @PathVariable(value = "id")Long id ){

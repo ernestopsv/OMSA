@@ -3,9 +3,12 @@ package com.proyectoFinal.OMSA.Services;
 import com.proyectoFinal.OMSA.Entities.*;
 import com.proyectoFinal.OMSA.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+
 import java.util.List;
 
 /**
@@ -16,7 +19,10 @@ public class AutobusServices {
     @Autowired
     AutobusRepository autobusRepository;
 
-
+    public List<Autobus> buscarAutobusPorRutaId(Long id, int page, int itemsPerPage){
+        Pageable pageable = new PageRequest(page, itemsPerPage);
+        return autobusRepository.findAutobusesByRutaId(id,pageable);
+    }
     public List<Autobus> buscarTodoLosAutobus(){
         return autobusRepository.findAll();
     }

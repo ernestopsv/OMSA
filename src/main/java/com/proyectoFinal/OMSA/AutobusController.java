@@ -29,8 +29,8 @@ public class AutobusController {
 
     @RequestMapping("/")
     public String index(Model model){
-        List<Autobus> autobuses = autobusServices.buscarTodoLosAutobus();
-        model.addAttribute("autobuses", autobuses);
+        model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
+
         return "ver_autobus";
     }
 

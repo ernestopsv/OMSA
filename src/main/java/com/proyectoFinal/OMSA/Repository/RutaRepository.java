@@ -1,6 +1,7 @@
 package com.proyectoFinal.OMSA.Repository;
 
 import com.proyectoFinal.OMSA.Entities.*;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -19,6 +20,8 @@ public interface RutaRepository extends CrudRepository<Ruta, Long> {
     List<Ruta> findAll();
 
     List<Ruta> findAllByCiudad(String ciudad);
+
+    List<Ruta> findAll(Pageable pageable);
 
     //encontrar ruta con id
     Ruta findRutaById(Long id);

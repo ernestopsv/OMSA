@@ -35,11 +35,9 @@ public class RutaController {
 
     @RequestMapping("/")
     public String index(Model model){
-        List<Ruta> rutas = rutaServices.buscarTodasLasRutas();
-        model.addAttribute("rutas", rutas);
+        model.addAttribute("size", rutaServices.buscarTodasLasRutas().size());
         return "ver_ruta";
     }
-
 
     @RequestMapping("/listar/paradas/{id}")
     public String mostrarParadas(Model model, @PathVariable("id") Long id_ruta){

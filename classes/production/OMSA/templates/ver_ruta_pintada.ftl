@@ -46,7 +46,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <tr ng-show="paradas.length <= 0"><td colspan="6" style="text-align:center;">Leyendo Nuevos Datos!!</td></tr>
+                                <tr ng-show="paradas.length <= 0"><td colspan="5" style="text-align:center;">Leyendo Nuevos Datos!!</td></tr>
                                 <tr dir-paginate="parada in paradas|itemsPerPage:itemsPerPage" total-items="${size}">
                                     <td>{{parada.id}}</td>
                                     <td>{{parada.nombre}}</td>
