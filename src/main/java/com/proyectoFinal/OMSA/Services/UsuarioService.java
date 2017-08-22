@@ -3,6 +3,8 @@ package com.proyectoFinal.OMSA.Services;
 import com.proyectoFinal.OMSA.Entities.Usuario;
 import com.proyectoFinal.OMSA.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,10 +31,15 @@ public class UsuarioService {
     public Usuario buscarUsuarioPorUsername(String username){
         return usuarioRepository.findByUsername(username);
     }
-    public List<Usuario> buscarUsuarios(){
-        return usuarioRepository.findAll();
+
+    public List<Usuario> buscarUsuarios(int page, int itemPerPage){
+        Pageable pageable = new PageRequest(page,itemPerPage);
+        return usuarioRepository.findAll(pageable);
     }
 
+    public List<Usuario> buscarTodosUsuarios(){
+        return usuarioRepository.findAll();
+    }
     public List<Usuario> buscarUsuariosPorRoles(Boolean isadmin){
         return usuarioRepository.findByAdmin(isadmin);
     }

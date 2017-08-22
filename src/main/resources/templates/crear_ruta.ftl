@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <#include "header.ftl">
 
 <body ng-app="OmsaTracker">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
 
-                <form role="form">
+                <form role="form" th:action="" th:object="${ruta}" method="post">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label for="ruta">Ruta</label>
                                 <select class="form-control" name="ruta" id="ruta" required>
-                                    <option selected disabled>Elija una opcion</option>
+                                    <option selected disabled>Elija una ruta</option>
                                 </select>
                             </div>
                         </div>

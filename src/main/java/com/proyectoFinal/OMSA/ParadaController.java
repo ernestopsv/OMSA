@@ -35,9 +35,12 @@ public class ParadaController {
         model.addAttribute("nombreCorredor", rutaServices.buscarRutaPorId(id).getNombreCorredor());
         return "ver_parada_pintada";
     }
-    @RequestMapping("/crear")
-    public String crearParada(Model model){
+    @RequestMapping("/crear/{id}")
+    public String crearParada(Model model, @PathVariable("id")Long id){
+        model.addAttribute("id_ruta", id);
         model.addAttribute("parada", new Parada());
+        model.addAttribute("paradas", paradaServices.buscarParadaPorRutaId(id));
+        model.addAttribute("ruta", rutaServices.buscarRutaPorId(id));
         return "crear_parada";
     }
 

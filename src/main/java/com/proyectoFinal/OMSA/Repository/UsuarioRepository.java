@@ -1,6 +1,7 @@
 package com.proyectoFinal.OMSA.Repository;
 
 import com.proyectoFinal.OMSA.Entities.Usuario;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -16,6 +17,8 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
     Usuario findByUsername(String username);
 
     Usuario findById(Long id);
+
+    List<Usuario>findAll(Pageable pageable);
 
     List<Usuario>findAll();
 

@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -101,10 +102,15 @@ public class RutaController {
         rutaServices.guardarRuta(ruta);
         return "redirect:/ruta/";
     }
-
+@Transactional
     @RequestMapping("/eliminar/{id}")
     public String eliminarRuta(@PathVariable("id")Long id){
         paradaServices.eliminarParadaPorRutaId(id);
+        List<Autobus> autobuses= autobusServices.buscarTodosLosAutobusporRuta(id);
+        for(Autobus autobus: autobuses){
+            autobus.setRuta(null);
+            autobusServices.guardarAutobus(autobus);
+        }
         rutaServices.eliminarRutaPorId(id);
         return "redirect:/ruta/";
     }

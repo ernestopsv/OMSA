@@ -30,7 +30,6 @@ public class AutobusController {
     @RequestMapping("/")
     public String index(Model model){
         model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
-
         return "ver_autobus";
     }
 
@@ -56,9 +55,11 @@ public class AutobusController {
     @RequestMapping("/crear")
     public String crearAutobus(Model model){
         model.addAttribute("autobus", new Autobus());
+        model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
         return "crear_autobus";
     }
     @PostMapping("/crear")
+
     @Transactional
     public String guardarAutobusCreado(@ModelAttribute Autobus autobus, @RequestParam("ruta")Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);

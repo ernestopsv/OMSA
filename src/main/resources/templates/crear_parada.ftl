@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <#include "header.ftl">
 <body>
 <div id="wrapper">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <form role="form">
+                <form role="form" th:action="@{/parada/crear}" th:object="${parada}" method="POST">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -37,17 +37,16 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="ruta">Ruta</label>
-                                <select class="form-control" name="ruta" id="ruta" required>
-                                    <option selected disabled>Elija una opcion</option>
-                                </select>
+                                <input type="text" name="ruta" readonly <#if ruta??>value="${ruta.nombreCorredor}</#if>">
                             </div>
                         </div>
+                        <input type="hidden" value="${ruta.id}">
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="latitud">Latitud</label>
-                                <input type="number" id="latitud" step="0.000001" name="latitud" class="form-control">
+                                <label for="latitude">Latitud</label>
+                                <input type="number" id="latitude" step="0.000001" name="latitude" class="form-control">
                             </div>
 
                         </div>
@@ -64,7 +63,11 @@
                             <div class="form-group">
                                 <label for="paradaAnterior">Parada anterior</label>
                                 <select class="form-control" name="paradaAnterior" id="paradaAnterior">
-                                     <option selected disabled>Elija una opcion</option>
+                                     <option selected disabled>Elija una parada anterior</option>
+                                    <#if paradas>
+                                        <#list paradas as paradas></#list>
+                                        <option value="${parada.id}">${parada.nombre}</option>
+                                    </#if>
                                 </select>
                             </div>
                         </div>
@@ -72,7 +75,11 @@
                             <div class="form-group">
                                 <label for="paradaSiguiente">Parada Siguiente</label>
                                 <select class="form-control" name="paradaSiguiente" id="paradaSiguiente">
-                                     <option selected disabled>Elija una opcion</option>
+                                     <option selected disabled>Elija una parada siguiente</option>
+                                <#if paradas>
+                                    <#list paradas as paradas></#list>
+                                    <option value="${parada.id}">${parada.nombre}</option>
+                                </#if>
                                 </select>
                             </div>
                         </div>
@@ -85,13 +92,13 @@
                 <div class="col-lg-offset-6 col-lg-6">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <button type="submit" class="btn btn-success form-control">Guardar</button>
+                            <button type="reset" class="btn btn-success form-control">Limpiar</button>
                         </div>
 
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <button type="reset" class="btn btn-success form-control">Limpiar</button>
+                            <button type="submit" class="btn btn-success form-control">Guardar</button>
                         </div>
 
                     </div>

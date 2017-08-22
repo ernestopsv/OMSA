@@ -1,6 +1,8 @@
 package com.proyectoFinal.OMSA.Entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.sql.Date;
@@ -14,11 +16,15 @@ public class Chequeo implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id; //to be thinking
+    @Min(1483228800)
     private Long fechaRegistrada;
+    @NotNull
     @ManyToOne(cascade = CascadeType.ALL)
     private Autobus autobus;
+    @NotNull
     @ManyToOne(cascade = CascadeType.ALL)  // to be thought
     private Parada parada;
+    @NotNull
     private Boolean esEntrada;
 
     public Chequeo(Long fechaRegistrada, Autobus autobus, Parada parada, Boolean esEntrada) {

@@ -31,6 +31,10 @@ public class RestApiController {
     private CoordenadaServices coordenadaServices;
     @Autowired
     private RutaServices rutaServices;
+    @Autowired
+    UsuarioService usuarioService;
+
+//**********************************************************************Autobus*****************************************************
     /**
      * Buscar un autobus por su id
      * @param id
@@ -101,74 +105,56 @@ public class RestApiController {
     /**
      *
      * modificar coordenada de un autobus
-     * @param numeroSerial
-     * @param latitud
-     * @param longitud
-     * @param fechaRegistrada
+     * @param autobus
      * @return
      */
-    @RequestMapping(value = "/autobus/modificar/posicion/", method =RequestMethod.POST, produces = ACCECPT_TYPE, consumes = ACCECPT_TYPE)
-    public String modificarCoordenadaAutobus(@RequestParam("numeroSerial")String numeroSerial, @RequestParam("latitud") double latitud,
-                                             @RequestParam("longitud")double longitud , @RequestParam("fecha") Long fechaRegistrada) {
-        Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial);
+    @RequestMapping(value = "/autobus/modificar/posicion/", method =RequestMethod.PUT, produces = ACCECPT_TYPE, consumes = ACCECPT_TYPE)
+    public String modificarCoordenadaAutobus(@RequestBody Autobus autobus) {
+        Autobus currentAutobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(autobus.getRaspberryPiNumeroSerial());
 
-        if(autobus == null){
+        if(currentAutobus == null){
             return new Gson().toJson("Este autobus no existe");
         }
-
-        autobus.setUltimaFechaModificada(fechaRegistrada);
-        Coordenada coordenada = autobus.getCoordenada();
-        coordenada.setLatitude(latitud);
-        coordenada.setLongitud(longitud);
-        autobus.setCoordenada(coordenada);
-        autobusServices.modifcarCoordenadaAutobus(autobus);
+        currentAutobus.getCoordenada().setLatitude(autobus.getCoordenada().getLatitude());
+        currentAutobus.getCoordenada().setLongitud(autobus.getCoordenada().getLongitud());
+        currentAutobus.setUltimaFechaModificada(autobus.getUltimaFechaModificada());
+        autobusServices.guardarAutobus(currentAutobus);
 
         return new Gson().toJson("Posicion autobus modificado exitosamente");
     }
     /**
      *
      * modificar posicion de un autobus
-     * @param estadoActual
-     * @param fechaRegistrada
-     * @param latitud
-     * @param longitud
+     * @param autobus
      * @return
      */
-    @RequestMapping(value = "/autobus/modificar/estado", method =RequestMethod.POST, produces = ACCECPT_TYPE, consumes =ACCECPT_TYPE)
-    public String modificarEstadoAutobus(@RequestParam("estadoActual") Boolean estadoActual, @RequestParam("numeroSerial")String numeroSerial, @RequestParam("fecha") Long fechaRegistrada,
-                                         @RequestParam("longitud")Double longitud, @RequestParam("latitud")Double latitud){
-        Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial);
-        if(autobus == null){
+    @RequestMapping(value = "/autobus/modificar/estado", method =RequestMethod.PUT, produces = ACCECPT_TYPE, consumes =ACCECPT_TYPE)
+    public String modificarEstadoAutobus(@RequestBody Autobus autobus){
+        Autobus currentAutobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(autobus.getRaspberryPiNumeroSerial());
+        if(currentAutobus == null){
             return new Gson().toJson("El autobus que quieres modificar no existe");
         }
-        autobus.setActivo(estadoActual);
-        autobus.setUltimaFechaModificada(fechaRegistrada);
-        Coordenada coordenada = new Coordenada();
-        coordenada.setLongitud(longitud);
-        coordenada.setLatitude(latitud);
-        //Parada parada = getParadaReal()
+        currentAutobus.setActivo(autobus.getActivo());
+        currentAutobus.setUltimaFechaModificada(autobus.getUltimaFechaModificada());
 
-        autobusServices.modificarEstadoAutobus(autobus);
-
+        autobusServices.guardarAutobus(currentAutobus);
         return new Gson().toJson( "Estado Autobus modificado exitosamente");
 
     }
     /**
      * modificar posicion de un autobus
-     * @param numeroSerial
-     * @param cantidadPasajeros
-     * @param  fechaRegistrada
+     * @param autobus
      * @return
      */
-    @RequestMapping(value = "/autobus/modificar/cantidadPasajeros", method =RequestMethod.POST, produces = ACCECPT_TYPE, consumes = ACCECPT_TYPE)
-    public String modificarCantidadPasajerosAutobus( @RequestParam("numeroSerial") String numeroSerial,@RequestParam("cantidadPasajeros") Integer cantidadPasajeros, @RequestParam("fecha") Long fechaRegistrada){
-        Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial);
-        if(autobus == null){
+    @RequestMapping(value = "/autobus/modificar/cantidadPasajeros", method =RequestMethod.PUT, produces = ACCECPT_TYPE, consumes = ACCECPT_TYPE)
+    public String modificarCantidadPasajerosAutobus( @RequestBody Autobus autobus){
+        Autobus currentAutobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(autobus.getRaspberryPiNumeroSerial());
+        if(currentAutobus == null){
             return new Gson().toJson("El autobus que quieres modificar no existe");
         }
-        autobus.setCantidadDePasajerosActual(cantidadPasajeros);
-        autobus.setUltimaFechaModificada(fechaRegistrada);
-        autobusServices.modificarCantidadPasajeros(autobus);
+        currentAutobus.setCantidadDePasajerosActual(autobus.getCantidadDePasajerosActual());
+        currentAutobus.setUltimaFechaModificada(autobus.getUltimaFechaModificada());
+        autobusServices.guardarAutobus(currentAutobus);
         return new Gson().toJson("Autobus modificado exitosamente");
 
     }
@@ -284,11 +270,22 @@ public String guardarRuta(@RequestBody Ruta ruta){
 
 
     @RequestMapping(value="/chequeo/guardar", method = RequestMethod.POST, consumes = ACCECPT_TYPE)
-    public String guardarChequeo(@RequestBody Chequeo chequeo, @RequestParam("numero_serial")String numeroSerial){
+    public String guardarChequeo(@RequestBody Chequeo chequeo){
         //obteniendo la parada mas cerca a ese punto
-        chequeo.setParada(getParadaReal(chequeo, numeroSerial));
-        chequeo.setAutobus(autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial));
-        return new Gson().toJson(chequeoServices.guardarChequeo(chequeo));
+        Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(chequeo.getAutobus().getRaspberryPiNumeroSerial());
+
+        chequeo.setAutobus(autobus);
+        Parada parada = getParadaReal(chequeo);
+        chequeo.setParada(parada);
+        if(parada==null){
+            new Gson().toJson("No se pudo guardar el chequeo");
+        }
+        autobus.setUltimaParada(parada);
+        chequeo.setAutobus(autobus);
+        if(chequeoServices.guardarChequeo(chequeo)==null){
+            return new Gson().toJson("No se pudo guardar el chequeo");
+        }
+        return new Gson().toJson("Chequeo guardado");
     }
 
     @RequestMapping(value="/chequeo/buscar/{id_autobus}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
@@ -299,8 +296,8 @@ public String guardarRuta(@RequestBody Ruta ruta){
         }
         return chequeos;
     }
-    private Parada getParadaReal(Chequeo chequeo,String numeroSerial){
-        Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(numeroSerial);
+    private Parada getParadaReal(Chequeo chequeo){
+        Autobus autobus = chequeo.getAutobus();
         Ruta ruta = autobus.getRuta();
         List<Parada> paradas = paradaServices.buscarParadaPorRutaId(ruta.getId());
         Integer cont =1;
@@ -322,4 +319,16 @@ public String guardarRuta(@RequestBody Ruta ruta){
     private Ruta rutaReal(Coordenada coordenada, Autobus autobus){
         return new Ruta();
     }
+
+
+ //-------------------------------------------------------------Usuario-------------------------------------------------------------------
+ @RequestMapping(value = "/usuario/buscar/{page}/item/{items}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+ public ArrayList<Usuario> buscarUsuarioPorPaginas(@PathVariable("items")int items, @PathVariable("page")int page){
+        List <Usuario> usuarios = usuarioService.buscarUsuarios(page, items);
+        if (usuarios==null){
+            return new ArrayList<>();
+        }
+     return (ArrayList<Usuario>) usuarios;
+ }
+
 }

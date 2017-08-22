@@ -1,9 +1,7 @@
 package com.proyectoFinal.OMSA.Entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.io.DataInput;
 import java.io.Serializable;
 import java.sql.Date;
@@ -22,24 +20,36 @@ public class Autobus implements  Serializable {
     @Size(min = 2, max = 35)
     private String modelo;
     @Max(100)
+    @Min(0)
     private Integer cantidadDeAsientos;
+    @DecimalMax("35000.00")
+    @DecimalMin("0.00")
     private Float peso;
     @ManyToOne
     private Ruta ruta; //Updatable
     @ManyToOne
     private Parada ultimaParada; // Updatable
+    @Min(1950)
     private Integer anoFabricacion;
     private Boolean activo;  //Updatable
+    @Size(min=2, max = 100)
     private String conductor;
+    @Min(1483228800)
     private Long fechaCreada; //fecha agregada en la base de datos
+    @Min(1483228800)
     private Long ultimaFechaModificada; // Updatable
-    @Min(10)
+    @NotNull
+    @Size(min = 10, max = 100)
     private Integer precio;
+    @NotNull
     private Boolean tieneAireAcondicionado;
     @Max(100)
+    @Min(0)
     private Integer cantidadDePasajerosActual; //Updatable
     @OneToOne(cascade = CascadeType.ALL)
     private Coordenada coordenada; //Updatable
+    @NotNull
+    @Pattern(regexp = "^[A-Za-z0-9]+$")
     private String raspberryPiNumeroSerial;
 
     public Autobus() {

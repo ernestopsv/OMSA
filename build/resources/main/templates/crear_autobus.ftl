@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <#include "header.ftl">
 <body>
 <div id="wrapper">
@@ -27,13 +27,13 @@
                     </div>
                 </div>
 
-                <form role="form" name="myForm">
-
+                <form role="form" name="myForm" th:action="@{/autobus/crear}" th:object="${autobous}" method="post">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="modelo">Modelo</label>
-                                <input type="text" class="form-control" placeholder="Modelo del autobus" name="modelo" id="modelo">
+                                <input type="text" class="form-control" placeholder="Modelo del autobus" min="2" max="35" name="modelo" id="modelo">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -48,7 +48,7 @@
                             <div class="form-group">
                                 <label for="peso">Peso</label>
                                 <div class="input-group">
-                                    <input type="number" id="peso" step="0.01" name="peso" placeholder="Entre el peso" class="form-control">
+                                    <input type="number" id="peso" step="0.01" name="peso" placeholder="Entre el peso" min="3500" class="form-control">
                                     <span class="input-group-addon">kg</span>
                                 </div>
 
@@ -58,7 +58,12 @@
                             <div class="form-group">
                                 <label for="ruta">Ruta</label>
                                 <select class="form-control" name="ruta" id="ruta" required>
-                                    <option selected disabled>Elija una opcion</option>
+                                    <option selected disabled>Elija una ruta</option>
+                                    <#if rutas??>
+                                        <#list rutas as ruta>
+                                            <option value="${ruta.id}">${ruta.nombreCorredor}</option>
+                                        </#list>
+                                    </#if>
                                 </select>
                             </div>
                         </div>
@@ -66,16 +71,16 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="anoFabricacion">Ano Fabricacion</label>
+                                <label for="anoFabricacion">A&ntilde;o Fabricaci&oacute;n</label>
                                 <select class="form-control" name="anoFabricacion" id="anoFabricacion">
-                                     <option selected disabled>Elija una opcion</option>
+                                     <option selected disabled>Elija un a&ntilde;o </option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="conductor">Conductor</label>
-                                <input type="text" class="form-control" placeholder="Nombre del conductor" name="conductor" min="2" max="100" id="conductor">
+                                <input type="text" class="form-control" placeholder="Nombre del conductor" name="conductor" min="2" max="100" id="conductor" required>
                             </div>
                         </div>
                     </div>
@@ -92,10 +97,10 @@
                                 <label for="tieneAire">Tiene aire acondicionado</label>
                                 <br>
                                 <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="1" checked>SI
+                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="1" checked>Si
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="0">NO
+                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="0">No
                                 </label>
                             </div>
                         </div>
@@ -110,7 +115,7 @@
                             <hr>
                             <div class="form-group">
                                 <label for="numeroDeSerie">Numero de Serie</label>
-                                <input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" class="form-control" name="numeroDeSerie" min="0" max="100" id="numeroDeSerie" required>
+                                <input type="text" pattern="^[A-Za-z0-9]+$" class="form-control" name="numeroDeSerie" min="0" max="100" id="numeroDeSerie" required>
                             </div>
                         </div>
 

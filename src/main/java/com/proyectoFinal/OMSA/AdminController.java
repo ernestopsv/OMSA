@@ -23,7 +23,7 @@ public class AdminController {
 
     @RequestMapping("/ver/usuarios")
     public String index(Model model){
-        model.addAttribute("usuarios",usuarioService.buscarUsuarios());
+        model.addAttribute("size",usuarioService.buscarTodosUsuarios().size());
         return "ver_usuarios";
     }
 

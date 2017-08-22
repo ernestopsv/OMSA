@@ -1,6 +1,7 @@
 package com.proyectoFinal.OMSA.Entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -12,7 +13,9 @@ public class Coordenada implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private double latitude;
+    @NotNull
     private double longitud;
 
     public Coordenada(){

@@ -4,6 +4,9 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.sql.Date;
@@ -19,13 +22,18 @@ public class Ruta implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @DecimalMin("0.00")
     private Float distanciaTotal;
+    @Min(1483228800)
     private Long fechaCreada;
+    @Min(1483228800)
     private Long fechaUltimaModificacion;
     @Size(min=2, max = 100)
     private String ciudad;
+    @NotNull
     @Size(min=2, max = 100)
     private String nombreCorredor;
+    @NotNull
     private Boolean esDireccionSubida;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

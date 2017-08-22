@@ -1,6 +1,7 @@
 package com.proyectoFinal.OMSA.Entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
@@ -14,11 +15,14 @@ public class Usuario {
     private Long id;
     @Size(min = 2, max = 100)
     private String name;
+    @NotNull
     @Size(min = 4, max = 30)
     @Column(unique=true)
     private String username;
+    @NotNull
     @Size(min = 6, max = 30)
     private String password;
+    @NotNull
     private Boolean admin;
 
     public Usuario() {

@@ -75,7 +75,7 @@
                             <tbody>
 
                             <tr ng-show="autobuses.length <= 0">
-                                <td colspan="5" style="text-align:center;">Leyendo Nuevos Datos!!</td>
+                                <td colspan="15" style="text-align:center;">Leyendo Nuevos Datos!!</td>
                             </tr>
                             <tr dir-paginate="autobus in autobuses|itemsPerPage:itemsPerPage" total-items="total_count">
                                 <td>{{$index+1}}</td>
