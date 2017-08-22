@@ -35,6 +35,7 @@ public class AdminController {
     @PostMapping("/registrar")
     public ModelAndView agregar(@ModelAttribute Usuario usuario, Model model){
         usuario.setAdmin(false);
+        System.out.println(usuario.getName()+"/"+usuario.getPassword()+"/"+usuario.getUsername());
         if (usuarioService.guardarUsuario(usuario)!=null){
             return new ModelAndView( "redirect:/");
         }

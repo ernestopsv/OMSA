@@ -1,4 +1,3 @@
-app.controller("usuarioController", function ($scope) {
-
+angular.module("omsaTracker").controller("usuarioController", function ($scope) {
 
 });

@@ -173,10 +173,10 @@
                                         <label for="username">Usuario</label>
                                         <input type="text" class="form-control" ng-minlength="4" ng-maxlength=30 ng-model="username" name="username" placeholder="Entre su nombre de usuario" id="username" required>
                                         <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$invalid">
-                                              <span ng-show="myForm.username.$error.required">Nombre de usuario requerido.</span>
+                                              <small ng-show="myForm.username.$error.required">Nombre de usuario requerido.</small>
                                         </span>
-                                        <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$error.minlength">Nombre de usuario corto.</span>
-                                        <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$error.maxlength">Nombre de usuario demasiado largo.</span>
+                                        <small style="color:red" ng-show="myForm.username.$dirty && myForm.username.$error.minlength">Nombre de usuario corto.</small>
+                                        <small style="color:red" ng-show="myForm.username.$dirty && myForm.username.$error.maxlength">Nombre de usuario demasiado largo.</small>
                                     </div>
                                 </div>
                             </div>
@@ -186,10 +186,10 @@
                                         <label for="cantidadDeAsientos">Contrase&ntilde;a</label>
                                         <input type="password" class="form-control" ng-model="password" name="password" placeholder="Entre su contrasena" id="password" ng-minlength="6" ng-maxlength=30 required>
                                         <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
-                                              <span ng-show="myForm.password.$error.required">Contrase&ntilde;a requerida.</span>
+                                              <small ng-show="myForm.password.$error.required">Contrase&ntilde;a requerida.</small>
                                         </span>
-                                        <span style="color:red" ng-show="myForm.password.$dirty && mysForm.password.$error.minlength">contrase&ntilde;a corto</span>
-                                        <span style="color:red" ng-show="myForm.password.$dirty && mysForm.password.$error.maxlength">contrase&ntilde;a demasiado largo</span>
+                                        <small style="color:red" ng-show="myForm.password.$dirty && mysForm.password.$error.minlength">contrase&ntilde;a corto</small>
+                                        <small style="color:red" ng-show="myForm.password.$dirty && mysForm.password.$error.maxlength">contrase&ntilde;a demasiado largo</small>
                                     </div>
 
                                 </div>

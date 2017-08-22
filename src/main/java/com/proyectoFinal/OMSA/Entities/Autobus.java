@@ -39,7 +39,8 @@ public class Autobus implements  Serializable {
     @Min(1483228800)
     private Long ultimaFechaModificada; // Updatable
     @NotNull
-    @Size(min = 10, max = 100)
+    @Min(10)
+    @Max(100)
     private Integer precio;
     @NotNull
     private Boolean tieneAireAcondicionado;
