@@ -300,14 +300,14 @@ public String guardarRuta(@RequestBody Ruta ruta){
         Autobus autobus = chequeo.getAutobus();
         Ruta ruta = autobus.getRuta();
         ArrayList<Parada> paradas = (ArrayList<Parada>) paradaServices.buscarParadaPorRutaId(ruta.getId());
-        Integer cont =1;
+        int cont =0;
         double distancia=1000000000;
         double distanciaActual=0;
-        Integer indexes=0;
+        int indexes=0;
         for(int i = 0; i<paradas.size(); i++){
             distanciaActual =Math.sqrt(Math.pow((paradas.get(i).getCoordenada().getLatitude()-chequeo.getParada().getCoordenada().getLatitude()), 2)+Math.pow((paradas.get(i).getCoordenada().getLongitud()-chequeo.getParada().getCoordenada().getLongitud()),2));
             if (distanciaActual<distancia){
-                //distancia =distanciaActual;
+                distancia =distanciaActual;
                 indexes = cont;
             }
             cont++;
