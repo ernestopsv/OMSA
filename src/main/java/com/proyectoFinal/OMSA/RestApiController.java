@@ -299,13 +299,13 @@ public String guardarRuta(@RequestBody Ruta ruta){
     private Parada getParadaReal(Chequeo chequeo){
         Autobus autobus = chequeo.getAutobus();
         Ruta ruta = autobus.getRuta();
-        List<Parada> paradas = paradaServices.buscarParadaPorRutaId(ruta.getId());
+        ArrayList<Parada> paradas = (ArrayList<Parada>) paradaServices.buscarParadaPorRutaId(ruta.getId());
         Integer cont =1;
         double distancia=1000000000;
         double distanciaActual=0;
         Integer indexes=0;
-        for(Parada parada:paradas){
-            distanciaActual =Math.sqrt(Math.pow((parada.getCoordenada().getLatitude()-chequeo.getParada().getCoordenada().getLatitude()), 2)+Math.pow((parada.getCoordenada().getLongitud()-chequeo.getParada().getCoordenada().getLongitud()),2));
+        for(int i = 0; i<paradas.size(); i++){
+            distanciaActual =Math.sqrt(Math.pow((paradas.get(i).getCoordenada().getLatitude()-chequeo.getParada().getCoordenada().getLatitude()), 2)+Math.pow((paradas.get(i).getCoordenada().getLongitud()-chequeo.getParada().getCoordenada().getLongitud()),2));
             if (distanciaActual<distancia){
                 //distancia =distanciaActual;
                 indexes = cont;
