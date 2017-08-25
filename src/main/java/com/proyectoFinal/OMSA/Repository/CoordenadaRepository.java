@@ -12,6 +12,7 @@ public interface CoordenadaRepository extends CrudRepository<Coordenada, Long> {
 
     List<Coordenada> findAll();
 
+
     Coordenada findById(Long id);
 
     Coordenada save(Coordenada coordenada);

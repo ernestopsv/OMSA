@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <#include "header.ftl">
 
 <body>
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Ruta
+                        Editar una ruta
                     </h1>
                     <ol class="breadcrumb">
                         <li>
@@ -25,109 +25,47 @@
                 </div>
             </div>
 
-            <form role="form">
+            <form role="form" th:action="@{/ruta/editar}" th:object="${ruta}" method="post">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="nombreCorredor">Nombre Corredor</label>
-                            <input type="text" class="form-control" name="nombreCorredor" id="nombreCorredor">
+                            <input type="text" class="form-control" placeholder="Nombre del corredor" min="2" max="100" name="nombreCorredor" value="${ruta.nombreCorredor}" id="nombreCorredor" required>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="ruta">Ruta</label>
-                            <select class="form-control" name="ruta" id="ruta">
-                                <option selected disabled>Elija una opcion</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="distanciaTotal">Distancia Total</label>
                             <div class="input-group">
-                                <input type="number" id="distanciaTotal" step="0.01" min="0.0" name="distanciaTotal"
-                                       class="form-control">
+                                <input type="number" id="distanciaTotal" step="0.01" placeholder="Entre la distancia total" value="${ruta.distanciaTotal}" min="0.0" name="distanciaTotal" class="form-control">
                                 <span class="input-group-addon">km</span>
                             </div>
                         </div>
 
                     </div>
+                </div>
+                <div class="row">
+
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="ciudad">Ciudad</label>
-                            <input type="text" class="form-control" name="ciudad" min="2" max="100" id="ciudad">
+                            <input type="text" class="form-control" name="ciudad" value="${ruta.ciudad}" placeholder="Entre la ciudad" min="2" max="100" id="ciudad">
                         </div>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="anoFabricacion">Ano Fabricacion</label>
-                            <select class="form-control" name="anoFabricacion" id="anoFabricacion">
-                                <option selected disabled>Elija una opcion</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="conductor">Conductor</label>
-                            <input type="text" class="form-control" name="conductor" min="2" max="100" id="conductor">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="precio">Precio</label>
-                            <input type="number" min="10" class="form-control" name="precio" id="precio">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="tieneAire">Tiene aire acondicionado</label>
-                            <br>
-                            <label class="radio-inline">
-                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="1"
-                                       checked>SI
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="0">NO
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <h3 style="padding-left: 15px">Raspberry Pi</h3>
-
-                    <div class="col-lg-6">
-
-                        <div class="form-group">
-                            <label for="numeroDeSerie">Numero de Serie</label>
-                            <input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" class="form-control"
-                                   name="numeroDeSerie"
-                                   min="0" max="100" id="numeroDeSerie">
-                        </div>
-                    </div>
-
-                </div>
+                <input type="hidden" name="corredor" value="${ruta.nombreCorredor}">
                 <div class="row">
                     <hr>
                     <div class="col-lg-offset-6 col-lg-6">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success form-control">Guardar</button>
+                                <button type="reset" class="btn btn-success form-control">Limpiar</button>
                             </div>
 
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <button type="reset" class="btn btn-success form-control">Limpiar</button>
+                                <button type="submit" class="btn btn-success form-control">Guardar</button>
                             </div>
 
                         </div>
@@ -136,6 +74,7 @@
                 </div>
 
             </form>
+
 
         </div>
         <!-- /.container-fluid -->

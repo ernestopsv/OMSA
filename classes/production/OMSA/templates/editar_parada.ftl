@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <#include "header.ftl">
 
 <body>
@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Parada
+                        Editar una parada
                     </h1>
                     <ol class="breadcrumb">
                         <li>
@@ -27,36 +27,35 @@
                     </ol>
                 </div>
             </div>
-
-            <form role="form">
+            <form role="form" action="#" th:action="@{/parada/editar}" th:object="${parada}" method="POST">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" name="nombre" id="nombre">
+                            <input type="text" class="form-control" min="2" max="100" name="nombre" id="nombre" value="${parada.nombre}" required>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="ruta">Ruta</label>
-                            <select class="form-control" name="ruta" id="ruta">
-                                <option selected disabled>Elija una opcion</option>
-                            </select>
+                            <input type="text" readonly <#if ruta??>value="${ruta.nombreCorredor} | <#if ruta.esDireccionSubida> Subida <#else> Bajada</#if></#if>"/>
+                            <input type="hidden" id="ruta" name="ruta" value="${ruta.id}">
                         </div>
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="latitud">Latitud</label>
-                            <input type="number" id="latitud" step="0.000001" name="latitud" class="form-control">
+                            <label for="latitude">Latitud</label>
+                            <input type="number" id="latitude" step="0.000001" name="latitude" class="form-control" value="${parada.coordenada.latitude}">
                         </div>
 
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="longitud">Longitud</label>
-                            <input type="number" class="form-control" step="0.000001" name="longitud" id="longitud">
+                            <input type="number" class="form-control" step="0.000001" name="longitud" id="longitud" value="${parada.coordenada.longitud}">
                         </div>
                     </div>
                 </div>
@@ -64,16 +63,26 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="para">Parada anterior</label>
-                            <select class="form-control" name="anoFabricacion" id="anoFabricacion">
-                                <option selected disabled>Elija una opcion</option>
+                            <label for="paradaAnterior">Parada anterior</label>
+                            <select class="form-control" name="paradaAnterior" id="paradaAnterior">
+                                <option selected disabled>Elija una parada anterior</option>
+                            <#if paradas>
+                                <#list paradas as paradas></#list>
+                                <option value="${parada.id}">${parada.nombre}</option>
+                            </#if>
                             </select>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="conductor">Parada Siguiente</label>
-                            <input type="text" class="form-control" name="conductor" min="2" max="100" id="conductor">
+                            <label for="paradaSiguiente">Parada Siguiente</label>
+                            <select class="form-control" name="paradaSiguiente" id="paradaSiguiente">
+                                <option selected disabled>Elija una parada siguiente</option>
+                            <#if paradas>
+                                <#list paradas as paradas></#list>
+                                <option value="${parada.id}">${parada.nombre}</option>
+                            </#if>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -85,13 +94,13 @@
             <div class="col-lg-offset-6 col-lg-6">
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success form-control">Guardar</button>
+                        <button type="reset" class="btn btn-success form-control">Limpiar</button>
                     </div>
 
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <button type="reset" class="btn btn-success form-control">Limpiar</button>
+                        <button type="submit" class="btn btn-success form-control">Guardar</button>
                     </div>
 
                 </div>
@@ -100,7 +109,6 @@
         </div>
 
         </form>
-
     </div>
     <!-- /.container-fluid -->
 

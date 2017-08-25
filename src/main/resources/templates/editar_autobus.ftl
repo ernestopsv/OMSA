@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <#include "header.ftl">
 
 <body>
@@ -27,19 +27,19 @@
             </div>
         </div>
 
-        <form role="form" name="myForm">
-
+        <form role="form" action="#" name="myForm" th:action="@{/autobus/crear}" th:object="${autobus}" method="post">
+        <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="modelo">Modelo</label>
-                        <input type="text" class="form-control" placeholder="Modelo del autobus" name="modelo" id="modelo">
+                        <input type="text" class="form-control" placeholder="Modelo del autobus" min="2" max="35" name="modelo" id="modelo" <#if autobus.modelo??>value="${autobus.modelo}"</#if>>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="cantidadDeAsientos">Cantidad de Asientos</label>
-                        <input type="number" class="form-control" placeholder="Cantidad de asientos" name="cantidadDeAsientos" min="0" max="100" id="cantidadDeAsientos" required>
+                        <input type="number" class="form-control" placeholder="Cantidad de asientos" name="cantidadDeAsientos" min="0" max="100" <#if autobus.cantidadDeAsientos??>value="${autobus.cantidadDeAsientos}"</#if> id="cantidadDeAsientos" required>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <label for="peso">Peso</label>
                         <div class="input-group">
-                            <input type="number" id="peso" step="0.01" name="peso" placeholder="Entre el peso" class="form-control">
+                            <input type="number" id="peso" step="0.01" name="peso" min="0" placeholder="Entre el peso" max="35000"  <#if autobus.peso??>value="${autobus.peso}"</#if> class="form-control">
                             <span class="input-group-addon">kg</span>
                         </div>
 
@@ -58,7 +58,12 @@
                     <div class="form-group">
                         <label for="ruta">Ruta</label>
                         <select class="form-control" name="ruta" id="ruta" required>
-                            <option selected disabled>Elija una opcion</option>
+                            <option selected disabled>Elija una ruta</option>
+                        <#if rutas??>
+                            <#list rutas as ruta>
+                                <option value="${ruta.id}">${ruta.nombreCorredor}/ <#if ruta.esDireccionSubida>Subida --> <#else> Bajada <-- </#if></option>
+                            </#list>
+                        </#if>
                         </select>
                     </div>
                 </div>
@@ -66,16 +71,16 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label for="anoFabricacion">Ano Fabricacion</label>
+                        <label for="anoFabricacion">A&ntilde;o Fabricaci&oacute;n</label>
                         <select class="form-control" name="anoFabricacion" id="anoFabricacion">
-                            <option selected disabled>Elija una opcion</option>
+                            <option selected disabled>Elija el a&ntilde;o de fabricaci&oacute;n</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="conductor">Conductor</label>
-                        <input type="text" class="form-control" placeholder="Nombre del conductor" name="conductor" min="2" max="100" id="conductor">
+                        <input type="text" class="form-control" pattern="[a-zA-Z]+[ ][a-zA-Z]+" placeholder="Nombre del conductor"  <#if autobus.conductor??>value="${autobus.conductor}"</#if> name="conductor" min="2" max="100" id="conductor" required>
                     </div>
                 </div>
             </div>
@@ -84,7 +89,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="precio">Precio</label>
-                        <input type="number" min="10" placeholder="Entre el precio" class="form-control" name="precio" id="precio" required>
+                        <input type="number" min="10" placeholder="Entre el precio" class="form-control" name="precio"  <#if autobus.precio??>value="${autobus.precio}"</#if> id="precio" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -92,10 +97,10 @@
                         <label for="tieneAire">Tiene aire acondicionado</label>
                         <br>
                         <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="1" checked>SI
+                            <input type="radio" name="tieneAireAcondicionado" id="noTieneAireAcondicionado" value=true checked>Si
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="0">NO
+                            <input type="radio" name="tieneAireAcondicionado" id="noTieneAireAcondicionado" value=false >No
                         </label>
                     </div>
                 </div>
@@ -110,7 +115,7 @@
                     <hr>
                     <div class="form-group">
                         <label for="numeroDeSerie">Numero de Serie</label>
-                        <input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" class="form-control" name="numeroDeSerie" min="0" max="100" id="numeroDeSerie" required>
+                        <input type="text" pattern="^[A-Za-z0-9-]+$" class="form-control" name="numeroDeSerie" min="0" max="100"  <#if autobus.raspberryPiNumeroSerial??>value="${autobus.raspberryPiNumeroSerial}"</#if> id="precio" id="numeroDeSerie" required>
                     </div>
                 </div>
 
@@ -143,6 +148,18 @@
 
 <!-- jQuery -->
 <script src="/js/jquery.js">
+</script>
+
+<script type="text/javascript">
+    // get the OPTION we want selected
+    var $option = $('#ruta').children('option[value="'+ ${autobus.ruta.id} +'"]');
+    // and now set the option we want selected
+    $option.attr('selected', true);​​
+
+    $(function() {
+        $("#anoFabricacion").val(${autobus.anoFabricacion});
+    });
+
 </script>
 
 <!-- Bootstrap Core JavaScript -->

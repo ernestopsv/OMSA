@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Registro de un Autobus
+                            Registrar un Autobus
                         </h1>
                         <ol class="breadcrumb">
                             <li>
@@ -27,8 +27,8 @@
                     </div>
                 </div>
 
-                <form role="form" name="myForm" th:action="@{/autobus/crear}" th:object="${autobous}" method="post">
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                <form role="form" action="#" name="myForm" th:action="@{/autobus/crear}" th:object="${autobus}" method="post">
+                    <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -48,7 +48,7 @@
                             <div class="form-group">
                                 <label for="peso">Peso</label>
                                 <div class="input-group">
-                                    <input type="number" id="peso" step="0.01" name="peso" placeholder="Entre el peso" min="3500" class="form-control">
+                                    <input type="number" id="peso" step="0.01" name="peso" min="0" placeholder="Entre el peso" max="35000" class="form-control">
                                     <span class="input-group-addon">kg</span>
                                 </div>
 
@@ -61,7 +61,7 @@
                                     <option selected disabled>Elija una ruta</option>
                                     <#if rutas??>
                                         <#list rutas as ruta>
-                                            <option value="${ruta.id}">${ruta.nombreCorredor}</option>
+                                            <option value="${ruta.id}">${ruta.nombreCorredor} | <#if ruta.esDireccionSubida>Subida <#else> Bajada </#if></option>
                                         </#list>
                                     </#if>
                                 </select>
@@ -73,14 +73,14 @@
                             <div class="form-group">
                                 <label for="anoFabricacion">A&ntilde;o Fabricaci&oacute;n</label>
                                 <select class="form-control" name="anoFabricacion" id="anoFabricacion">
-                                     <option selected disabled>Elija un a&ntilde;o </option>
+                                     <option selected disabled>Elija el a&ntilde;o de fabricaci&oacute;n</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="conductor">Conductor</label>
-                                <input type="text" class="form-control" placeholder="Nombre del conductor" name="conductor" min="2" max="100" id="conductor" required>
+                                <input type="text" class="form-control" pattern="[a-zA-Z]+[ ][a-zA-Z]+" placeholder="Nombre del conductor" name="conductor" min="2" max="100" id="conductor" required>
                             </div>
                         </div>
                     </div>
@@ -97,10 +97,10 @@
                                 <label for="tieneAire">Tiene aire acondicionado</label>
                                 <br>
                                 <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="1" checked>Si
+                                    <input type="radio" name="tieneAireAcondicionado" id="noTieneAireAcondicionado" value=true checked>Si
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="0">No
+                                    <input type="radio" name="tieneAireAcondicionado" id="TieneAireAcondicionado" value=false >No
                                 </label>
                             </div>
                         </div>
@@ -109,17 +109,14 @@
                     <div class="row">
 
 
-                        <h4 style="padding-left: 15px">Raspberry Pi</h4>
-
                         <div class="col-lg-6">
-                            <hr>
                             <div class="form-group">
-                                <label for="numeroDeSerie">Numero de Serie</label>
-                                <input type="text" pattern="^[A-Za-z0-9]+$" class="form-control" name="numeroDeSerie" min="0" max="100" id="numeroDeSerie" required>
+                                <label for="raspberryPiNumeroSerial">Raspberry Pi / Numero de Serie</label>
+                                <input type="text" pattern="^[A-Za-z0-9-]+$" class="form-control" name="raspberryPiNumeroSerial" min="0" max="100" id="raspberryPiNumeroSerial" required>
                             </div>
                         </div>
 
-                        <div class="col-lg-6" style="padding-top: 65px">
+                        <div class="col-lg-6" >
 
                             <div class="col-lg-6">
                                 <div class="form-group">

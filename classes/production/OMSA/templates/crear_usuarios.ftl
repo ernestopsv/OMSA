@@ -65,6 +65,9 @@
 
                     <div class="row">
                         <hr>
+                        <#if error??>
+                            <small class="error" style="color: red;"> ${error}</small>
+                        </#if>
                         <div class="col-lg-offset-6 col-lg-6">
                             <div class="col-lg-6">
                                 <div class="form-group">

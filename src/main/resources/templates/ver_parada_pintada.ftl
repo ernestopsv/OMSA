@@ -97,13 +97,7 @@
 
             </div>
             <!-- /.container-fluid -->
-            <div class="row">
-                <button class="btn btn-success btn-xs pull-right" onclick="">refresh</button>
-                <div class="col-lg-12">
-                    <div id="map" style="width: 1100px; height: 400px;"></div>
 
-                </div>
-            </div>
         </div>
         <!-- /#page-wrapper -->
 

@@ -27,14 +27,6 @@ public class ParadaController {
     RutaServices rutaServices;
 
 
-    @RequestMapping("/ver/{id}")
-    public String ver(Model model, @PathVariable(value = "id")Long id ){
-        List<Parada> paradas = paradaServices.buscarParadaPorRutaId(id);
-        model.addAttribute("paradas", paradas);
-        model.addAttribute("id_ruta", id);
-        model.addAttribute("nombreCorredor", rutaServices.buscarRutaPorId(id).getNombreCorredor());
-        return "ver_parada_pintada";
-    }
     @RequestMapping("/crear/{id}")
     public String crearParada(Model model, @PathVariable("id")Long id){
         model.addAttribute("id_ruta", id);
@@ -46,11 +38,21 @@ public class ParadaController {
 
     @Transactional
     @PostMapping("/crear")
-    public String guardarParadaCreada(@ModelAttribute Parada parada, @RequestParam("id")Long id){
+    public String guardarParadaCreada(@ModelAttribute Parada parada, Model model,  @RequestParam("ruta")Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
             parada.setRuta(ruta);
-            paradaServices.guardarParada(parada);
-            return "redirect:/";
+
+            if(paradaServices.guardarParada(parada)!=null){
+                model.addAttribute("message", true);
+            }else {
+                model.addAttribute("message", false);
+            }
+
+        model.addAttribute("id_ruta", id);
+        model.addAttribute("parada", new Parada());
+        model.addAttribute("paradas", paradaServices.buscarParadaPorRutaId(id));
+        model.addAttribute("ruta", rutaServices.buscarRutaPorId(id));
+        return "crear_parada";
     }
 
     @RequestMapping(value = "/editar/{id}", method = RequestMethod.GET)

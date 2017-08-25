@@ -296,21 +296,40 @@ public String guardarRuta(@RequestBody Ruta ruta){
         }
         return chequeos;
     }
+//    import sys
+//import math
+//
+//    dict =[(19.4416166,-70.68727), (19.43919,-70.68845), (19.43493,-70.69110), (19.42904,-70.69471), (19.42482,-70.69729), (19.42227,-70.69899)]
+//
+//    def calculate(list,tuple):
+//    d = 0
+//    max =100000000
+//    index=0
+//    count =1
+//            for k in list:
+//    d =math.sqrt(pow((tuple[0]-k[0]), 2)+ pow((tuple[1]-k[1]),2))
+//    print k, d
+//        if(d<max):
+//    max=d
+//            index=count
+//    count=count+1
+//            return index
+//    print calculate(dict,(19.4406,-70.6873))
+
     private Parada getParadaReal(Chequeo chequeo){
         Autobus autobus = chequeo.getAutobus();
         Ruta ruta = autobus.getRuta();
         ArrayList<Parada> paradas = (ArrayList<Parada>) paradaServices.buscarParadaPorRutaId(ruta.getId());
-        int cont =0;
-        double distancia=1000000000;
+
+        double max=1000000000;
         double distanciaActual=0;
         int indexes=0;
         for(int i = 0; i<paradas.size(); i++){
             distanciaActual =Math.sqrt(Math.pow((paradas.get(i).getCoordenada().getLatitude()-chequeo.getParada().getCoordenada().getLatitude()), 2)+Math.pow((paradas.get(i).getCoordenada().getLongitud()-chequeo.getParada().getCoordenada().getLongitud()),2));
-            if (distanciaActual<distancia){
-                distancia =distanciaActual;
-                indexes = cont;
+            if (distanciaActual<max){
+                max =distanciaActual;
+                indexes = i;
             }
-            cont++;
         }
 
         return paradas.get(indexes);
@@ -330,5 +349,15 @@ public String guardarRuta(@RequestBody Ruta ruta){
         }
      return (ArrayList<Usuario>) usuarios;
  }
+//-----------------------------------------Coordenada----------------------------------------------------
+    @RequestMapping(value = "/ruta/{id}/buscar/coordenada/{start}/{end}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Coordenada> buscarCoordenadas (@PathVariable("id")Long id, @PathVariable("start")int start, @PathVariable("end")int end){
+       ArrayList<Coordenada> coordenadasTemp = new ArrayList<>();
+       List<Coordenada> coordenadas = rutaServices.buscarRutaPorId(id).getCoordenadas();;
+        for (int i= start; i<start+end; i++){
+            coordenadasTemp.add(coordenadas.get(i));
+        }
 
+     return coordenadasTemp;
+    }
 }

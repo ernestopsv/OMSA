@@ -28,7 +28,7 @@
                     </div>
                 </div>
 
-                <form role="form" th:action="" th:object="${ruta}" method="post">
+                <form role="form"  action="#" th:action="@{/ruta/crear}" th:object="${ruta}" method="post">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -36,16 +36,6 @@
                                 <input type="text" class="form-control" placeholder="Nombre del corredor" min="2" max="100" name="nombreCorredor" id="nombreCorredor" required>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="ruta">Ruta</label>
-                                <select class="form-control" name="ruta" id="ruta" required>
-                                    <option selected disabled>Elija una ruta</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="distanciaTotal">Distancia Total</label>
@@ -56,6 +46,9 @@
                             </div>
 
                         </div>
+                    </div>
+                    <div class="row">
+
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="ciudad">Ciudad</label>
@@ -64,57 +57,6 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="anoFabricacion">Ano Fabricacion</label>
-                                <select class="form-control" name="anoFabricacion" placeholder="" id="anoFabricacion">
-                                     <option selected disabled>Elija una opcion</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="conductor">Conductor</label>
-                                <input type="text" class="form-control" placeholder="Nombre del conductor" name="conductor" min="2" max="100" id="conductor">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="precio">Precio</label>
-                                <input type="number" min="10" class="form-control" placeholder="Precio del viaje" name="precio" id="precio" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="tieneAire">Tiene aire acondicionado</label>
-                                <br>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="1" checked>SI
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="0">NO
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-
-                        <h3 style="padding-left: 15px">Raspberry Pi</h3>
-
-                        <div class="col-lg-6">
-
-                            <div class="form-group">
-                                <label for="numeroDeSerie">Numero de Serie</label>
-                                <input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*{}" class="form-control" name="numeroDeSerie" min="13" max="13" id="numeroDeSerie">
-                            </div>
-                        </div>
-
-                    </div>
                     <div class="row">
                         <hr>
                         <div class="col-lg-offset-6 col-lg-6">

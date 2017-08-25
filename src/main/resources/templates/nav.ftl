@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-        <a class="navbar-brand" href="index.ftl">OMSA</a>
+        <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo"></a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
@@ -133,8 +133,8 @@
                 <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
             </li>
             <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Parada <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="demo" class="collapse">
+                <a href="javascript:;" data-toggle="collapse" data-target="#parada"><i class="fa fa-fw fa-arrows-v"></i> Parada <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="parada" class="collapse">
                     <li>
                         <a href="#">Agregar Parada</a>
                     </li>

@@ -33,6 +33,7 @@ public class Autobus implements  Serializable {
     private Integer anoFabricacion;
     private Boolean activo;  //Updatable
     @Size(min=2, max = 100)
+    @Pattern(regexp = "[a-zA-Z]+[ ][a-zA-Z]+")
     private String conductor;
     @Min(1483228800)
     private Long fechaCreada; //fecha agregada en la base de datos
@@ -50,7 +51,8 @@ public class Autobus implements  Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     private Coordenada coordenada; //Updatable
     @NotNull
-    @Pattern(regexp = "^[A-Za-z0-9]+$")
+    @Pattern(regexp = "^[A-Za-z0-9-]+$")
+    @Size(max = 100)
     private String raspberryPiNumeroSerial;
 
     public Autobus() {

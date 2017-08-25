@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <form role="form" th:action="@{/parada/crear}" th:object="${parada}" method="POST">
+                <form role="form" action="#" th:action="@{/parada/crear}" th:object="${parada}" method="POST">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -37,10 +37,11 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="ruta">Ruta</label>
-                                <input type="text" name="ruta" readonly <#if ruta??>value="${ruta.nombreCorredor}</#if>">
+                                <input type="text" class="form-control" <#if ruta??>value="${ruta.nombreCorredor} | <#if ruta.esDireccionSubida> Subida <#else> Bajada</#if></#if>"/>
+                                <input type="hidden" id="ruta" name="ruta" value="${ruta.id}">
                             </div>
                         </div>
-                        <input type="hidden" value="${ruta.id}">
+
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
@@ -64,9 +65,11 @@
                                 <label for="paradaAnterior">Parada anterior</label>
                                 <select class="form-control" name="paradaAnterior" id="paradaAnterior">
                                      <option selected disabled>Elija una parada anterior</option>
-                                    <#if paradas>
-                                        <#list paradas as paradas></#list>
-                                        <option value="${parada.id}">${parada.nombre}</option>
+                                    <#if paradas??>
+                                        <#list paradas as p>
+                                            <option value="${p.id}">${p.nombre}</option>
+                                        </#list>
+
                                     </#if>
                                 </select>
                             </div>
@@ -76,37 +79,39 @@
                                 <label for="paradaSiguiente">Parada Siguiente</label>
                                 <select class="form-control" name="paradaSiguiente" id="paradaSiguiente">
                                      <option selected disabled>Elija una parada siguiente</option>
-                                <#if paradas>
-                                    <#list paradas as paradas></#list>
-                                    <option value="${parada.id}">${parada.nombre}</option>
+                                <#if paradas??>
+                                    <#list paradas as p>
+                                        <option value="${p.id}">${p.nombre}</option>
+                                    </#list>
+
                                 </#if>
                                 </select>
                             </div>
                         </div>
                     </div>
 
+                    <div class="row">
+                        <hr>
+                        <div class="col-lg-offset-6 col-lg-6">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <button type="reset" class="btn btn-success form-control">Limpiar</button>
+                                </div>
 
-            </div>
-            <div class="row">
-                <hr>
-                <div class="col-lg-offset-6 col-lg-6">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <button type="reset" class="btn btn-success form-control">Limpiar</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success form-control">Guardar</button>
+                                </div>
+
+                            </div>
+
                         </div>
-
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success form-control">Guardar</button>
-                        </div>
-
                     </div>
 
-                </div>
+                </form>
             </div>
 
-            </form>
 
         </div>
         <!-- /.container-fluid -->

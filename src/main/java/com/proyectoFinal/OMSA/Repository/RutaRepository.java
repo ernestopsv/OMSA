@@ -23,6 +23,7 @@ public interface RutaRepository extends CrudRepository<Ruta, Long> {
 
     List<Ruta> findAll(Pageable pageable);
 
+
     //encontrar ruta con id
     Ruta findRutaById(Long id);
 
