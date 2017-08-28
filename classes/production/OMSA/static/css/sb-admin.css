@@ -27,6 +27,9 @@ body {
     background-color: #fff;
 }
 
+.fa{
+    color:#5cb85c;
+}
 .huge {
     font-size: 50px;
     line-height: normal;

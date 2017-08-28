@@ -40,6 +40,7 @@
                                 <th>#</th>
                                 <th>Latitud</th>
                                 <th>Longitud</th>
+                                <th>id</th>
                                 <th>&nbsp</th>
                                 <th>&nbsp</th>
 
@@ -48,15 +49,16 @@
                             <tbody>
                             <tr ng-show="coordenadas.length <= 0"><td colspan="5" style="text-align:center;">Leyendo Nuevos Datos!!</td></tr>
                             <tr dir-paginate="coordenada in coordenadas|itemsPerPage:itemsPerPage" total-items="${size}">
-                                <td>{{$index+1}}</td>
+                                <td>{{start+$index+1}}</td>
                                 <td>{{coordenada.latitude}}</td>
                                 <td>{{coordenada.longitud}}</td>
-                                <td> <a href="/ruta/coordenada/editar/${id_ruta}/{{coordenada.id}}">
-                                    <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>
+                                <td>{{coordenada.id}}</td>
+                                <td> <a href="/coordenada/editar/${id_ruta}/{{coordenada.id}}">
+                                    <p data-placement="top" data-toggle="tooltip" title="Editar"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>
                                 </a></td>
                                 <td>
-                                    <a href="/ruta/coordenada/eliminar/${id_ruta}/{{coordenada.id}}">
-                                        <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Eliminar" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>
+                                    <a href="/coordenada/eliminar/${id_ruta}/{{coordenada.id}}">
+                                        <p data-placement="top" data-toggle="tooltip" title="Eliminar"><button class="btn btn-danger btn-xs" data-title="Eliminar" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>
                                     </a>
                                 </td>
 
@@ -74,7 +76,13 @@
                 </div>
             </div>
             <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="map" style="width: 1100px; height: 400px;"></div>
 
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /.container-fluid -->
 

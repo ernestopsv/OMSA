@@ -12,9 +12,9 @@
                             <!-- Page Heading -->
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h1 class="page-header">
-                                        Usuarios
-                                    </h1>
+                                    <h3 class="page-header">
+                                       Crear un nuevo usuario
+                                    </h3>
                                     <ol class="breadcrumb">
                                         <li>
                                             <i class="fa fa-dashboard"></i> <a href="/">Home</a>

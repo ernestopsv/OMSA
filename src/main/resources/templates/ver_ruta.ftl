@@ -40,10 +40,13 @@
                                 <th>&nbsp</th>
                                 <th>&nbsp</th>
                                 <th>&nbsp</th>
+                                <th>&nbsp</th>
+                                <th>&nbsp</th>
+                                <th>&nbsp</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <tr ng-show="rutas.length <= 0"><td colspan="8" style="text-align:center;">Leyendo Nuevas Rutas!!</td></tr>
+                        <tr ng-show="rutas.length <= 0"><td colspan="10" style="text-align:center;">Leyendo Nuevas Rutas!!</td></tr>
                         <tr dir-paginate="r in rutas[0].content | itemsPerPage:itemsPerPage" total-items="${size}">
                             <td>{{$index+1}}</td>
                             <td>{{r.nombreCorredor}}</td>
@@ -53,15 +56,15 @@
                             <td><a href="/ruta/listar/paradas/{{r.id}}">Ver Paradas</a></td>
                             <td><a href="/ruta/listar/coordenadas/{{r.id}}">Ver Coordenadas</a></td>
                             <td><a href="/parada/crear/{{r.id}}">Agregar Parada</a></td>
-                            <td><a href="/ruta/coordenada/crear/{{r.id}}">Agregar Coordenada</a></td>
+                            <td><a href="/coordenada/crear/{{r.id}}">Agregar Coordenada</a></td>
                             <td>
                                 <a href="/ruta/editar/{{r.id}}">
-                                    <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>
+                                    <p data-placement="top" data-toggle="tooltip" title="Editar"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>
                                 </a>
                             </td>
                             <td>
                                 <a href="/ruta/eliminar/{{r.id}}">
-                                    <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Eliminar" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>
+                                    <p data-placement="top" data-toggle="tooltip" title="Eliminar"><button class="btn btn-danger btn-xs" data-title="Eliminar" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>
                                 </a>
                             </td>
 

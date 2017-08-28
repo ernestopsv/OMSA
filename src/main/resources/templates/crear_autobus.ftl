@@ -12,9 +12,9 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Registrar un Autobus
-                        </h1>
+                        <h3 class="page-header">
+                            Crear un nuevo autobus
+                        </h3>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i> <a href="/">Home</a>
@@ -112,11 +112,11 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="raspberryPiNumeroSerial">Raspberry Pi / Numero de Serie</label>
-                                <input type="text" pattern="^[A-Za-z0-9-]+$" class="form-control" name="raspberryPiNumeroSerial" min="0" max="100" id="raspberryPiNumeroSerial" required>
+                                <input type="text" pattern="^[A-Za-z0-9-]+$" placeholder="Entre el numero serial del raspberry" class="form-control" name="raspberryPiNumeroSerial" min="0" max="100" id="raspberryPiNumeroSerial" required>
                             </div>
                         </div>
 
-                        <div class="col-lg-6" >
+                        <div class="col-lg-6" style="margin-top: 22px">
 
                             <div class="col-lg-6">
                                 <div class="form-group">

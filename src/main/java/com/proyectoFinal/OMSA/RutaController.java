@@ -64,6 +64,15 @@ public class RutaController {
         model.addAttribute("autobuses", autobuses);
         return "ver_autobus";
     }
+    @RequestMapping("/listar/coordenadas/{id}")
+    public String mostrarCoordenadas(Model model, @PathVariable("id") Long id_ruta){
+        List<Coordenada> coordenadas = rutaServices.buscarRutaPorId(id_ruta).getCoordenadas();
+        model.addAttribute("coordenadas",coordenadas);
+        model.addAttribute("size", coordenadas.size());
+        model.addAttribute("id_ruta", id_ruta);
+        model.addAttribute("nombreCorredor", rutaServices.buscarRutaPorId(id_ruta).getNombreCorredor());
+        return "ver_coordenada_pintada";
+    }
 
     @RequestMapping(value = "/buscar", method = RequestMethod.GET, produces = "application/json")
     public List<Ruta> buscarRuta(Model model, @RequestParam("nombre_corredor")String nombre_Corredor){
@@ -71,11 +80,10 @@ public class RutaController {
         return rutaServices.buscarRutaPorNombreCorredor(nombre_Corredor);
     }
 
-    @RequestMapping("/editar")
-    public String editarRuta(Model model , @RequestParam("ruta")Long id){
+    @RequestMapping("/editar/{ruta}")
+    public String editarRuta(Model model , @PathVariable("ruta")Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
         model.addAttribute("ruta", ruta);
-
         return "editar_ruta";
     }
 
@@ -106,9 +114,16 @@ public class RutaController {
         ruta.setFechaUltimaModificacion(getLongFromDate(new Date()));
         ruta.setFechaCreada(getLongFromDate(new Date()));
         ruta.setEsDireccionSubida(true);
-        rutaServices.guardarRuta(ruta);
-        ruta.setEsDireccionSubida(false);
-        rutaServices.guardarRuta(ruta);
+        Ruta currentRuta =rutaServices.guardarRuta(ruta);
+
+        Ruta nuevaRuta = new Ruta();
+        nuevaRuta.setNombreCorredor(ruta.getNombreCorredor());
+        nuevaRuta.setDistanciaTotal(ruta.getDistanciaTotal());
+        nuevaRuta.setFechaUltimaModificacion(ruta.getFechaUltimaModificacion());
+        nuevaRuta.setFechaCreada(ruta.getFechaCreada());
+        nuevaRuta.setCiudad(ruta.getCiudad());
+        nuevaRuta.setEsDireccionSubida(false);
+        rutaServices.guardarRuta(nuevaRuta);
         return "redirect:/ruta/";
     }
     private Long getLongFromDate(Date date){
@@ -126,92 +141,6 @@ public class RutaController {
         }
         rutaServices.eliminarRutaPorId(id);
         return "redirect:/ruta/";
-    }
-//-------------------------------------------------Coordenada-----------------------------------------------------
-    @RequestMapping("/listar/coordenadas/{id}")
-    public String mostrarCoordenadas(Model model, @PathVariable("id") Long id_ruta){
-        List<Coordenada>coordenadas = rutaServices.buscarRutaPorId(id_ruta).getCoordenadas();
-        model.addAttribute("coordenadas",coordenadas);
-        model.addAttribute("size", coordenadas.size());
-        model.addAttribute("id_ruta", id_ruta);
-        model.addAttribute("nombreCorredor", rutaServices.buscarRutaPorId(id_ruta).getNombreCorredor());
-        return "ver_coordenada_pintada";
-    }
-
-    @RequestMapping("/coordenada/crear/{id}")
-    public String crearCoordenada(Model model, @PathVariable("id")Long id){
-        model.addAttribute("ruta", rutaServices.buscarRutaPorId(id));
-        model.addAttribute("coordenada", new Coordenada());
-        return "crear_coordenada";
-    }
-
-    @PostMapping("/coordenada/crear")
-    public String guardarRutaCreada(@ModelAttribute Coordenada coordenada, Model model, @RequestParam("ruta")Long id){
-        Ruta currentRuta = rutaServices.buscarRutaPorId(id);
-        List<Ruta> rutas = rutaServices.buscarRutaPorNombreCorredor(currentRuta.getNombreCorredor());
-        boolean guardado = false;
-        for(Ruta ruta : rutas){
-            ruta.getCoordenadas().add(coordenada);
-            if(rutaServices.guardarRuta(ruta)!=null){
-                guardado= true;
-            }
-        }
-        if(guardado){
-            model.addAttribute("message", true);
-        }else {
-            model.addAttribute("message", false);
-        }
-        model.addAttribute("ruta", rutaServices.buscarRutaPorId(id));
-        model.addAttribute("coordenada", new Coordenada());
-        return "crear_coordenada";
-    }
-
-    @RequestMapping("/coordenada/editar/{id_ruta}/{id_coordenada}")
-    public String editarCoordenada(Model model, @PathVariable("ruta")Long id_ruta, @PathVariable("id_coordenada") Long id_coordenada ){
-        model.addAttribute("ruta", rutaServices.buscarRutaPorId(id_ruta));
-        model.addAttribute("coordenada", coordenadaServices.buscarUnaCoordenada(id_coordenada));
-        return "crear_coordenada";
-    }
-
-    @PostMapping("/coordenada/editar")
-    public String guardarCoordenadaCreada(@ModelAttribute Coordenada coordenada, Model model, @RequestParam("ruta")Long id_ruta, @RequestParam("coordenada")Long id_coordenada){
-        Ruta currentRuta = rutaServices.buscarRutaPorId(id_ruta);
-
-        List<Ruta> rutas = rutaServices.buscarRutaPorNombreCorredor(currentRuta.getNombreCorredor());
-        boolean modificado = false;
-//        for(Ruta ruta : rutas){
-//            List<Coordenada> coordenadas= ruta.getCoordenadas();
-//            for(Coordenada coor: coordenadas){
-//                if(coor.getId()){}
-//            }
-            if(coordenadaServices.guardarCoordenada(coordenada)!=null){
-                modificado= true;
-            }
-      //  }
-        if(modificado){
-            return "redirect:/listar/coordenadas/"+currentRuta.getId();
-        }else {
-            model.addAttribute("message", true);
-            model.addAttribute("ruta", rutaServices.buscarRutaPorId(id_ruta));
-            model.addAttribute("coordenada", coordenadaServices.buscarUnaCoordenada(id_coordenada));
-            return "crear_coordenada";
-        }
-
-    }
-
-    @Transactional
-    @RequestMapping("/coordenada/eliminar/{id_ruta}/{id_coordenada")
-    public String eliminarRuta(@PathVariable("id_ruta")Long id_ruta, @PathVariable("id_coordenada")Long id_coordenada ){
-        List<Coordenada> coordenadas= rutaServices.buscarRutaPorId(id_ruta).getCoordenadas();
-       for(Coordenada coordenada:coordenadas) {
-           if (coordenada.getId().equals(id_coordenada)) {
-               coordenadas.remove(coordenada);
-           }
-       }
-       Ruta ruta =  rutaServices.buscarRutaPorId(id_ruta);
-       ruta.setCoordenadas(coordenadas);
-        rutaServices.guardarRuta(ruta);
-        return "redirect:/listar/coordenadas/"+id_ruta;
     }
 
 }

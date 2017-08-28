@@ -96,7 +96,7 @@
                                 <td><a href="">Ver Autobus</a></td>
                                 <td>
                                     <a href="/autobus/editar/{{autobus.id}}">
-                                        <p data-placement="top" data-toggle="tooltip" title="Edit">
+                                        <p data-placement="top" data-toggle="tooltip" title="Editar">
                                             <button class="btn btn-primary btn-xs" data-title="Editar"
                                                     data-toggle="modal" data-target="#edit"><span
                                                     class="glyphicon glyphicon-pencil"></span></button>
@@ -105,7 +105,7 @@
                                 </td>
                                 <td>
                                     <a href="/autobus/eliminar/{{autobus.id}}">
-                                        <p data-placement="top" data-toggle="tooltip" title="Delete">
+                                        <p data-placement="top" data-toggle="tooltip" title="Eliminar">
                                             <button class="btn btn-danger btn-xs" data-title="Eliminar"
                                                     data-toggle="modal" data-target="#delete"><span
                                                     class="glyphicon glyphicon-trash"></span></button>
@@ -114,39 +114,6 @@
                                 </td>
 
                             </tr>
-
-                            <#--<#if autobuses??>-->
-                            <#--<#list autobuses as autobus>-->
-                            <#--<tr>-->
-                            <#--<th scope="row">${autobus?index+1}</th>-->
-                            <#--<td><#if autobus.modelo??>${autobus.modelo}</#if></td>-->
-                            <#--<td><#if autobus.cantidadDeAsientos??>${autobus.cantidadDeAsientos}</#if></td>-->
-                            <#--<td><#if autobus.peso??>${autobus.peso}</#if></td>-->
-                            <#--<td><#if autobus.ruta??>${autobus.ruta.nombreCorredor}</#if></td>-->
-                            <#--<td><#if autobus.anoFabricacion??>${autobus.anoFabricacion}</#if></td>-->
-                            <#--<td><#if autobus.conductor??>${autobus.conductor}</#if></td>-->
-                            <#--<#assign fecha = (autobus.fechaCreada*1000)?number_to_datetime>-->
-                            <#--<td><#if fecha??>${fecha}</#if></td>-->
-                            <#--<td><#if autobus.precio??>${autobus.precio}</#if></td>-->
-                            <#--<td><#if autobus.tieneAireAcondicionado>SI <#else> NO</#if></td>-->
-                            <#--<td><#if autobus.cantidadDePasajerosActual??>${autobus.cantidadDePasajerosActual}</#if></td>-->
-                            <#--<td ><#if autobus.activo> <span class="label label-success">SI </span><#else> <span class="label label-danger">NO</span></#if></td>-->
-                            <#--<td><a href="">Ver Autobus</a></td>-->
-                            <#--<td>-->
-                            <#--<a href="/autobus/editar/${autobus.id}">-->
-                            <#--<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>-->
-                            <#--</a>-->
-                            <#--</td>-->
-                            <#--<td>-->
-                            <#--<a href="/autobus/eliminar/${autobus.id}">-->
-                            <#--<p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Eliminar" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>-->
-                            <#--</a>-->
-                            <#--</td>-->
-                            <#--</tr>-->
-                            <#--</#list>-->
-
-                            <#--</#if>-->
-
 
                             </tbody>
                         </table>

@@ -132,7 +132,7 @@
             <div class="col-lg-offset-2 col-lg-7">
                 <div class="panel panel-green">
                     <div class="panel-heading" style="text-align: center">
-                        <h2 class="panel-title">Login</h2>
+                        <h2 class="panel-title" style="font-weight: bold; font-size: 20px">Login</h2>
                     </div>
                     <div class="panel-body" style="background-image: url(../images/OMSA.jpg); background-color: rgba(255,255,255,0.6);background-blend-mode: lighten;  ">
 
@@ -154,7 +154,7 @@
                                 <div class="col-lg-offset-3 col-lg-6">
                                     <div class="form-group">
                                         <label for="cantidadDeAsientos">Contrase&ntilde;a</label>
-                                        <input type="password" class="form-control" ng-model="password" name="password" placeholder="Entre su contrasena" id="password" ng-minlength="6" ng-maxlength=30 required>
+                                        <input type="password" class="form-control" ng-model="password" name="password" placeholder="Entre su contrase&ntilde;a" id="password" ng-minlength="6" ng-maxlength=30 required>
                                         <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
                                               <small ng-show="myForm.password.$error.required">Contrase&ntilde;a requerida.</small>
                                         </span>

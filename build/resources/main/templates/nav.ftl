@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-        <a class="navbar-brand" href="index.ftl">OMSA</a>
+        <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo"></a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
@@ -115,72 +115,52 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
             <li class="active">
-                <a href="index.ftl"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                <a href="/"><i class="fa fa-fw fa-dashboard"></i> Home</a>
             </li>
             <li>
                 <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
             </li>
+
             <li>
-                <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-            </li>
-            <li>
-                <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-            </li>
-            <li>
-                <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-            </li>
-            <li>
-                <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-            </li>
-            <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Parada <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="demo" class="collapse">
+                <a href="javascript:;" data-toggle="collapse" data-target="#parada"><i class="fa fa-fw fa-arrows-v"></i> Parada <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="parada" class="collapse">
                     <li>
                         <a href="#">Agregar Parada</a>
                     </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#ruta"><i class="fa fa-fw fa-arrows-v"></i> Ruta <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="ruta" class="collapse">
                     <li>
-                        <a href="#">Ver parada</a>
+                        <a href="/ruta/crear">Agregar Nueva Ruta</a>
+                    </li>
+                    <li>
+                        <a href="/ruta/">Ver Ruta</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Ruta <i class="fa fa-fw fa-caret-down"></i></a>
+                <a href="javascript:;" data-toggle="collapse" data-target="#autobus"><i class="fa fa-fw fa-arrows-v"></i> Autobus <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="autobus" class="collapse">
+                    <li>
+                        <a href="/autobus/crear">Agregar Nuevo Autobus</a>
+                    </li>
+                    <li>
+                        <a href="/autobus/">Ver Autobus</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Usuarios <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo" class="collapse">
                     <li>
-                        <a href="#">Agregar Nueva Ruta</a>
+                        <a href="#">Agregar Nuevo Usuario</a>
                     </li>
                     <li>
-                        <a href="#">Ver Ruta</a>
+                        <a href="#">Ver Usuarios</a>
                     </li>
                 </ul>
-            </li>
-            <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="demo" class="collapse">
-                    <li>
-                        <a href="#">Agregar Nuevo Autobus</a>
-                    </li>
-                    <li>
-                        <a href="#">Ver Autobus</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="demo" class="collapse">
-                    <li>
-                        <a href="#">Dropdown Item</a>
-                    </li>
-                    <li>
-                        <a href="#">Dropdown Item</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-            </li>
-            <li>
-                <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
             </li>
         </ul>
     </div>

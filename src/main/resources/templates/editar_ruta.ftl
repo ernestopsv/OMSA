@@ -10,16 +10,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Editar una ruta
-                    </h1>
+                    <h3 class="page-header">
+                        Modificar una ruta
+                    </h3>
                     <ol class="breadcrumb">
                         <li>
                             <i class="fa fa-dashboard"></i> <a href="/">Home</a>
                         </li>
 
                         <li class="active">
-                            <i class="fa fa-edit"></i> Editar Ruta
+                            <i class="fa fa-edit"></i> Modificar Ruta
                         </li>
                     </ol>
                 </div>

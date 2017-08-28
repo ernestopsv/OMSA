@@ -12,9 +12,9 @@
             <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Usuarios
-                    </h1>
+                    <h3 class="page-header">
+                        Ver usuarios
+                    </h3>
                     <ol class="breadcrumb">
                         <li>
                             <i class="fa fa-dashboard"></i> <a href="/">Home</a>
@@ -54,7 +54,7 @@
                                 <td>{{usuario.username}}</td>
                                 <td>{{parada.admin}}</td>
                                 <a href="/zonaAdmin/eliminar/usuario/{{usuario.id}}">
-                                    <p data-placement="top" data-toggle="tooltip" title="Edit">
+                                    <p data-placement="top" data-toggle="tooltip" title="Editar">
                                         <button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal"
                                                 data-target="#edit"><span class="glyphicon glyphicon-pencil"></span>
                                         </button>
@@ -63,7 +63,7 @@
                                 </td>
                                 <td>
                                     <a href="/zonaAdmin/editar/{{usuario.id}}">
-                                        <p data-placement="top" data-toggle="tooltip" title="Delete">
+                                        <p data-placement="top" data-toggle="tooltip" title="Eliminar">
                                             <button class="btn btn-danger btn-xs" data-title="Eliminar"
                                                     data-toggle="modal" data-target="#delete"><span
                                                     class="glyphicon glyphicon-trash"></span></button>

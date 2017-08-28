@@ -7,15 +7,15 @@ app.controller("coordenadaTableController", function ($http, $scope) {
     $scope.getData = function (pageno, id) {
         $scope.coordenadas=[];
 
-        $scope.start= pageno*$scope.itemsPerPage-itemsPerPage;
-        $http.get("/api/ruta/"+id+"/buscar/coordenada/"+$scope.start+"/"+$scope.itemsPerPage).then(
+        $scope.start= pageno*$scope.itemsPerPage-$scope.itemsPerPage;
+        $http.get("/api/ruta/"+id+"/buscar/coordenada/"+$scope.start+"/"+($scope.start+$scope.itemsPerPage)).then(
             function (response) {
 
                 $scope.coordenadas = response.data;
 
                 $scope.total_count= response.count;
             }, function (response) {
-                $scope.coordenadas=response.data
+                $scope.coordenadas=[]
             })
     };
 

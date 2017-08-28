@@ -11,41 +11,43 @@
             <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Crear una nueva coordenada
-                    </h1>
+                    <h3 class="page-header">
+                        Modificar una coordenada
+                    </h3>
                     <ol class="breadcrumb">
                         <li>
                             <i class="fa fa-dashboard"></i> <a href="/">Home</a>
                         </li>
 
                         <li class="active">
-                            <i class="fa fa-edit"></i> Crear Coordenada
+                            <i class="fa fa-edit"></i> Modificar Coordenada
                         </li>
                     </ol>
                 </div>
             </div>
             <a href="/ruta/listar/coordenadas/${ruta.id}">Ver Ruta</a>
 
-            <form role="form" action="#" th:action="@{/ruta/coordenada/editar}" th:object="${coordenada}"  method="POST">
+            <form role="form" action="/coordenada/editar"  method="POST">
 
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="latitude">Latitud</label>
-                            <input type="number" id="latitude" step="0.000001" name="latitude" value="${coordenada.latitude}" class="form-control" required>
+                            <input type="number" id="latitude" step="0.00000001" name="latitude" value="${latitude}" class="form-control" required>
                         </div>
 
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="longitud">Longitud</label>
-                            <input type="number" class="form-control" value="${coordenada.longitud}" step="0.000001" name="longitud" id="longitud" required>
+                            <input type="number" class="form-control" value="${longitud}" step="0.00000001" name="longitud" id="longitud" required>
                         </div>
                     </div>
                 </div>
                 <input type="hidden" name="ruta" value="${ruta.id}">
-                <input type="hidden" name="coordenada" value="${coordenada.id}">
+                <input type="hidden" name="oldLat" value="${latitude}">
+                <input type="hidden" name="oldLong" value="${longitud}">
+                <input type="hidden" name="coordenada" value="${id_coordenada}">
         </div>
         <div class="row">
             <hr>

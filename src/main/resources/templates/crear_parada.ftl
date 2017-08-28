@@ -11,9 +11,9 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">
+                        <h3 class="page-header">
                             Crear una nueva parada
-                        </h1>
+                        </h3>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i> <a href="/">Home</a>
@@ -26,7 +26,8 @@
                     </div>
                 </div>
                 <a href="/ruta/listar/paradas/${ruta.id}">Ver Paradas</a>
-                <form role="form" action="#" th:action="@{/parada/crear}" th:object="${parada}" method="POST">
+                <hr>
+                <form role="form" action="/parada/crear" th:object="${parada}" method="POST">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -37,7 +38,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="ruta">Ruta</label>
-                                <input type="text" class="form-control" <#if ruta??>value="${ruta.nombreCorredor} | <#if ruta.esDireccionSubida> Subida <#else> Bajada</#if></#if>"/>
+                                <input type="text" readonly class="form-control" <#if ruta??>value="${ruta.nombreCorredor} | <#if ruta.esDireccionSubida> Subida <#else> Bajada</#if></#if>"/>
                                 <input type="hidden" id="ruta" name="ruta" value="${ruta.id}">
                             </div>
                         </div>
@@ -47,48 +48,48 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="latitude">Latitud</label>
-                                <input type="number" id="latitude" placeholder="Entre la latitud" step="0.000001" name="latitude" class="form-control">
+                                <input type="number" id="latitude" placeholder="Entre la latitud" step="0.00000001" name="latitude" class="form-control">
                             </div>
 
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="longitud">Longitud</label>
-                                <input type="number" class="form-control" step="0.000001" placeholder="Entre la longitud" name="longitud" id="longitud">
+                                <input type="number" class="form-control" step="0.00000001" placeholder="Entre la longitud" name="longitud" id="longitud">
                             </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="paradaAnterior">Parada anterior</label>
-                                <select class="form-control" name="paradaAnterior" id="paradaAnterior">
-                                     <option selected disabled>Elija una parada anterior</option>
-                                    <#if paradas??>
-                                        <#list paradas as p>
-                                            <option value="${p.id}">${p.nombre}</option>
-                                        </#list>
+                    <#--<div class="row">-->
+                        <#--<div class="col-lg-6">-->
+                            <#--<div class="form-group">-->
+                                <#--<label for="paradaAnterior">Parada anterior</label>-->
+                                <#--<select class="form-control" name="paradaAnterior" id="paradaAnterior">-->
+                                     <#--<option selected disabled>Elija una parada anterior</option>-->
+                                    <#--<#if paradas??>-->
+                                        <#--<#list paradas as p>-->
+                                            <#--<option value="${p.id}">${p.nombre}</option>-->
+                                        <#--</#list>-->
 
-                                    </#if>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="paradaSiguiente">Parada Siguiente</label>
-                                <select class="form-control" name="paradaSiguiente" id="paradaSiguiente">
-                                     <option selected disabled>Elija una parada siguiente</option>
-                                <#if paradas??>
-                                    <#list paradas as p>
-                                        <option value="${p.id}">${p.nombre}</option>
-                                    </#list>
+                                    <#--</#if>-->
+                                <#--</select>-->
+                            <#--</div>-->
+                        <#--</div>-->
+                        <#--<div class="col-lg-6">-->
+                            <#--<div class="form-group">-->
+                                <#--<label for="paradaSiguiente">Parada Siguiente</label>-->
+                                <#--<select class="form-control" name="paradaSiguiente" id="paradaSiguiente">-->
+                                     <#--<option selected disabled>Elija una parada siguiente</option>-->
+                                <#--<#if paradas??>-->
+                                    <#--<#list paradas as p>-->
+                                        <#--<option value="${p.id}">${p.nombre}</option>-->
+                                    <#--</#list>-->
 
-                                </#if>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                                <#--</#if>-->
+                                <#--</select>-->
+                            <#--</div>-->
+                        <#--</div>-->
+                    <#--</div>-->
 
                     <div class="row">
                         <hr>
@@ -108,11 +109,14 @@
 
                         </div>
                     </div>
-                <#if message>
-                    <small class="text-success">Parada guardada!!!</small>
+                <#if message??>
+                    <#if message=="success">
+                        <small class="text-success">Parada guardada!!!</small>
                     <#else>
                         <small class="text-danger">No se pudo guardar la parada!!!</small>
-                </#if>
+                    </#if>
+
+                    </#if>
                 </form>
             </div>
 

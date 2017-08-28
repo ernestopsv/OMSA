@@ -1,5 +1,6 @@
 package com.proyectoFinal.OMSA;
 
+import com.proyectoFinal.OMSA.Entities.Coordenada;
 import com.proyectoFinal.OMSA.Entities.Parada;
 import com.proyectoFinal.OMSA.Entities.Ruta;
 import com.proyectoFinal.OMSA.Services.ParadaServices;
@@ -38,20 +39,31 @@ public class ParadaController {
 
     @Transactional
     @PostMapping("/crear")
-    public String guardarParadaCreada(@ModelAttribute Parada parada, Model model,  @RequestParam("ruta")Long id){
-        Ruta ruta = rutaServices.buscarRutaPorId(id);
-            parada.setRuta(ruta);
+    public String guardarParadaCreada(@RequestParam("nombre")String nombre,@RequestParam("latitude")Double latitude,@RequestParam("longitud")Double longitud,
+                                      @RequestParam(value = "paradaAnterior", required = false)Long paradaAnterior, @RequestParam(value = "paradaSiguiente", required = false)Long paradaSiguiente,
+                                      Model model,  @RequestParam("ruta")Long id_ruta){
 
+       // System.out.println(parada.getId()+"/"+parada.getParadaAnterior()+"/"+parada.getParadaSiguiente()+"/"+parada.getCoordenada().getLongitud()+"/"+parada.getCoordenada().getLatitude()+"================================================================");
+
+        Ruta ruta = rutaServices.buscarRutaPorId(id_ruta);
+        Parada parada = new Parada();
+        parada.setRuta(ruta);
+        parada.setCoordenada(new Coordenada(latitude, longitud));
+        parada.setNombre(nombre);
+        if(paradaAnterior!=null||paradaSiguiente!=null){
+            parada.setParadaAnterior(paradaAnterior);
+            parada.setParadaSiguiente(paradaSiguiente);
+        }
             if(paradaServices.guardarParada(parada)!=null){
-                model.addAttribute("message", true);
+                model.addAttribute("message", "success");
             }else {
-                model.addAttribute("message", false);
+                model.addAttribute("message", "error");
             }
 
-        model.addAttribute("id_ruta", id);
+        model.addAttribute("id_ruta", id_ruta);
         model.addAttribute("parada", new Parada());
-        model.addAttribute("paradas", paradaServices.buscarParadaPorRutaId(id));
-        model.addAttribute("ruta", rutaServices.buscarRutaPorId(id));
+        model.addAttribute("paradas", paradaServices.buscarParadaPorRutaId(id_ruta));
+        model.addAttribute("ruta", rutaServices.buscarRutaPorId(id_ruta));
         return "crear_parada";
     }
 

@@ -351,13 +351,18 @@ public String guardarRuta(@RequestBody Ruta ruta){
  }
 //-----------------------------------------Coordenada----------------------------------------------------
     @RequestMapping(value = "/ruta/{id}/buscar/coordenada/{start}/{end}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
-    public ArrayList<Coordenada> buscarCoordenadas (@PathVariable("id")Long id, @PathVariable("start")int start, @PathVariable("end")int end){
-       ArrayList<Coordenada> coordenadasTemp = new ArrayList<>();
-       List<Coordenada> coordenadas = rutaServices.buscarRutaPorId(id).getCoordenadas();;
-        for (int i= start; i<start+end; i++){
-            coordenadasTemp.add(coordenadas.get(i));
-        }
+    public List<Coordenada> buscarCoordenadas (@PathVariable("id")Long id, @PathVariable("start")int start, @PathVariable("end")int end){
 
-     return coordenadasTemp;
+       List<Coordenada> coordenadas = rutaServices.buscarRutaPorId(id).getCoordenadas();
+
+       if(coordenadas.size()==0){
+            return new ArrayList<>();
+       }else{
+           if(end>=coordenadas.size()){
+               end = coordenadas.size();
+           }
+       }
+
+     return coordenadas.subList(start, end);
     }
 }

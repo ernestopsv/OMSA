@@ -12,22 +12,22 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">
-                    Autobus
-                </h1>
+                <h3 class="page-header">
+                   Modificar un autobus
+                </h3>
                 <ol class="breadcrumb">
                     <li>
                         <i class="fa fa-dashboard"></i> <a href="/">Home</a>
                     </li>
 
                     <li class="active">
-                        <i class="fa fa-edit"></i> Editar Autobus
+                        <i class="fa fa-edit"></i> Modificar Autobus
                     </li>
                 </ol>
             </div>
         </div>
 
-        <form role="form" action="#" name="myForm" th:action="@{/autobus/crear}" th:object="${autobus}" method="post">
+        <form role="form" action="#" th:action="@{/autobus/editar}" th:object="${autobus}" method="POST">
         <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
             <div class="row">
                 <div class="col-lg-6">
@@ -55,13 +55,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="form-group">
+                    <div class="form-group ruta">
                         <label for="ruta">Ruta</label>
                         <select class="form-control" name="ruta" id="ruta" required>
                             <option selected disabled>Elija una ruta</option>
                         <#if rutas??>
                             <#list rutas as ruta>
-                                <option value="${ruta.id}">${ruta.nombreCorredor}/ <#if ruta.esDireccionSubida>Subida --> <#else> Bajada <-- </#if></option>
+                                <option value="${ruta.id}">${ruta.nombreCorredor} | <#if ruta.esDireccionSubida>Subida <#else> Bajada </#if></option>
                             </#list>
                         </#if>
                         </select>
@@ -70,9 +70,9 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="form-group">
+                    <div class="form-group anoFabricacion">
                         <label for="anoFabricacion">A&ntilde;o Fabricaci&oacute;n</label>
-                        <select class="form-control" name="anoFabricacion" id="anoFabricacion">
+                        <select class="form-control" name="anoFabricacion" id="fabricacion">
                             <option selected disabled>Elija el a&ntilde;o de fabricaci&oacute;n</option>
                         </select>
                     </div>
@@ -107,19 +107,14 @@
             </div>
 
             <div class="row">
-
-
-                <h4 style="padding-left: 15px">Raspberry Pi</h4>
-
                 <div class="col-lg-6">
-                    <hr>
                     <div class="form-group">
-                        <label for="numeroDeSerie">Numero de Serie</label>
-                        <input type="text" pattern="^[A-Za-z0-9-]+$" class="form-control" name="numeroDeSerie" min="0" max="100"  <#if autobus.raspberryPiNumeroSerial??>value="${autobus.raspberryPiNumeroSerial}"</#if> id="precio" id="numeroDeSerie" required>
+                        <label for="raspberryPiNumeroSerial">Raspberry Pi / Numero de Serie</label>
+                        <input type="text" pattern="^[A-Za-z0-9-]+$" placeholder="Entre el numero serial del raspberry" class="form-control" name="raspberryPiNumeroSerial" min="0" max="100" id="raspberryPiNumeroSerial" value="${autobus.raspberryPiNumeroSerial}" required>
                     </div>
                 </div>
 
-                <div class="col-lg-6" style="padding-top: 65px">
+                <div class="col-lg-6" style="margin-top: 22px">
 
                     <div class="col-lg-6">
                         <div class="form-group">
@@ -138,6 +133,14 @@
             </div>
 
         </form>
+    <#if message??>
+        <#if message == 'success'>
+            <small class="text-success">Coordenada guardada!!!</small>
+        <#else>
+            <small class="text-danger">No se pudo guardar la coordenada!!!</small>
+        </#if>
+    </#if>
+
     </div>
     <!-- /.container-fluid -->
 
@@ -152,14 +155,26 @@
 
 <script type="text/javascript">
     // get the OPTION we want selected
-    var $option = $('#ruta').children('option[value="'+ ${autobus.ruta.id} +'"]');
-    // and now set the option we want selected
-    $option.attr('selected', true);​​
 
-    $(function() {
-        $("#anoFabricacion").val(${autobus.anoFabricacion});
-    });
 
+
+            $(document).ready(function() {
+                $('.ruta option')
+                        .removeAttr('selected')
+                        .filter('[value=${autobus.ruta.id}]')
+                        .attr('selected', true);
+
+                var date = new Date();
+                for (var i = 1950; i < date.getFullYear(); i++) {
+                    $("#fabricacion").append($("<option>").append(i));
+                }
+
+                //$("div.anoFabricacion select").val(${autobus.anoFabricacion});
+                $('.anoFabricacion option')
+                        .removeAttr('selected')
+                        .val(${autobus.anoFabricacion})
+                        .attr('selected', true);
+            });
 </script>
 
 <!-- Bootstrap Core JavaScript -->

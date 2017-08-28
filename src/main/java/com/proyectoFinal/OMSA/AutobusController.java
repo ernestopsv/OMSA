@@ -13,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -45,14 +46,28 @@ public class AutobusController {
     @RequestMapping("/editar/{id}")
     public String editarAutobus(Model model, @PathVariable("id")Long id){
         Autobus autobus =autobusServices.buscarUnAutobus(id);
-        model.addAttribute(autobus);
+        model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
+        model.addAttribute("autobus", autobus);
         return "editar_autobus";
     }
 
     @PostMapping("/editar")
-    public String guardarAutobusEditado(@ModelAttribute Autobus autobus){
-        autobusServices.guardarAutobus(autobus);
-        return "redirect:/autobus/";
+    public String guardarAutobusEditado(@ModelAttribute Autobus autobus, Model model, @RequestParam("ruta")Long id_ruta){
+        boolean modificado= false;
+        System.out.println(autobus.getModelo()+"===============================================");
+        autobus.setRuta(rutaServices.buscarRutaPorId(id_ruta));
+        if(autobusServices.guardarAutobus(autobus)!=null){
+            modificado=true;
+        }
+        if (modificado){
+             return "redirect:/autobus/";
+        }else {
+            //Autobus  autobus1 =autobusServices.buscarUnAutobus(id);
+            model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
+            model.addAttribute("message", "error");
+            model.addAttribute(autobus);
+            return "editar_autobus";
+        }
     }
 
     @RequestMapping("/crear")
