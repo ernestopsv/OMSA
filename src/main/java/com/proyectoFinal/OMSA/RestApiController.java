@@ -276,6 +276,7 @@ public String guardarRuta(@RequestBody Ruta ruta){
 
         chequeo.setAutobus(autobus);
         Parada parada = getParadaReal(chequeo);
+        parada.setRuta(null);
         chequeo.setParada(parada);
         if(parada==null){
             new Gson().toJson("No se pudo guardar el chequeo");
