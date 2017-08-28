@@ -73,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/RestApiController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="131">
-              <caret line="279" column="34" lean-forward="true" selection-start-line="279" selection-start-column="34" selection-end-line="279" selection-end-column="34" />
+              <caret line="279" column="35" lean-forward="false" selection-start-line="279" selection-start-column="35" selection-end-line="279" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -1241,7 +1241,7 @@
       <workItem from="1503667738617" duration="13217000" />
       <workItem from="1503755344972" duration="21451000" />
       <workItem from="1503840440237" duration="22899000" />
-      <workItem from="1503929024737" duration="2960000" />
+      <workItem from="1503929024737" duration="3067000" />
     </task>
     <task id="LOCAL-00001" summary="preparing aplication deployment">
       <created>1500390391871</created>
@@ -1467,11 +1467,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503929414732</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="getting registration forms ready">
+      <created>1503932793003</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1503932793003</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="509778000" />
+    <option name="totallyTimeSpent" value="509885000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1972,7 +1979,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/RestApiController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
-          <caret line="279" column="34" lean-forward="true" selection-start-line="279" selection-start-column="34" selection-end-line="279" selection-end-column="34" />
+          <caret line="279" column="35" lean-forward="false" selection-start-line="279" selection-start-column="35" selection-end-line="279" selection-end-column="35" />
           <folding />
         </state>
       </provider>
