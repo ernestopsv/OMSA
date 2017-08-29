@@ -115,6 +115,14 @@ public class RestApiController {
         if(currentAutobus == null){
             return new Gson().toJson("Este autobus no existe");
         }
+        if(currentAutobus.getCoordenada()==null){
+            Coordenada coordenada = new Coordenada();
+            coordenada.setLongitud(autobus.getCoordenada().getLongitud());
+            coordenada.setLatitude(autobus.getCoordenada().getLatitude());
+            currentAutobus.setCoordenada(coordenada);
+            currentAutobus.setUltimaFechaModificada(autobus.getUltimaFechaModificada());
+            autobusServices.guardarAutobus(currentAutobus);
+        }
         currentAutobus.getCoordenada().setLatitude(autobus.getCoordenada().getLatitude());
         currentAutobus.getCoordenada().setLongitud(autobus.getCoordenada().getLongitud());
         currentAutobus.setUltimaFechaModificada(autobus.getUltimaFechaModificada());
@@ -152,7 +160,12 @@ public class RestApiController {
         if(currentAutobus == null){
             return new Gson().toJson("El autobus que quieres modificar no existe");
         }
-        currentAutobus.setCantidadDePasajerosActual(autobus.getCantidadDePasajerosActual());
+        if(autobus.getCantidadDePasajerosActual()>=currentAutobus.getCantidadDeAsientos()){
+            currentAutobus.setCantidadDePasajerosActual(currentAutobus.getCantidadDeAsientos());
+
+        }else {
+            currentAutobus.setCantidadDePasajerosActual(autobus.getCantidadDePasajerosActual());
+        }
         currentAutobus.setUltimaFechaModificada(autobus.getUltimaFechaModificada());
         autobusServices.guardarAutobus(currentAutobus);
         return new Gson().toJson("Autobus modificado exitosamente");
@@ -244,7 +257,9 @@ public class RestApiController {
     public Ruta buscarRuta(@PathVariable Long id){
         Ruta ruta =rutaServices.buscarRutaPorId(id);
         if(ruta==null){
-            return new Ruta();
+            Ruta ruta1 = new Ruta();
+            ruta1.setParadas(null);
+            return ruta1;
         }
         ruta.setParadas(null);
         return  ruta;
