@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <form role="form" action="#" th:action="@{/autobus/editar}" th:object="${autobus}" method="post">
+        <form action="#" th:action="@{/autobus/editar}" th:object="${autobus}" method="POST">
         <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
             <div class="row">
                 <div class="col-lg-6">
@@ -57,7 +57,7 @@
                 <div class="col-lg-6">
                     <div class="form-group ruta">
                         <label for="ruta">Ruta</label>
-                        <select class="form-control" name="ruta" id="ruta" required>
+                        <select class="form-control selectpicker" data-live-search="true" data-size="5" name="ruta" id="ruta" required>
                             <option selected disabled>Elija una ruta</option>
                         <#if rutas??>
                             <#list rutas as ruta>
@@ -151,6 +151,10 @@
 
 <!-- jQuery -->
 <script src="/js/jquery.js">
+</script>
+<script src="/js/bootstrap-select.min.js"></script>
+<script type="text/javascript">
+    $('.selectpicker').selectpicker();
 </script>
 
 <script type="text/javascript">

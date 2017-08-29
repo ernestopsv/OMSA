@@ -57,7 +57,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="ruta">Ruta</label>
-                                <select class="form-control" name="ruta" id="ruta" required>
+                                <select class="form-control selectpicker" data-live-search="true" data-size="5" name="ruta" id="ruta" required>
                                     <option selected disabled>Elija una ruta</option>
                                     <#if rutas??>
                                         <#list rutas as ruta>
@@ -72,7 +72,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="anoFabricacion">A&ntilde;o Fabricaci&oacute;n</label>
-                                <select class="form-control" name="anoFabricacion" id="anoFabricacion">
+                                <select class="form-control selectpicker" data-live-search="true" data-size="5" name="anoFabricacion" id="anoFabricacion">
                                      <option selected disabled>Elija el a&ntilde;o de fabricaci&oacute;n</option>
                                 </select>
                             </div>
@@ -149,6 +149,7 @@
     <script src="/js/jquery.js">
     </script>
 
+
     <script type="application/javascript">
         $(document).ready(function() {
             var date = new Date();
@@ -160,7 +161,18 @@
     </script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+<#--<script type="text/javascript">-->
+    <#--$('.selectpicker').selectpicker();-->
+<#--</script>-->
 
 </body>
 

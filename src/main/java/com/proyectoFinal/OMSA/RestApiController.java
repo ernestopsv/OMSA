@@ -246,6 +246,7 @@ public class RestApiController {
         if(ruta==null){
             return new Ruta();
         }
+        ruta.setParadas(null);
         return  ruta;
     }
     @RequestMapping(value = "/ruta/eliminar/{id}", method = RequestMethod.POST, produces = CONTENT_TYPE)

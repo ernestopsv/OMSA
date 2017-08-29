@@ -33,7 +33,7 @@
 
                         <div class="form-group">
                             <label for="ruta">Ruta</label>
-                            <select class="form-control" ng-model="ruta" ng-change="getData(1, ruta)"  name="ruta" id="ruta">
+                            <select class="form-control selectpicker" data-live-search="true" data-size="5" ng-model="ruta" ng-change="getData(1, ruta)"  name="ruta" id="ruta">
                                 <#if rutas??>
                                     <option selected disabled>Elije una ruta</option>
                                     <#list rutas as ruta>
@@ -143,7 +143,17 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/dirPagination.js"></script>
 <script src="/js/appTable.js"></script>
-<script src="/js/tableControllers/autobusTableController.js"></script>
+<script src="/js/tableControllers/autobusTableController.js">
+
+    <script type="text/javascript">
+    $('.selectpicker').selectpicker();
+    </script>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+
 </body>
 
 </html>

@@ -64,7 +64,7 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="paradaAnterior">Parada anterior</label>
-                            <select class="form-control" name="paradaAnterior" id="paradaAnterior">
+                            <select class="form-control  selectpicker" data-live-search="true" data-size="5" name="paradaAnterior" id="paradaAnterior">
                                 <option selected disabled>Elija una parada anterior</option>
                             <#if paradas>
                                 <#list paradas as paradas></#list>
@@ -76,7 +76,7 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="paradaSiguiente">Parada Siguiente</label>
-                            <select class="form-control" name="paradaSiguiente" id="paradaSiguiente">
+                            <select class="form-control selectpicker" data-live-search="true" data-size="5" name="paradaSiguiente" id="paradaSiguiente">
                                 <option selected disabled>Elija una parada siguiente</option>
                             <#if paradas>
                                 <#list paradas as paradas></#list>
@@ -120,7 +120,10 @@
 <!-- jQuery -->
 <script src="/js/jquery.js">
 </script>
-
+<script src="/js/bootstrap-select.min.js"></script>
+<script type="text/javascript">
+    $('.selectpicker').selectpicker();
+</script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js"></script>
 

@@ -89,6 +89,9 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+    $('.selectpicker').selectpicker();
+</script>
 </body>
 
 </html>

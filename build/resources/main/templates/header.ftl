@@ -7,8 +7,6 @@
     <meta name="author" content="">
     <#if title??>
         <title>${title}</title>
-    <#else>
-        <title>SB Admin - Bootstrap Admin Template</title>
     </#if>
 
 
@@ -24,9 +22,10 @@
     <!-- Custom Fonts -->
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
 
     <script type="text/javascript" src="/js/angular.js"></script>
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
