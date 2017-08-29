@@ -93,7 +93,7 @@ public class RestApiController {
         autobus.setRuta(ruta);
         Autobus autobus1 = autobusServices.guardarAutobus(autobus);
         if(ruta==null){
-          return "La ruta no existe";
+            return "La ruta no existe";
         }
         if(autobus1!=null){
 
@@ -168,7 +168,7 @@ public class RestApiController {
         autobusServices.eliminarAutobusporId(id);
         return true;
     }
-//----------------------------------------Parada---------------------------------------
+    //----------------------------------------Parada---------------------------------------
     @RequestMapping(value = "/paradas/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public ArrayList<Parada> buscarParadasPorRuta(@PathVariable Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
@@ -197,7 +197,7 @@ public class RestApiController {
         if(parada==null){
             return new Parada();
         }
-       return parada;
+        return parada;
     }
     /** Guardar una parada
      * @param id
@@ -221,20 +221,21 @@ public class RestApiController {
      * @param numberOfItems
      * @return
      */
-  @RequestMapping(value = "/paradas/buscar/{page}/{items}/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
-  public ArrayList<Parada> buscarTopParadas(@PathVariable("page")int page, @PathVariable("items")int numberOfItems, @PathVariable("id")Long id_ruta){
-      List<Parada> paradas = paradaServices.getTopParadas(id_ruta, page, numberOfItems);
-      if(paradas==null){
-          return new ArrayList<>();
-      }
-      return (ArrayList<Parada>) paradas;
-  }
+    @RequestMapping(value = "/paradas/buscar/{page}/{items}/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Parada> buscarTopParadas(@PathVariable("page")int page, @PathVariable("items")int numberOfItems, @PathVariable("id")Long id_ruta){
+        List<Parada> paradas = paradaServices.getTopParadas(id_ruta, page, numberOfItems);
+        if(paradas==null){
+            return new ArrayList<>();
+        }
+        return (ArrayList<Parada>) paradas;
+    }
 
-//---------------------------------------Ruta-------------------------------------------//--------------------------------------Ruta----------------------------------------------------------
-@RequestMapping(value="/guardar/ruta/", method =RequestMethod.POST, consumes = ACCECPT_TYPE)
-public String guardarRuta(@RequestBody Ruta ruta){
-    Ruta ruta1  = rutaServices.guardarRuta(ruta);
-    if(ruta1!=null){
+    //---------------------------------------Ruta-------------------------------------------//--------------------------------------Ruta----------------------------------------------------------
+    @RequestMapping(value="/guardar/ruta/", method =RequestMethod.POST, consumes = ACCECPT_TYPE)
+    public String guardarRuta(@RequestBody Ruta ruta){
+        Ruta ruta1  = rutaServices.guardarRuta(ruta);
+
+        if(ruta1!=null){
         return  new Gson().toJson("Ruta guardada exitosamente");
     }
     return new Gson().toJson("no se pudo guardar la ruta especificada");
@@ -273,7 +274,6 @@ public String guardarRuta(@RequestBody Ruta ruta){
     public String guardarChequeo(@RequestBody Chequeo chequeo){
         //obteniendo la parada mas cerca a ese punto
         Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(chequeo.getAutobus().getRaspberryPiNumeroSerial());
-
         chequeo.setAutobus(autobus);
         Parada parada = getParadaReal(chequeo);
         parada.setRuta(null);
