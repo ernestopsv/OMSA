@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Editar Usuario</title>
 <#include "header.ftl">
 <body>
 <div id="wrapper">

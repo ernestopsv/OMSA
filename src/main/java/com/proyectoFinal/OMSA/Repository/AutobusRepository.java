@@ -29,6 +29,8 @@ public interface AutobusRepository extends CrudRepository<Autobus,Long> {
     //leer todos los autobuses
     List<Autobus> findAll();
 
+    List<Autobus> findAllByUltimaParadaId(Long id);
+
     List<Autobus> findAutobusesByRutaId(Long id,  Pageable pagin);
 
     //buscar un autobus por macAddress del raspberry

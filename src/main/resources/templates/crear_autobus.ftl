@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<title>Crear Autobus</title>
 <#include "header.ftl">
 <body>
 <div id="wrapper">

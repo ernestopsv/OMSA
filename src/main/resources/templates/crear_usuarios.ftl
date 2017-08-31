@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" ng-app="omsaTracker">
+<title>Crear Usuario</title>
 <#include "header.ftl">
 
 <body>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="angularTable">
+<title>Ver Paradas</title>
 <#include "header.ftl">
 <body>
 <div id="wrapper">
@@ -55,7 +56,7 @@
                                 <td>{{parada.nombre}}</td>
                                 <td>{{parada.coordenada.latitude}}</td>
                                 <td>{{parada.coordenada.longitud}}</td>
-                                <td><a href="/">
+                                <td><a href="/parada/editar/${id_ruta}/{{parada.id}}">
                                     <p data-placement="top" data-toggle="tooltip" title="Editar">
                                         <button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal"
                                                 data-target="#edit"><span class="glyphicon glyphicon-pencil"></span>

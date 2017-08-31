@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<title>Editar  Ruta</title>
 <#include "header.ftl">
 
 <body>

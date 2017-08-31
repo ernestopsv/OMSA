@@ -122,14 +122,6 @@
             </li>
 
             <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#parada"><i class="fa fa-fw fa-arrows-v"></i> Parada <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="parada" class="collapse">
-                    <li>
-                        <a href="#">Agregar Parada</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#ruta"><i class="fa fa-fw fa-arrows-v"></i> Ruta <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="ruta" class="collapse">
                     <li>

@@ -133,6 +133,15 @@ public class RutaController {
     @Transactional
     @RequestMapping("/eliminar/{id}")
     public String eliminarRuta(@PathVariable("id")Long id){
+        List<Parada> paradas = paradaServices.buscarParadaPorRutaId(id);
+        for(Parada p : paradas){
+            List<Autobus>autobuses = autobusServices.buscarAutobusPorUltimaParadaID(p.getId());
+            for(Autobus autobus: autobuses){
+                autobus.setUltimaParada(null);
+                autobusServices.guardarAutobus(autobus);
+            }
+
+        }
         paradaServices.eliminarParadaPorRutaId(id);
         List<Autobus> autobuses= autobusServices.buscarTodosLosAutobusporRuta(id);
         for(Autobus autobus: autobuses){

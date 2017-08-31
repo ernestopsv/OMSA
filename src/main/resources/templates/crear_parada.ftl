@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<title>Crear Parada</title>
 <#include "header.ftl">
 <body>
 <div id="wrapper">
@@ -31,65 +32,41 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" class="form-control" min="2" placeholder="Entre el nombre de la parada" max="100" name="nombre" id="nombre" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="ruta">Ruta</label>
-                                <input type="text" readonly class="form-control" <#if ruta??>value="${ruta.nombreCorredor} | <#if ruta.esDireccionSubida> Subida <#else> Bajada</#if></#if>"/>
-                                <input type="hidden" id="ruta" name="ruta" value="${ruta.id}">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
                                 <label for="latitude">Latitud</label>
-                                <input type="number" id="latitude" placeholder="Entre la latitud" step="0.00000001" name="latitude" class="form-control">
+                                <input type="number" id="latitude" placeholder="Entre la latitud" step="0.00000001" name="latitude" class="form-control" required>
                             </div>
-
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="longitud">Longitud</label>
-                                <input type="number" class="form-control" step="0.00000001" placeholder="Entre la longitud" name="longitud" id="longitud">
+                                <input type="number" class="form-control" step="0.00000001" placeholder="Entre la longitud" name="longitud" id="longitud" required>
                             </div>
                         </div>
                     </div>
 
-                    <#--<div class="row">-->
-                        <#--<div class="col-lg-6">-->
-                            <#--<div class="form-group">-->
-                                <#--<label for="paradaAnterior">Parada anterior</label>-->
-                                <#--<select class="form-control" name="paradaAnterior" id="paradaAnterior">-->
-                                     <#--<option selected disabled>Elija una parada anterior</option>-->
-                                    <#--<#if paradas??>-->
-                                        <#--<#list paradas as p>-->
-                                            <#--<option value="${p.id}">${p.nombre}</option>-->
-                                        <#--</#list>-->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" min="2" placeholder="Entre el nombre de la parada" max="100" name="nombre" id="nombre" required>
+                            </div>
+                        </div>
 
-                                    <#--</#if>-->
-                                <#--</select>-->
-                            <#--</div>-->
-                        <#--</div>-->
-                        <#--<div class="col-lg-6">-->
-                            <#--<div class="form-group">-->
-                                <#--<label for="paradaSiguiente">Parada Siguiente</label>-->
-                                <#--<select class="form-control" name="paradaSiguiente" id="paradaSiguiente">-->
-                                     <#--<option selected disabled>Elija una parada siguiente</option>-->
-                                <#--<#if paradas??>-->
-                                    <#--<#list paradas as p>-->
-                                        <#--<option value="${p.id}">${p.nombre}</option>-->
-                                    <#--</#list>-->
+                        <div class="col-lg-6">
+                            <div class="form-group ruta">
+                                <label for="ruta">Ruta</label>
+                                <select class="form-control selectpicker" data-live-search="true" data-size="5" name="ruta" id="ruta" required>
+                                    <option selected disabled>Elija una ruta</option>
+                                        <#if rutas??>
+                                            <#list rutas as ruta>
+                                                <option value="${ruta.id}">${ruta.nombreCorredor} | <#if ruta.esDireccionSubida>Subida <#else> Bajada </#if></option>
+                                            </#list>
+                                        </#if>
+                                </select>
+                            </div>
+                        </div>
 
-                                <#--</#if>-->
-                                <#--</select>-->
-                            <#--</div>-->
-                        <#--</div>-->
-                    <#--</div>-->
+                    </div>
 
                     <div class="row">
                         <hr>
@@ -133,7 +110,22 @@
     <script src="/js/jquery.js">
     </script>
 
-    <!-- Bootstrap Core JavaScript -->
+<script type = "text/javascript" >
+
+    $(document).ready(function() {
+        $('.ruta option')
+                .removeAttr('selected')
+                .filter('[value=${ruta.id}]')
+                .attr('selected', true);
+        })
+</script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
 
 </body>

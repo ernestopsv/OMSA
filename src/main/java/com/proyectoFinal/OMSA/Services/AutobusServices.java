@@ -73,6 +73,10 @@ public class AutobusServices {
         return  autobusRepository.findAllByActivoAndRuta(activo, ruta);
     }
 
+    public List<Autobus> buscarAutobusPorUltimaParadaID(Long id){
+        return buscarAutobusPorUltimaParadaID(id);
+    }
+
     @Transactional
     public void modificarRutaAutobus(Autobus autobus){
          autobusRepository.modifyRutaActualAutobus(autobus.getRuta(),autobus.getId());

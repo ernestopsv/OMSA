@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<title>Eiditar Coordenada</title>
 <#include "header.ftl">
 <body>
 <div id="wrapper">

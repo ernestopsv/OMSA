@@ -52,10 +52,28 @@ public class AutobusController {
     }
 
     @PostMapping("/editar")
-    public String guardarAutobusEditado(@ModelAttribute Autobus autobus, Model model, @RequestParam("ruta")Long id_ruta){
+    public String guardarAutobusEditado( Model model, @RequestParam("ruta")Long id_ruta, @RequestParam(value="modelo", required= false)String modelo, @RequestParam(value="cantidadDeAsientos")Integer cantidadAsientos,
+                                         @RequestParam(value = "peso", required = false)Float peso, @RequestParam(value = "anoFabricacion", required = false)Integer anoFabircacion, @RequestParam(value="conductor", required = false)String conductor,
+                                         @RequestParam(value = "precio")Integer precio, @RequestParam("autobus")Long id_autobus, @RequestParam(value = "raspberryPiNumeroSerial")String numeroSerial,
+                                         @RequestParam("tieneAireAcondicionado")Boolean tieneAire){
         boolean modificado= false;
-        System.out.println(autobus.getModelo()+"===============================================");
+        Autobus autobus = autobusServices.buscarAutobusPorId(id_autobus);
+        autobus.setModelo(modelo);
         autobus.setRuta(rutaServices.buscarRutaPorId(id_ruta));
+        autobus.setCantidadDeAsientos(cantidadAsientos);
+        autobus.setPeso(peso);
+        autobus.setAnoFabricacion(anoFabircacion);
+        autobus.setConductor(conductor);
+        autobus.setPrecio(precio);
+        autobus.setRaspberryPiNumeroSerial(numeroSerial);
+        autobus.setTieneAireAcondicionado(tieneAire);
+        System.out.println("autobus = [" + autobus.getPrecio() + "], autobus = [" + autobus.getConductor() + "],autobus = [" + autobus.getActivo() +
+                "],autobus = [" + autobus.getModelo() + "],autobus = [" + autobus.getRaspberryPiNumeroSerial() + "],autobus = [" + autobus.getAnoFabricacion() + "]," +
+                "autobus = [" + autobus.getFechaCreada() + "]," +
+                "autobus = [" + autobus.getCantidadDeAsientos() + "],autobus = [" + autobus.getCantidadDePasajerosActual() + "],autobus = [" + autobus.getTieneAireAcondicionado() + "], autobus = [" + autobus.getAnoFabricacion() + "], id = [" + id_autobus + "]");
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=");
+
+
         if(autobusServices.guardarAutobus(autobus)!=null){
             modificado=true;
         }

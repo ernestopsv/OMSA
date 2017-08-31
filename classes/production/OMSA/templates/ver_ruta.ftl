@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="angularTable">
+<title>Ver Ruta</title>
 <#include "header.ftl">
 <body>
 <div id="wrapper">

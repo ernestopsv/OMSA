@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<title>Editar Parada</title>
 <#include "header.ftl">
 
 <body>
@@ -27,7 +28,7 @@
                     </ol>
                 </div>
             </div>
-            <form role="form" action="#" th:action="@{/parada/editar}" th:object="${parada}" method="POST">
+            <form role="form" action="/parada/editar" method="POST">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
@@ -36,10 +37,16 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form-group">
+                        <div class="form-group ruta">
                             <label for="ruta">Ruta</label>
-                            <input type="text" readonly <#if ruta??>value="${ruta.nombreCorredor} | <#if ruta.esDireccionSubida> Subida <#else> Bajada</#if></#if>"/>
-                            <input type="hidden" id="ruta" name="ruta" value="${ruta.id}">
+                            <select class="form-control selectpicker" data-live-search="true" data-size="5" name="ruta" id="ruta" required>
+                                <option selected disabled>Elija una ruta</option>
+                                    <#if rutas??>
+                                        <#list rutas as ruta>
+                                            <option value="${ruta.id}">${ruta.nombreCorredor} | <#if ruta.esDireccionSubida>Subida <#else> Bajada </#if></option>
+                                        </#list>
+                                    </#if>
+                            </select>
                         </div>
                     </div>
 
@@ -48,14 +55,14 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="latitude">Latitud</label>
-                            <input type="number" id="latitude" step="0.000001" name="latitude" class="form-control" value="${parada.coordenada.latitude}">
+                            <input type="number" id="latitude" step="0.00000001" name="latitude" class="form-control" value="${parada.coordenada.latitude?c}" required>
                         </div>
 
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="longitud">Longitud</label>
-                            <input type="number" class="form-control" step="0.000001" name="longitud" id="longitud" value="${parada.coordenada.longitud}">
+                            <input type="number" class="form-control" step="0.00000001" name="longitud" id="longitud" value="${parada.coordenada.longitud?c}" required>
                         </div>
                     </div>
                 </div>
@@ -66,10 +73,12 @@
                             <label for="paradaAnterior">Parada anterior</label>
                             <select class="form-control  selectpicker" data-live-search="true" data-size="5" name="paradaAnterior" id="paradaAnterior">
                                 <option selected disabled>Elija una parada anterior</option>
-                            <#if paradas>
-                                <#list paradas as paradas></#list>
-                                <option value="${parada.id}">${parada.nombre}</option>
-                            </#if>
+                                    <#if paradas??>
+                                        <#list paradas as p>
+                                            <option value="${p.id}">${p.nombre}</option>
+                                        </#list>
+
+                                    </#if>
                             </select>
                         </div>
                     </div>
@@ -78,17 +87,19 @@
                             <label for="paradaSiguiente">Parada Siguiente</label>
                             <select class="form-control selectpicker" data-live-search="true" data-size="5" name="paradaSiguiente" id="paradaSiguiente">
                                 <option selected disabled>Elija una parada siguiente</option>
-                            <#if paradas>
-                                <#list paradas as paradas></#list>
-                                <option value="${parada.id}">${parada.nombre}</option>
-                            </#if>
+                                    <#if paradas??>
+                                        <#list paradas as p>
+                                            <option value="${p.id}">${p.nombre}</option>
+                                        </#list>
+
+                                    </#if>
                             </select>
                         </div>
                     </div>
                 </div>
+                <input type="hidden" name="id_parada" value="${parada.id}">
 
 
-        </div>
         <div class="row">
             <hr>
             <div class="col-lg-offset-6 col-lg-6">
@@ -109,6 +120,11 @@
         </div>
 
         </form>
+    <#if message??>
+        <#if message == 'error'>
+            <small class="text-danger">No se pudo modificar la parada!!!</small>
+        </#if>
+    </#if>
     </div>
     <!-- /.container-fluid -->
 
@@ -120,10 +136,24 @@
 <!-- jQuery -->
 <script src="/js/jquery.js">
 </script>
-<script src="/js/bootstrap-select.min.js"></script>
-<script type="text/javascript">
-    $('.selectpicker').selectpicker();
+
+<script type = "text/javascript" >
+$('.selectpicker').selectpicker();
+
+$(document).ready(function() {
+    $('.ruta option')
+            .removeAttr('selected')
+            .filter('[value=${parada.ruta.id}]')
+            .attr('selected', true);
+})
 </script>
+
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js"></script>
 

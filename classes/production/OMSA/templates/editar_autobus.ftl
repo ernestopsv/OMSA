@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<title>Editar Autobus</title>
 <#include "header.ftl">
 
 <body>
@@ -27,7 +28,7 @@
             </div>
         </div>
 
-        <form action="#" th:action="@{/autobus/editar}" th:object="${autobus}" method="POST">
+        <form action="/autobus/editar" method="POST">
         <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
             <div class="row">
                 <div class="col-lg-6">
@@ -46,9 +47,12 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
+                    <#--<#setting number_format="##0.00">-->
+                    <#setting locale="en_US">
                         <label for="peso">Peso</label>
+
                         <div class="input-group">
-                            <input type="number" id="peso" step="0.01" name="peso" min="0" placeholder="Entre el peso" max="35000"  <#if autobus.peso??>value="${autobus.peso}"</#if> class="form-control">
+                            <input type="number" id="peso" step="0.01" name="peso" min="0" max="35000"  <#if autobus.peso??>value="${autobus.peso?string["##0.00"]}"</#if> class="form-control">
                             <span class="input-group-addon">kg</span>
                         </div>
 
@@ -72,7 +76,7 @@
                 <div class="col-lg-6">
                     <div class="form-group anoFabricacion">
                         <label for="anoFabricacion">A&ntilde;o Fabricaci&oacute;n</label>
-                        <select class="form-control" name="anoFabricacion" id="fabricacion">
+                        <select class="form-control selectpicker" data-live-search="true" data-size="5" name="anoFabricacion" id="fabricacion">
                             <option selected disabled>Elija el a&ntilde;o de fabricaci&oacute;n</option>
                         </select>
                     </div>
@@ -131,7 +135,7 @@
 
                 </div>
             </div>
-
+            <input type="hidden" name="autobus" value="${autobus.id}">
         </form>
     <#if message??>
         <#if message == 'success'>
@@ -152,34 +156,43 @@
 <!-- jQuery -->
 <script src="/js/jquery.js">
 </script>
-<script src="/js/bootstrap-select.min.js"></script>
-<script type="text/javascript">
+
+
+
+<script type = "text/javascript" >
     $('.selectpicker').selectpicker();
 </script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+
 
 <script type="text/javascript">
     // get the OPTION we want selected
 
 
 
-            $(document).ready(function() {
-                $('.ruta option')
-                        .removeAttr('selected')
-                        .filter('[value=${autobus.ruta.id}]')
-                        .attr('selected', true);
+    $(document).ready(function() {
+        $('.ruta option')
+                .removeAttr('selected')
+                .filter('[value=${autobus.ruta.id}]')
+                .attr('selected', true);
 
-                var date = new Date();
-                for (var i = 1950; i < date.getFullYear(); i++) {
-                    $("#fabricacion").append($("<option>").append(i));
-                }
 
-                //$("div.anoFabricacion select").val(${autobus.anoFabricacion});
-                $('.anoFabricacion option')
-                        .removeAttr('selected')
-                        .val(${autobus.anoFabricacion})
-                        .attr('selected', true);
-            });
+        var date = new Date();
+        for (var i = 1950; i < date.getFullYear(); i++) {
+            $("#fabricacion").append($("<option>").attr(value, i).append(i));}
+
+
+    $('.anoFabricacion option')
+            .removeAttr('selected')
+            .filter('[value=${autobus.anoFabricacion}]')
+            .attr('selected', true);
+
+    });
 </script>
+
 
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js"></script>
