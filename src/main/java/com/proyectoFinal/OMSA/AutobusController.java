@@ -3,6 +3,7 @@ package com.proyectoFinal.OMSA;
 import com.proyectoFinal.OMSA.Entities.*;
 import com.proyectoFinal.OMSA.Repository.*;
 import com.proyectoFinal.OMSA.Services.AutobusServices;
+import com.proyectoFinal.OMSA.Services.ChequeoServices;
 import com.proyectoFinal.OMSA.Services.RutaServices;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,8 @@ import java.util.List;
 public class AutobusController {
     @Autowired
     private AutobusServices autobusServices;
+    @Autowired
+    ChequeoServices chequeoServices;
 
     @Autowired
     RutaServices rutaServices;
@@ -132,7 +135,10 @@ public class AutobusController {
      */
     @RequestMapping(value = "/eliminar/{id}")
     public String eliminarAutobus(@PathVariable("id") Long id){
-
+        List<Chequeo> chequeos = chequeoServices.buscarChequeoPorAutobusId(id);
+//        for (Chequeo chequeo : chequeos){
+//            chequeoServices.elimin
+//        }
         autobusServices.eliminarAutobusporId(id);
             return "redirect:/autobus/";
 

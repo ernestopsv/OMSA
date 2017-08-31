@@ -46,6 +46,7 @@ public class RestApiController {
         if (autobus==null){
             return new Autobus();
         }
+        autobus.getRuta().setParadas(null);
         return autobus;
     }
 

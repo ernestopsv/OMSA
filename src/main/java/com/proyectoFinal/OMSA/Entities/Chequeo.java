@@ -16,6 +16,7 @@ public class Chequeo implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id; //to be thinking
+    @NotNull
     @Min(1483228800)
     private Long fechaRegistrada;
     @NotNull
