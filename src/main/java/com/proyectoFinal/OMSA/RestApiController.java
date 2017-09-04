@@ -50,6 +50,20 @@ public class RestApiController {
         return autobus;
     }
 
+    @RequestMapping(value = "/autobuses/buscar", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public List<Autobus> buscarTodosLoasAutobuses(){
+        List<Autobus> autobuses = autobusServices.buscarTodoLosAutobus();
+
+        if (autobuses==null){
+            return new ArrayList<>();
+        }
+        for(int i=0; i<autobuses.size(); i++){
+            autobuses.get(i).setRuta(null);
+            autobuses.get(i).setUltimaParada(null);
+        }
+        return autobuses;
+    }
+
     @RequestMapping(value = "/autobus/buscar/ruta/size/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public int getCantdeAutobusPorRuta(@PathVariable("id")Long id){
         return autobusServices.buscarTodosLosAutobusporRuta(id).size();
@@ -284,6 +298,19 @@ public class RestApiController {
         }
         return (ArrayList<Ruta>) rutas;
     }
+
+    /** Buscar Todas las rutas
+     * @return
+     */
+    @RequestMapping(value = "/rutas/buscar", method = RequestMethod.GET, produces = ACCECPT_TYPE )
+    public List<Ruta> buscarTodasLasRutas(){
+        List<Ruta> rutas = rutaServices.buscarTodasLasRutas();
+        if(rutas==null){
+            return new ArrayList<>();
+        }
+        return rutas;
+    }
+
 //-------------------------------------Chequeo-----------------------------------------------
 
 

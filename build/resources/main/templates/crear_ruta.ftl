@@ -3,11 +3,11 @@
 <title>Crear Ruta</title>
 <#include "header.ftl">
 
-<body ng-app="OmsaTracker">
+<body>
     <div id="wrapper">
     <#include "nav.ftl">
 
-        <div id="page-wrapper" ng-controller="rutaController">
+        <div id="page-wrapper" >
 
             <div class="container-fluid">
 
@@ -41,7 +41,7 @@
                             <div class="form-group">
                                 <label for="distanciaTotal">Distancia Total</label>
                                 <div class="input-group">
-                                    <input type="number" id="distanciaTotal" step="0.01" placeholder="Entre la distancia total" min="0.0" name="distanciaTotal" class="form-control">
+                                    <input type="number" id="distanciaTotal" step="0.0001" placeholder="Entre la distancia total" min="0.0" name="distanciaTotal" class="form-control">
                                     <span class="input-group-addon">km</span>
                                 </div>
                             </div>

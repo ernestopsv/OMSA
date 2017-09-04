@@ -37,10 +37,10 @@ public class IndexController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
      public ModelAndView paginaPrincipal(HttpServletRequest request){
-        Usuario usuario = (Usuario) request.getSession(true).getAttribute("usario");
-        if(usuario==null){
-            return new ModelAndView("redirect:/usuario/iniciar_sesion");
-        }
+      //  Usuario usuario = (Usuario) request.getSession(true).getAttribute("usario");
+//        if(usuario==null){
+//            return new ModelAndView("redirect:/usuario/iniciar_sesion");
+//        }
         return new ModelAndView("index");
    }
 

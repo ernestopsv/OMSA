@@ -20,10 +20,10 @@ public class Chequeo implements Serializable{
     @Min(1483228800)
     private Long fechaRegistrada;
     @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Autobus autobus;
     @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)  // to be thought
+    @ManyToOne  // to be thought
     private Parada parada;
     @NotNull
     private Boolean esEntrada;

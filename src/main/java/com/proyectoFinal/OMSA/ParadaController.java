@@ -42,7 +42,6 @@ public class ParadaController {
     @Transactional
     @PostMapping("/crear")
     public String guardarParadaCreada(@RequestParam("nombre")String nombre,@RequestParam("latitude")Double latitude,@RequestParam("longitud")Double longitud,
-                                      @RequestParam(value = "paradaAnterior", required = false)Long paradaAnterior, @RequestParam(value = "paradaSiguiente", required = false)Long paradaSiguiente,
                                       Model model,  @RequestParam("ruta")Long id_ruta){
 
        // System.out.println(parada.getId()+"/"+parada.getParadaAnterior()+"/"+parada.getParadaSiguiente()+"/"+parada.getCoordenada().getLongitud()+"/"+parada.getCoordenada().getLatitude()+"================================================================");
@@ -52,20 +51,17 @@ public class ParadaController {
         parada.setRuta(ruta);
         parada.setCoordenada(new Coordenada(latitude, longitud));
         parada.setNombre(nombre);
-        if(paradaAnterior!=null||paradaSiguiente!=null){
-            parada.setParadaAnterior(paradaAnterior);
-            parada.setParadaSiguiente(paradaSiguiente);
+        if(paradaServices.guardarParada(parada)!=null){
+            model.addAttribute("message", "success");
+        }else {
+            model.addAttribute("message", "error");
         }
-            if(paradaServices.guardarParada(parada)!=null){
-                model.addAttribute("message", "success");
-            }else {
-                model.addAttribute("message", "error");
-            }
 
         model.addAttribute("id_ruta", id_ruta);
         model.addAttribute("parada", new Parada());
         model.addAttribute("paradas", paradaServices.buscarParadaPorRutaId(id_ruta));
         model.addAttribute("ruta", rutaServices.buscarRutaPorId(id_ruta));
+        model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
         return "crear_parada";
     }
 
