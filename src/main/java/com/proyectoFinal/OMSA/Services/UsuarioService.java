@@ -1,5 +1,6 @@
 package com.proyectoFinal.OMSA.Services;
 
+import com.proyectoFinal.OMSA.Entities.Rol;
 import com.proyectoFinal.OMSA.Entities.Usuario;
 import com.proyectoFinal.OMSA.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ import java.util.List;
 public class UsuarioService {
     @Autowired
     UsuarioRepository usuarioRepository;
+    @Autowired
+    RolServices rolServices;
 
     @Transactional
     public void  eliminarUsuario(Long id){
@@ -44,6 +47,10 @@ public class UsuarioService {
         return usuarioRepository.findByAdmin(isadmin);
     }
 
+    public List<Usuario> buscarUsuarioPorNombreUsuario(String username){
+        return usuarioRepository.findAllByUsername(username);
+    }
+
     @Transactional
     public void eliminarUsuarioPorId(Long id){
         usuarioRepository.deleteById(id);
@@ -51,6 +58,22 @@ public class UsuarioService {
 
     public Usuario buscarUnUsuario(Long id){
         return usuarioRepository.findById(id);
+    }
+
+    @Transactional
+    public void crearAdmin(){
+        List<Usuario> usuarios = buscarUsuarioPorNombreUsuario("admin");
+        if(usuarios.size()<1){
+            Usuario usuario =  new Usuario();
+            usuario.setName("OMSA");
+            usuario.setUsername("admin");
+            usuario.setPassword("omsa1234");
+            guardarUsuario(usuario);
+            Rol rol = new Rol();
+            rol.setUsuario(usuario);
+            rol.setRol("ROLE_ADMIN");
+            rolServices.creacionRol(rol);
+        }
     }
 }
 

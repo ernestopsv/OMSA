@@ -3,6 +3,7 @@ package com.proyectoFinal.OMSA.Entities;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 /**
  * Created by anyderre on 11/08/17.
@@ -22,26 +23,25 @@ public class Usuario {
     @NotNull
     @Size(min = 6, max = 30)
     private String password;
-    @NotNull
-    private Boolean admin;
+    @OneToMany(mappedBy = "usuario")
+    private List<Rol> roles;
 
     public Usuario() {
     }
 
-    public Usuario(Long id, String name, String username, String password, Boolean admin) {
-        this.id = id;
+    public Usuario(String name, String username, String password, List<Rol> roles) {
         this.name = name;
         this.username = username;
         this.password = password;
-        this.admin = admin;
+        this.roles = roles;
     }
 
-    public Boolean getAdmin() {
-        return admin;
+    public List<Rol> getRoles() {
+        return roles;
     }
 
-    public void setAdmin(Boolean admin) {
-        this.admin = admin;
+    public void setRoles(List<Rol> roles) {
+        this.roles = roles;
     }
 
     public Long getId() {

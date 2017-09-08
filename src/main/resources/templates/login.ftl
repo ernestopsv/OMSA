@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org" ng-app="omsaTracker">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" ng-app="omsaTracker">
 
 <title>Logear</title>
 <#include "header.ftl">
@@ -135,7 +135,7 @@
                     </div>
                     <div class="panel-body" style="background-image: url(../images/OMSA.jpg); background-color: rgba(255,255,255,0.6);background-blend-mode: lighten;  ">
 
-                        <form role="form" name="myForm">
+                        <form role="form" th:action="@{/login}" method="post" name="myForm">
                             <div class="row">
                                 <div class="col-lg-offset-3 col-lg-6">
                                     <div class="form-group">
@@ -174,6 +174,11 @@
                             </div>
 
                         </form>
+
+                    <#if error.isPresent()>
+                        <p>usuario no existe....</p>
+                    </#if>
+
                     </div>
                 </div>
             </div>

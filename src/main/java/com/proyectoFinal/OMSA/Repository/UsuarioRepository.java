@@ -20,6 +20,8 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 
     List<Usuario>findAll(Pageable pageable);
 
+    List<Usuario> findAllByUsername(String username);
+
     List<Usuario>findAll();
 
     void deleteById(Long id);

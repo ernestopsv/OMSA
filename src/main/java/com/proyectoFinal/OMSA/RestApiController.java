@@ -308,6 +308,9 @@ public class RestApiController {
         if(rutas==null){
             return new ArrayList<>();
         }
+        for(Ruta r:rutas){
+            r.setParadas(null);
+        }
         return rutas;
     }
 

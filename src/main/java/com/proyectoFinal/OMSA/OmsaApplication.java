@@ -1,5 +1,7 @@
 package com.proyectoFinal.OMSA;
 
+import com.proyectoFinal.OMSA.Services.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -22,17 +24,15 @@ import java.util.Properties;
 //@ComponentScan
 @SpringBootApplication
 public class OmsaApplication extends SpringBootServletInitializer{
+	@Autowired
+	UsuarioService usuarioService;
 
 	public static void main(String[] args) {
 
 
 		ApplicationContext app = SpringApplication.run(OmsaApplication.class, args);
-//		Properties properties = new Properties();
-//		properties.setProperty("spring.resources.staticLocations","classpath:/resources/static/");
-//
-//		app.setDefaultProperties(properties);
-		//app.run(args);
-
+		UsuarioService usuarioServices = (UsuarioService) app.getBean("usuarioService");
+		usuarioServices.crearAdmin();
 
 	}
 	@Override
