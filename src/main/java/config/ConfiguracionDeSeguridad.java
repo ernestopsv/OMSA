@@ -41,7 +41,7 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         //Marcando las reglas para permitir unicamente los usuarios
         http.authorizeRequests()
-                .antMatchers("/", "/autobus/**","/parada/**", "/ruta/**", "/coordenada/**").hasAnyRole("ADMIN","USER")
+                .antMatchers( "/autobus/**","/parada/**", "/ruta/**", "/coordenada/**").hasAnyRole("ADMIN","USER")
                 .anyRequest().authenticated()
                 .antMatchers("/admin/**")
                 .hasRole("ADMIN").anyRequest().authenticated()
