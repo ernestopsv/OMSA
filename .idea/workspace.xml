@@ -130,7 +130,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
-              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -1272,14 +1272,7 @@
       <workItem from="1504799815787" duration="26847000" />
       <workItem from="1504934436071" duration="685000" />
       <workItem from="1504992784468" duration="5544000" />
-      <workItem from="1504999882571" duration="385000" />
-    </task>
-    <task id="LOCAL-00001" summary="preparing aplication deployment">
-      <created>1500390391871</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1500390391871</updated>
+      <workItem from="1504999882571" duration="544000" />
     </task>
     <task id="LOCAL-00002" summary="pushing datas">
       <created>1501963244341</created>
@@ -1617,11 +1610,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504999943500</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="fixing error in spring security">
+      <created>1505000292860</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1505000292861</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="634794000" />
+    <option name="totallyTimeSpent" value="634953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2056,7 +2056,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
