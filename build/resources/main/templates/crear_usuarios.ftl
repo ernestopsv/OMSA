@@ -59,8 +59,19 @@
                                             <input type="password" ng-model="confirmPassword" class="form-control" min="2" max="100" id="confirmPassword" placeholder="Confirme su contrase&ntilde;a" required>
                                         </div>
                                             <small class="error" style="color: red" ng-show="password !== confirmPassword">Contrase&ntilde;a incompatibles</small>
+                                    </div>
 
-
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="">
+                                                <select id="roles" class="form-control" name="roles" multiple="multiple" required>
+                                                    <option value="ROLE_ADMIN">Administrador</option>
+                                                    <option value="ROLE_USER">Usuario</option>
+                                                </select>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
 

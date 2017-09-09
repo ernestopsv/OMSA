@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 /**
  * Created by anyderre on 29/06/17.
  */
+@Repository
 public interface AutobusRepository extends CrudRepository<Autobus,Long> {
 
     //buscar un autobus por id

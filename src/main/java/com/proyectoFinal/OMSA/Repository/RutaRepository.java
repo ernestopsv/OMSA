@@ -6,12 +6,14 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by anyderre on 30/06/17.
  */
+@Repository
 public interface RutaRepository extends CrudRepository<Ruta, Long> {
     //Encontrar ruta por nombre Corredor
     List<Ruta> findAllByNombreCorredor(String nombre);

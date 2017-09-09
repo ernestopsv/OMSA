@@ -40,7 +40,7 @@
                                 <th>#</th>
                                 <th>Nombre</th>
                                 <th>Nombre de Usuario</th>
-                                <th>Administrador</th>
+                                <th>Roles</th>
                                 <th>&nbsp</th>
                                 <th>&nbsp</th>
                             </tr>
@@ -53,7 +53,7 @@
                                 <td>{{$index+1}}</td>
                                 <td>{{usuario.name}}</td>
                                 <td>{{usuario.username}}</td>
-                                <td>{{parada.admin}}</td>
+                                <td>{{usario.roles}}</td>
                                 <a href="/zonaAdmin/eliminar/usuario/{{usuario.id}}">
                                     <p data-placement="top" data-toggle="tooltip" title="Editar">
                                         <button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal"

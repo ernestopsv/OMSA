@@ -71,7 +71,6 @@
 
                     var obj = {lat: v.latitude, lng: v.longitud};
                     coor.push(obj)
-
                 });
                 var flightPath = new google.maps.Polyline({
                     path: coor,
@@ -83,15 +82,11 @@
                 coor = [];
                 flightPath.setMap(map);
             });
-
-
         });
         setInterval(function () {
             console.log("here");
             setAutobus(map);
         }, 30000); // 30 seconds
-
-
     }
 
     function setParadas(map, id_ruta) {

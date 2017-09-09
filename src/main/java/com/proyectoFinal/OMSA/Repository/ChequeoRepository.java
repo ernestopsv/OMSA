@@ -2,6 +2,7 @@ package com.proyectoFinal.OMSA.Repository;
 
 import com.proyectoFinal.OMSA.Entities.*;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 /**
  * Created by anyderre on 30/06/17.
  */
+@Repository
 public interface ChequeoRepository extends CrudRepository<Chequeo, BigInteger> {
 
     Chequeo save (Chequeo chequeo);

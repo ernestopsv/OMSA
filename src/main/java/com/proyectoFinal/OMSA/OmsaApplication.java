@@ -1,37 +1,37 @@
 package com.proyectoFinal.OMSA;
 
-import com.proyectoFinal.OMSA.Services.UsuarioService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
+import com.proyectoFinal.OMSA.Services.UsuarioServices;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-
-import java.util.Properties;
 
 
-//@Configuration
-//@EnableAutoConfiguration
-//@ComponentScan
 @SpringBootApplication
 public class OmsaApplication extends SpringBootServletInitializer{
-	@Autowired
-	UsuarioService usuarioService;
+
+	//@Autowired
+	//static RolServices rolServices;
 
 	public static void main(String[] args) {
+		ApplicationContext appContext = SpringApplication.run(OmsaApplication.class, args);
 
-
-		ApplicationContext app = SpringApplication.run(OmsaApplication.class, args);
-		UsuarioService usuarioServices = (UsuarioService) app.getBean("usuarioService");
+//		UsuarioRepository usuarioRepository = (UsuarioRepository)appContext.getBean("usuarioRepository");
+//
+//		List<Usuario> usuarios = usuarioRepository.findAllByUsername("admin");
+//		if(usuarios.size()<1){
+//			Usuario usuario =  new Usuario();
+//			usuario.setName("OMSA");
+//			usuario.setUsername("admin");
+//			usuario.setPassword("omsa1234");
+//			usuarioRepository.save(usuario);
+//			Rol rol = new Rol();
+//			rol.setUsuario(usuario);
+//			rol.setRol("ROLE_ADMIN");
+//			rolServices.creacionRol(rol);
+//		}
+		UsuarioServices usuarioServices = (UsuarioServices)appContext.getBean("usuarioServices");
 		usuarioServices.crearAdmin();
 
 	}

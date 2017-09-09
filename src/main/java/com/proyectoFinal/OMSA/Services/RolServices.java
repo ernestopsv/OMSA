@@ -4,6 +4,7 @@ import com.proyectoFinal.OMSA.Entities.Rol;
 import com.proyectoFinal.OMSA.Entities.Usuario;
 import com.proyectoFinal.OMSA.Repository.RolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * Created by Dany on 07/09/2017.
  */
+@Service
 public class RolServices {
     //Inyectando el repositorio
     @Autowired
