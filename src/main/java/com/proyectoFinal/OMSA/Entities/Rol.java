@@ -14,7 +14,7 @@ public class Rol implements Serializable {
     private Long id;
     private String rol;
     @ManyToOne
-    private Usuario usuario;
+    private String username;
 
     public Long getId() {
         return id;
@@ -32,11 +32,11 @@ public class Rol implements Serializable {
         this.rol = rol;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

@@ -62,19 +62,19 @@ public class UsuarioServices {
     public void crearAdmin(){
         List<Usuario> usuarios = usuarioRepository.findAllByUsername("admin");
         System.out.println(usuarios.size() +"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=");
-        System.out.println("usuarios.get(0).getUsername() = " + usuarios.get(0).getUsername());
-        
-        List<Rol> roles = rolServices.rolesUsuario(usuarios.get(0));
-        System.out.println("roles.get(0).getRol() + roles.get(0).getUsuario().getId() = " + roles.get(0).getRol() + roles.get(0).getUsuario().getId());
+//        System.out.println("usuarios.get(0).getUsername() = " + usuarios.get(0).getUsername());
+
+//        List<Rol> roles = rolServices.rolesUsuario(usuarios.get(0));
+//        System.out.println("roles.get(0).getRol() + roles.get(0).getUsuario().getId() = " + roles.get(0).getRol() + roles.get(0).getUsuario().getUsername());
         if(usuarios.size()<1){
             System.out.println("There+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             Usuario usuario =  new Usuario();
             usuario.setName("OMSA");
             usuario.setUsername("admin");
-            usuario.setPassword("1234");
+            usuario.setPassword("omsa1234");
             guardarUsuario(usuario);
             Rol rol = new Rol();
-            rol.setUsuario(usuario);
+            rol.setUsername(usuario.getUsername());
             rol.setRol("ROLE_ADMIN");
             rolServices.creacionRol(rol);
         }

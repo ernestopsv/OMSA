@@ -46,7 +46,7 @@ public class AdminController {
             for(String rol : roles){
                 Rol r = new Rol();
                 r.setRol(rol);
-                r.setUsuario(usuario);
+                r.setUsername(usuario.getUsername());
 
                 rols.add(r);
             }
@@ -85,7 +85,7 @@ public class AdminController {
                                 if (!rol1.getRol().equals(rol)){
                                     Rol r = new Rol();
                                     r.setRol(rol);
-                                    r.setUsuario(usuario);
+                                    r.setUsername(usuario.getUsername());
                                     rolServices.creacionRol(r);
                                 }
                             }

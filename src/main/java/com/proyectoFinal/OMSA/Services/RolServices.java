@@ -36,7 +36,7 @@ public class RolServices {
         return rolRepository.findAll();
     }
     public List<Rol> rolesUsuario(Usuario usuario){
-        return rolRepository.findAllByUsuario(usuario);
+        return rolRepository.findAllByUsername(usuario.getUsername());
     }
 
 
