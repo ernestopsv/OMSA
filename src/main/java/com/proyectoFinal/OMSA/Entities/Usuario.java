@@ -20,6 +20,9 @@ public class Usuario {
     @Size(min = 4, max = 30)
     @Column(unique=true)
     private String username;
+
+    @Column(name="enabled", nullable = false, columnDefinition = "int default 1")
+    private int enable = 1;
     @NotNull
     @Size(min = 6, max = 30)
     private String password;
@@ -29,11 +32,20 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String name, String username, String password, List<Rol> roles) {
+    public Usuario(String name, String username, int enable, String password, List<Rol> roles) {
         this.name = name;
         this.username = username;
+        this.enable = enable;
         this.password = password;
         this.roles = roles;
+    }
+
+    public int getEnable() {
+        return enable;
+    }
+
+    public void setEnable(int enable) {
+        this.enable = enable;
     }
 
     public List<Rol> getRoles() {
