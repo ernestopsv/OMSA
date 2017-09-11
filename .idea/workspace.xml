@@ -4,11 +4,7 @@
     <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/login.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/login.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UsuarioServices.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UsuarioServices.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/ConfiguracionDeSeguridad.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/ConfiguracionDeSeguridad.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -73,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
-              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -1352,14 +1348,7 @@
       <workItem from="1504992784468" duration="5544000" />
       <workItem from="1504999882571" duration="10633000" />
       <workItem from="1505048218491" duration="1463000" />
-      <workItem from="1505153852893" duration="4263000" />
-    </task>
-    <task id="LOCAL-00003" summary="fixing templates name">
-      <created>1501991008547</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1501991008547</updated>
+      <workItem from="1505153852893" duration="4369000" />
     </task>
     <task id="LOCAL-00004" summary="fixing templates name">
       <created>1502291593396</created>
@@ -1697,11 +1686,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505000449247</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="fixing error in spring security">
+      <created>1505159803855</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1505159803856</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="650768000" />
+    <option name="totallyTimeSpent" value="650874000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2129,7 +2125,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
