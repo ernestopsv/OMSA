@@ -135,7 +135,8 @@
                     </div>
                     <div class="panel-body" style="background-image: url(../images/OMSA.jpg); background-color: rgba(255,255,255,0.6);background-blend-mode: lighten;  ">
 
-                        <form role="form" th:action="@{/login}" method="post" name="myForm">
+                        <form role="form" action="/login" method="post" class="form-signin name="myForm">
+                            <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
                             <div class="row">
                                 <div class="col-lg-offset-3 col-lg-6">
                                     <div class="form-group">
@@ -167,17 +168,23 @@
                             <div class="row">
                                 <div class="col-lg-offset-3 col-lg-3">
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-success form-control" ng-disabled="myForm.username.$dirty && myForm.username.$invalid || myForm.password.$dirty && myForm.password.$invalid">Guardar</button>
+                                        <button type="Submit" class="btn btn-success form-control" ng-disabled="myForm.username.$dirty && myForm.username.$invalid || myForm.password.$dirty && myForm.password.$invalid">Login</button>
                                     </div>
 
                                 </div>
                             </div>
 
                         </form>
-
-                    <#if error.isPresent()>
-                        <p>usuario no existe....</p>
-                    </#if>
+                        <div class="row">
+                            <div class="col-lg-offset-3 col-lg-3">
+                                <#if error??>
+                                    <p>${error}</p>
+                                </#if>
+                                <#if msg??>
+                                    <p>${msg}</p>
+                                </#if>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
