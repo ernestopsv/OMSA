@@ -12,18 +12,24 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configurable
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter {
     @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Autowired
     DataSource dataSource;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth)throws Exception{
-        auth.jdbcAuthentication().dataSource(dataSource).usersByUsernameQuery("select username, password, enabled from usuario where username=?")
-                .authoritiesByUsernameQuery("select username, rol from rol where username=?");
+        auth.jdbcAuthentication().usersByUsernameQuery("select username, password, enabled from usuario where username=?")
+                .authoritiesByUsernameQuery("select username as principal, rol as role from rol where username=?").
+                dataSource(dataSource).passwordEncoder(bCryptPasswordEncoder);
     }
     /*
      * Permite configurar las reglas de seguridad.

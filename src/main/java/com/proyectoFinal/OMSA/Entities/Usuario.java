@@ -26,7 +26,7 @@ public class Usuario {
     @NotNull
     @Size(min = 6, max = 30)
     private String password;
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany
     private List<Rol> roles;
 
     public Usuario() {

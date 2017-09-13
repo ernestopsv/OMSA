@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="d343vlcv4s6vh9@ec2-23-21-246-11.compute-1.amazonaws.com" uuid="fe353a8a-cfec-477a-b6cd-59eb86d4cc3a">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>mlbhvrkpgwgxob</user-name>
+      <ssh-properties>
+        <enabled>false</enabled>
+        <user>mlbhvrkpgwgxob</user>
+        <use-password>true</use-password>
+      </ssh-properties>
+    </data-source>
+  </component>
+</project>
