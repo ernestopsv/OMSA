@@ -157,6 +157,7 @@
             markers = [];
             $.each(data, function (key, autobus) {
                 var conductor=autobus["conductor"];
+                var matricula = autobus["matricula"];
                 var porcentajePas=(autobus["cantidadDePasajerosActual"]/autobus["cantidadDeAsientos"])*100;
                 var tieneAire=autobus["tieneAireAcondicionado"];
                 var precio=autobus["precio"];
@@ -169,7 +170,7 @@
                     }else{
                         return "danger"
                     }
-                }
+                };
 
                 if (activo) {
                     marker = new google.maps.Marker({
@@ -198,12 +199,11 @@
                     });
                     markers.push(marker);
                 }
-
+                //'<span class="sr-only">40% Complete (success)</span> </div> '
                 var contentString = '<div style="border:1px solid gray">' +
-                        '<h1>Autobus No: </h1> <div class="progress">' +
+                        '<h1>Autobus Matricula:'+matricula+'</h1> <div class="progress">' +
                         '<div class="progress-bar progress-bar-'+estado(porcentajePas)+' progress-bar-striped"' +
-                        ' role="progressbar" aria-valuenow="'+porcentajePas+'" aria-valuemin="0" aria-valuemax="100" style="width: '+porcentajePas+' %"> ' +
-                        '<span class="sr-only">40% Complete (success)</span> </div> ' +
+                        ' role="progressbar" aria-valuenow="'+porcentajePas+'" aria-valuemin="0" aria-valuemax="100" style="width:'+porcentajePas+'%"> ' +
                         '</div>' +
                         '<ul class="list-group"> ' +
                         '<li class="list-group-item">Conductor : <span class="badge">'+conductor+'</span></li>' +
