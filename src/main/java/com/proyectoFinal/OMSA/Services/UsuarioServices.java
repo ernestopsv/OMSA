@@ -6,6 +6,7 @@ import com.proyectoFinal.OMSA.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +22,8 @@ public class UsuarioServices {
     UsuarioRepository usuarioRepository;
     @Autowired
     RolServices rolServices;
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Transactional
     public void  eliminarUsuario(Long id){
@@ -71,7 +74,7 @@ public class UsuarioServices {
             Usuario usuario =  new Usuario();
             usuario.setName("OMSA");
             usuario.setUsername("admin");
-            usuario.setPassword("omsa1234");
+            usuario.setPassword(bCryptPasswordEncoder.encode("omsa1234"));
             guardarUsuario(usuario);
             Rol rol = new Rol();
             rol.setUsername(usuario.getUsername());
