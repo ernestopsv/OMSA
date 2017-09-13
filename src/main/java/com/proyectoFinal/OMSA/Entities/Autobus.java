@@ -35,6 +35,9 @@ public class Autobus implements  Serializable {
     @Size(min=2, max = 100)
     @Pattern(regexp = "[a-zA-Z]+[ ][a-zA-Z]+")
     private String conductor;
+    @Size(min=5, max = 6)
+    @Pattern(regexp = "([0-9]{2})((-[0-9]{3})|([0-9]{3}))")
+    private String matricula;
     @Min(1483228800)
     private Long fechaCreada; //fecha agregada en la base de datos
     @Min(1483228800)
@@ -59,7 +62,7 @@ public class Autobus implements  Serializable {
 
     }
 
-    public Autobus(String modelo, Integer cantidadDeAsientos, Float peso, Ruta ruta, Parada ultimaParada, Integer anoFabricacion, Boolean activo, String conductor, Long fechaCreada, Long ultimaFechaModificada, Integer precio, Boolean tieneAireAcondicionado, Integer cantidadDePasajerosActual, Coordenada coordenada, String raspberryPiNumeroSerial) {
+    public Autobus(String modelo, Integer cantidadDeAsientos, Float peso, Ruta ruta, Parada ultimaParada, Integer anoFabricacion, Boolean activo, String conductor, String matricula, Long fechaCreada, Long ultimaFechaModificada, Integer precio, Boolean tieneAireAcondicionado, Integer cantidadDePasajerosActual, Coordenada coordenada, String raspberryPiNumeroSerial) {
         this.modelo = modelo;
         this.cantidadDeAsientos = cantidadDeAsientos;
         this.peso = peso;
@@ -68,6 +71,7 @@ public class Autobus implements  Serializable {
         this.anoFabricacion = anoFabricacion;
         this.activo = activo;
         this.conductor = conductor;
+        this.matricula = matricula;
         this.fechaCreada = fechaCreada;
         this.ultimaFechaModificada = ultimaFechaModificada;
         this.precio = precio;
@@ -75,6 +79,14 @@ public class Autobus implements  Serializable {
         this.cantidadDePasajerosActual = cantidadDePasajerosActual;
         this.coordenada = coordenada;
         this.raspberryPiNumeroSerial = raspberryPiNumeroSerial;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
     public String getRaspberryPiNumeroSerial() {

@@ -109,15 +109,21 @@
 
                     <div class="row">
 
-
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="raspberryPiNumeroSerial">Raspberry Pi / Numero de Serie</label>
                                 <input type="text" pattern="^[A-Za-z0-9-]+$" placeholder="Entre el numero serial del raspberry" class="form-control" name="raspberryPiNumeroSerial" min="0" max="100" id="raspberryPiNumeroSerial" required>
                             </div>
                         </div>
-
-                        <div class="col-lg-6" style="margin-top: 22px">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="matricula">Matricula</label>
+                                <input type="text" class="form-control" pattern="([0-9]{2})((-[0-9]{3})|([0-9]{3}))" placeholder="Matricula del autobus" name="matricula" min="5" max="6" id="matricula" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-offset-6 col-lg-6" style="margin-top: 22px">
 
                             <div class="col-lg-6">
                                 <div class="form-group">

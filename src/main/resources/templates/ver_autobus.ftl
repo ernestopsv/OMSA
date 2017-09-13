@@ -59,16 +59,17 @@
                             <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Matricula</th>
                                 <th>Modelo</th>
-                                <th>Cantidad de Asientos</th>
+                                <th>Cant. Asientos</th>
                                 <th>Peso(KG)</th>
                                 <th>Corredor</th>
-                                <th>Ano Fabricacion</th>
+                                <th>A&ntilde;o Fabri.</th>
                                 <th>Conductor</th>
                                 <th>Inicio Monitoreo</th>
                                 <th>Precio</th>
-                                <th>Tiene Aire Acondicionado</th>
-                                <th>Cantidad De Pasajero actual</th>
+                                <th>Climatizado</th>
+                                <th>Cant. Pasajeros</th>
                                 <th>Activo</th>
                                 <th>&nbsp</th>
                                 <th>&nbsp</th>
@@ -82,6 +83,7 @@
                             </tr>
                             <tr dir-paginate="autobus in autobuses|itemsPerPage:itemsPerPage" total-items="total_count">
                                 <td>{{$index+1}}</td>
+                                <td>{{autobus.matricula}}</td>
                                 <td>{{autobus.modelo}}</td>
                                 <td>{{autobus.cantidadDeAsientos}}</td>
                                 <td>{{autobus.peso}}</td>

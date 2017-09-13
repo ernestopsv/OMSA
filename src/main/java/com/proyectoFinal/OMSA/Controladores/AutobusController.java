@@ -55,7 +55,7 @@ public class AutobusController {
     }
 
     @PostMapping("/editar")
-    public String guardarAutobusEditado( Model model, @RequestParam("ruta")Long id_ruta, @RequestParam(value="modelo", required= false)String modelo, @RequestParam(value="cantidadDeAsientos")Integer cantidadAsientos,
+    public String guardarAutobusEditado( Model model,@RequestParam("matricula")String matricula, @RequestParam("ruta")Long id_ruta, @RequestParam(value="modelo", required= false)String modelo, @RequestParam(value="cantidadDeAsientos")Integer cantidadAsientos,
                                          @RequestParam(value = "peso", required = false)Float peso, @RequestParam(value = "anoFabricacion", required = false)Integer anoFabircacion, @RequestParam(value="conductor", required = false)String conductor,
                                          @RequestParam(value = "precio")Integer precio, @RequestParam("autobus")Long id_autobus, @RequestParam(value = "raspberryPiNumeroSerial")String numeroSerial,
                                          @RequestParam("tieneAireAcondicionado")Boolean tieneAire){
@@ -65,6 +65,7 @@ public class AutobusController {
         autobus.setRuta(rutaServices.buscarRutaPorId(id_ruta));
         autobus.setCantidadDeAsientos(cantidadAsientos);
         autobus.setPeso(peso);
+        autobus.setMatricula(matricula);
         autobus.setAnoFabricacion(anoFabircacion);
         autobus.setConductor(conductor);
         autobus.setPrecio(precio);
