@@ -27,9 +27,11 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth)throws Exception{
-        auth.jdbcAuthentication().usersByUsernameQuery("select username, password, enabled from usuario where username=?")
-                .authoritiesByUsernameQuery("select username as principal, rol as role from rol where username=?").
-                dataSource(dataSource).passwordEncoder(bCryptPasswordEncoder);
+        auth.jdbcAuthentication()
+                .usersByUsernameQuery("select username, password, enabled from usuario where username=?")
+                .authoritiesByUsernameQuery("select username as principal, rol as role from rol where username=?")
+                .dataSource(dataSource)
+                .passwordEncoder(bCryptPasswordEncoder);
     }
     /*
      * Permite configurar las reglas de seguridad.
