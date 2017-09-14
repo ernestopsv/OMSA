@@ -24,7 +24,7 @@ public class Usuario {
     @Column(name="enabled", nullable = false, columnDefinition = "int default 1")
     private int enable = 1;
     @NotNull
-    @Lob
+    @Size(max=255)
     private String password;
     @OneToMany
     private List<Rol> roles;

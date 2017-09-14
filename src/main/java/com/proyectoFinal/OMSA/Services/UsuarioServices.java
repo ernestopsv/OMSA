@@ -65,6 +65,7 @@ public class UsuarioServices {
     public void crearAdmin(){
         List<Usuario> usuarios = usuarioRepository.findAllByUsername("admin");
         System.out.println(usuarios.size() +"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=");
+
 //        System.out.println("usuarios.get(0).getUsername() = " + usuarios.get(0).getUsername());
 
 //        List<Rol> roles = rolServices.rolesUsuario(usuarios.get(0));

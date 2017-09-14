@@ -5,6 +5,7 @@ import com.proyectoFinal.OMSA.Entities.Usuario;
 import com.proyectoFinal.OMSA.Services.RolServices;
 import com.proyectoFinal.OMSA.Services.UsuarioServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,8 @@ public class AdminController {
     RolServices rolServices;
     @Autowired
     UsuarioServices usuarioServices;
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
     @RequestMapping("/ver/usuarios")
@@ -41,6 +44,7 @@ public class AdminController {
     public ModelAndView agregar(@ModelAttribute Usuario usuario, Model model, @RequestParam("roles")String[] roles){
 
         System.out.println(usuario.getName()+"/"+usuario.getPassword()+"/"+usuario.getUsername());
+        usuario.setPassword(bCryptPasswordEncoder.encode(usuario.getPassword()));
         List<Rol> rols= new ArrayList<>();
         if(roles!=null){
             for(String rol : roles){
@@ -70,7 +74,7 @@ public class AdminController {
                                   @RequestParam("password") String password, @RequestParam("name") String nombre, Model model){
         Usuario usuario = new Usuario();
         usuario.setName(nombre);
-        usuario.setPassword(password);
+        usuario.setPassword(bCryptPasswordEncoder.encode(password));
         usuario.setUsername(username);
         if (usuarioServices.guardarUsuario(usuario)!=null){
             return new ModelAndView( "redirect:/ver/usuarios");
