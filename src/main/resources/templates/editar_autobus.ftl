@@ -18,9 +18,11 @@
                 </h3>
                 <ol class="breadcrumb">
                     <li>
-                        <i class="fa fa-dashboard"></i> <a href="/">Home</a>
+                    <i class="fa fa-dashboard"></i> <a href="/home">Home</a>
+                </li>
+                    <li>
+                        <i class="fa fa-table"></i> <a href="/autobus/">Tabla de Autobuses</a>
                     </li>
-
                     <li class="active">
                         <i class="fa fa-edit"></i> Modificar Autobus
                     </li>

@@ -16,7 +16,10 @@
                     </h3>
                     <ol class="breadcrumb">
                         <li>
-                            <i class="fa fa-dashboard"></i> <a href="/">Home</a>
+                            <i class="fa fa-dashboard"></i> <a href="/home">Home</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-table"></i> <a href="/ruta/">Tabla de Corredores</a>
                         </li>
 
                         <li class="active">

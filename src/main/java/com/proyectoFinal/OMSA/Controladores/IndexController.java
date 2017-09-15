@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Controller
 //@EnableWebMvc
-@RequestMapping("/")
 public class IndexController {
     @Autowired
     ParadaServices paradaServices;
@@ -31,7 +30,7 @@ public class IndexController {
     @Autowired
     ChequeoServices chequeoServices;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
      public ModelAndView paginaPrincipal(HttpServletRequest request){
       //  Usuario usuario = (Usuario) request.getSession(true).getAttribute("usario");
 //        if(usuario==null){

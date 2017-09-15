@@ -71,7 +71,6 @@ public class ParadaController {
         model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
         model.addAttribute("parada", parada);
         model.addAttribute("paradas", paradaServices.buscarParadaPorRutaId(id_ruta));
-
         return "/editar_parada";
     }
 

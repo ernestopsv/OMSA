@@ -47,7 +47,7 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter {
                 .and().csrf().disable()
                 .formLogin()
                     .loginPage("/login")
-                    .defaultSuccessUrl("/")
+                    .defaultSuccessUrl("/home", true)
                     .failureUrl("/login?error")
                     .permitAll()
                 .usernameParameter("username")
@@ -64,7 +64,7 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers( "/static/**", "/css/**", "/js/**", "/images/**");
+                .antMatchers( "/fonts/**","/font-awesome/**", "/css/**", "/js/**", "/images/**","/api/**");
     }
 
 }

@@ -29,7 +29,7 @@ public class AdminController {
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
-    @RequestMapping("/ver/usuarios")
+    @RequestMapping("/usuarios")
     public String index(Model model){
         model.addAttribute("size", usuarioServices.buscarTodosUsuarios().size());
         return "ver_usuarios";
@@ -77,7 +77,7 @@ public class AdminController {
         usuario.setPassword(bCryptPasswordEncoder.encode(password));
         usuario.setUsername(username);
         if (usuarioServices.guardarUsuario(usuario)!=null){
-            return new ModelAndView( "redirect:/ver/usuarios");
+            return new ModelAndView( "redirect:/usuarios");
         }
 
         if(roles!=null){
@@ -113,7 +113,7 @@ public class AdminController {
     @RequestMapping("/eliminar/usuario/{id}")
     public String eliminarUsuario(@PathVariable("id")Long id){
         usuarioServices.eliminarUsuario(id);
-        return "redirect:/ver/usuarios";
+        return "redirect:/usuarios";
     }
 
 }
