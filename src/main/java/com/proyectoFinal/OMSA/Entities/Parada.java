@@ -17,7 +17,7 @@ public class Parada implements Serializable {
     @NotNull
     @Size(min=2 , max = 100)
     private String nombre;
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "RUTA_ID")
     private Ruta ruta;
     private Long paradaAnterior;

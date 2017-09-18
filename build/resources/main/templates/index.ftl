@@ -128,7 +128,7 @@
     function setAutobus(map) {
 
         var active = {
-            url: '/images/activo.PNG',
+            url: '/images/active.PNG',
             // This marker is 20 pixels wide by 32 pixels high.
             size: new google.maps.Size(80, 29),
             // The origin for this image is (0, 0).
@@ -137,7 +137,7 @@
             anchor: new google.maps.Point(0, 29)
         };
         var inactive = {
-            url: '/images/inactivo.png',
+            url: '/images/inactive.PNG',
             // This marker is 20 pixels wide by 32 pixels high.
             size: new google.maps.Size(80, 26),
             // The origin for this image is (0, 0).

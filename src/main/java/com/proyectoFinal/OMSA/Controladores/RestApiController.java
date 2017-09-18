@@ -2,13 +2,21 @@ package com.proyectoFinal.OMSA.Controladores; /**
  * Created by anyderre on 04/07/17.
  */
 import com.proyectoFinal.OMSA.Entities.*;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.google.gson.Gson;
 import com.proyectoFinal.OMSA.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,8 +89,8 @@ public class RestApiController {
      * @param id
      * @return
      */
-    @RequestMapping(value ="/autobuses/buscar/rutas", method = RequestMethod.GET, produces = ACCECPT_TYPE)
-    public ArrayList<Autobus> obetenerAutobusPorRuta(@RequestParam("id_ruta")Long id){
+    @RequestMapping(value ="/autobuses/buscar/ruta/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Autobus> obetenerAutobusPorRuta(@PathVariable("id")Long id){
         Ruta ruta =rutaServices.buscarRutaPorId(id);
         if(ruta==null){
 //            logger.error("No se encuentra el autobus buscado.", id);
@@ -380,9 +388,7 @@ public class RestApiController {
         return paradas.get(indexes);
     }
 
-    private Ruta rutaReal(Coordenada coordenada, Autobus autobus){
-        return new Ruta();
-    }
+
 
 
  //-------------------------------------------------------------Usuario-------------------------------------------------------------------
@@ -410,4 +416,164 @@ public class RestApiController {
 
      return coordenadas.subList(start, end);
     }
+//______________________________________________________Mobile App Distance and Time________________________________________________
+    @RequestMapping(value = "/distancia/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public DistanceAndTime buscarDistanciaYTiempo (@PathVariable("id")Long id){
+            Parada parada = paradaServices.buscarParada(id);
+            Autobus autobus = autobosMasCercanoPorParada(parada);
+           // totalTiempoApiGoogle();
+            if(autobus!=null){
+                Parada iterador = getParadaMasCerca(autobus);
+                double totalTiempo = 0;
+                double totalTraffic= 0;
+                double totalDistance=0;
+                totalTiempo+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDuration();
+                totalTraffic+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDuration_Traffic();
+                totalDistance+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDistance();
+
+                while (!iterador.getId().equals(parada.getId())){
+                    totalTiempo+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDuration();
+                    totalTraffic+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDuration_Traffic();
+                    totalDistance+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDistance();
+                    iterador=paradaServices.buscarParada(iterador.getParadaSiguiente());
+                }
+
+                return new DistanceAndTime(totalDistance,totalTiempo,totalTraffic);
+
+            }
+
+            return new DistanceAndTime();
+    }
+private DistanceAndTime totalTiempoApiGoogle(Coordenada coordenadaAutobus, Coordenada coordenadaParada){
+        DistanceAndTime distanceAndTime = new DistanceAndTime();
+
+    String cadena = "https://maps.googleapis.com/maps/api/directions/json?origin=";
+
+    cadena = cadena + coordenadaAutobus.getLatitude();
+    cadena = cadena + ",";
+    cadena = cadena + coordenadaAutobus.getLongitud();
+    cadena = cadena + "&destination=";
+    cadena = cadena + coordenadaParada.getLatitude();
+    cadena = cadena + ",";
+    cadena = cadena + coordenadaAutobus.getLongitud();
+    cadena = cadena + "&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
+
+    String cadena2 = "https://maps.googleapis.com/maps/api/directions/json?origin=19.488278,-70.7167&destination=19.4710,-70.6913&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
+
+    String devuelve = "";
+    System.out.println("cadena: "+cadena);
+    URL url = null;
+    try {
+        url = new URL(cadena);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection(); //Abrir la conexión
+        connection.setRequestProperty("User-Agent", "Mozilla/5.0" +
+                " (Linux; Android 1.5; es-ES) Ejemplo HTTP");
+        //connection.setHeader("content-type", "application/json");
+
+        int respuesta = connection.getResponseCode();
+        StringBuilder result = new StringBuilder();
+
+        if (respuesta == HttpURLConnection.HTTP_OK) {
+
+
+            InputStream in = new BufferedInputStream(connection.getInputStream());  // preparo la cadena de entrada
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));  // la introduzco en un BufferedReader
+
+            // El siguiente proceso lo hago porque el JSONOBject necesita un String y tengo
+            // que tranformar el BufferedReader a String. Esto lo hago a traves de un
+            // StringBuilder.
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                result.append(line);        // Paso toda la entrada al StringBuilder
+            }
+
+            //Creamos un objeto JSONObject para poder acceder a los atributos (campos) del objeto.
+            JSONObject respuestaJSON = new JSONObject(result.toString());   //Creo un JSONObject a partir del StringBuilder pasado a cadena
+            //Accedemos al vector de resultados
+            JSONArray resultJSON = respuestaJSON.getJSONArray("routes");   // results es el nombre del campo en el JSON
+            JSONObject jsonObject = resultJSON.getJSONObject(0);
+            JSONArray jsonArray = jsonObject.getJSONArray("legs");
+            //---------------------------distance-----------
+            JSONObject distance = jsonArray.getJSONObject(0).getJSONObject("distance");
+            int dis= (int) distance.get("value");
+            System.out.println(distance+"==================================");
+            System.out.println(dis+"==================================");
+            System.out.println("valor: "+jsonArray.toString());
+            //----------------------------duracion--------------------------
+            JSONObject duracion = jsonArray.getJSONObject(0).getJSONObject("duration");
+            int durac= (int) duracion.get("value");
+            System.out.println(duracion+"==================================");
+            System.out.println(durac+"==================================");
+            System.out.println("valor: "+jsonArray.toString());
+            //----------------------------duracion In traffic--------------------------
+            JSONObject duracionTraffic = jsonArray.getJSONObject(0).getJSONObject("duration_in_traffic ");
+            int duracTraf= (int) duracionTraffic.get("value");
+            System.out.println(duracionTraffic+"==================================");
+            System.out.println(duracTraf+"==================================");
+            System.out.println("valor: "+jsonArray.toString());
+            double newDurac = durac/60;
+            double newDuracTraf = duracTraf/60;
+            double newDis = dis/1000;
+            distanceAndTime.setDistance(newDis);
+            distanceAndTime.setDuration(newDurac);
+            distanceAndTime.setDuration_Traffic(newDuracTraf);
+            //Vamos obteniendo todos los campos que nos interesen.
+            //En este caso obtenemos la primera dirección de los resultados.
+                   /* String direccion="SIN DATOS PARA ESA LONGITUD Y LATITUD";
+                    if (resultJSON.length()>0){
+                        direccion = resultJSON.getJSONObject(0).getString("formatted_address");    // dentro del results pasamos a Objeto la seccion formated_address
+                    }
+                    devuelve = "Dirección: " + direccion;   // variable de salida que mandaré al onPostExecute para que actualice la UI
+*/
+        }
+;
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (JSONException e) {
+        e.printStackTrace();
+    }
+
+    return distanceAndTime;
+
+}
+
+    private Parada getParadaMasCerca(Autobus autobus){
+        Ruta ruta = autobus.getRuta();
+        ArrayList<Parada> paradas = (ArrayList<Parada>) paradaServices.buscarParadaPorRutaId(ruta.getId());
+
+        double max=1000000000;
+        double distanciaActual=0;
+        int indexes=0;
+        for(int i = 0; i<paradas.size(); i++){
+            distanciaActual =Math.sqrt(Math.pow((paradas.get(i).getCoordenada().getLatitude()-autobus.getCoordenada().getLatitude()), 2)
+                    +Math.pow((paradas.get(i).getCoordenada().getLongitud()-autobus.getCoordenada().getLongitud()),2));
+            if (distanciaActual<max){
+                max =distanciaActual;
+                indexes = i;
+            }
+        }
+
+        return paradas.get(indexes);
+    }
+    private Autobus autobosMasCercanoPorParada(Parada parada){
+        Ruta ruta = parada.getRuta();
+        ArrayList<Autobus>  autobuses = (ArrayList<Autobus>) autobusServices.buscarAutobusActivosYPorRuta(true, ruta);//Busca una lista de autobuses dado una ruta
+        if(autobuses.size() == 0){
+            return new Autobus();
+        }
+
+        Parada iterador = paradaServices.buscarParada(parada.getParadaAnterior());
+        while(!iterador.getId().equals(parada.getId())){
+            for(Autobus autobus: autobuses){
+                if(iterador.getId().equals(autobus.getUltimaParada().getId()))
+                    return autobus;
+            }
+            iterador = paradaServices.buscarParada(iterador.getParadaAnterior());
+
+        }
+        return  new Autobus();
+    }
+
 }
