@@ -97,6 +97,9 @@ public class RestApiController {
             return new ArrayList<Autobus>();
         }
         List <Autobus> autobuses = autobusServices.buscarTodosLosAutobusporRuta(ruta.getId());
+        for(Autobus autobus: autobuses){
+            autobus.getRuta().setParadas(null);
+        }
         return (ArrayList<Autobus>) autobuses;
     }
 
@@ -438,7 +441,8 @@ public class RestApiController {
                     iterador=paradaServices.buscarParada(iterador.getParadaSiguiente());
                 }
 
-                return new DistanceAndTime(totalDistance,totalTiempo,totalTraffic);
+                autobus.getRuta().setParadas(null);
+                return new DistanceAndTime(totalDistance,totalTiempo,totalTraffic, autobus);
 
             }
 

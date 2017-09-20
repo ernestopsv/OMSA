@@ -75,7 +75,7 @@
                 var flightPath = new google.maps.Polyline({
                     path: coor,
                     geodesic: true,
-                    strokeColor: '#DA4444',
+                    strokeColor: '#088A08',
                     strokeOpacity: 1.0,
                     strokeWeight: 5
                 });
@@ -128,7 +128,7 @@
     function setAutobus(map) {
 
         var active = {
-            url: '/images/logobusActive.png',
+            url: '/images/active.PNG',
             // This marker is 20 pixels wide by 32 pixels high.
             size: new google.maps.Size(80, 29),
             // The origin for this image is (0, 0).

@@ -7,11 +7,22 @@ public class DistanceAndTime {
     private double distance;
     private double duration;
     private double duration_Traffic;
+    private Autobus autobus;
 
-    public DistanceAndTime(double distance, double duration, double duration_Traffic) {
+
+    public DistanceAndTime(double distance, double duration, double duration_Traffic, Autobus autobus) {
         this.distance = distance;
         this.duration = duration;
         this.duration_Traffic = duration_Traffic;
+        this.autobus = autobus;
+    }
+
+    public Autobus getAutobus() {
+        return autobus;
+    }
+
+    public void setAutobus(Autobus autobus) {
+        this.autobus = autobus;
     }
 
     public double getDistance() {
