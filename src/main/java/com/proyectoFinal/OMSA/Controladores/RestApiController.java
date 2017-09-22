@@ -376,6 +376,9 @@ public class RestApiController {
         Autobus autobus = chequeo.getAutobus();
         Ruta ruta = autobus.getRuta();
         ArrayList<Parada> paradas = (ArrayList<Parada>) paradaServices.buscarParadaPorRutaId(ruta.getId());
+        if(paradas==null){
+            return new Parada();
+        }
 
         double max=1000000000;
         double distanciaActual=0;
@@ -390,7 +393,7 @@ public class RestApiController {
             }
             cont++;
         }
-        return paradas.get(index);
+        return paradas.get(index-1);
     }
 
  //-------------------------------------------------------------Usuario-------------------------------------------------------------------
