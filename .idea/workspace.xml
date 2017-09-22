@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="addinng new images">
+    <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/RestApiController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/RestApiController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/DistanceAndTime.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/DistanceAndTime.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/images/paradas.png" afterPath="$PROJECT_DIR$/build/resources/main/static/images/paradas.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/index.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/index.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -121,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
-              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -1354,14 +1357,7 @@
       <workItem from="1505758518614" duration="8738000" />
       <workItem from="1505865340756" duration="355000" />
       <workItem from="1505931253342" duration="2311000" />
-      <workItem from="1506092332106" duration="3222000" />
-    </task>
-    <task id="LOCAL-00022" summary="parada pagination">
-      <created>1503175881965</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1503175881965</updated>
+      <workItem from="1506092332106" duration="3630000" />
     </task>
     <task id="LOCAL-00023" summary="parada pagination">
       <created>1503176022114</created>
@@ -1699,11 +1695,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505768238352</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="arreglar funcion parada mas cercana">
+      <created>1506095881487</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1506095881489</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="715613000" />
+    <option name="totallyTimeSpent" value="716021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1793,7 +1796,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing templates name" />
     <MESSAGE value="delete parada function" />
     <MESSAGE value="''" />
     <MESSAGE value="adding logging and amdin controller" />
@@ -1818,7 +1820,8 @@
     <MESSAGE value="busacar todos los autobuses" />
     <MESSAGE value="vacanisimo" />
     <MESSAGE value="addinng new images" />
-    <option name="LAST_COMMIT_MESSAGE" value="addinng new images" />
+    <MESSAGE value="arreglar funcion parada mas cercana" />
+    <option name="LAST_COMMIT_MESSAGE" value="arreglar funcion parada mas cercana" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2186,7 +2189,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
