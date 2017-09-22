@@ -288,7 +288,7 @@ public class RestApiController {
         return  ruta;
     }
     @RequestMapping(value = "/ruta/eliminar/{id}", method = RequestMethod.POST, produces = CONTENT_TYPE)
-    public Boolean borrarParada(@PathVariable("id")Long id){
+    public Boolean borrarRuta(@PathVariable("id")Long id){
         Ruta ruta = rutaServices.buscarRutaPorId(id);
         if(ruta!=null){
             paradaServices.eliminarParadaPorRutaId(id);
@@ -379,20 +379,19 @@ public class RestApiController {
 
         double max=1000000000;
         double distanciaActual=0;
-        int indexes=0;
-        for(int i = 0; i<paradas.size(); i++){
-            distanciaActual =Math.sqrt(Math.pow((paradas.get(i).getCoordenada().getLatitude()-chequeo.getParada().getCoordenada().getLatitude()), 2)+Math.pow((paradas.get(i).getCoordenada().getLongitud()-chequeo.getParada().getCoordenada().getLongitud()),2));
+        int index=0;
+        int cont=1;
+        for(Parada parada:paradas){
+            distanciaActual =Math.sqrt(Math.pow((parada.getCoordenada().getLatitude()-chequeo.getParada().getCoordenada().getLatitude()), 2)
+                    +Math.pow((parada.getCoordenada().getLongitud()-chequeo.getParada().getCoordenada().getLongitud()),2));
             if (distanciaActual<max){
                 max =distanciaActual;
-                indexes = i;
+                index = cont;
             }
+            cont++;
         }
-
-        return paradas.get(indexes);
+        return paradas.get(index);
     }
-
-
-
 
  //-------------------------------------------------------------Usuario-------------------------------------------------------------------
  @RequestMapping(value = "/usuario/buscar/{page}/item/{items}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
