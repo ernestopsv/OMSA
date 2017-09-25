@@ -18,6 +18,8 @@ import java.util.List;
 public class ParadaServices {
     @Autowired
     ParadaRepository paradaRepository;
+    @Autowired
+    RutaServices rutaServices;
 
     @Transactional
     public void eliminarParadaPor(Long id){
@@ -48,5 +50,10 @@ public class ParadaServices {
     @Transactional
     void modificarParadaPorId(Parada parada){
         paradaRepository.modifyParadaById(parada.getCoordenada(),parada.getNombre(),parada.getRuta(),parada.getParadaAnterior(),parada.getParadaSiguiente(),parada.getId());
+    }
+
+    public void guardarParadaAlPrincipio(){
+        Ruta ruta1 = rutaServices.buscarRutaPorId((long) 1);
+        Ruta ruta2 = rutaServices.buscarRutaPorId((long) 2);
     }
 }

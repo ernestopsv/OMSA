@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,5 +49,20 @@ public class RutaServices {
     @Transactional
     public void modificarRutaPorId(Ruta ruta){
          rutaRepository.modifyRutaById(ruta.getDistanciaTotal(), ruta.getEsDireccionSubida(),ruta.getFechaUltimaModificacion(),ruta.getNombreCorredor(),ruta.getId());
+    }
+
+    public void guardarRutaAlPrincipio(){
+        Ruta ruta = new Ruta();
+        ruta.setDistanciaTotal((float) 43233);
+        ruta.setFechaCreada((long) 1500573374);
+        ruta.setFechaUltimaModificacion((long) 1500573374);
+        ruta.setCiudad("Santiago de Los Caballeros");
+        ruta.setNombreCorredor("C-3(Baldom)");
+        ruta.setEsDireccionSubida(true);
+
+        ArrayList<Coordenada> coordenadas = new ArrayList<>();
+//        coordenadas.add(new Coordenada(19.))
+
+
     }
 }
