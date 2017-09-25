@@ -331,7 +331,6 @@ public class RestApiController {
         Autobus autobus = autobusServices.buscarAutobusPorRaspberryNumeroSerial(chequeo.getAutobus().getRaspberryPiNumeroSerial());
         chequeo.setAutobus(autobus);
         Parada parada = getParadaReal(chequeo);
-        parada.setRuta(null);
         chequeo.setParada(parada);
         if(parada==null){
             new Gson().toJson("No se pudo guardar el chequeo");
@@ -352,34 +351,14 @@ public class RestApiController {
         }
         return chequeos;
     }
-//    import sys
-//import math
-//
-//    dict =[(19.4416166,-70.68727), (19.43919,-70.68845), (19.43493,-70.69110), (19.42904,-70.69471), (19.42482,-70.69729), (19.42227,-70.69899)]
-//
-//    def calculate(list,tuple):
-//    d = 0
-//    max =100000000
-//    index=0
-//    count =1
-//            for k in list:
-//    d =math.sqrt(pow((tuple[0]-k[0]), 2)+ pow((tuple[1]-k[1]),2))
-//    print k, d
-//        if(d<max):
-//    max=d
-//            index=count
-//    count=count+1
-//            return index
-//    print calculate(dict,(19.4406,-70.6873))
 
     private Parada getParadaReal(Chequeo chequeo){
         Autobus autobus = chequeo.getAutobus();
         Ruta ruta = autobus.getRuta();
         ArrayList<Parada> paradas = (ArrayList<Parada>) paradaServices.buscarParadaPorRutaId(ruta.getId());
         if(paradas==null){
-            return new Parada();
+            return null;
         }
-
         double max=1000000000;
         double distanciaActual=0;
         int index=0;
@@ -567,7 +546,7 @@ private DistanceAndTime totalTiempoApiGoogle(Coordenada coordenadaAutobus, Coord
         Ruta ruta = parada.getRuta();
         ArrayList<Autobus>  autobuses = (ArrayList<Autobus>) autobusServices.buscarAutobusActivosYPorRuta(true, ruta);//Busca una lista de autobuses dado una ruta
         if(autobuses.size() == 0){
-            return new Autobus();
+            return null;
         }
 
         Parada iterador = paradaServices.buscarParada(parada.getParadaAnterior());
