@@ -361,6 +361,7 @@ public class RestApiController {
         }
         double max=1000000000;
         double distanciaActual=0;
+        Parada paradaActual= new Parada();
         int index=0;
         int cont=1;
         for(Parada parada:paradas){
@@ -369,10 +370,12 @@ public class RestApiController {
             if (distanciaActual<max){
                 max =distanciaActual;
                 index = cont;
+                paradaActual =parada;
+
             }
             cont++;
         }
-        return paradas.get(index-1);
+        return paradaActual;
     }
 
  //-------------------------------------------------------------Usuario-------------------------------------------------------------------
