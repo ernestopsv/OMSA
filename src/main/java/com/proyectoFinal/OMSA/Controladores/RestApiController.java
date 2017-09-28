@@ -39,6 +39,11 @@ public class RestApiController {
     @Autowired
     UsuarioServices usuarioServices;
 
+    static double  totalTiempo = 0;
+    static double totalTraffic= 0;
+    static double totalDistance=0;
+    private StringBuilder sb = new StringBuilder();
+
 //**********************************************************************Autobus*****************************************************
     /**
      * Buscar un autobus por su id
@@ -333,14 +338,16 @@ public class RestApiController {
         Parada parada = getParadaReal(chequeo);
         chequeo.setParada(parada);
         if(parada==null){
-            new Gson().toJson("No se pudo guardar el chequeo");
+            return new Gson().toJson("No se pudo guardar el chequeo");
         }
         autobus.setUltimaParada(parada);
         chequeo.setAutobus(autobus);
         if(chequeoServices.guardarChequeo(chequeo)==null){
             return new Gson().toJson("No se pudo guardar el chequeo");
         }
-        return new Gson().toJson("Chequeo guardado");
+        ArrayList<Parada>paradas = (ArrayList<Parada>) paradaServices.buscarParadaPorRutaId(autobus.getRuta().getId());
+
+        return new Gson().toJson("Chequeo guardado Tamano-> "+paradas.size());
     }
 
     @RequestMapping(value="/chequeo/buscar/{id_autobus}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
@@ -356,25 +363,30 @@ public class RestApiController {
         Autobus autobus = chequeo.getAutobus();
         Ruta ruta = autobus.getRuta();
         ArrayList<Parada> paradas = (ArrayList<Parada>) paradaServices.buscarParadaPorRutaId(ruta.getId());
+
+        System.out.println("+++++++++++++++++++++++++++++"+ paradas.size());
         if(paradas==null){
             return null;
         }
         double max=1000000000;
-        double distanciaActual=0;
+        double distanciaActual;
         Parada paradaActual= new Parada();
-        int index=0;
-        int cont=1;
+
         for(Parada parada:paradas){
-            distanciaActual =Math.sqrt(Math.pow((parada.getCoordenada().getLatitude()-chequeo.getParada().getCoordenada().getLatitude()), 2)
-                    +Math.pow((parada.getCoordenada().getLongitud()-chequeo.getParada().getCoordenada().getLongitud()),2));
+            distanciaActual= Math.sqrt(
+                              Math.pow((parada.getCoordenada().getLatitude()-chequeo.getParada().getCoordenada().getLatitude()),2)
+                            + Math.pow((parada.getCoordenada().getLongitud()-chequeo.getParada().getCoordenada().getLongitud()),2)
+            );
+            System.out.println("Distancia Actual-> "+ distanciaActual + "  Parada-> "+ parada.getNombre());
             if (distanciaActual<max){
                 max =distanciaActual;
-                index = cont;
-                paradaActual =parada;
-
+                paradaActual = parada;
+                System.out.println(paradaActual.getNombre());
             }
-            cont++;
+
+
         }
+        System.out.println("parada obtenida -> "+ paradaActual.getNombre());
         return paradaActual;
     }
 
@@ -406,123 +418,144 @@ public class RestApiController {
 //______________________________________________________Mobile App Distance and Time________________________________________________
     @RequestMapping(value = "/distancia/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public DistanceAndTime buscarDistanciaYTiempo (@PathVariable("id")Long id){
-            Parada parada = paradaServices.buscarParada(id);
-            Autobus autobus = autobosMasCercanoPorParada(parada);
+            Parada paradaSeleccionada = paradaServices.buscarParada(id);
+        System.out.println("Parada solicitada------------------------------------------> "+ paradaSeleccionada.getNombre());
+            Autobus autobus = autobosMasCercanoPorParada(paradaSeleccionada);
+
            // totalTiempoApiGoogle();
             if(autobus!=null){
                 Parada iterador = getParadaMasCerca(autobus);
-                double totalTiempo = 0;
-                double totalTraffic= 0;
-                double totalDistance=0;
-                totalTiempo+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDuration();
-                totalTraffic+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDuration_Traffic();
-                totalDistance+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDistance();
-
-                while (!iterador.getId().equals(parada.getId())){
-                    totalTiempo+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDuration();
-                    totalTraffic+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDuration_Traffic();
-                    totalDistance+= totalTiempoApiGoogle(autobus.getCoordenada(), iterador.getCoordenada()).getDistance();
-                    iterador=paradaServices.buscarParada(iterador.getParadaSiguiente());
-                }
-
-                autobus.getRuta().setParadas(null);
-                return new DistanceAndTime(totalDistance,totalTiempo,totalTraffic, autobus);
-
+                System.out.println("Parada mas cerca-------------------------------------> "+iterador.getNombre());
+                DistanceAndTime distanceAndTime = totalTiempoApiGoogle(autobus, paradaSeleccionada, iterador);
+                totalTiempo  =0;
+                totalTraffic = 0;
+                totalDistance =0;
+                return distanceAndTime;
             }
 
             return new DistanceAndTime();
     }
-private DistanceAndTime totalTiempoApiGoogle(Coordenada coordenadaAutobus, Coordenada coordenadaParada){
-        DistanceAndTime distanceAndTime = new DistanceAndTime();
-
-    String cadena = "https://maps.googleapis.com/maps/api/directions/json?origin=";
-
-    cadena = cadena + coordenadaAutobus.getLatitude();
-    cadena = cadena + ",";
-    cadena = cadena + coordenadaAutobus.getLongitud();
-    cadena = cadena + "&destination=";
-    cadena = cadena + coordenadaParada.getLatitude();
-    cadena = cadena + ",";
-    cadena = cadena + coordenadaAutobus.getLongitud();
-    cadena = cadena + "&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
-
-    String cadena2 = "https://maps.googleapis.com/maps/api/directions/json?origin=19.488278,-70.7167&destination=19.4710,-70.6913&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
-
-    String devuelve = "";
-    System.out.println("cadena: "+cadena);
-    URL url = null;
-    try {
-        url = new URL(cadena);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection(); //Abrir la conexión
-        connection.setRequestProperty("User-Agent", "Mozilla/5.0" +
-                " (Linux; Android 1.5; es-ES) Ejemplo HTTP");
-        //connection.setHeader("content-type", "application/json");
-
-        int respuesta = connection.getResponseCode();
-        StringBuilder result = new StringBuilder();
-
-        if (respuesta == HttpURLConnection.HTTP_OK) {
 
 
-            InputStream in = new BufferedInputStream(connection.getInputStream());  // preparo la cadena de entrada
+private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Parada iterador){
+    DistanceAndTime distanceAndTime = new DistanceAndTime();
+    int cont=0;
+    while (!iterador.getId().equals(parada.getId())) {
+        cont++;
+        System.out.println(cont);
+        String cadena = "https://maps.googleapis.com/maps/api/directions/json?origin=";
+        if(cont ==1){
+            cadena = cadena + autobus.getCoordenada().getLatitude();
+            cadena = cadena + ",";
+            cadena = cadena + autobus.getCoordenada().getLongitud();
+            cadena = cadena + "&destination=";
+            cadena = cadena + iterador.getCoordenada().getLatitude();
+            cadena = cadena + ",";
+            cadena = cadena + iterador.getCoordenada().getLongitud();
+            cadena = cadena + "&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
+            iterador = paradaServices.buscarParada(iterador.getParadaAnterior());
+        }else{
+            iterador = paradaServices.buscarParada(iterador.getParadaAnterior());
+            cadena = cadena + iterador.getCoordenada().getLatitude();
+            cadena = cadena + ",";
+            cadena = cadena + iterador.getCoordenada().getLongitud();
+            cadena = cadena + "&destination=";
+            cadena = cadena + iterador.getCoordenada().getLatitude();
+            cadena = cadena + ",";
+            cadena = cadena + iterador.getCoordenada().getLongitud();
+            cadena = cadena + "&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(in));  // la introduzco en un BufferedReader
+        }
 
-            // El siguiente proceso lo hago porque el JSONOBject necesita un String y tengo
-            // que tranformar el BufferedReader a String. Esto lo hago a traves de un
-            // StringBuilder.
+       // String cadena2 = "https://maps.googleapis.com/maps/api/directions/json?origin=19.488278,-70.7167&destination=19.4710,-70.6913&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
 
-            String line;
-            while ((line = reader.readLine()) != null) {
-                result.append(line);        // Paso toda la entrada al StringBuilder
-            }
+        System.out.println("cadena: " + cadena);
+        URL url = null;
+        try {
+            url = new URL(cadena);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection(); //Abrir la conexión
+            connection.setRequestProperty("User-Agent", "Mozilla/5.0" +
+                    " (Linux; Android 1.5; es-ES) Ejemplo HTTP");
+            //connection.setHeader("content-type", "application/json");
 
-            //Creamos un objeto JSONObject para poder acceder a los atributos (campos) del objeto.
-            JSONObject respuestaJSON = new JSONObject(result.toString());   //Creo un JSONObject a partir del StringBuilder pasado a cadena
-            //Accedemos al vector de resultados
-            JSONArray resultJSON = respuestaJSON.getJSONArray("routes");   // results es el nombre del campo en el JSON
-            JSONObject jsonObject = resultJSON.getJSONObject(0);
-            JSONArray jsonArray = jsonObject.getJSONArray("legs");
-            //---------------------------distance-----------
-            JSONObject distance = jsonArray.getJSONObject(0).getJSONObject("distance");
-            int dis= (int) distance.get("value");
-            System.out.println(distance+"==================================");
-            System.out.println(dis+"==================================");
-            System.out.println("valor: "+jsonArray.toString());
-            //----------------------------duracion--------------------------
-            JSONObject duracion = jsonArray.getJSONObject(0).getJSONObject("duration");
-            int durac= (int) duracion.get("value");
-            System.out.println(duracion+"==================================");
-            System.out.println(durac+"==================================");
-            System.out.println("valor: "+jsonArray.toString());
-            //----------------------------duracion In traffic--------------------------
-            JSONObject duracionTraffic = jsonArray.getJSONObject(0).getJSONObject("duration_in_traffic ");
-            int duracTraf= (int) duracionTraffic.get("value");
-            System.out.println(duracionTraffic+"==================================");
-            System.out.println(duracTraf+"==================================");
-            System.out.println("valor: "+jsonArray.toString());
-            double newDurac = durac/60;
-            double newDuracTraf = duracTraf/60;
-            double newDis = dis/1000;
-            distanceAndTime.setDistance(newDis);
-            distanceAndTime.setDuration(newDurac);
-            distanceAndTime.setDuration_Traffic(newDuracTraf);
-            //Vamos obteniendo todos los campos que nos interesen.
-            //En este caso obtenemos la primera dirección de los resultados.
+            int respuesta = connection.getResponseCode();
+            StringBuilder result = new StringBuilder();
+
+            if (respuesta == HttpURLConnection.HTTP_OK) {
+
+
+                InputStream in = new BufferedInputStream(connection.getInputStream());  // preparo la cadena de entrada
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));  // la introduzco en un BufferedReader
+
+                // El siguiente proceso lo hago porque el JSONOBject necesita un String y tengo
+                // que tranformar el BufferedReader a String. Esto lo hago a traves de un
+                // StringBuilder.
+
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    result.append(line);        // Paso toda la entrada al StringBuilder
+                }
+
+                //Creamos un objeto JSONObject para poder acceder a los atributos (campos) del objeto.
+                JSONObject respuestaJSON = new JSONObject(result.toString());   //Creo un JSONObject a partir del StringBuilder pasado a cadena
+                //Accedemos al vector de resultados
+                JSONArray resultJSON = respuestaJSON.getJSONArray("routes");   // results es el nombre del campo en el JSON
+                JSONObject jsonObject = resultJSON.getJSONObject(0);
+                JSONArray jsonArray = jsonObject.getJSONArray("legs");
+                //---------------------------distance-----------
+                JSONObject distance = jsonArray.getJSONObject(0).getJSONObject("distance");
+                int dis = (int) distance.get("value");
+                System.out.println(distance + "<- Distance");
+                System.out.println("valor: " + jsonArray.toString());
+
+                //----------------------------duracion--------------------------
+                JSONObject duracion = jsonArray.getJSONObject(0).getJSONObject("duration");
+                int durac = (int) duracion.get("value");
+                System.out.println(duracion + "==================================");
+                System.out.println(durac + "==================================");
+                System.out.println("valor: " + jsonArray.toString());
+                //----------------------------duracion In traffic--------------------------
+                JSONObject duracionTraffic = jsonArray.getJSONObject(0).getJSONObject("duration_in_traffic");
+                int duracTraf = (int) duracionTraffic.get("value");
+                System.out.println(duracionTraffic + "==================================");
+                System.out.println(duracTraf + "==================================");
+                System.out.println("valor: " + jsonArray.toString());
+                double newDurac = durac / 60;
+                double newDuracTraf = duracTraf / 60;
+                double newDis = dis / 1000;
+
+                totalTiempo = totalTiempo +newDurac;
+                totalTraffic = totalTraffic + newDuracTraf;
+                totalDistance = totalDistance + newDis;
+                System.out.println("Total tiempo actual-> "+ totalTiempo);
+
+//                distanceAndTime.setDistance(newDis);
+//                distanceAndTime.setDuration(newDurac);
+//                distanceAndTime.setDuration_Traffic(newDuracTraf);
+                //Vamos obteniendo todos los campos que nos interesen.
+                //En este caso obtenemos la primera dirección de los resultados.
                    /* String direccion="SIN DATOS PARA ESA LONGITUD Y LATITUD";
                     if (resultJSON.length()>0){
                         direccion = resultJSON.getJSONObject(0).getString("formatted_address");    // dentro del results pasamos a Objeto la seccion formated_address
                     }
                     devuelve = "Dirección: " + direccion;   // variable de salida que mandaré al onPostExecute para que actualice la UI
 */
+            }
+            ;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-;
-    } catch (IOException e) {
-        e.printStackTrace();
-    } catch (JSONException e) {
-        e.printStackTrace();
     }
-
+    distanceAndTime.setDistance(totalDistance);
+    distanceAndTime.setDuration(totalTiempo);
+    distanceAndTime.setDuration_Traffic(totalTraffic);
+    System.out.println("Cantidad"+ cont);
+    autobus.getRuta().setParadas(null);
+    autobus.getRuta().setCoordenadas(null);
+    distanceAndTime.setAutobus(autobus);
     return distanceAndTime;
 
 }

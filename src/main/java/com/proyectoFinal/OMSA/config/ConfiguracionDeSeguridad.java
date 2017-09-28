@@ -13,16 +13,20 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.stereotype.Component;
 
 
 @Configurable
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter {
     @Autowired
-    BCryptPasswordEncoder bCryptPasswordEncoder;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    DataSource dataSource;
+    private DataSource dataSource;
+
+    @Autowired
+    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth)throws Exception{
@@ -47,7 +51,8 @@ public class ConfiguracionDeSeguridad extends WebSecurityConfigurerAdapter {
                 .and().csrf().disable()
                 .formLogin()
                     .loginPage("/login")
-                    .defaultSuccessUrl("/home", true)
+//                    .defaultSuccessUrl("/home", true)
+                      .successHandler(customAuthenticationSuccessHandler)
                     .failureUrl("/login?error")
                     .permitAll()
                 .usernameParameter("username")

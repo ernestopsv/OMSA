@@ -83,6 +83,7 @@
                 flightPath.setMap(map);
             });
         });
+        setAutobus(map);
         setInterval(function () {
             console.log("here");
             setAutobus(map);
@@ -128,7 +129,7 @@
     function setAutobus(map) {
 
         var active = {
-            url: '/images/logobusActive.png',
+            url: '/images/busActive.png',
             // This marker is 20 pixels wide by 32 pixels high.
             size: new google.maps.Size(80, 29),
             // The origin for this image is (0, 0).
@@ -137,7 +138,7 @@
             anchor: new google.maps.Point(0, 29)
         };
         var inactive = {
-            url: '/images/inactive.PNG',
+            url: '/images/busInactive.png',
             // This marker is 20 pixels wide by 32 pixels high.
             size: new google.maps.Size(80, 26),
             // The origin for this image is (0, 0).

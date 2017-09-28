@@ -80,6 +80,9 @@ public class UsuarioServices {
             Rol rol = new Rol();
             rol.setUsername(usuario.getUsername());
             rol.setRol("ROLE_ADMIN");
+            Rol rol2 = new Rol();
+            rol2.setUsername(usuario.getUsername());
+            rol2.setRol("ROLE_USER");
             rolServices.creacionRol(rol);
         }
     }
