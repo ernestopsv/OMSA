@@ -5,6 +5,7 @@ import com.proyectoFinal.OMSA.Repository.*;
 import com.proyectoFinal.OMSA.Services.AutobusServices;
 import com.proyectoFinal.OMSA.Services.ChequeoServices;
 import com.proyectoFinal.OMSA.Services.RutaServices;
+import com.proyectoFinal.OMSA.Services.UsuarioServices;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -34,11 +36,27 @@ public class AutobusController {
     @Autowired
     RutaServices rutaServices;
 
+    @Autowired
+    UsuarioServices usuarioServices;
+
     @RequestMapping("/")
-    public String index(Model model){
+    public String index(HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
         model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
         return "ver_autobus";
     }
+
+    @RequestMapping("/sinRuta")
+    public String autobusSinRuta(HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
+        return "ver_autobusSinRutas";
+    }
+
 
     /**
      *
@@ -47,7 +65,11 @@ public class AutobusController {
      * @return
      */
     @RequestMapping("/editar/{id}")
-    public String editarAutobus(Model model, @PathVariable("id")Long id){
+    public String editarAutobus(@PathVariable("id")Long id, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
         Autobus autobus =autobusServices.buscarUnAutobus(id);
         model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
         model.addAttribute("autobus", autobus);
@@ -55,10 +77,14 @@ public class AutobusController {
     }
 
     @PostMapping("/editar")
-    public String guardarAutobusEditado( Model model,@RequestParam("matricula")String matricula, @RequestParam("ruta")Long id_ruta, @RequestParam(value="modelo", required= false)String modelo, @RequestParam(value="cantidadDeAsientos")Integer cantidadAsientos,
+    public String guardarAutobusEditado( @RequestParam("matricula")String matricula, @RequestParam("ruta")Long id_ruta, @RequestParam(value="modelo", required= false)String modelo, @RequestParam(value="cantidadDeAsientos")Integer cantidadAsientos,
                                          @RequestParam(value = "peso", required = false)Float peso, @RequestParam(value = "anoFabricacion", required = false)Integer anoFabircacion, @RequestParam(value="conductor", required = false)String conductor,
                                          @RequestParam(value = "precio")Integer precio, @RequestParam("autobus")Long id_autobus, @RequestParam(value = "raspberryPiNumeroSerial")String numeroSerial,
-                                         @RequestParam("tieneAireAcondicionado")Boolean tieneAire){
+                                         @RequestParam("tieneAireAcondicionado")Boolean tieneAire, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
         boolean modificado= false;
         Autobus autobus = autobusServices.buscarAutobusPorId(id_autobus);
         autobus.setModelo(modelo);
@@ -93,7 +119,11 @@ public class AutobusController {
     }
 
     @RequestMapping("/crear")
-    public String crearAutobus(Model model){
+    public String crearAutobus( HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
         model.addAttribute("autobus", new Autobus());
         model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
 
@@ -105,7 +135,11 @@ public class AutobusController {
 
     @PostMapping("/crear")
     @Transactional
-    public String guardarAutobusCreado(@ModelAttribute Autobus autobus, RedirectAttributes redirectAttributes, Model model, @RequestParam("ruta")Long id){
+    public String guardarAutobusCreado(@ModelAttribute Autobus autobus, @RequestParam("ruta")Long id, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
         Ruta ruta = rutaServices.buscarRutaPorId(id);
         autobus.setRuta(ruta);
         autobus.setActivo(false);

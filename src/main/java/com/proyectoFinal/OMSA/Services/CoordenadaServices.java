@@ -28,4 +28,8 @@ public class CoordenadaServices {
         return coordenadaRepository.save(coordenada);
     }
 
+    public void eliminarCoordenada(Long id ){
+        coordenadaRepository.deleteCoordenadaById(id);
+    }
+
 }

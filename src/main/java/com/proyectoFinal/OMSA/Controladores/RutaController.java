@@ -1,13 +1,7 @@
 package com.proyectoFinal.OMSA;
 
-import com.proyectoFinal.OMSA.Entities.Autobus;
-import com.proyectoFinal.OMSA.Entities.Coordenada;
-import com.proyectoFinal.OMSA.Entities.Parada;
-import com.proyectoFinal.OMSA.Entities.Ruta;
-import com.proyectoFinal.OMSA.Services.AutobusServices;
-import com.proyectoFinal.OMSA.Services.CoordenadaServices;
-import com.proyectoFinal.OMSA.Services.ParadaServices;
-import com.proyectoFinal.OMSA.Services.RutaServices;
+import com.proyectoFinal.OMSA.Entities.*;
+import com.proyectoFinal.OMSA.Services.*;
 import com.sun.org.apache.bcel.internal.generic.L2I;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.hibernate.internal.IteratorImpl;
@@ -18,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Date;
@@ -41,7 +36,9 @@ public class RutaController {
     private ParadaServices paradaServices;
 
     @Autowired
-    CoordenadaServices coordenadaServices;
+    UsuarioServices usuarioServices;
+
+
     @RequestMapping("/")
     public String index(Model model){
         model.addAttribute("size", rutaServices.buscarTodasLasRutas().size());
@@ -49,7 +46,10 @@ public class RutaController {
     }
 
     @RequestMapping("/listar/paradas/{id}")
-    public String mostrarParadas(Model model, @PathVariable("id") Long id_ruta){
+    public String mostrarParadas(@PathVariable("id") Long id_ruta, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
         List<Parada>paradas = paradaServices.buscarParadaPorRutaId(id_ruta);
         model.addAttribute("paradas",paradas);
         model.addAttribute("size", paradas.size());
@@ -59,13 +59,19 @@ public class RutaController {
     }
 
     @RequestMapping("/listar/autobus")
-    public String mostrarAutobus(Model model, @RequestParam("id")Long id_ruta){
+    public String mostrarAutobus( @RequestParam("id")Long id_ruta, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
         List<Autobus> autobuses = autobusServices.buscarTodosLosAutobusporRuta(id_ruta);
         model.addAttribute("autobuses", autobuses);
         return "ver_autobus";
     }
     @RequestMapping("/listar/coordenadas/{id}")
-    public String mostrarCoordenadas(Model model, @PathVariable("id") Long id_ruta){
+    public String mostrarCoordenadas(@PathVariable("id") Long id_ruta, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
         List<Coordenada> coordenadas = rutaServices.buscarRutaPorId(id_ruta).getCoordenadas();
         model.addAttribute("coordenadas",coordenadas);
         model.addAttribute("size", coordenadas.size());
@@ -75,13 +81,20 @@ public class RutaController {
     }
 
     @RequestMapping(value = "/buscar", method = RequestMethod.GET, produces = "application/json")
-    public List<Ruta> buscarRuta(Model model, @RequestParam("nombre_corredor")String nombre_Corredor){
+    public List<Ruta> buscarRuta(@RequestParam("nombre_corredor")String nombre_Corredor, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
         //model.addAttribute("ruta", rutaServices.buscarRutaPorNombreCorredor(nombre_Corredor));
         return rutaServices.buscarRutaPorNombreCorredor(nombre_Corredor);
     }
 
     @RequestMapping("/editar/{ruta}")
-    public String editarRuta(Model model , @PathVariable("ruta")Long id){
+    public String editarRuta(@PathVariable("ruta")Long id, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
         Ruta ruta = rutaServices.buscarRutaPorId(id);
         model.addAttribute("ruta", ruta);
         return "editar_ruta";
@@ -89,7 +102,6 @@ public class RutaController {
 
     @PostMapping("/editar")
     public String guardarRutaEditada(@ModelAttribute Ruta ruta, @RequestParam("corredor")String nombreCorredor){
-
         Ruta ruta1 = rutaServices.buscarRutaPorNombreCorredor(nombreCorredor).get(1);
 
         if(ruta1!=null){
@@ -105,7 +117,10 @@ public class RutaController {
     }
 
     @RequestMapping("/crear")
-    public String crearRuta(Model model){
+    public String crearRuta( HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
         model.addAttribute("ruta", new Ruta());
         return "crear_ruta";
     }

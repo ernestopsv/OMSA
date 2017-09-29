@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,18 +31,27 @@ public class AdminController {
 
 
     @RequestMapping("/usuarios")
-    public String index(Model model){
+    public String index(HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario usuario = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", usuario);
         model.addAttribute("size", usuarioServices.buscarTodosUsuarios().size());
         return "ver_usuarios";
     }
 
     @RequestMapping("/registrar")
-    public  String agregar(Model model){
+    public  String agregar(HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario usuario = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", usuario);
         model.addAttribute("usuario",new Usuario());
         return "crear_usuarios";
     }
     @PostMapping("/registrar")
-    public ModelAndView agregar(@ModelAttribute Usuario usuario, Model model, @RequestParam("roles")String[] roles){
+    public ModelAndView agregar(@ModelAttribute Usuario usuario, @RequestParam("roles")String[] roles, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
 
         System.out.println(usuario.getName()+"/"+usuario.getPassword()+"/"+usuario.getUsername());
         usuario.setPassword(bCryptPasswordEncoder.encode(usuario.getPassword()));
@@ -51,11 +61,10 @@ public class AdminController {
                 Rol r = new Rol();
                 r.setRol(rol);
                 r.setUsername(usuario.getUsername());
-
                 rols.add(r);
             }
         }
-        usuario.setRoles(rols);
+       // usuario.setRoles(rols);
         if (usuarioServices.guardarUsuario(usuario)!=null){
             return new ModelAndView( "redirect:/");
         }
@@ -64,14 +73,20 @@ public class AdminController {
     }
 
     @RequestMapping("/editar/{id}")
-    public  String modificar(Model model, @PathVariable("id")Long id){
+    public  String modificar( @PathVariable("id")Long id, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
         model.addAttribute("usuario", usuarioServices.buscarUnUsuario(id));
         return "editar_usuarios";
     }
 
     @PostMapping("/editar")
     public ModelAndView modificar(@RequestParam("roles") String[] roles, @RequestParam("id")Long id, @RequestParam("username") String username,
-                                  @RequestParam("password") String password, @RequestParam("name") String nombre, Model model){
+                                  @RequestParam("password") String password, @RequestParam("name") String nombre, HttpServletRequest request, Model model){
+        String uname = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(uname);
+        model.addAttribute("usuario", user);
         Usuario usuario = new Usuario();
         usuario.setName(nombre);
         usuario.setPassword(bCryptPasswordEncoder.encode(password));

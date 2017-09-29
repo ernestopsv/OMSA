@@ -47,7 +47,7 @@
                             </thead>
                             <tbody>
                             <tr ng-show="usuarios.length <= 0">
-                                <td colspan="6" style="text-align:center;">Leyendo Nuevos Datos!!</td>
+                                <td colspan="7" style="text-align:center;">Leyendo Nuevos Datos!!</td>
                             </tr>
                             <tr dir-paginate="usuario in usuarios|itemsPerPage:itemsPerPage" total-items="${size}">
                                 <td>{{$index+1}}</td>

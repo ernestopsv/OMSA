@@ -39,10 +39,6 @@ public class RestApiController {
     @Autowired
     UsuarioServices usuarioServices;
 
-    static double  totalTiempo = 0;
-    static double totalTraffic= 0;
-    static double totalDistance=0;
-    private StringBuilder sb = new StringBuilder();
 
 //**********************************************************************Autobus*****************************************************
     /**
@@ -426,11 +422,8 @@ public class RestApiController {
             if(autobus!=null){
                 Parada iterador = getParadaMasCerca(autobus);
                 System.out.println("Parada mas cerca-------------------------------------> "+iterador.getNombre());
-                DistanceAndTime distanceAndTime = totalTiempoApiGoogle(autobus, paradaSeleccionada, iterador);
-                totalTiempo  =0;
-                totalTraffic = 0;
-                totalDistance =0;
-                return distanceAndTime;
+
+                return totalTiempoApiGoogle(autobus, paradaSeleccionada, iterador);
             }
 
             return new DistanceAndTime();
@@ -440,18 +433,22 @@ public class RestApiController {
 private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Parada iterador){
     DistanceAndTime distanceAndTime = new DistanceAndTime();
     int cont=0;
+    double newDurac= 0.0D, newDuracTraf = 0.0D,newDis= 0.0D;
+    int durac=0,dis=0, duracTraf=0;
+
+
     while (!iterador.getId().equals(parada.getId())) {
         cont++;
         System.out.println(cont);
         String cadena = "https://maps.googleapis.com/maps/api/directions/json?origin=";
         if(cont ==1){
-            cadena = cadena + autobus.getCoordenada().getLatitude();
-            cadena = cadena + ",";
-            cadena = cadena + autobus.getCoordenada().getLongitud();
-            cadena = cadena + "&destination=";
             cadena = cadena + iterador.getCoordenada().getLatitude();
             cadena = cadena + ",";
             cadena = cadena + iterador.getCoordenada().getLongitud();
+            cadena = cadena + "&destination=";
+            cadena = cadena + autobus.getCoordenada().getLatitude();
+            cadena = cadena + ",";
+            cadena = cadena + autobus.getCoordenada().getLongitud();
             cadena = cadena + "&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
             iterador = paradaServices.buscarParada(iterador.getParadaAnterior());
         }else{
@@ -471,6 +468,8 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
 
         System.out.println("cadena: " + cadena);
         URL url = null;
+
+
         try {
             url = new URL(cadena);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection(); //Abrir la conexión
@@ -505,30 +504,34 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
                 JSONArray jsonArray = jsonObject.getJSONArray("legs");
                 //---------------------------distance-----------
                 JSONObject distance = jsonArray.getJSONObject(0).getJSONObject("distance");
-                int dis = (int) distance.get("value");
+                 dis = (int) distance.get("value");
                 System.out.println(distance + "<- Distance");
                 System.out.println("valor: " + jsonArray.toString());
 
                 //----------------------------duracion--------------------------
                 JSONObject duracion = jsonArray.getJSONObject(0).getJSONObject("duration");
-                int durac = (int) duracion.get("value");
-                System.out.println(duracion + "==================================");
+                 durac = (int) duracion.get("value");
+                System.out.println(duracion + "<- Duracion");
                 System.out.println(durac + "==================================");
                 System.out.println("valor: " + jsonArray.toString());
                 //----------------------------duracion In traffic--------------------------
                 JSONObject duracionTraffic = jsonArray.getJSONObject(0).getJSONObject("duration_in_traffic");
-                int duracTraf = (int) duracionTraffic.get("value");
-                System.out.println(duracionTraffic + "==================================");
+                duracTraf = (int) duracionTraffic.get("value");
+                System.out.println(duracionTraffic + "Duracion Traffic");
                 System.out.println(duracTraf + "==================================");
                 System.out.println("valor: " + jsonArray.toString());
-                double newDurac = durac / 60;
-                double newDuracTraf = duracTraf / 60;
-                double newDis = dis / 1000;
+                durac =duracTraf-10;
+                if(durac<0){
+                    durac = 0;
+                }
+                newDurac+=durac;
+                newDuracTraf+=duracTraf;
+                newDis+=dis;
 
-                totalTiempo = totalTiempo +newDurac;
-                totalTraffic = totalTraffic + newDuracTraf;
-                totalDistance = totalDistance + newDis;
-                System.out.println("Total tiempo actual-> "+ totalTiempo);
+
+
+                System.out.println("Total tiempo actual-> "+ newDurac);
+                System.out.println("Total tiempo actual-> "+ newDuracTraf);
 
 //                distanceAndTime.setDistance(newDis);
 //                distanceAndTime.setDuration(newDurac);
@@ -549,12 +552,11 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
             e.printStackTrace();
         }
     }
-    distanceAndTime.setDistance(totalDistance);
-    distanceAndTime.setDuration(totalTiempo);
-    distanceAndTime.setDuration_Traffic(totalTraffic);
+    distanceAndTime.setDistance(newDis/1000);
+    distanceAndTime.setDuration(newDurac/60);
+    distanceAndTime.setDuration_Traffic(newDuracTraf/60);
     System.out.println("Cantidad"+ cont);
     autobus.getRuta().setParadas(null);
-    autobus.getRuta().setCoordenadas(null);
     distanceAndTime.setAutobus(autobus);
     return distanceAndTime;
 
@@ -594,7 +596,7 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
             iterador = paradaServices.buscarParada(iterador.getParadaAnterior());
 
         }
-        return  new Autobus();
+        return  null;
     }
 
 }

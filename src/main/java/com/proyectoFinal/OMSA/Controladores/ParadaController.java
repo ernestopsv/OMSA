@@ -3,8 +3,11 @@ package com.proyectoFinal.OMSA.Controladores;
 import com.proyectoFinal.OMSA.Entities.Coordenada;
 import com.proyectoFinal.OMSA.Entities.Parada;
 import com.proyectoFinal.OMSA.Entities.Ruta;
+import com.proyectoFinal.OMSA.Entities.Usuario;
+import com.proyectoFinal.OMSA.Services.CoordenadaServices;
 import com.proyectoFinal.OMSA.Services.ParadaServices;
 import com.proyectoFinal.OMSA.Services.RutaServices;
+import com.proyectoFinal.OMSA.Services.UsuarioServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import sun.awt.ModalExclude;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -27,10 +31,17 @@ public class ParadaController {
     ParadaServices paradaServices;
     @Autowired
     RutaServices rutaServices;
-
+    @Autowired
+    UsuarioServices usuarioServices;
+    @Autowired
+    CoordenadaServices coordenadaServices;
 
     @RequestMapping("/crear/{id}")
-    public String crearParada(Model model, @PathVariable("id")Long id){
+    public String crearParada(@PathVariable("id")Long id, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
         model.addAttribute("id_ruta", id);
         model.addAttribute("parada", new Parada());
         model.addAttribute("paradas", paradaServices.buscarParadaPorRutaId(id));
@@ -41,8 +52,12 @@ public class ParadaController {
 
     @Transactional
     @PostMapping("/crear")
-    public String guardarParadaCreada(@RequestParam("nombre")String nombre,@RequestParam("latitude")Double latitude,@RequestParam("longitud")Double longitud,
-                                      Model model,  @RequestParam("ruta")Long id_ruta){
+    public String guardarParadaCreada(@RequestParam("nombre")String nombre,@RequestParam("latitude")Double latitude,
+                                      @RequestParam("longitud")Double longitud, @RequestParam("ruta")Long id_ruta,
+                                      HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
 
        // System.out.println(parada.getId()+"/"+parada.getParadaAnterior()+"/"+parada.getParadaSiguiente()+"/"+parada.getCoordenada().getLongitud()+"/"+parada.getCoordenada().getLatitude()+"================================================================");
 
@@ -66,7 +81,11 @@ public class ParadaController {
     }
 
     @RequestMapping(value = "/editar/{id_ruta}/{id_parada}", method = RequestMethod.GET)
-    public String modificarParada(Model model, @PathVariable("id_parada")Long id_parada, @PathVariable("id_ruta")Long id_ruta){
+    public String modificarParada(Model model, @PathVariable("id_parada")Long id_parada, @PathVariable("id_ruta")Long id_ruta,
+                                  HttpServletRequest request){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
         Parada parada = paradaServices.buscarParada(id_parada);
         model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
         model.addAttribute("parada", parada);
@@ -75,9 +94,13 @@ public class ParadaController {
     }
 
     @PostMapping("/editar")
-    public ModelAndView guardarParadaModificada(Model model, @RequestParam("nombre")String nombre, @RequestParam("ruta")Long id_ruta, @RequestParam("latitude")Double latitude,
+    public ModelAndView guardarParadaModificada(@RequestParam("nombre")String nombre, @RequestParam("ruta")Long id_ruta, @RequestParam("latitude")Double latitude,
                                                 @RequestParam("longitud")Double longitud, @RequestParam(value = "paradaSiguiente", required = false)Long paradaSiguiente,
-                                                @RequestParam(value = "paradaAnterior", required = false)Long paradaAnterior, @RequestParam("id_parada")Long id_parada){
+                                                @RequestParam(value = "paradaAnterior", required = false)Long paradaAnterior, @RequestParam("id_parada")Long id_parada, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
         Ruta ruta = rutaServices.buscarRutaPorId(id_ruta);
         Parada parada = paradaServices.buscarParada(id_parada);
         parada.setRuta(ruta);
@@ -89,7 +112,7 @@ public class ParadaController {
            boolean modificado = true;
         if(paradaServices.guardarParada(parada)!=null){
             modificado =true;
-        };
+        }
         if (modificado){
             return new ModelAndView("redirect:/ruta/listar/paradas/"+id_ruta);
 
@@ -102,9 +125,10 @@ public class ParadaController {
 
     }
 
-//    @RequestMapping("/eliminar_parada")
-//    public String eliminarParada(@RequestParam("id")Long id){
-//        paradaServices.eliminarParadaPor(id);
-//        return "redirect:/parada/";
-//    }
+    @RequestMapping("/eliminar")
+    public String eliminarParada(@RequestParam("id")Long id){
+        coordenadaServices.eliminarCoordenada(paradaServices.buscarParada(id).getCoordenada().getId());
+        paradaServices.eliminarParadaPor(id);
+        return "redirect:/parada/";
+    }
 }

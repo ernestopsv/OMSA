@@ -201,17 +201,20 @@
                     markers.push(marker);
                 }
                 //'<span class="sr-only">40% Complete (success)</span> </div> '
-                var contentString = '<div style="border:1px solid gray">' +
-                        '<h1>Autobus Matricula:'+matricula+'</h1> <div class="progress">' +
-                        '<div class="progress-bar progress-bar-'+estado(porcentajePas)+' progress-bar-striped"' +
-                        ' role="progressbar" aria-valuenow="'+porcentajePas+'" aria-valuemin="0" aria-valuemax="100" style="width:'+porcentajePas+'%"> ' +
-                        '</div>' +
-                        '<ul class="list-group"> ' +
-                        '<li class="list-group-item">Conductor : <span class="badge">'+conductor+'</span></li>' +
-                        '<li class="list-group-item">Precio :<span class="badge">'+precio+'</span></li> ' +
-                        '<li class="list-group-item">Tiene Aire :<span class="badge">'+tieneAire+'</span></li> ' +
-                        '<li class="list-group-item">Activo :<span class="badge">'+activo+'</span></li> ' +
-                        '</ul> ' +
+                var contentString =
+                        '<div style="border:1px solid gray; padding:10px;">'+
+                            '<h1>Autobus: '+matricula+'</h1>'+
+                            '<div class="progress">'+
+                                '<div class="progress-bar progress-bar-'+estado(porcentajePas)+' progress-bar-striped"' +
+                                ' role="progressbar" aria-valuenow="'+porcentajePas+'" aria-valuemin="0" aria-valuemax="100" style="width:'+porcentajePas+'%;">' +
+                                '</div>' +
+                            '</div>'+
+                            '<ul class="list-group">' +
+                                '<li class="list-group-item">Conductor : <span class="badge">'+conductor+'</span></li>' +
+                                '<li class="list-group-item">Precio :<span class="badge">'+precio+'</span></li> ' +
+                                '<li class="list-group-item">Tiene Aire :<span class="badge">'+tieneAire+'</span></li> ' +
+                                '<li class="list-group-item">Activo :<span class="badge">'+activo+'</span></li> ' +
+                            '</ul> '+
                         '</div>';
                 var infowindow = new google.maps.InfoWindow({
                     content: contentString

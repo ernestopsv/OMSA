@@ -2,14 +2,17 @@ package com.proyectoFinal.OMSA.Controladores;
 
 import com.proyectoFinal.OMSA.Entities.Coordenada;
 import com.proyectoFinal.OMSA.Entities.Ruta;
+import com.proyectoFinal.OMSA.Entities.Usuario;
 import com.proyectoFinal.OMSA.Services.CoordenadaServices;
 import com.proyectoFinal.OMSA.Services.RutaServices;
+import com.proyectoFinal.OMSA.Services.UsuarioServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.swing.plaf.ColorUIResource;
 import javax.transaction.Transactional;
 import java.util.List;
@@ -25,19 +28,29 @@ public class CoordenadaController {
    @Autowired
     CoordenadaServices coordenadaServices;
 
+   @Autowired
+    UsuarioServices usuarioServices;
+
     @RequestMapping("/crear/{id}")
-    public String crearCoordenada(Model model, @PathVariable("id")Long id){
+    public String crearCoordenada(@PathVariable("id")Long id, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
         model.addAttribute("ruta", rutaServices.buscarRutaPorId(id));
         model.addAttribute("coordenada", new Coordenada());
         return "crear_coordenada";
     }
 
     @PostMapping("/crear")
-    public String guardarCoordenadaCreada(@RequestParam("latitude")double latitud, @RequestParam("longitud")double longitud, Model model, @RequestParam("ruta")Long id){
-        System.out.println("Was there 1------------========================================================");
+    public String guardarCoordenadaCreada(@RequestParam("latitude")double latitud, @RequestParam("longitud")double longitud, @RequestParam("ruta")Long id, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
         Ruta currentRuta = rutaServices.buscarRutaPorId(id);
         List<Ruta> rutas = rutaServices.buscarRutaPorNombreCorredor(currentRuta.getNombreCorredor());
-        System.out.println("Was there 2------------========================================================");
+
         boolean guardado = false;
         Coordenada coordenada = new Coordenada();
         coordenada.setLatitude(latitud);
@@ -45,50 +58,53 @@ public class CoordenadaController {
         rutas.get(0).getCoordenadas().add(coordenada);
         System.out.println(coordenada.getLatitude()+"/"+coordenada.getLongitud());
         if(rutaServices.guardarRuta(rutas.get(0))!=null){
-            System.out.println("Was there 3------------========================================================");
+
             guardado= true;
         }
         if(rutas.size()>1){
-            System.out.println("Was there 4------------========================================================");
+
             Coordenada coordenada1 = new Coordenada();
             coordenada1.setLongitud(coordenada.getLongitud());
             coordenada1.setLatitude(coordenada.getLatitude());
             rutas.get(1).getCoordenadas().add(coordenada1);
             if(rutaServices.guardarRuta(rutas.get(1))!=null){
-                System.out.println("Was there Saving 5------------========================================================");
-
                 guardado= true;
             }
         }
-        System.out.println("Was there 6------------========================================================");
+
         if(guardado){
-            System.out.println("Was there 7------------========================================================");
+
             model.addAttribute("message", "success");
         }else {
-            System.out.println("Was there 8------------========================================================");
+
             model.addAttribute("message", "error");
         }
         model.addAttribute("ruta", rutaServices.buscarRutaPorId(id));
         model.addAttribute("coordenada", new Coordenada());
-        System.out.println("Was there 9------------========================================================");
         return "crear_coordenada";
     }
 
     @RequestMapping("/editar/{id_ruta}/{id_coordenada}")
-    public String editarCoordenada(Model model, @PathVariable("id_ruta")Long id_ruta, @PathVariable("id_coordenada") Long id_coordenada ){
+    public String editarCoordenada( @PathVariable("id_ruta")Long id_ruta, @PathVariable("id_coordenada") Long id_coordenada,  HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
         model.addAttribute("ruta", rutaServices.buscarRutaPorId(id_ruta));
         Coordenada coordenada = coordenadaServices.buscarUnaCoordenada(id_coordenada);
         model.addAttribute("id_coordenada",String.valueOf(coordenada.getId()));
         model.addAttribute("longitud",String.valueOf(coordenada.getLongitud()));
         model.addAttribute("latitude",String.valueOf(coordenada.getLatitude()));
-
-
         return "editar_coordenada";
     }
 
     @PostMapping("/editar")
     public ModelAndView guardarCoordenadaModificada(@RequestParam("latitude")double latitude,@RequestParam("longitud")double longitud,
-                                                    @RequestParam("oldLat")double oldLat, @RequestParam("oldLong") double oldLong ,Model model, @RequestParam("ruta")Long id_ruta, @RequestParam("coordenada")Long id_coordenada){
+                                                    @RequestParam("oldLat")double oldLat, @RequestParam("oldLong") double oldLong ,@RequestParam("ruta")Long id_ruta,
+                                                    @RequestParam("coordenada")Long id_coordenada, HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        model.addAttribute("usuario", user);
+
         Ruta currentRuta = rutaServices.buscarRutaPorId(id_ruta);
         boolean modificado = false;
         List<Coordenada> coordenadas = coordenadaServices.buscarCoordenadaPorLatitudLongitud(oldLat,oldLong);

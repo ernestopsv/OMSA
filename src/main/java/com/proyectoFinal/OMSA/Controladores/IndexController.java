@@ -46,18 +46,9 @@ public class IndexController {
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
      public ModelAndView paginaPrincipal(HttpServletRequest request, Model model){
-      //  Usuario usuario = (Usuario) request.getSession(true).getAttribute("usario");
-//        if(usuario==null){
-//            return new ModelAndView("redirect:/usuario/iniciar_sesion");
-//        }
-        HttpSession session = request.getSession();
         String username = request.getSession().getAttribute("username").toString();
         Usuario usuario = usuarioServices.buscarUsuarioPorUsername(username);
-
         model.addAttribute("usuario", usuario);
-        List<Rol> role = rolServices.rolesUsuario(usuario);
-        model.addAttribute("roles", role);
-        session.setAttribute("roles",role);
 
         return new ModelAndView("index");
    }

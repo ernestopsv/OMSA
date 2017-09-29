@@ -75,7 +75,7 @@
                 var flightPath = new google.maps.Polyline({
                     path: coor,
                     geodesic: true,
-                    strokeColor: '#088A08',
+                    strokeColor: '#DA4444',
                     strokeOpacity: 1.0,
                     strokeWeight: 5
                 });
@@ -83,6 +83,7 @@
                 flightPath.setMap(map);
             });
         });
+        setAutobus(map);
         setInterval(function () {
             console.log("here");
             setAutobus(map);
@@ -128,7 +129,7 @@
     function setAutobus(map) {
 
         var active = {
-            url: '/images/active.PNG',
+            url: '/images/busActive.png',
             // This marker is 20 pixels wide by 32 pixels high.
             size: new google.maps.Size(80, 29),
             // The origin for this image is (0, 0).
@@ -137,7 +138,7 @@
             anchor: new google.maps.Point(0, 29)
         };
         var inactive = {
-            url: '/images/inactive.PNG',
+            url: '/images/busInactive.png',
             // This marker is 20 pixels wide by 32 pixels high.
             size: new google.maps.Size(80, 26),
             // The origin for this image is (0, 0).
@@ -201,7 +202,7 @@
                 }
                 //'<span class="sr-only">40% Complete (success)</span> </div> '
                 var contentString = '<div style="border:1px solid gray">' +
-                        '<h1>Autobus Matricula:'+matricula+'</h1> <div class="progress">' +
+                        '<h1>Autobus: '+matricula+'</h1> <div class="progress">' +
                         '<div class="progress-bar progress-bar-'+estado(porcentajePas)+' progress-bar-striped"' +
                         ' role="progressbar" aria-valuenow="'+porcentajePas+'" aria-valuemin="0" aria-valuemax="100" style="width:'+porcentajePas+'%"> ' +
                         '</div>' +
