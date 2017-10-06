@@ -12,7 +12,7 @@ import java.sql.Date;
  */
 @Entity
 @Table(name = "chequeo")
-public class Chequeo implements Serializable{
+public class Chequeo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id; //to be thinking
@@ -28,15 +28,24 @@ public class Chequeo implements Serializable{
     @NotNull
     private Boolean esEntrada;
 
-    public Chequeo(Long fechaRegistrada, Autobus autobus, Parada parada, Boolean esEntrada) {
+    private String matriculaAutobus;
+    private String paradaNombre;
+    private String corredor;
+    private String direccionCorredor;
+
+    public Chequeo() {
+
+    }
+
+    public Chequeo(Long fechaRegistrada, Autobus autobus, Parada parada, Boolean esEntrada, String matriculaAutobus, String paradaNombre, String corredor, String direccionCorredor) {
         this.fechaRegistrada = fechaRegistrada;
         this.autobus = autobus;
         this.parada = parada;
         this.esEntrada = esEntrada;
-    }
-
-    public Chequeo(){
-
+        this.matriculaAutobus = matriculaAutobus;
+        this.paradaNombre = paradaNombre;
+        this.corredor = corredor;
+        this.direccionCorredor = direccionCorredor;
     }
 
     public BigInteger getId() {
@@ -77,5 +86,37 @@ public class Chequeo implements Serializable{
 
     public void setEsEntrada(Boolean esEntrada) {
         this.esEntrada = esEntrada;
+    }
+
+    public String getMatriculaAutobus() {
+        return matriculaAutobus;
+    }
+
+    public void setMatriculaAutobus(String matriculaAutobus) {
+        this.matriculaAutobus = matriculaAutobus;
+    }
+
+    public String getParadaNombre() {
+        return paradaNombre;
+    }
+
+    public void setParadaNombre(String paradaNombre) {
+        this.paradaNombre = paradaNombre;
+    }
+
+    public String getCorredor() {
+        return corredor;
+    }
+
+    public void setCorredor(String corredor) {
+        this.corredor = corredor;
+    }
+
+    public String getDireccionCorredor() {
+        return direccionCorredor;
+    }
+
+    public void setDireccionCorredor(String direccionCorredor) {
+        this.direccionCorredor = direccionCorredor;
     }
 }

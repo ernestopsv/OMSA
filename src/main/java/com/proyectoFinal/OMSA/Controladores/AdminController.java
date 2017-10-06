@@ -127,7 +127,9 @@ public class AdminController {
 
     @RequestMapping("/eliminar/usuario/{id}")
     public String eliminarUsuario(@PathVariable("id")Long id){
-        usuarioServices.eliminarUsuario(id);
+        Usuario usuario = usuarioServices.buscarUnUsuario(id);
+        rolServices.eliminarRolPorUsername(usuario.getUsername());
+        usuarioServices.eliminarUsuario(usuario.getId());
         return "redirect:/usuarios";
     }
 

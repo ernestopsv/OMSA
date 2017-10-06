@@ -38,6 +38,8 @@ public class RestApiController {
     private RutaServices rutaServices;
     @Autowired
     UsuarioServices usuarioServices;
+    @Autowired
+    UserRatingServices userRatingServices;
 
 
 //**********************************************************************Autobus*****************************************************
@@ -74,11 +76,23 @@ public class RestApiController {
     public int getCantdeAutobusPorRuta(@PathVariable("id")Long id){
         return autobusServices.buscarTodosLosAutobusporRuta(id).size();
     }
+    @RequestMapping(value = "/autobus/buscar/size/", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public int getCantAutobus(@PathVariable("id")Long id){
+        return autobusServices.buscarAutobusesNull();
+    }
 
 
     @RequestMapping(value = "/autobus/buscar/{page}/{items}/corredor/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public ArrayList<Autobus> buscarAutobusPorRutaId(@PathVariable ("page") int page, @PathVariable ("items") int itemsPerPage, @PathVariable ("id")Long corredor){
         List<Autobus> autobuses = autobusServices.buscarAutobusPorRutaId(corredor, page, itemsPerPage);
+        if (autobuses==null){
+            return new ArrayList<>();
+        }
+        return (ArrayList<Autobus>) autobuses;
+    }
+    @RequestMapping(value = "/autobus/sinRuta/buscar/{page}/{items}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Autobus> buscarAutobusSinRuta(@PathVariable ("page") int page, @PathVariable ("items") int itemsPerPage){
+        List<Autobus> autobuses = autobusServices.buscarAutobusPorRutaNull(page, itemsPerPage);
         if (autobuses==null){
             return new ArrayList<>();
         }
@@ -267,6 +281,120 @@ public class RestApiController {
         return (ArrayList<Parada>) paradas;
     }
 
+    @RequestMapping(value = "/paradas/mas/cerca", method = RequestMethod.POST, produces = ACCECPT_TYPE)
+    public ParadaCercana buscarParadasMasCercanas(@RequestBody ArrayList<Coordenada> coordenadas){
+        List<Parada> paradas = paradaServices.buscarTodasParadas();
+
+        ArrayList<ParadaCercana> listaOrigen  = new ArrayList<>();
+        ArrayList<ParadaCercana> listaDestino  = new ArrayList<>();
+        System.out.println("Lista de parada Sin ordenar");
+        for(Parada parada : paradas){
+            double distanciaOrigen = getDistance(parada.getCoordenada(), coordenadas.get(0));
+            double distanciaDestino = getDistance(parada.getCoordenada(), coordenadas.get(1));
+            listaDestino.add(new ParadaCercana(parada, distanciaDestino, coordenadas.get(1), null, null));
+            listaOrigen.add(new ParadaCercana(parada, distanciaOrigen, coordenadas.get(0),null,null));
+           // System.out.println("Parada "+parada.getNombre()+"--Distancia "+distanciaOrigen+"\n");
+
+        }
+        listaDestino = mergeSort(listaDestino);
+        listaOrigen = mergeSort(listaOrigen);
+        System.out.println("Lista de parada ordenada");
+        for (ParadaCercana paradaOrigen : listaOrigen){
+            System.out.println("Primer for");
+//            System.out.println("Parada "+paradaCercana.getParadaActual().getNombre()+"--Distancia "+paradaCercana.getDistancia()+"\n");
+            for(ParadaCercana paradaDestino:listaDestino) {
+                System.out.println("Segundo for");
+
+                if(paradaDestino.getParadaActual().getRuta().getId().equals(paradaOrigen.getParadaActual().getRuta().getId())){
+                    System.out.println("Was there-->"+paradaDestino.getParadaActual().getNombre());
+                    return new ParadaCercana(null, 0.0, null,paradaDestino.getParadaActual(),paradaOrigen.getParadaActual());
+                }
+            }
+        }
+        System.out.println("Salio");
+
+
+        return new ParadaCercana();
+
+    }
+
+    private double getDistance(Coordenada parada, Coordenada coordenada) {
+
+        double distanciaActual;
+
+        distanciaActual = Math.sqrt(
+                Math.pow((parada.getLatitude() - coordenada.getLatitude()), 2)
+                        + Math.pow((parada.getLongitud() - coordenada.getLongitud()), 2)
+        );
+       return distanciaActual;
+    }
+
+    private ArrayList<ParadaCercana> mergeSort(ArrayList<ParadaCercana> whole) {
+        ArrayList<ParadaCercana> left = new ArrayList<>();
+        ArrayList<ParadaCercana> right = new ArrayList<>();
+        int center;
+
+        if (whole.size() == 1) {
+            return whole;
+        } else {
+            center = whole.size()/2;
+            // copy the left half of whole into the left.
+            for (int i=0; i<center; i++) {
+                left.add(whole.get(i));
+            }
+
+            //copy the right half of whole into the new arraylist.
+            for (int i=center; i<whole.size(); i++) {
+                right.add(whole.get(i));
+            }
+
+            // Sort the left and right halves of the arraylist.
+            left  = mergeSort(left);
+            right = mergeSort(right);
+
+            // Merge the results back together.
+            merge(left, right, whole);
+        }
+        return whole;
+    }
+    private void merge(ArrayList<ParadaCercana> left, ArrayList<ParadaCercana> right, ArrayList<ParadaCercana> whole) {
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int wholeIndex = 0;
+
+        // As long as neither the left nor the right ArrayList has
+        // been used up, keep taking the smaller of left.get(leftIndex)
+        // or right.get(rightIndex) and adding it at both.get(bothIndex).
+        while (leftIndex < left.size() && rightIndex < right.size()) {
+            if ( (left.get(leftIndex).getDistancia().compareTo(right.get(rightIndex).getDistancia())) < 0) {
+                whole.set(wholeIndex, left.get(leftIndex));
+                leftIndex++;
+            } else {
+                whole.set(wholeIndex, right.get(rightIndex));
+                rightIndex++;
+            }
+            wholeIndex++;
+        }
+
+        ArrayList<ParadaCercana> rest;
+        int restIndex;
+        if (leftIndex >= left.size()) {
+            // The left ArrayList has been use up...
+            rest = right;
+            restIndex = rightIndex;
+        } else {
+            // The right ArrayList has been used up...
+            rest = left;
+            restIndex = leftIndex;
+        }
+
+        // Copy the rest of whichever ArrayList (left or right) was not used up.
+        for (int i=restIndex; i<rest.size(); i++) {
+            whole.set(wholeIndex, rest.get(i));
+            wholeIndex++;
+        }
+    }
+
     //---------------------------------------Ruta-------------------------------------------//--------------------------------------Ruta----------------------------------------------------------
     @RequestMapping(value="/guardar/ruta/", method =RequestMethod.POST, consumes = ACCECPT_TYPE)
     public String guardarRuta(@RequestBody Ruta ruta){
@@ -338,6 +466,17 @@ public class RestApiController {
         }
         autobus.setUltimaParada(parada);
         chequeo.setAutobus(autobus);
+        chequeo.setCorredor(parada.getRuta().getNombreCorredor());
+        chequeo.setMatriculaAutobus(autobus.getMatricula());
+        String direccion;
+        if(parada.getRuta().getEsDireccionSubida()){
+            direccion= "subida";
+        }else {
+            direccion="bajada";
+        }
+        chequeo.setParadaNombre(parada.getNombre());
+        chequeo.setDireccionCorredor(direccion);
+
         if(chequeoServices.guardarChequeo(chequeo)==null){
             return new Gson().toJson("No se pudo guardar el chequeo");
         }
@@ -598,5 +737,14 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
         }
         return  null;
     }
+//---------------------------------------------------Rating-----------------------------------------------
+@RequestMapping(value = "/ruta/eliminar/{id}", method = RequestMethod.POST, produces = CONTENT_TYPE)
+public Boolean recibirComentario(@RequestBody UserRating userRating){
 
+    if(userRating!=null){
+        userRatingServices.guardarComentario(userRating);
+        return true;
+    }
+    return false;
+}
 }

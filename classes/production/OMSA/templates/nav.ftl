@@ -66,6 +66,9 @@
                     <li>
                         <a href="/autobus/">Ver Autobus</a>
                     </li>
+                    <li>
+                        <a href="/autobus/sinRuta">Autobus sin Ruta</a>
+                    </li>
                 </ul>
             </li>
 

@@ -1,4 +1,4 @@
-package com.proyectoFinal.OMSA;
+package com.proyectoFinal.OMSA.Controladores;
 
 import com.proyectoFinal.OMSA.Entities.*;
 import com.proyectoFinal.OMSA.Services.*;
@@ -37,6 +37,8 @@ public class RutaController {
 
     @Autowired
     UsuarioServices usuarioServices;
+    @Autowired
+    ChequeoServices chequeoServices;
 
 
     @RequestMapping("/")
@@ -155,14 +157,21 @@ public class RutaController {
                 autobus.setUltimaParada(null);
                 autobusServices.guardarAutobus(autobus);
             }
+            List<Chequeo> chequeos = chequeoServices.buscarChequoPorParadaId(id);
+            for(Chequeo chequeo: chequeos){
+                chequeo.setParada(null);
+                chequeoServices.guardarChequeo(chequeo);
+            }
 
         }
         paradaServices.eliminarParadaPorRutaId(id);
         List<Autobus> autobuses= autobusServices.buscarTodosLosAutobusporRuta(id);
         for(Autobus autobus: autobuses){
             autobus.setRuta(null);
+            autobus.setCantidadDePasajerosActual(0);
             autobusServices.guardarAutobus(autobus);
         }
+
         rutaServices.eliminarRutaPorId(id);
         return "redirect:/ruta/";
     }

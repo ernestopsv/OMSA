@@ -33,7 +33,7 @@ public class Autobus implements  Serializable {
     private Integer anoFabricacion;
     private Boolean activo;  //Updatable
     @Size(min=2, max = 100)
-    @Pattern(regexp = "[a-zA-Z]+[ ][a-zA-Z]+")
+    @Pattern(regexp = "^(\\s)*[A-Za-z]+((\\s)?((\\'|\\-|\\.)?([A-Za-z])+))*(\\s)*$")
     private String conductor;
     @Size(min=5, max = 6)
     @Pattern(regexp = "([0-9]{2})((-[0-9]{3})|([0-9]{3}))")

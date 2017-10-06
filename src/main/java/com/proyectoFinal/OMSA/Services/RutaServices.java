@@ -61,7 +61,7 @@ public class RutaServices {
         ruta.setEsDireccionSubida(true);
 
         ArrayList<Coordenada> coordenadas = new ArrayList<>();
-//
+
         coordenadas.add(new Coordenada(19.48827848, -70.71671963));
         coordenadas.add( new Coordenada(19.48763117, -70.7144022));
         coordenadas.add(new Coordenada(19.48263467, -70.70815265));
@@ -127,8 +127,10 @@ public class RutaServices {
         coordenadas.add(new Coordenada(19.48945172, -70.71881711));
         coordenadas.add(new Coordenada(19.48910784, -70.7170254));
         coordenadas.add(new Coordenada(19.48827848, -70.71671963));
-
-
+        ruta.setCoordenadas(coordenadas);
+        rutaRepository.save(ruta);
+        ruta.setEsDireccionSubida(false);
+        rutaRepository.save(ruta);
 
     }
 }

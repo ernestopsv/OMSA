@@ -81,7 +81,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="conductor">Conductor</label>
-                                <input type="text" class="form-control" pattern="[a-zA-Z]+[ ][a-zA-Z]+" placeholder="Nombre del conductor" name="conductor" min="2" max="100" id="conductor" required>
+                                <input type="text" class="form-control" pattern="^(\s)*[A-Za-z]+((\s)?((\'|\-|\.)?([A-Za-z])+))*(\s)*$" placeholder="Nombre del conductor" name="conductor" min="2" max="100" id="conductor" required>
                             </div>
                         </div>
                     </div>

@@ -53,7 +53,6 @@ public class AutobusController {
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
         model.addAttribute("usuario", user);
-
         return "ver_autobusSinRutas";
     }
 
@@ -171,9 +170,9 @@ public class AutobusController {
     @RequestMapping(value = "/eliminar/{id}")
     public String eliminarAutobus(@PathVariable("id") Long id){
         List<Chequeo> chequeos = chequeoServices.buscarChequeoPorAutobusId(id);
-//        for (Chequeo chequeo : chequeos){
-//            chequeoServices.elimin
-//        }
+        for (Chequeo chequeo : chequeos){
+            chequeo.setAutobus(null);
+        }
         autobusServices.eliminarAutobusporId(id);
             return "redirect:/autobus/";
 

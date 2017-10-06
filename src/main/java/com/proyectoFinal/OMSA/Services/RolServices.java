@@ -27,6 +27,10 @@ public class RolServices {
         rolRepository.save(rol);
         return rol;
     }
+    @Transactional
+    public void eliminarRolPorUsername(String username){
+        rolRepository.deleteRolByUsername(username);
+    }
 
     @Transactional
     public void elimarRolPorId(Long id){

@@ -23,6 +23,13 @@ public class AutobusServices {
         Pageable pageable = new PageRequest(page, itemsPerPage);
         return autobusRepository.findAutobusesByRutaId(id,pageable);
     }
+    public List<Autobus> buscarAutobusPorRutaNull(int page, int itemsPerPage){
+        Pageable pageable = new PageRequest(page, itemsPerPage);
+        return autobusRepository.findAutobusesByRutaIsNull(pageable);
+    }
+    public int buscarAutobusesNull(){
+        return autobusRepository.findAutobusesByRutaIsNull().size();
+    }
     public List<Autobus> buscarTodoLosAutobus(){
         return autobusRepository.findAll();
     }
