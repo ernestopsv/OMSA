@@ -67,10 +67,10 @@
             var color= ["#4d4d00",
                 "#004d00",
                 "#00004d",
-                "#004d4d"
+                "#004d4d",
                 "#4d0000",
                 "#4d004d",
-                "#145219"]
+                "#145219"];
             var coor = [];
             $.each(data, function (key, value) {
                 setParadas(map, value["id"]);
