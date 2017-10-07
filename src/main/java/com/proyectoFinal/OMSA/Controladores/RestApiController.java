@@ -40,6 +40,8 @@ public class RestApiController {
     UsuarioServices usuarioServices;
     @Autowired
     UserRatingServices userRatingServices;
+    @Autowired
+    RolServices rolServices;
 
 
 //**********************************************************************Autobus*****************************************************
@@ -213,6 +215,11 @@ public class RestApiController {
     @RequestMapping(value = "/autobus/eliminar/{id}", method = RequestMethod.POST)
     public Boolean eliminarAutobus(@PathVariable("id")Long id){
         Autobus autobus = autobusServices.buscarUnAutobus(id);
+        List<Chequeo> chequeos = chequeoServices.buscarChequeoPorAutobusId(autobus.getId());
+        for(Chequeo chequeo: chequeos){
+            chequeo.setAutobus(null);
+            chequeoServices.guardarChequeo(chequeo);
+        }
         if(autobus==null){
             return false;
         }
@@ -527,12 +534,16 @@ public class RestApiController {
 
  //-------------------------------------------------------------Usuario-------------------------------------------------------------------
  @RequestMapping(value = "/usuario/buscar/{page}/item/{items}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
- public ArrayList<Usuario> buscarUsuarioPorPaginas(@PathVariable("items")int items, @PathVariable("page")int page){
-        List <Usuario> usuarios = usuarioServices.buscarUsuarios(page, items);
+ public List<Usuario> buscarUsuarioPorPaginas(@PathVariable("items")int items, @PathVariable("page")int page){
+        ArrayList <Usuario> usuarios = (ArrayList<Usuario>) usuarioServices.buscarUsuarios(page, items);
+
+//        for (int i=0; i<usuarios.size(); i++){
+//            usuarios.get(i).setRoles((ArrayList<Rol>)rolServices.rolesUsuario(usuarios.get(i)));
+//        }
         if (usuarios==null){
             return new ArrayList<>();
         }
-     return (ArrayList<Usuario>) usuarios;
+     return  usuarios;
  }
 //-----------------------------------------Coordenada----------------------------------------------------
     @RequestMapping(value = "/ruta/{id}/buscar/coordenada/{start}/{end}", method = RequestMethod.GET, produces = ACCECPT_TYPE)

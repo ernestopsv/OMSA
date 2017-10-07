@@ -12,8 +12,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Dashboard
-                        <small>Statistics Overview</small>
+                        Autobus Actividades
                     </h1>
                     <ol class="breadcrumb">
                         <li class="active">
@@ -23,7 +22,6 @@
                 </div>
             </div>
             <!-- /.row -->
-            <h3>Actividades Autobus</h3>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
@@ -64,13 +62,13 @@
 
 
         $.getJSON("/api/rutas/buscar", function (data) {
-            var color= ["#4d4d00",
-                "#004d00",
-                "#00004d",
-                "#004d4d",
-                "#4d0000",
-                "#4d004d",
-                "#145219"];
+            var color= ["#ffff00",
+                "#00ff00",
+                "#0000ff",
+                "#00ffff",
+                "#ff0000",
+                "#ff00ff",
+                "#ff700f"];
             var coor = [];
             $.each(data, function (key, value) {
                 setParadas(map, value["id"]);
@@ -85,7 +83,7 @@
                     geodesic: true,
                     strokeColor: color[x],
                     strokeOpacity: 1.0,
-                    strokeWeight: 3
+                    strokeWeight: 5
                 });
                 coor = [];
                 flightPath.setMap(map);

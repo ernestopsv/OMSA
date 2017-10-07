@@ -29,8 +29,6 @@
                             </div>
 
                             <form role="form" name="myForm" method="post" action="#" th:action="@{/zonaAdmin/registrar}" th:object="${usuario}">
-                                <h2>Agregar Nuevo Usuario</h2>
-                                <hr>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
@@ -65,12 +63,12 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="">
-                                                <select id="roles" class="form-control" name="roles" multiple="multiple" required>
+                                            <label for="roles">Rol</label>
+                                                <select id="roles" class="form-control selectpicker" data-max-options="2" name="theRoles" multiple="multiple" required>
                                                     <option value="ROLE_ADMIN">Administrador</option>
                                                     <option value="ROLE_USER">Usuario</option>
                                                 </select>
-                                            </label>
+
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +113,13 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/app.js"></script>
-    <script src="/js/controllers/usarioController.js"></script>
+    <script src="/js/controllers/usuarioController.js"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+
+
 
 </body>
 

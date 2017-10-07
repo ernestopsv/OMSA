@@ -10,6 +10,7 @@ app.controller("usuarioTableController", function ($http, $scope) {
             function (response) {
 
                 $scope.usuarios = response.data;
+                console.log($scope.usuarios);
 
                 $scope.total_count= response.count;
             }, function (response) {

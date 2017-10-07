@@ -32,7 +32,6 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Tabla de Usuarios</h2>
                     <div class="table-responsive" ng-controller="usuarioTableController">
                         <table class="table table-bordered table-hover table-striped" ng-init="getData(pageno)">
                             <thead>
@@ -46,24 +45,25 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-show="usuarios.length <= 0">
+                            <tr ng-show="usuarios.length <=0">
                                 <td colspan="7" style="text-align:center;">Leyendo Nuevos Datos!!</td>
                             </tr>
-                            <tr dir-paginate="usuario in usuarios|itemsPerPage:itemsPerPage" total-items="${size}">
+                            <tr dir-paginate="usuario in usuarios[0].content|itemsPerPage:itemsPerPage" total-items="${size}">
                                 <td>{{start+$index+1}}</td>
                                 <td>{{usuario.name}}</td>
                                 <td>{{usuario.username}}</td>
                                 <td>{{usario.roles}}</td>
-                                <a href="/zonaAdmin/eliminar/usuario/{{usuario.id}}">
-                                    <p data-placement="top" data-toggle="tooltip" title="Editar">
-                                        <button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal"
-                                                data-target="#edit"><span class="glyphicon glyphicon-pencil"></span>
-                                        </button>
-                                    </p>
-                                </a>
-                                </td>
                                 <td>
                                     <a href="/zonaAdmin/editar/{{usuario.id}}">
+                                        <p data-placement="top" data-toggle="tooltip" title="Editar">
+                                            <button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal"
+                                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span>
+                                            </button>
+                                        </p>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/zonaAdmin/eliminar/usuario/{{usuario.id}}">
                                         <p data-placement="top" data-toggle="tooltip" title="Eliminar">
                                             <button class="btn btn-danger btn-xs" data-title="Eliminar"
                                                     data-toggle="modal" data-target="#delete"><span

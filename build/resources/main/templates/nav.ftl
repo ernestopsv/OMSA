@@ -39,7 +39,7 @@
                 <a href="/home"><i class="fa fa-fw fa-dashboard"></i> Home</a>
             </li>
             <li>
-                <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i>Charts</a>
             </li>
 
             <#--<li>-->

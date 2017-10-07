@@ -19,10 +19,8 @@ public class Chequeo implements Serializable {
     @NotNull
     @Min(1483228800)
     private Long fechaRegistrada;
-    @NotNull
     @ManyToOne
     private Autobus autobus;
-    @NotNull
     @ManyToOne  // to be thought
     private Parada parada;
     @NotNull

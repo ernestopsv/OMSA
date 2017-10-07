@@ -48,28 +48,27 @@ public class AdminController {
         return "crear_usuarios";
     }
     @PostMapping("/registrar")
-    public ModelAndView agregar(@ModelAttribute Usuario usuario, @RequestParam("roles")String[] roles, HttpServletRequest request, Model model){
+    public String agregar(@ModelAttribute Usuario usuario, @RequestParam("theRoles")String[] roles, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
         model.addAttribute("usuario", user);
 
         System.out.println(usuario.getName()+"/"+usuario.getPassword()+"/"+usuario.getUsername());
         usuario.setPassword(bCryptPasswordEncoder.encode(usuario.getPassword()));
-        List<Rol> rols= new ArrayList<>();
+
         if(roles!=null){
             for(String rol : roles){
                 Rol r = new Rol();
                 r.setRol(rol);
                 r.setUsername(usuario.getUsername());
-                rols.add(r);
+               rolServices.creacionRol(r);
             }
         }
-       // usuario.setRoles(rols);
         if (usuarioServices.guardarUsuario(usuario)!=null){
-            return new ModelAndView( "redirect:/");
+            return "redirect:/zonaAdmin/usuarios";
         }
         model.addAttribute("error", "no se pudo guardar el usuario");
-        return new ModelAndView("crear_usuarios");
+        return "crear_usuarios";
     }
 
     @RequestMapping("/editar/{id}")
@@ -78,7 +77,7 @@ public class AdminController {
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
         model.addAttribute("usuario", user);
         model.addAttribute("usuario", usuarioServices.buscarUnUsuario(id));
-        return "editar_usuarios";
+        return "editar_usuario";
     }
 
     @PostMapping("/editar")
@@ -92,7 +91,7 @@ public class AdminController {
         usuario.setPassword(bCryptPasswordEncoder.encode(password));
         usuario.setUsername(username);
         if (usuarioServices.guardarUsuario(usuario)!=null){
-            return new ModelAndView( "redirect:/usuarios");
+            return new ModelAndView( "redirect:/zonaAdmin/usuarios");
         }
 
         if(roles!=null){
@@ -122,7 +121,7 @@ public class AdminController {
                 }
         }
         model.addAttribute("error", "Averigue bien los campos!");
-        return new ModelAndView("editar_usuarios");
+        return new ModelAndView("editar_usuario");
     }
 
     @RequestMapping("/eliminar/usuario/{id}")
@@ -130,7 +129,7 @@ public class AdminController {
         Usuario usuario = usuarioServices.buscarUnUsuario(id);
         rolServices.eliminarRolPorUsername(usuario.getUsername());
         usuarioServices.eliminarUsuario(usuario.getId());
-        return "redirect:/usuarios";
+        return "redirect:/zonaAdmin/usuarios";
     }
 
 }
