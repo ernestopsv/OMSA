@@ -738,7 +738,7 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
         return  null;
     }
 //---------------------------------------------------Rating-----------------------------------------------
-@RequestMapping(value = "/ruta/eliminar/{id}", method = RequestMethod.POST, produces = CONTENT_TYPE)
+@RequestMapping(value = "/recibir/comentario/", method = RequestMethod.POST, produces = CONTENT_TYPE)
 public Boolean recibirComentario(@RequestBody UserRating userRating){
 
     if(userRating!=null){

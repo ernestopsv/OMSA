@@ -64,6 +64,13 @@
 
 
         $.getJSON("/api/rutas/buscar", function (data) {
+            var color= ["#4d4d00",
+                "#004d00",
+                "#00004d",
+                "#004d4d"
+                "#4d0000",
+                "#4d004d",
+                "#145219"]
             var coor = [];
             $.each(data, function (key, value) {
                 setParadas(map, value["id"]);
@@ -72,10 +79,11 @@
                     var obj = {lat: v.latitude, lng: v.longitud};
                     coor.push(obj)
                 });
+                var x = Math.floor((Math.random() * 7));
                 var flightPath = new google.maps.Polyline({
                     path: coor,
                     geodesic: true,
-                    strokeColor: '#DA4444',
+                    strokeColor: color[x],
                     strokeOpacity: 1.0,
                     strokeWeight: 5
                 });

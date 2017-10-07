@@ -56,6 +56,18 @@
                                 <input type="text" class="form-control" name="ciudad" placeholder="Entre la ciudad" min="2" max="100" id="ciudad">
                             </div>
                         </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="direccionSubida">Sentido Ruta</label>
+                                <br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="esDireccionSubida" id="direccionSubida" value=true checked>Si
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="esDireccionSubida" id="direccionBajada" value=false >No
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row">
