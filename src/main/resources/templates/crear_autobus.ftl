@@ -95,7 +95,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="tieneAire">Tiene aire acondicionado</label>
+                                <label for="noTieneAireAcondicionado">Tiene aire acondicionado</label>
                                 <br>
                                 <label class="radio-inline">
                                     <input type="radio" name="tieneAireAcondicionado" id="noTieneAireAcondicionado" value=true checked>Si

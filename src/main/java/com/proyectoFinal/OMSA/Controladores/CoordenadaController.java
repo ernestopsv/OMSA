@@ -49,34 +49,20 @@ public class CoordenadaController {
         model.addAttribute("usuario", user);
 
         Ruta currentRuta = rutaServices.buscarRutaPorId(id);
-        List<Ruta> rutas = rutaServices.buscarRutaPorNombreCorredor(currentRuta.getNombreCorredor());
+        //List<Ruta> rutas = rutaServices.buscarRutaPorNombreCorredor(currentRuta.getNombreCorredor());
 
         boolean guardado = false;
         Coordenada coordenada = new Coordenada();
         coordenada.setLatitude(latitud);
         coordenada.setLongitud(longitud);
-        rutas.get(0).getCoordenadas().add(coordenada);
-        System.out.println(coordenada.getLatitude()+"/"+coordenada.getLongitud());
-        if(rutaServices.guardarRuta(rutas.get(0))!=null){
 
+        currentRuta.getCoordenadas().add(coordenada);
+        if(rutaServices.guardarRuta(currentRuta)!=null){
             guardado= true;
         }
-        if(rutas.size()>1){
-
-            Coordenada coordenada1 = new Coordenada();
-            coordenada1.setLongitud(coordenada.getLongitud());
-            coordenada1.setLatitude(coordenada.getLatitude());
-            rutas.get(1).getCoordenadas().add(coordenada1);
-            if(rutaServices.guardarRuta(rutas.get(1))!=null){
-                guardado= true;
-            }
-        }
-
         if(guardado){
-
             model.addAttribute("message", "success");
         }else {
-
             model.addAttribute("message", "error");
         }
         model.addAttribute("ruta", rutaServices.buscarRutaPorId(id));
@@ -89,6 +75,7 @@ public class CoordenadaController {
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
         model.addAttribute("usuario", user);
+
         model.addAttribute("ruta", rutaServices.buscarRutaPorId(id_ruta));
         Coordenada coordenada = coordenadaServices.buscarUnaCoordenada(id_coordenada);
         model.addAttribute("id_coordenada",String.valueOf(coordenada.getId()));
@@ -99,30 +86,28 @@ public class CoordenadaController {
 
     @PostMapping("/editar")
     public ModelAndView guardarCoordenadaModificada(@RequestParam("latitude")double latitude,@RequestParam("longitud")double longitud,
-                                                    @RequestParam("oldLat")double oldLat, @RequestParam("oldLong") double oldLong ,@RequestParam("ruta")Long id_ruta,
-                                                    @RequestParam("coordenada")Long id_coordenada, HttpServletRequest request, Model model){
+                                                    @RequestParam("ruta")Long id_ruta, @RequestParam("coordenada")Long id_coordenada, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
         model.addAttribute("usuario", user);
 
         Ruta currentRuta = rutaServices.buscarRutaPorId(id_ruta);
         boolean modificado = false;
-        List<Coordenada> coordenadas = coordenadaServices.buscarCoordenadaPorLatitudLongitud(oldLat,oldLong);
+        Coordenada coordenada = coordenadaServices.buscarUnaCoordenada(id_coordenada);
 
-        for(Coordenada c :coordenadas){
-            c.setLatitude(latitude);
-            c.setLongitud(longitud);
-            if(coordenadaServices.guardarCoordenada(c)!=null){
-                modificado= true;
-            }
+        coordenada.setLatitude(latitude);
+        coordenada.setLongitud(longitud);
+        if(coordenadaServices.guardarCoordenada(coordenada)!=null){
+            modificado= true;
         }
 
         if(modificado){
             return new ModelAndView("redirect:/ruta/listar/coordenadas/"+currentRuta.getId());
         }else {
-
             model.addAttribute("ruta", rutaServices.buscarRutaPorId(id_ruta));
-            model.addAttribute("coordenada", coordenadaServices.buscarUnaCoordenada(id_coordenada));
+            model.addAttribute("id_coordenada",String.valueOf(coordenada.getId()));
+            model.addAttribute("longitud",String.valueOf(coordenada.getLongitud()));
+            model.addAttribute("latitude",String.valueOf(coordenada.getLatitude()));
             return new ModelAndView("crear_coordenada");
         }
 

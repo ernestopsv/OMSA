@@ -51,8 +51,6 @@
                     </div>
                 </div>
                 <input type="hidden" name="ruta" value="${ruta.id}">
-                <input type="hidden" name="oldLat" value="${latitude}">
-                <input type="hidden" name="oldLong" value="${longitud}">
                 <input type="hidden" name="coordenada" value="${id_coordenada}">
         </div>
         <div class="row">

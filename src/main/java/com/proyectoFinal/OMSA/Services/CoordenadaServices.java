@@ -20,7 +20,7 @@ public class CoordenadaServices {
         return coordenadaRepository.findById(id);
     }
 
-    public List<Coordenada> buscarCoordenadaPorLatitudLongitud(Double latitud, Double longitud){
+    public Coordenada buscarCoordenadaPorLatitudLongitud(Double latitud, Double longitud){
         return coordenadaRepository.findCoordenadaByLatitudeAndLongitud(latitud,longitud);
     }
 

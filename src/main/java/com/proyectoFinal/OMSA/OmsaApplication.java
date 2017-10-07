@@ -19,11 +19,11 @@ public class OmsaApplication extends SpringBootServletInitializer{
 		UsuarioServices usuarioServices = (UsuarioServices)appContext.getBean("usuarioServices");
 		usuarioServices.crearAdmin();
 
-		RutaServices rutaServices = (RutaServices)appContext.getBean("rutaServices");
-		rutaServices.guardarRutaAlPrincipio();
-
-		ParadaServices paradaServices =(ParadaServices)appContext.getBean("paradaServices");
-		paradaServices.guardarParadaAlPrincipio();
+//		RutaServices rutaServices = (RutaServices)appContext.getBean("rutaServices");
+//		rutaServices.guardarRutaAlPrincipio();
+//
+//		ParadaServices paradaServices =(ParadaServices)appContext.getBean("paradaServices");
+//		paradaServices.guardarParadaAlPrincipio();
 
 	}
 	@Override

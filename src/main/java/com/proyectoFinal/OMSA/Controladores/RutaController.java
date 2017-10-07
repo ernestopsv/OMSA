@@ -130,17 +130,17 @@ public class RutaController {
     public String guardarRutaCreada(@ModelAttribute Ruta ruta){
         ruta.setFechaUltimaModificacion(getLongFromDate(new Date()));
         ruta.setFechaCreada(getLongFromDate(new Date()));
-        ruta.setEsDireccionSubida(true);
-        Ruta currentRuta =rutaServices.guardarRuta(ruta);
-
-        Ruta nuevaRuta = new Ruta();
-        nuevaRuta.setNombreCorredor(ruta.getNombreCorredor());
-        nuevaRuta.setDistanciaTotal(ruta.getDistanciaTotal());
-        nuevaRuta.setFechaUltimaModificacion(ruta.getFechaUltimaModificacion());
-        nuevaRuta.setFechaCreada(ruta.getFechaCreada());
-        nuevaRuta.setCiudad(ruta.getCiudad());
-        nuevaRuta.setEsDireccionSubida(false);
-        rutaServices.guardarRuta(nuevaRuta);
+       // ruta.setEsDireccionSubida(true);
+        rutaServices.guardarRuta(ruta);
+//
+//        Ruta nuevaRuta = new Ruta();
+//        nuevaRuta.setNombreCorredor(ruta.getNombreCorredor());
+//        nuevaRuta.setDistanciaTotal(ruta.getDistanciaTotal());
+//        nuevaRuta.setFechaUltimaModificacion(ruta.getFechaUltimaModificacion());
+//        nuevaRuta.setFechaCreada(ruta.getFechaCreada());
+//        nuevaRuta.setCiudad(ruta.getCiudad());
+//        nuevaRuta.setEsDireccionSubida(false);
+//        rutaServices.guardarRuta(nuevaRuta);
         return "redirect:/ruta/";
     }
     private Long getLongFromDate(Date date){

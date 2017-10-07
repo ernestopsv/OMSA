@@ -18,6 +18,6 @@ public interface CoordenadaRepository extends CrudRepository<Coordenada, Long> {
 
     Coordenada save(Coordenada coordenada);
 
-    List<Coordenada> findCoordenadaByLatitudeAndLongitud(double latitud, double longitud);
+    Coordenada findCoordenadaByLatitudeAndLongitud(double latitud, double longitud);
     void deleteCoordenadaById(Long id);
 }
