@@ -64,13 +64,13 @@
 
 
         $.getJSON("/api/rutas/buscar", function (data) {
-            var color= ["#4d4d00",
-                "#004d00",
-                "#00004d",
-                "#004d4d",
-                "#4d0000",
-                "#4d004d",
-                "#145219"];
+            var color= ["#ffff00",
+                "#00ff00",
+                "#0000ff",
+                "#00ffff",
+                "#ff0000",
+                "#ff00ff",
+                "#ff700f"];
             var coor = [];
             $.each(data, function (key, value) {
                 setParadas(map, value["id"]);

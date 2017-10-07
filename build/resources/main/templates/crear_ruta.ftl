@@ -61,10 +61,10 @@
                                 <label for="direccionSubida">Sentido Ruta</label>
                                 <br>
                                 <label class="radio-inline">
-                                    <input type="radio" name="esDireccionSubida" id="direccionSubida" value=true checked>Si
+                                    <input type="radio" name="esDireccionSubida" id="direccionSubida" value=true checked>Subida
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="esDireccionSubida" id="direccionBajada" value=false >No
+                                    <input type="radio" name="esDireccionSubida" id="direccionBajada" value=false >Bajada
                                 </label>
                             </div>
                         </div>
