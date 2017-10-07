@@ -13,7 +13,7 @@
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Welcome, <span style="color: #3d8b3d; font-family: cursive">${username}</span> </b> <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Bienvenido, <span style="color: #3d8b3d; font-family: cursive">${username}</span> </b> <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <#---->
                 <#--<li>-->
