@@ -317,7 +317,9 @@ public class RestApiController {
 
                 if(paradaDestino.getParadaActual().getRuta().getId().equals(paradaOrigen.getParadaActual().getRuta().getId())){
                     System.out.println("Was there-->"+paradaDestino.getParadaActual().getNombre());
-                    return new ParadaCercana(null, 0.0, null,paradaDestino.getParadaActual(),paradaOrigen.getParadaActual());
+                    paradaDestino.getParadaActual().getRuta().setParadas(null);
+                    paradaOrigen.getParadaActual().getRuta().setParadas(null);
+                    return new ParadaCercana(null, 0.0, null,paradaOrigen.getParadaActual(),paradaDestino.getParadaActual());
                 }
             }
         }
