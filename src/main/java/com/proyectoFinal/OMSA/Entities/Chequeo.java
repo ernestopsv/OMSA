@@ -1,5 +1,8 @@
 package com.proyectoFinal.OMSA.Entities;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -20,12 +23,13 @@ public class Chequeo implements Serializable {
     @Min(1483228800)
     private Long fechaRegistrada;
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Autobus autobus;
-    @ManyToOne  // to be thought
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)// to be thought
     private Parada parada;
     @NotNull
     private Boolean esEntrada;
-
     private String matriculaAutobus;
     private String paradaNombre;
     private String corredor;

@@ -23,17 +23,18 @@ import java.util.List;
 public class AdminController {
 
     @Autowired
-    RolServices rolServices;
+    private RolServices rolServices;
     @Autowired
-    UsuarioServices usuarioServices;
+    private UsuarioServices usuarioServices;
     @Autowired
-    BCryptPasswordEncoder bCryptPasswordEncoder;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
     @RequestMapping("/usuarios")
     public String index(HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario usuario = usuarioServices.buscarUsuarioPorUsername(username);
+        usuario.setRoles(rolServices.rolesUsuario(usuario));
         model.addAttribute("usuario", usuario);
         model.addAttribute("size", usuarioServices.buscarTodosUsuarios().size());
         return "ver_usuarios";
@@ -43,14 +44,16 @@ public class AdminController {
     public  String agregar(HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario usuario = usuarioServices.buscarUsuarioPorUsername(username);
+        usuario.setRoles(rolServices.rolesUsuario(usuario));
         model.addAttribute("usuario", usuario);
-        model.addAttribute("usuario",new Usuario());
+        model.addAttribute("user",new Usuario());
         return "crear_usuarios";
     }
     @PostMapping("/registrar")
     public String agregar(@ModelAttribute Usuario usuario, @RequestParam("theRoles")String[] roles, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         System.out.println(usuario.getName()+"/"+usuario.getPassword()+"/"+usuario.getUsername());
@@ -61,7 +64,9 @@ public class AdminController {
                 Rol r = new Rol();
                 r.setRol(rol);
                 r.setUsername(usuario.getUsername());
-               rolServices.creacionRol(r);
+
+              // rolServices.creacionRol(r);
+                user.getRoles().add(r);
             }
         }
         if (usuarioServices.guardarUsuario(usuario)!=null){
@@ -75,51 +80,37 @@ public class AdminController {
     public  String modificar( @PathVariable("id")Long id, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
-        model.addAttribute("usuario", usuarioServices.buscarUnUsuario(id));
+        model.addAttribute("user", usuarioServices.buscarUnUsuario(id));
         return "editar_usuario";
     }
 
     @PostMapping("/editar")
-    public ModelAndView modificar(@RequestParam("roles") String[] roles, @RequestParam("id")Long id, @RequestParam("username") String username,
-                                  @RequestParam("password") String password, @RequestParam("name") String nombre, HttpServletRequest request, Model model){
+    public ModelAndView modificar(@RequestParam("theRoles") String[] roles, @RequestParam("id")Long id, @RequestParam("username") String username,
+                                   @RequestParam("name") String nombre, HttpServletRequest request, Model model){
         String uname = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(uname);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
-        Usuario usuario = new Usuario();
+
+        Usuario usuario = usuarioServices.buscarUnUsuario(id);
+        List<Rol> rols= new ArrayList<>();
+        usuario.setRoles(rols);
+
+
         usuario.setName(nombre);
-        usuario.setPassword(bCryptPasswordEncoder.encode(password));
         usuario.setUsername(username);
+        usuarioServices.guardarUsuario(usuario);
+        for (String rol :roles){
+            usuario.getRoles().add(new Rol(rol, usuario.getUsername()));
+        }
+
         if (usuarioServices.guardarUsuario(usuario)!=null){
             return new ModelAndView( "redirect:/zonaAdmin/usuarios");
         }
 
-        if(roles!=null){
-            List<Rol> rolList= rolServices.rolesUsuario(usuario);
-                switch (rolList.size()){
-                    case 1:
-                        for(Rol rol1 : rolList){
-                            for(String rol : roles){
-                                if (!rol1.getRol().equals(rol)){
-                                    Rol r = new Rol();
-                                    r.setRol(rol);
-                                    r.setUsername(usuario.getUsername());
-                                    rolServices.creacionRol(r);
-                                }
-                            }
-                        }
-                        break;
-                    case 2:
-                        if(roles.length==1){
-                            for(Rol rol1: rolList){
-                                if(!roles[0].equals(rol1.getRol())){
-                                    rolServices.elimarRolPorId(rol1.getId());
-                                }
-                            }
-                        }
-                        break;
-                }
-        }
+
         model.addAttribute("error", "Averigue bien los campos!");
         return new ModelAndView("editar_usuario");
     }

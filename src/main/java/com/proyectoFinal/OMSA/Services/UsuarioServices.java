@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,6 +25,8 @@ public class UsuarioServices {
     RolServices rolServices;
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Autowired
+    UsuarioServices usuarioServices;
 
     @Transactional
     public void  eliminarUsuario(Long id){
@@ -83,7 +86,12 @@ public class UsuarioServices {
             Rol rol2 = new Rol();
             rol2.setUsername(usuario.getUsername());
             rol2.setRol("ROLE_USER");
-            rolServices.creacionRol(rol);
+            //rolServices.creacionRol(rol);
+            List<Rol> rols = new ArrayList<>();
+            rols.add(rol);
+            rols.add(rol2);
+            usuario.setRoles(rols);
+            usuarioServices.guardarUsuario(usuario);
         }
     }
 }

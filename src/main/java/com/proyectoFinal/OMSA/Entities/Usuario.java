@@ -26,7 +26,7 @@ public class Usuario {
     @NotNull
     @Size(max=255)
     private String password;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Rol> roles;
 
     public Usuario() {

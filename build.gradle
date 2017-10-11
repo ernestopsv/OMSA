@@ -48,6 +48,10 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+	// https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf
+
+
+	//compile group: 'org.thymeleaf', name: 'thymeleaf', version: '3.0.7.RELEASE'
 	runtime('org.postgresql:postgresql')
 	compile group: 'org.webjars', name: 'jquery', version: '3.2.1'
 	compile group: 'org.webjars', name: 'bootstrap', version: '3.2.0'

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="angularTable">
+<html lang="en" ng-app="angularTable" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <title>Ver autobus</title>
 <#include "header.ftl">
 <body>

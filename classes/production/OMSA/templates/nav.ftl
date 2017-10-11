@@ -71,18 +71,25 @@
                     </li>
                 </ul>
             </li>
+            <#if usuario??>
+                <#list usuario.roles as rol>
+                    <#if rol.rol=="ROLE_ADMIN">
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Usuarios <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="demo" class="collapse">
+                                <li>
+                                    <a href="/zonaAdmin/registrar">Agregar Nuevo Usuario</a>
+                                </li>
+                                <li>
+                                    <a href="/zonaAdmin/usuarios">Ver Usuarios</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </#if>
+                </#list>
+                </#if>
 
-                <li sec:authorize="hasRole('ROLE_ADMIN')">
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Usuarios <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="demo" class="collapse">
-                        <li>
-                            <a href="/zonaAdmin/registrar">Agregar Nuevo Usuario</a>
-                        </li>
-                        <li>
-                            <a href="/zonaAdmin/usuarios">Ver Usuarios</a>
-                        </li>
-                    </ul>
-                </li>
+
         </ul>
     </div>
     <!-- /.navbar-collapse -->

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" ng-app="omsaTracker">
+<html lang="en"xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      ng-app="omsaTracker">
 <title>Crear Usuario</title>
 <#include "header.ftl">
 
@@ -28,7 +31,7 @@
                                 </div>
                             </div>
 
-                            <form role="form" name="myForm" method="post" action="#" th:action="@{/zonaAdmin/registrar}" th:object="${usuario}">
+                            <form role="form" name="myForm" method="post" action="#" th:action="@{/zonaAdmin/registrar}" th:object="${user}">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">

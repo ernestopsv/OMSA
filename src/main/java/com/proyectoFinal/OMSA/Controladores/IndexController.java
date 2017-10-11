@@ -48,6 +48,7 @@ public class IndexController {
      public ModelAndView paginaPrincipal(HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario usuario = usuarioServices.buscarUsuarioPorUsername(username);
+        usuario.setRoles(rolServices.rolesUsuario(usuario));
         model.addAttribute("usuario", usuario);
 
         return new ModelAndView("index");

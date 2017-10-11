@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="angularTable">
+<html lang="en" ng-app="angularTable" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <title>Ver Usuarios</title>
 <#include "header.ftl">
 <body>
@@ -52,7 +54,8 @@
                                 <td>{{start+$index+1}}</td>
                                 <td>{{usuario.name}}</td>
                                 <td>{{usuario.username}}</td>
-                                <td>{{usario.roles}}</td>
+                                <td> <span ng-repeat="x in usuario.roles">{{x.rol}}/</span></td>
+                                <#--<td>{{usuario.roles..rol/usuario.roles.1.rol}}</td>-->
                                 <td>
                                     <a href="/zonaAdmin/editar/{{usuario.id}}">
                                         <p data-placement="top" data-toggle="tooltip" title="Editar">

@@ -2,10 +2,7 @@ package com.proyectoFinal.OMSA.Controladores;
 
 import com.proyectoFinal.OMSA.Entities.*;
 import com.proyectoFinal.OMSA.Repository.*;
-import com.proyectoFinal.OMSA.Services.AutobusServices;
-import com.proyectoFinal.OMSA.Services.ChequeoServices;
-import com.proyectoFinal.OMSA.Services.RutaServices;
-import com.proyectoFinal.OMSA.Services.UsuarioServices;
+import com.proyectoFinal.OMSA.Services.*;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,18 +28,22 @@ public class AutobusController {
     @Autowired
     private AutobusServices autobusServices;
     @Autowired
-    ChequeoServices chequeoServices;
+    private ChequeoServices chequeoServices;
 
     @Autowired
-    RutaServices rutaServices;
+    private RutaServices rutaServices;
 
     @Autowired
-    UsuarioServices usuarioServices;
+    private UsuarioServices usuarioServices;
+
+    @Autowired
+    private RolServices rolServices;
 
     @RequestMapping("/")
     public String index(HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
         model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
         return "ver_autobus";
@@ -52,6 +53,7 @@ public class AutobusController {
     public String autobusSinRuta(HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
         return "ver_autobusSinRutas";
     }
@@ -67,6 +69,7 @@ public class AutobusController {
     public String editarAutobus(@PathVariable("id")Long id, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         Autobus autobus =autobusServices.buscarUnAutobus(id);
@@ -82,6 +85,7 @@ public class AutobusController {
                                          @RequestParam("tieneAireAcondicionado")Boolean tieneAire, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         boolean modificado= false;
@@ -121,6 +125,7 @@ public class AutobusController {
     public String crearAutobus( HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         model.addAttribute("autobus", new Autobus());
@@ -137,6 +142,7 @@ public class AutobusController {
     public String guardarAutobusCreado(@ModelAttribute Autobus autobus, @RequestParam("ruta")Long id, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         Ruta ruta = rutaServices.buscarRutaPorId(id);

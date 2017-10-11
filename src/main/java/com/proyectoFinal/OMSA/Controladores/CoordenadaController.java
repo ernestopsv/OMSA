@@ -4,6 +4,7 @@ import com.proyectoFinal.OMSA.Entities.Coordenada;
 import com.proyectoFinal.OMSA.Entities.Ruta;
 import com.proyectoFinal.OMSA.Entities.Usuario;
 import com.proyectoFinal.OMSA.Services.CoordenadaServices;
+import com.proyectoFinal.OMSA.Services.RolServices;
 import com.proyectoFinal.OMSA.Services.RutaServices;
 import com.proyectoFinal.OMSA.Services.UsuarioServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,17 +25,20 @@ import java.util.List;
 @RequestMapping("/coordenada")
 public class CoordenadaController {
    @Autowired
-    RutaServices rutaServices;
+    private RutaServices rutaServices;
    @Autowired
-    CoordenadaServices coordenadaServices;
+    private CoordenadaServices coordenadaServices;
 
    @Autowired
-    UsuarioServices usuarioServices;
+   private UsuarioServices usuarioServices;
+    @Autowired
+    private RolServices rolServices;
 
     @RequestMapping("/crear/{id}")
     public String crearCoordenada(@PathVariable("id")Long id, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         model.addAttribute("ruta", rutaServices.buscarRutaPorId(id));
@@ -46,6 +50,7 @@ public class CoordenadaController {
     public String guardarCoordenadaCreada(@RequestParam("latitude")double latitud, @RequestParam("longitud")double longitud, @RequestParam("ruta")Long id, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         Ruta currentRuta = rutaServices.buscarRutaPorId(id);
@@ -74,6 +79,7 @@ public class CoordenadaController {
     public String editarCoordenada( @PathVariable("id_ruta")Long id_ruta, @PathVariable("id_coordenada") Long id_coordenada,  HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         model.addAttribute("ruta", rutaServices.buscarRutaPorId(id_ruta));
@@ -89,6 +95,7 @@ public class CoordenadaController {
                                                     @RequestParam("ruta")Long id_ruta, @RequestParam("coordenada")Long id_coordenada, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         Ruta currentRuta = rutaServices.buscarRutaPorId(id_ruta);

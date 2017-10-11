@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="angularTable">
+<html lang="en" ng-app="angularTable" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <title>Ver Ruta</title>
 <#include "header.ftl">
 <body>
@@ -37,7 +39,7 @@
                                 <th>Nombre Corredor</th>
                                 <th>Distancia Total (KM)</th>
                                 <th>Ciudad</th>
-                                <th>Es Direccion Subida</th>
+                                <th>Direcci&oacute;n</th>
                                 <th>&nbsp</th>
                                 <th>&nbsp</th>
                                 <th>&nbsp</th>
@@ -47,13 +49,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <tr ng-show="rutas.length <= 0"><td colspan="10" style="text-align:center;">Leyendo Nuevas Rutas!!</td></tr>
+                        <tr ng-show="rutas.length <= 0"><td colspan="11" style="text-align:center;">Leyendo Nuevas Rutas!!</td></tr>
                         <tr dir-paginate="r in rutas[0].content | itemsPerPage:itemsPerPage" total-items="${size}">
                             <td>{{$index+1}}</td>
                             <td>{{r.nombreCorredor}}</td>
                             <td>{{r.distanciaTotal}}</td>
                             <td>{{r.ciudad}}</td>
-                            <td>{{r.esDireccionSubida}}</td>
+                            <td ng-bind ="isTrue({{r.esDireccionSubida}})? 'Subida' : 'Bajada'"></td>
                             <td><a href="/ruta/listar/paradas/{{r.id}}">Ver Paradas</a></td>
                             <td><a href="/ruta/listar/coordenadas/{{r.id}}">Ver Coordenadas</a></td>
                             <td><a href="/parada/crear/{{r.id}}">Agregar Parada</a></td>

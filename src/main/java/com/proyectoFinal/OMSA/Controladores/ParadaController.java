@@ -4,10 +4,7 @@ import com.proyectoFinal.OMSA.Entities.Coordenada;
 import com.proyectoFinal.OMSA.Entities.Parada;
 import com.proyectoFinal.OMSA.Entities.Ruta;
 import com.proyectoFinal.OMSA.Entities.Usuario;
-import com.proyectoFinal.OMSA.Services.CoordenadaServices;
-import com.proyectoFinal.OMSA.Services.ParadaServices;
-import com.proyectoFinal.OMSA.Services.RutaServices;
-import com.proyectoFinal.OMSA.Services.UsuarioServices;
+import com.proyectoFinal.OMSA.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,18 +25,21 @@ import java.util.List;
 @RequestMapping("/parada")
 public class ParadaController {
     @Autowired
-    ParadaServices paradaServices;
+    private ParadaServices paradaServices;
     @Autowired
-    RutaServices rutaServices;
+    private RutaServices rutaServices;
     @Autowired
-    UsuarioServices usuarioServices;
+    private UsuarioServices usuarioServices;
     @Autowired
-    CoordenadaServices coordenadaServices;
+    private CoordenadaServices coordenadaServices;
+    @Autowired
+    private RolServices rolServices;
 
     @RequestMapping("/crear/{id}")
     public String crearParada(@PathVariable("id")Long id, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         model.addAttribute("id_ruta", id);
@@ -57,6 +57,7 @@ public class ParadaController {
                                       HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
        // System.out.println(parada.getId()+"/"+parada.getParadaAnterior()+"/"+parada.getParadaSiguiente()+"/"+parada.getCoordenada().getLongitud()+"/"+parada.getCoordenada().getLatitude()+"================================================================");
@@ -85,6 +86,7 @@ public class ParadaController {
                                   HttpServletRequest request){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
         Parada parada = paradaServices.buscarParada(id_parada);
         model.addAttribute("rutas", rutaServices.buscarTodasLasRutas());
@@ -99,6 +101,7 @@ public class ParadaController {
                                                 @RequestParam(value = "paradaAnterior", required = false)Long paradaAnterior, @RequestParam("id_parada")Long id_parada, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         Ruta ruta = rutaServices.buscarRutaPorId(id_ruta);

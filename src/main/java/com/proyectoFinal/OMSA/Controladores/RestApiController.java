@@ -288,18 +288,21 @@ public class RestApiController {
         return (ArrayList<Parada>) paradas;
     }
 
-    @RequestMapping(value = "/paradas/mas/cerca", method = RequestMethod.POST, produces = ACCECPT_TYPE)
-    public ParadaCercana buscarParadasMasCercanas(@RequestBody ArrayList<Coordenada> coordenadas){
+    @RequestMapping(value = "/paradas/mas/cerca/{LatOrig}/{LngOrig}/{LatDest}/{LngDest}/", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ParadaCercana buscarParadasMasCercanas(@PathVariable("LatOrig") Double latOrig, @PathVariable("LngOrig") Double lngOrig,
+                                                  @PathVariable("LatDest") Double latDest, @PathVariable("LngDest") Double lngDest){
         List<Parada> paradas = paradaServices.buscarTodasParadas();
-
+        System.out.println(latOrig+"/"+lngOrig+"/"+latDest+"/"+lngDest);
         ArrayList<ParadaCercana> listaOrigen  = new ArrayList<>();
         ArrayList<ParadaCercana> listaDestino  = new ArrayList<>();
+        Coordenada coordenadaOrig = new Coordenada(latOrig, lngOrig);
+        Coordenada coordenadaDest = new Coordenada(latDest, lngDest);
         System.out.println("Lista de parada Sin ordenar");
         for(Parada parada : paradas){
-            double distanciaOrigen = getDistance(parada.getCoordenada(), coordenadas.get(0));
-            double distanciaDestino = getDistance(parada.getCoordenada(), coordenadas.get(1));
-            listaDestino.add(new ParadaCercana(parada, distanciaDestino, coordenadas.get(1), null, null));
-            listaOrigen.add(new ParadaCercana(parada, distanciaOrigen, coordenadas.get(0),null,null));
+            double distanciaOrigen = getDistance(parada.getCoordenada(),coordenadaOrig);
+            double distanciaDestino = getDistance(parada.getCoordenada(),coordenadaDest);
+            listaDestino.add(new ParadaCercana(parada, distanciaDestino, coordenadaDest, null, null));
+            listaOrigen.add(new ParadaCercana(parada, distanciaOrigen, coordenadaOrig,null,null));
            // System.out.println("Parada "+parada.getNombre()+"--Distancia "+distanciaOrigen+"\n");
 
         }

@@ -15,6 +15,14 @@ public class Rol implements Serializable {
     private String rol;
     private String username;
 
+    public Rol() {
+    }
+
+    public Rol(String rol, String username) {
+        this.rol = rol;
+        this.username = username;
+    }
+
     public Long getId() {
         return id;
     }

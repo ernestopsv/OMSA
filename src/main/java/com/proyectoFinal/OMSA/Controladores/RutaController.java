@@ -36,14 +36,20 @@ public class RutaController {
     private ParadaServices paradaServices;
 
     @Autowired
-    UsuarioServices usuarioServices;
+    private UsuarioServices usuarioServices;
     @Autowired
-    ChequeoServices chequeoServices;
-
+    private ChequeoServices chequeoServices;
+    @Autowired
+    private RolServices rolServices;
 
     @RequestMapping("/")
-    public String index(Model model){
+    public String index(HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
+        model.addAttribute("usuario", user);
         model.addAttribute("size", rutaServices.buscarTodasLasRutas().size());
+
         return "ver_ruta";
     }
 
@@ -51,6 +57,7 @@ public class RutaController {
     public String mostrarParadas(@PathVariable("id") Long id_ruta, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
         List<Parada>paradas = paradaServices.buscarParadaPorRutaId(id_ruta);
         model.addAttribute("paradas",paradas);
@@ -64,6 +71,7 @@ public class RutaController {
     public String mostrarAutobus( @RequestParam("id")Long id_ruta, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
         List<Autobus> autobuses = autobusServices.buscarTodosLosAutobusporRuta(id_ruta);
         model.addAttribute("autobuses", autobuses);
@@ -73,6 +81,7 @@ public class RutaController {
     public String mostrarCoordenadas(@PathVariable("id") Long id_ruta, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
         List<Coordenada> coordenadas = rutaServices.buscarRutaPorId(id_ruta).getCoordenadas();
         model.addAttribute("coordenadas",coordenadas);
@@ -86,6 +95,7 @@ public class RutaController {
     public List<Ruta> buscarRuta(@RequestParam("nombre_corredor")String nombre_Corredor, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
         //model.addAttribute("ruta", rutaServices.buscarRutaPorNombreCorredor(nombre_Corredor));
@@ -96,6 +106,7 @@ public class RutaController {
     public String editarRuta(@PathVariable("ruta")Long id, HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
         Ruta ruta = rutaServices.buscarRutaPorId(id);
         model.addAttribute("ruta", ruta);
@@ -122,6 +133,7 @@ public class RutaController {
     public String crearRuta( HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
+        user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
         model.addAttribute("ruta", new Ruta());
         return "crear_ruta";
