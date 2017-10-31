@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Table(name = "dim_autobus")
 public class Dim_Autobus implements Serializable{
     @Id
-    @Column(unique=true)
+    @Column(unique=true, nullable = false, updatable = false)
     private Long idAutobus;
     private String matricula;
     private int precio;

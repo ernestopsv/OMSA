@@ -4,15 +4,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * Created by Dany on 30/10/2017.
  */
 @Entity
 @Table(name = "dim_tiempo")
-public class Dim_Tiempo {
+public class Dim_Tiempo implements Serializable {
     @Id
-    @Column(unique=true)
+    @Column(unique=true, nullable = false, updatable = false)
     private int idTiempo;
     private String tanda;
     private boolean esTarde;

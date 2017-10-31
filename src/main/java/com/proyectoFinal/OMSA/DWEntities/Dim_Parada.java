@@ -4,15 +4,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * Created by Dany on 30/10/2017.
  */
 @Entity
 @Table(name = "dim_parada")
-public class Dim_Parada {
+public class Dim_Parada implements Serializable {
     @Id
-    @Column(unique=true)
+    @Column(unique=true, nullable = false, updatable = false)
     private long id;
     private String nombre;
     private String ruta;
