@@ -10,24 +10,25 @@
 
         <div class="container-fluid">
 
-            <!-- Page Heading -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Autobus Actividades
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li class="active">
-                            <i class="fa fa-dashboard"></i> Dashboard
-                        </li>
-                    </ol>
-                </div>
-            </div>
+            <#--<!-- Page Heading &ndash;&gt;-->
+            <#--<div class="row">-->
+                <#--<div class="col-lg-12">-->
+                    <#--<h1 class="page-header">-->
+                        <#--Autobus Actividades-->
+                    <#--</h1>-->
+                    <#--&lt;#&ndash;<ol class="breadcrumb">&ndash;&gt;-->
+                        <#--&lt;#&ndash;<li class="active">&ndash;&gt;-->
+                            <#--&lt;#&ndash;<i class="fa fa-dashboard"></i> Dashboard&ndash;&gt;-->
+                        <#--&lt;#&ndash;</li>&ndash;&gt;-->
+                    <#--&lt;#&ndash;</ol>&ndash;&gt;-->
+                <#--</div>-->
+            <#--</div>-->
             <!-- /.row -->
-            <div class="panel-body">
+
+            <div class="panel-body" style="height: 100%; width:100%;">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div id="map" style="width: 100%; height: 400px;"></div>
+                        <div id="map" style="width: 100%; height: 600px;"></div>
 
                     </div>
                 </div>
@@ -75,7 +76,6 @@
             $.each(data, function (key, value) {
                 setParadas(map, value["id"]);
                 $.each(value["coordenadas"], function (k, v) {
-
                     var obj = {lat: v.latitude, lng: v.longitud};
                     coor.push(obj)
                 });
@@ -93,7 +93,7 @@
         });
         setAutobus(map);
         setInterval(function () {
-            console.log("here");
+
             setAutobus(map);
         }, 30000); // 30 seconds
     }
@@ -161,6 +161,7 @@
         };
 
         $.getJSON("/api/autobuses/buscar", function (data) {
+
             var marker = [];
             setMapOnAll(null);
             markers = [];

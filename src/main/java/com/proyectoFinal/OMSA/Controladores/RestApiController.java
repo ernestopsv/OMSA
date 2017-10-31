@@ -426,6 +426,13 @@ public class RestApiController {
             return ruta1;
         }
         ruta.setParadas(null);
+        List <Coordenada> coordenadas = new ArrayList<>();
+        for(Coordenada coordenada: ruta.getCoordenadas()){
+            if(coordenada.getHabilitado()){
+                coordenadas.add(coordenada);
+            }
+        }
+        ruta.setCoordenadas(coordenadas);
         return  ruta;
     }
     @RequestMapping(value = "/ruta/eliminar/{id}", method = RequestMethod.POST, produces = CONTENT_TYPE)
@@ -445,6 +452,22 @@ public class RestApiController {
         if(rutas==null){
             return new ArrayList<>();
         }
+//        List<Coordenada>coordenadas = new ArrayList<>();
+//        int cont =0;
+//        for (Ruta ruta: rutas){
+//            if(ruta.getCoordenadas().size()!=0){
+//                for(Coordenada coordenada: ruta.getCoordenadas()){
+//                    if(coordenada.getHabilitado()){
+//                        coordenadas.add(coordenada);
+//                        System.out.println("there++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//                    }
+//                }
+//                rutas.get(cont).setCoordenadas(coordenadas);
+//                cont++;
+//                coordenadas.clear();
+//            }
+//        }
+
         return (ArrayList<Ruta>) rutas;
     }
 
@@ -457,6 +480,22 @@ public class RestApiController {
         if(rutas==null){
             return new ArrayList<>();
         }
+        List<Coordenada>coordenadas = new ArrayList<>();
+        int cont =0;
+        for (Ruta ruta: rutas){
+            if(ruta.getCoordenadas().size()!=0){
+                for(Coordenada coordenada: ruta.getCoordenadas()){
+                    if(coordenada.getHabilitado()){
+                        coordenadas.add(coordenada);
+                        System.out.println("there++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                    }
+                }
+                rutas.get(cont).setCoordenadas(coordenadas);
+                cont++;
+                coordenadas.clear();
+            }
+        }
+
         for(Ruta r:rutas){
             r.setParadas(null);
         }
@@ -555,16 +594,22 @@ public class RestApiController {
     public List<Coordenada> buscarCoordenadas (@PathVariable("id")Long id, @PathVariable("start")int start, @PathVariable("end")int end){
 
        List<Coordenada> coordenadas = rutaServices.buscarRutaPorId(id).getCoordenadas();
+       List<Coordenada>coordenadasTemp = new ArrayList<>();
+        for(Coordenada coordenada:coordenadas){
+            if(coordenada.getHabilitado()){
+                coordenadasTemp.add(coordenada);
 
-       if(coordenadas.size()==0){
+            }
+        }
+       if(coordenadasTemp.size()==0){
             return new ArrayList<>();
        }else{
-           if(end>=coordenadas.size()){
-               end = coordenadas.size();
+           if(end>=coordenadasTemp.size()){
+               end = coordenadasTemp.size();
            }
        }
 
-     return coordenadas.subList(start, end);
+     return coordenadasTemp.subList(start, end);
     }
 //______________________________________________________Mobile App Distance and Time________________________________________________
     @RequestMapping(value = "/distancia/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)

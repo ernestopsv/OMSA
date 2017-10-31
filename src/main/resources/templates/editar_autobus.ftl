@@ -185,11 +185,13 @@
 
 
     $(document).ready(function() {
-        $('.ruta option')
-                .removeAttr('selected')
-                .filter('[value=${autobus.ruta.id}]')
-                .attr('selected', true);
+        <#if autobus.ruta??>
+            $('.ruta option')
+                    .removeAttr('selected')
+                    .filter('[value=${autobus.ruta.id}]')
+                    .attr('selected', true);
 
+        </#if>
 
         var date = new Date();
         for (var i = 1950; i < date.getFullYear(); i++) {

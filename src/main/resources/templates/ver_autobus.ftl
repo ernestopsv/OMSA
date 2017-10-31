@@ -73,7 +73,7 @@
                                 <th>Climatizado</th>
                                 <th>Cant. Pasajeros</th>
                                 <th>Activo</th>
-                                <th>&nbsp</th>
+                                <#--<th>&nbsp</th>-->
                                 <th>&nbsp</th>
                                 <th>&nbsp</th>
                             </tr>
@@ -94,13 +94,16 @@
                                 <td>{{autobus.conductor}}</td>
                                 <td>{{autobus.fechaCreada*1000 | date:'dd/MM/yyyy'}}</td>
                                 <td>{{autobus.precio}}</td>
-                                <td>{{autobus.tieneAireAcondicionado}}</td>
+                                <td>
+                                    <span ng-bind="isTrue({{autobus.tieneAireAcondicionado}})?'Si' : 'No'">
+                                    </span>
+                                </td>
                                 <td>{{autobus.cantidadDePasajerosActual}}</td>
                                 <td>
-                                    <span ng-class="isTrue({{autobus.activo}})? 'label label-success' : 'label label-danger'">
-                                    {{autobus.activo}}</span>
+                                    <span ng-bind="isTrue({{autobus.activo}})?'Si' : 'No'" ng-class="isTrue({{autobus.activo}})? 'label label-success' : 'label label-danger'">
+                                    </span>
                                 </td>
-                                <td><a href="">Ver Autobus</a></td>
+                                <#--<td><a href="">Ver Autobus</a></td>-->
                                 <td>
                                     <a href="/autobus/editar/{{autobus.id}}">
                                         <p data-placement="top" data-toggle="tooltip" title="Editar">

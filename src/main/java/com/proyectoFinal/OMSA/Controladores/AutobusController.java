@@ -5,6 +5,7 @@ import com.proyectoFinal.OMSA.Repository.*;
 import com.proyectoFinal.OMSA.Services.*;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -55,6 +56,7 @@ public class AutobusController {
         Usuario user = usuarioServices.buscarUsuarioPorUsername(username);
         user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
+
         return "ver_autobusSinRutas";
     }
 
@@ -173,6 +175,7 @@ public class AutobusController {
      * @param id
      * @return
      */
+
     @RequestMapping(value = "/eliminar/{id}")
     public String eliminarAutobus(@PathVariable("id") Long id){
 //        List<Chequeo> chequeos = chequeoServices.buscarChequeoPorAutobusId(id);

@@ -84,8 +84,16 @@ public class RutaController {
         user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
         List<Coordenada> coordenadas = rutaServices.buscarRutaPorId(id_ruta).getCoordenadas();
-        model.addAttribute("coordenadas",coordenadas);
-        model.addAttribute("size", coordenadas.size());
+        ArrayList<Coordenada> coordenadasTemp = new ArrayList<>();
+        for(Coordenada coordenada: coordenadas){
+
+            if(coordenada.getHabilitado()){
+                coordenadasTemp.add(coordenada);
+            }
+        }
+        System.out.println("Coordenadas.size()");
+        model.addAttribute("coordenadas",coordenadasTemp);
+        model.addAttribute("size", coordenadasTemp.size());
         model.addAttribute("id_ruta", id_ruta);
         model.addAttribute("nombreCorredor", rutaServices.buscarRutaPorId(id_ruta).getNombreCorredor());
         return "ver_coordenada_pintada";
@@ -144,15 +152,7 @@ public class RutaController {
         ruta.setFechaCreada(getLongFromDate(new Date()));
        // ruta.setEsDireccionSubida(true);
         rutaServices.guardarRuta(ruta);
-//
-//        Ruta nuevaRuta = new Ruta();
-//        nuevaRuta.setNombreCorredor(ruta.getNombreCorredor());
-//        nuevaRuta.setDistanciaTotal(ruta.getDistanciaTotal());
-//        nuevaRuta.setFechaUltimaModificacion(ruta.getFechaUltimaModificacion());
-//        nuevaRuta.setFechaCreada(ruta.getFechaCreada());
-//        nuevaRuta.setCiudad(ruta.getCiudad());
-//        nuevaRuta.setEsDireccionSubida(false);
-//        rutaServices.guardarRuta(nuevaRuta);
+
         return "redirect:/ruta/";
     }
     private Long getLongFromDate(Date date){
@@ -163,15 +163,7 @@ public class RutaController {
     @RequestMapping("/eliminar/{id}")
     public String eliminarRuta(@PathVariable("id")Long id){
         List<Parada> paradas = paradaServices.buscarParadaPorRutaId(id);
-        for(Parada p : paradas){
-            List<Autobus>autobuses = autobusServices.buscarAutobusPorUltimaParadaID(p.getId());
-            for(Autobus autobus: autobuses){
-                autobus.setUltimaParada(null);
-                autobusServices.guardarAutobus(autobus);
-            }
 
-        }
-//        paradaServices.eliminarParadaPorRutaId(id);
         for (Parada parada:paradas){
             parada.setHabilitado(false);
             paradaServices.guardarParada(parada);
@@ -179,6 +171,7 @@ public class RutaController {
         List<Autobus> autobuses= autobusServices.buscarTodosLosAutobusporRuta(id);
         for(Autobus autobus: autobuses){
             autobus.setRuta(null);
+            autobus.setUltimaParada(null);
             autobus.setCantidadDePasajerosActual(0);
             autobusServices.guardarAutobus(autobus);
         }

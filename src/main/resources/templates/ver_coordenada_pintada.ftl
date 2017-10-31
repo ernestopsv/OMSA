@@ -46,7 +46,7 @@
                                 <th>#</th>
                                 <th>Latitud</th>
                                 <th>Longitud</th>
-                                <th>id</th>
+                                <#--<th>id</th>-->
                                 <th>&nbsp</th>
                                 <th>&nbsp</th>
 
@@ -58,7 +58,7 @@
                                 <td>{{start+$index+1}}</td>
                                 <td>{{coordenada.latitude}}</td>
                                 <td>{{coordenada.longitud}}</td>
-                                <td>{{coordenada.id}}</td>
+                                <#--<td>{{coordenada.id}}</td>-->
                                 <td> <a href="/coordenada/editar/${id_ruta}/{{coordenada.id}}">
                                     <p data-placement="top" data-toggle="tooltip" title="Editar"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>
                                 </a></td>
@@ -127,7 +127,7 @@
         $.getJSON( "/api/ruta/${id_ruta}", function( data ) {
             var coor = [];
             $.each(data["coordenadas"], function (k, v) {
-
+                console.log(data)
                 var obj ={lat:v.latitude, lng:v.longitud}
                 coor.push(obj)
 

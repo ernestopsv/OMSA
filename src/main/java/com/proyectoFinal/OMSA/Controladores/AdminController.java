@@ -5,6 +5,7 @@ import com.proyectoFinal.OMSA.Entities.Usuario;
 import com.proyectoFinal.OMSA.Services.RolServices;
 import com.proyectoFinal.OMSA.Services.UsuarioServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -56,19 +57,21 @@ public class AdminController {
         user.setRoles(rolServices.rolesUsuario(user));
         model.addAttribute("usuario", user);
 
+        ///Creacion rol
         System.out.println(usuario.getName()+"/"+usuario.getPassword()+"/"+usuario.getUsername());
         usuario.setPassword(bCryptPasswordEncoder.encode(usuario.getPassword()));
-
+        List<Rol> rols = new ArrayList<>();
         if(roles!=null){
             for(String rol : roles){
                 Rol r = new Rol();
                 r.setRol(rol);
                 r.setUsername(usuario.getUsername());
-
+                rols.add(r);
               // rolServices.creacionRol(r);
-                user.getRoles().add(r);
+             //  user.getRoles().add(r);
             }
         }
+        usuario.setRoles(rols);
         if (usuarioServices.guardarUsuario(usuario)!=null){
             return "redirect:/zonaAdmin/usuarios";
         }
@@ -114,7 +117,7 @@ public class AdminController {
         model.addAttribute("error", "Averigue bien los campos!");
         return new ModelAndView("editar_usuario");
     }
-
+    @Secured("ROLE_ADMIN")
     @RequestMapping("/eliminar/usuario/{id}")
     public String eliminarUsuario(@PathVariable("id")Long id){
         Usuario usuario = usuarioServices.buscarUnUsuario(id);
