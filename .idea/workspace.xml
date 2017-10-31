@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/AdminController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/AdminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/AutobusController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/AutobusController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/CoordenadaController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/CoordenadaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/ParadaController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/ParadaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Autobus.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Autobus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Chequeo.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Chequeo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Coordenada.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Coordenada.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Parada.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Parada.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Rol.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Rol.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Ruta.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Ruta.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Usuario.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Usuario.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/OmsaApplication.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/OmsaApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/AutobusRepository.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/AutobusRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/CoordenadaRepository.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/CoordenadaRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/ParadaRepository.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/ParadaRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/RolRepository.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/RolRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/RutaRepository.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/RutaRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/UsuarioRepository.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Repository/UsuarioRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/AutobusServices.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/AutobusServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/CoordenadaServices.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/CoordenadaServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/ParadaServices.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/ParadaServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/RolServices.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/RolServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/RutaServices.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/RutaServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/UsuarioServices.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/UsuarioServices.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Autobus.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Autobus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Fecha.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Fecha.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Parada.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Parada.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Ruta.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Ruta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Tiempo.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Tiempo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -165,7 +135,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
-              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -1534,14 +1504,7 @@
       <workItem from="1508559521025" duration="579000" />
       <workItem from="1508687427739" duration="583000" />
       <workItem from="1508806411261" duration="151000" />
-      <workItem from="1509408540765" duration="9322000" />
-    </task>
-    <task id="LOCAL-00046" summary="adding spring security">
-      <created>1504881097676</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1504881097676</updated>
+      <workItem from="1509408540765" duration="9390000" />
     </task>
     <task id="LOCAL-00047" summary="adding spring security">
       <created>1504881447423</created>
@@ -1879,11 +1842,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509425257189</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="adding dimension tables">
+      <created>1509426069627</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1509426069627</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="897632000" />
+    <option name="totallyTimeSpent" value="897700000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2356,14 +2326,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Fecha.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Autobus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="224">
           <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1135#1136#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2380,12 +2350,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Ruta.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Fecha.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="176">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2402,14 +2374,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Autobus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Ruta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="150">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1135#1136#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2417,7 +2387,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
