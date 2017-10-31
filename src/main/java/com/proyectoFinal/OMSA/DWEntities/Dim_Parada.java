@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Dim_Parada implements Serializable {
     @Id
     @Column(unique=true, nullable = false, updatable = false)
-    private String idParada;
+    private long idParada ;
     private String nombre;
     private String ruta;
     private String direccionRuta;
@@ -22,6 +22,13 @@ public class Dim_Parada implements Serializable {
     public Dim_Parada() {
     }
 
+    public long getIdParada() {
+        return idParada;
+    }
+
+    public void setIdParada(long idParada) {
+        this.idParada = idParada;
+    }
 
     public String getNombre() {
         return nombre;

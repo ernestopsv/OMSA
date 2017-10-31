@@ -1,9 +1,10 @@
 package com.proyectoFinal.OMSA.DWEntities;
 
-import org.springframework.data.annotation.Id;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 
@@ -15,7 +16,7 @@ import java.io.Serializable;
 public class Dim_Ruta implements Serializable {
     @Id
     @Column(unique=true, nullable = false, updatable = false)
-    private String idRuta;
+    private int idRuta;
     private  String ciudad;
     private String direccion;
     private String nombreCorredor;
@@ -23,11 +24,11 @@ public class Dim_Ruta implements Serializable {
     public Dim_Ruta() {
     }
 
-    public String getIdRuta() {
+    public int getIdRuta() {
         return idRuta;
     }
 
-    public void setIdRuta(String idRuta) {
+    public void setIdRuta(int idRuta) {
         this.idRuta = idRuta;
     }
 
