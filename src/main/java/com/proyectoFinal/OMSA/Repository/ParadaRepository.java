@@ -20,23 +20,23 @@ public interface ParadaRepository extends CrudRepository<Parada, Long> {
     void deleteById(Long id);
 
     //mostrar todas las paradas
-    List<Parada> findAll();
+    List<Parada> findAllByHabilitadoIsTrue();
 
     Parada save(Parada parada);
 
 
-    Parada findParadaByCoordenada(Coordenada coordenada);
+    Parada findParadaByCoordenadaAndHabilitadoIsTrue(Coordenada coordenada);
 
     //mostrar las paradas de una ruta dada
-    List<Parada> findAllByRutaId(Long id);
+    List<Parada> findAllByRutaIdAndHabilitadoIsTrue(Long id);
 
-    List<Parada> findParadaByRutaId(Long id, Pageable pagin);
+    List<Parada> findParadaByRutaIdAndHabilitadoIsTrue(Long id, Pageable pagin);
 
     //Eliminar las paradas de una ruta
     void deleteAllByRutaId(Long id);
 
     //Mostrar una parada
-    Parada findById(Long id);
+    Parada findByIdAndHabilitadoIsTrue(Long id);
 
     //modificar una parada
     @Modifying

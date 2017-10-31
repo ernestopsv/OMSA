@@ -16,15 +16,15 @@ import java.util.List;
 public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
     Usuario save(Usuario usuario);
 
-    Usuario findByUsername(String username);
+    Usuario findByUsernameAndHabilitadoIsTrue(String username);
 
-    Usuario findById(Long id);
+    Usuario findByIdAndHabilitadoIsTrue(Long id);
 
-    List<Usuario>findAll(Pageable pageable);
+    List<Usuario>findAllByHabilitadoIsTrue(Pageable pageable);
 
-    List<Usuario> findAllByUsername(String username);
+    List<Usuario> findAllByHabilitadoIsTrueAndUsername(String username);
 
-    List<Usuario>findAll();
+    List<Usuario>findAllByHabilitadoIsTrue();
 
     void deleteById(Long id);
 }

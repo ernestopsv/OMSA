@@ -37,10 +37,10 @@ public class RolServices {
         rolRepository.deleteRolById(id);
     }
     public List<Rol> todosRoles(){
-        return rolRepository.findAll();
+        return rolRepository.findAllByHabilitadoIsTrue();
     }
     public List<Rol> rolesUsuario(Usuario usuario){
-        return rolRepository.findAllByUsername(usuario.getUsername());
+        return rolRepository.findAllByUsernameAndHabilitadoIsTrue(usuario.getUsername());
     }
 
 

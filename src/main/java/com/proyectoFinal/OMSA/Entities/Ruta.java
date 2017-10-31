@@ -32,10 +32,10 @@ public class Ruta implements Serializable{
     private String ciudad;
     @NotNull
     @Size(min=2, max = 100)
-    private String nombreCorredor;
+        private String nombreCorredor;
     @NotNull
     private Boolean esDireccionSubida;
-
+    private Boolean habilitado=true;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List <Coordenada> coordenadas;
 
@@ -47,15 +47,26 @@ public class Ruta implements Serializable{
 
     }
 
-    public Ruta(Float distanciaTotal, Long fechaCreada, Long fechaUltimaModificacion, String ciudad, String nombreCorredor, Boolean esDireccionSubida, List<Coordenada> coordenadas, List<Parada> paradas) {
+    public Ruta(Float distanciaTotal, Long fechaCreada, Long fechaUltimaModificacion,
+                String ciudad, String nombreCorredor, Boolean esDireccionSubida,
+                Boolean habilitado, List<Coordenada> coordenadas, List<Parada> paradas) {
         this.distanciaTotal = distanciaTotal;
         this.fechaCreada = fechaCreada;
         this.fechaUltimaModificacion = fechaUltimaModificacion;
         this.ciudad = ciudad;
         this.nombreCorredor = nombreCorredor;
         this.esDireccionSubida = esDireccionSubida;
+        this.habilitado = habilitado;
         this.coordenadas = coordenadas;
         this.paradas = paradas;
+    }
+
+    public Boolean getHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(Boolean habilitado) {
+        this.habilitado = habilitado;
     }
 
     public List<Parada> getParadas() {

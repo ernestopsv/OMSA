@@ -5,7 +5,7 @@
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-23-21-246-11.compute-1.amazonaws.com:6212/d343vlcv4s6vh9?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</jdbc-url>
+      <jdbc-url>jdbc:postgresql://ec2-23-21-246-11.compute-1.amazonaws.com:5432/d343vlcv4s6vh9?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</jdbc-url>
     </data-source>
   </component>
 </project>

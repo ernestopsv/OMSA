@@ -118,8 +118,13 @@ public class AdminController {
     @RequestMapping("/eliminar/usuario/{id}")
     public String eliminarUsuario(@PathVariable("id")Long id){
         Usuario usuario = usuarioServices.buscarUnUsuario(id);
-        rolServices.eliminarRolPorUsername(usuario.getUsername());
-        usuarioServices.eliminarUsuario(usuario.getId());
+        List<Rol>roles = rolServices.rolesUsuario(usuario);
+        for(Rol rol: roles){
+            rol.setHabilitado(false);
+            rolServices.creacionRol(rol);
+        }
+        usuario.setHabilitado(false);
+        usuarioServices.guardarUsuario(usuario);
         return "redirect:/zonaAdmin/usuarios";
     }
 

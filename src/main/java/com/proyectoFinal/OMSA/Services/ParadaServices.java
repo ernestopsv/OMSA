@@ -34,7 +34,7 @@ public class ParadaServices {
     }
     public  List<Parada> getTopParadas(Long id, int startPosition, int cantToRead){
         Pageable pageable = new PageRequest(startPosition, cantToRead);
-        return paradaRepository.findParadaByRutaId(id, pageable);
+        return paradaRepository.findParadaByRutaIdAndHabilitadoIsTrue(id, pageable);
     }
     @Transactional
     public Parada guardarParada(Parada parada){
@@ -42,15 +42,15 @@ public class ParadaServices {
     }
 
     public List<Parada> buscarParadaPorRutaId(Long id){
-        return paradaRepository.findAllByRutaId(id);
+        return paradaRepository.findAllByRutaIdAndHabilitadoIsTrue(id);
     }
 
     public List<Parada> buscarTodasParadas(){
-        return paradaRepository.findAll();
+        return paradaRepository.findAllByHabilitadoIsTrue();
     }
 
     public Parada buscarParada(Long id){
-        return paradaRepository.findById(id);
+        return paradaRepository.findByIdAndHabilitadoIsTrue(id);
     }
 
     @Transactional

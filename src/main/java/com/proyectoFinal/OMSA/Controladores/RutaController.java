@@ -169,22 +169,23 @@ public class RutaController {
                 autobus.setUltimaParada(null);
                 autobusServices.guardarAutobus(autobus);
             }
-            List<Chequeo> chequeos = chequeoServices.buscarChequoPorParadaId(id);
-            for(Chequeo chequeo: chequeos){
-                chequeo.setParada(null);
-                chequeoServices.guardarChequeo(chequeo);
-            }
 
         }
-        paradaServices.eliminarParadaPorRutaId(id);
+//        paradaServices.eliminarParadaPorRutaId(id);
+        for (Parada parada:paradas){
+            parada.setHabilitado(false);
+            paradaServices.guardarParada(parada);
+        }
         List<Autobus> autobuses= autobusServices.buscarTodosLosAutobusporRuta(id);
         for(Autobus autobus: autobuses){
             autobus.setRuta(null);
             autobus.setCantidadDePasajerosActual(0);
             autobusServices.guardarAutobus(autobus);
         }
-
-        rutaServices.eliminarRutaPorId(id);
+        Ruta ruta = rutaServices.buscarRutaPorId(id);
+        ruta.setHabilitado(false);
+//        rutaServices.eliminarRutaPorId(id);
+        rutaServices.guardarRuta(ruta);
         return "redirect:/ruta/";
     }
 

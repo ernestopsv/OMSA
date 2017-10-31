@@ -16,18 +16,18 @@ import java.util.List;
 @Repository
 public interface RutaRepository extends CrudRepository<Ruta, Long> {
     //Encontrar ruta por nombre Corredor
-    List<Ruta> findAllByNombreCorredor(String nombre);
+    List<Ruta> findAllByHabilitadoIsTrueAndNombreCorredor(String nombre);
 
     //Encontrar todas las rutas
-    List<Ruta> findAll();
+    List<Ruta> findAllByHabilitadoIsTrue();
 
-    List<Ruta> findAllByCiudad(String ciudad);
+    List<Ruta> findAllByCiudadAndHabilitadoIsTrue(String ciudad);
 
-    List<Ruta> findAll(Pageable pageable);
+    List<Ruta> findAllByHabilitadoIsTrue(Pageable pageable);
 
 
     //encontrar ruta con id
-    Ruta findRutaById(Long id);
+    Ruta findRutaByIdAndHabilitadoIsTrue(Long id);
 
     //Guardar Ruta
     Ruta save(Ruta ruta);

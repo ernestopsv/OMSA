@@ -175,11 +175,13 @@ public class AutobusController {
      */
     @RequestMapping(value = "/eliminar/{id}")
     public String eliminarAutobus(@PathVariable("id") Long id){
-        List<Chequeo> chequeos = chequeoServices.buscarChequeoPorAutobusId(id);
-        for (Chequeo chequeo : chequeos){
-            chequeo.setAutobus(null);
-        }
-        autobusServices.eliminarAutobusporId(id);
+//        List<Chequeo> chequeos = chequeoServices.buscarChequeoPorAutobusId(id);
+//        for (Chequeo chequeo : chequeos){
+//            chequeo.setAutobus(null);
+//        }
+        Autobus autobus = autobusServices.buscarAutobusPorId(id);
+        autobus.setHabilitado(false);
+        autobusServices.guardarAutobus(autobus);
             return "redirect:/autobus/";
 
     }

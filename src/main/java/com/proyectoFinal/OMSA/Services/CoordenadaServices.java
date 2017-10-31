@@ -17,11 +17,11 @@ public class CoordenadaServices {
     public CoordenadaRepository coordenadaRepository;
 
     public Coordenada buscarUnaCoordenada(Long id){
-        return coordenadaRepository.findById(id);
+        return coordenadaRepository.findByIdAndHabilitadoIsTrue(id);
     }
 
     public Coordenada buscarCoordenadaPorLatitudLongitud(Double latitud, Double longitud){
-        return coordenadaRepository.findCoordenadaByLatitudeAndLongitud(latitud,longitud);
+        return coordenadaRepository.findCoordenadaByLatitudeAndLongitudAndHabilitadoIsTrue(latitud,longitud);
     }
 
     public Coordenada guardarCoordenada(Coordenada coordenada){

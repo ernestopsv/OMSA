@@ -22,21 +22,31 @@ public class Parada implements Serializable {
     private Ruta ruta;
     private Long paradaAnterior;
     private Long paradaSiguiente;
-
     @OneToOne (cascade=CascadeType.ALL)
     @JoinColumn(name="COORDENADA_ID",nullable=false)
     private Coordenada coordenada;
+    private Boolean habilitado=true;
 
     public Parada(){
 
     }
 
-    public Parada(String nombre, Ruta ruta, Long paradaAnterior, Long paradaSiguiente, Coordenada coordenada) {
+    public Parada(String nombre, Ruta ruta, Long paradaAnterior,
+                  Long paradaSiguiente, Coordenada coordenada) {
         this.nombre = nombre;
         this.ruta = ruta;
         this.paradaAnterior = paradaAnterior;
         this.paradaSiguiente = paradaSiguiente;
         this.coordenada = coordenada;
+        this.habilitado = habilitado;
+    }
+
+    public Boolean getHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(Boolean habilitado) {
+        this.habilitado = habilitado;
     }
 
     public Long getId() {

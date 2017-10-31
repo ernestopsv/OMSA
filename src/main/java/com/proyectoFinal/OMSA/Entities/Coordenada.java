@@ -18,6 +18,8 @@ public class Coordenada implements Serializable{
     @NotNull
     private double longitud;
 
+    private Boolean habilitado = true;
+
     public Coordenada(){
 
     }
@@ -25,6 +27,15 @@ public class Coordenada implements Serializable{
     public Coordenada(double latitude, double longitud) {
         this.latitude = latitude;
         this.longitud = longitud;
+        this.habilitado = habilitado;
+    }
+
+    public Boolean getHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(Boolean habilitado) {
+        this.habilitado = habilitado;
     }
 
     public Long getId() {

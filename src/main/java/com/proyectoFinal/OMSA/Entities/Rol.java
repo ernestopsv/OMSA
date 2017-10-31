@@ -14,6 +14,7 @@ public class Rol implements Serializable {
     private Long id;
     private String rol;
     private String username;
+    private Boolean habilitado= true;
 
     public Rol() {
     }
@@ -21,6 +22,14 @@ public class Rol implements Serializable {
     public Rol(String rol, String username) {
         this.rol = rol;
         this.username = username;
+    }
+
+    public Boolean getHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(Boolean habilitado) {
+        this.habilitado = habilitado;
     }
 
     public Long getId() {

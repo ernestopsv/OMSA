@@ -21,20 +21,20 @@ public class RutaServices {
     RutaRepository rutaRepository;
 
     public List<Ruta> buscarRutaPorNombreCorredor(String nombre){
-        return rutaRepository.findAllByNombreCorredor(nombre);
+        return rutaRepository.findAllByHabilitadoIsTrueAndNombreCorredor(nombre);
     }
 
     public List<Ruta> buscarRutasPorPagina(int page, int itemPerPage){
         Pageable pageable = new PageRequest(page, itemPerPage);
-        return rutaRepository.findAll(pageable);
+        return rutaRepository.findAllByHabilitadoIsTrue(pageable);
     }
 
     public List<Ruta>buscarTodasLasRutas(){
-        return rutaRepository.findAll();
+        return rutaRepository.findAllByHabilitadoIsTrue();
     }
 
     public Ruta buscarRutaPorId(Long id){
-        return rutaRepository.findRutaById(id);
+        return rutaRepository.findRutaByIdAndHabilitadoIsTrue(id);
     }
 
     public Ruta guardarRuta(Ruta ruta){

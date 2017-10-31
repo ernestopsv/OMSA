@@ -130,8 +130,11 @@ public class ParadaController {
 
     @RequestMapping("/eliminar")
     public String eliminarParada(@RequestParam("id")Long id){
-        coordenadaServices.eliminarCoordenada(paradaServices.buscarParada(id).getCoordenada().getId());
-        paradaServices.eliminarParadaPor(id);
+//        coordenadaServices.eliminarCoordenada(paradaServices.buscarParada(id).getCoordenada().getId());
+//        paradaServices.eliminarParadaPor(id);
+        Parada parada = paradaServices.buscarParada(id);
+        parada.setHabilitado(false);
+        paradaServices.guardarParada(parada);
         return "redirect:/parada/";
     }
 }

@@ -57,12 +57,21 @@ public class Autobus implements  Serializable {
     @Pattern(regexp = "^[A-Za-z0-9-]+$")
     @Size(max = 100)
     private String raspberryPiNumeroSerial;
+    private Boolean habilitado=true;
 
     public Autobus() {
 
     }
 
-    public Autobus(String modelo, Integer cantidadDeAsientos, Float peso, Ruta ruta, Parada ultimaParada, Integer anoFabricacion, Boolean activo, String conductor, String matricula, Long fechaCreada, Long ultimaFechaModificada, Integer precio, Boolean tieneAireAcondicionado, Integer cantidadDePasajerosActual, Coordenada coordenada, String raspberryPiNumeroSerial) {
+    public Autobus(Boolean habilitado, String modelo, Integer cantidadDeAsientos,
+                   Float peso, Ruta ruta, Parada ultimaParada,
+                   Integer anoFabricacion, Boolean activo,
+                   String conductor, String matricula,
+                   Long fechaCreada, Long ultimaFechaModificada,
+                   Integer precio, Boolean tieneAireAcondicionado,
+                   Integer cantidadDePasajerosActual,
+                   Coordenada coordenada, String raspberryPiNumeroSerial
+                   ) {
         this.modelo = modelo;
         this.cantidadDeAsientos = cantidadDeAsientos;
         this.peso = peso;
@@ -79,6 +88,15 @@ public class Autobus implements  Serializable {
         this.cantidadDePasajerosActual = cantidadDePasajerosActual;
         this.coordenada = coordenada;
         this.raspberryPiNumeroSerial = raspberryPiNumeroSerial;
+        this.habilitado = habilitado;
+    }
+
+    public Boolean getHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(Boolean habilitado) {
+        this.habilitado = habilitado;
     }
 
     public String getMatricula() {

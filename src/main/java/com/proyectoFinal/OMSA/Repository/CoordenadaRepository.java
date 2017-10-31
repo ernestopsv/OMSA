@@ -12,12 +12,12 @@ import java.util.List;
 @Repository
 public interface CoordenadaRepository extends CrudRepository<Coordenada, Long> {
 
-    List<Coordenada> findAll();
+    List<Coordenada> findAllByHabilitadoIsTrue();
 
-    Coordenada findById(Long id);
+    Coordenada findByIdAndHabilitadoIsTrue(Long id);
 
     Coordenada save(Coordenada coordenada);
 
-    Coordenada findCoordenadaByLatitudeAndLongitud(double latitud, double longitud);
+    Coordenada findCoordenadaByLatitudeAndLongitudAndHabilitadoIsTrue(double latitud, double longitud);
     void deleteCoordenadaById(Long id);
 }

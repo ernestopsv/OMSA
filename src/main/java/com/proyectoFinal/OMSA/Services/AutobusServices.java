@@ -21,21 +21,21 @@ public class AutobusServices {
 
     public List<Autobus> buscarAutobusPorRutaId(Long id, int page, int itemsPerPage){
         Pageable pageable = new PageRequest(page, itemsPerPage);
-        return autobusRepository.findAutobusesByRutaId(id,pageable);
+        return autobusRepository.findAutobusesByHabilitadoIsTrueAndRutaId(id,pageable);
     }
     public List<Autobus> buscarAutobusPorRutaNull(int page, int itemsPerPage){
         Pageable pageable = new PageRequest(page, itemsPerPage);
-        return autobusRepository.findAutobusesByRutaIsNull(pageable);
+        return autobusRepository.findAutobusesByHabilitadoIsTrueAndRutaIsNull(pageable);
     }
     public int buscarAutobusesNull(){
-        return autobusRepository.findAutobusesByRutaIsNull().size();
+        return autobusRepository.findAutobusesByHabilitadoIsTrueAndRutaIsNull().size();
     }
     public List<Autobus> buscarTodoLosAutobus(){
-        return autobusRepository.findAll();
+        return autobusRepository.findAllByHabilitadoIsTrue();
     }
 
     public List<Autobus> buscarTodosLosAutobusporRuta(Long id){
-        return autobusRepository.findAutobusesByRutaId(id);
+        return autobusRepository.findAutobusesByHabilitadoIsTrueAndRutaId(id);
     }
 
     @Transactional
@@ -44,7 +44,7 @@ public class AutobusServices {
     }
 
     public Autobus buscarAutobusPorId(Long id){
-        return autobusRepository.findAutobusById(id);
+        return autobusRepository.findAutobusByIdAndHabilitadoIsTrue(id);
     }
 
     @Transactional
@@ -69,15 +69,15 @@ public class AutobusServices {
     }
 
     public Autobus buscarUnAutobus(Long id){
-        return autobusRepository.findAutobusById(id);
+        return autobusRepository.findAutobusByIdAndHabilitadoIsTrue(id);
     }
 
     public Autobus buscarAutobusPorRaspberryNumeroSerial(String numeroSerial){
-        return autobusRepository.findAutobusByRaspberryPiNumeroSerial(numeroSerial);
+        return autobusRepository.findAutobusByHabilitadoIsTrueAndRaspberryPiNumeroSerial(numeroSerial);
     }
 
     public List<Autobus> buscarAutobusActivosYPorRuta(Boolean activo, Ruta ruta){
-        return  autobusRepository.findAllByActivoAndRuta(activo, ruta);
+        return  autobusRepository.findAllByHabilitadoIsTrueAndActivoAndRuta(activo, ruta);
     }
 
     public List<Autobus> buscarAutobusPorUltimaParadaID(Long id){

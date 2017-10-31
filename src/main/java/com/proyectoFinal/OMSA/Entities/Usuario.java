@@ -20,7 +20,7 @@ public class Usuario {
     @Size(min = 4, max = 30)
     @Column(unique=true)
     private String username;
-
+    private  Boolean habilitado= true;
     @Column(name="enabled", nullable = false, columnDefinition = "int default 1")
     private int enable = 1;
     @NotNull
@@ -32,12 +32,21 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String name, String username, int enable, String password, List<Rol> roles) {
+    public Usuario(String name, String username, Boolean habilitado, int enable, String password, List<Rol> roles) {
         this.name = name;
         this.username = username;
+        this.habilitado = habilitado;
         this.enable = enable;
         this.password = password;
         this.roles = roles;
+    }
+
+    public Boolean getHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(Boolean habilitado) {
+        this.habilitado = habilitado;
     }
 
     public int getEnable() {

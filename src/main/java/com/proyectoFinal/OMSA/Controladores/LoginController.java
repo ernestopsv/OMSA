@@ -33,30 +33,4 @@ public class LoginController {
 
     }
 
-//    @RequestMapping(value = {"/login", "/"}, method = RequestMethod.GET)
-//    public ModelAndView login(@RequestParam Optional<String> error){
-//        return new ModelAndView("/login", "error", error);
-//    }
-//
-//    @PostMapping("/iniciar_sesion")
-//    public ModelAndView login(HttpServletRequest request, @ModelAttribute Usuario us, Model model){
-//        Usuario usuario = usuarioService.buscarUsuarioPorUsername(us.getUsername());
-//        if(usuario!=null){
-//            if(usuario.getUsername().equals(us.getPassword())){
-//                request.getSession(true).setAttribute("usuario", usuario);
-//                return new ModelAndView("redirect:/");
-//            }
-//            model.addAttribute("error", "Username or Password Incorrect");
-//            return new ModelAndView("login");
-//        }
-//        model.addAttribute("error", "este usurio no existe");
-//        return new ModelAndView("login");
-//    }
-
-//    @RequestMapping("/logout")
-//    public String logout(HttpServletRequest request){
-//        request.getSession().setAttribute("usuario", null);
-//        return "redirect:/cer";
-//
-//    }
 }

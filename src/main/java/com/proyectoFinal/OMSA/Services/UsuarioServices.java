@@ -20,13 +20,13 @@ import java.util.List;
 @Service
 public class UsuarioServices {
     @Autowired
-    UsuarioRepository usuarioRepository;
+   private UsuarioRepository usuarioRepository;
     @Autowired
-    RolServices rolServices;
+    private RolServices rolServices;
     @Autowired
-    BCryptPasswordEncoder bCryptPasswordEncoder;
+   private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
-    UsuarioServices usuarioServices;
+   private UsuarioServices usuarioServices;
 
     @Transactional
     public void  eliminarUsuario(Long id){
@@ -39,20 +39,20 @@ public class UsuarioServices {
     }
 
     public Usuario buscarUsuarioPorUsername(String username){
-        return usuarioRepository.findByUsername(username);
+        return usuarioRepository.findByUsernameAndHabilitadoIsTrue(username);
     }
 
     public List<Usuario> buscarUsuarios(int page, int itemPerPage){
         Pageable pageable = new PageRequest(page,itemPerPage);
-        return usuarioRepository.findAll(pageable);
+        return usuarioRepository.findAllByHabilitadoIsTrue(pageable);
     }
 
     public List<Usuario> buscarTodosUsuarios(){
-        return usuarioRepository.findAll();
+        return usuarioRepository.findAllByHabilitadoIsTrue();
     }
 
     public List<Usuario> buscarUsuarioPorNombreUsuario(String username){
-        return usuarioRepository.findAllByUsername(username);
+        return usuarioRepository.findAllByHabilitadoIsTrueAndUsername(username);
     }
 
     @Transactional
@@ -61,12 +61,12 @@ public class UsuarioServices {
     }
 
     public Usuario buscarUnUsuario(Long id){
-        return usuarioRepository.findById(id);
+        return usuarioRepository.findByIdAndHabilitadoIsTrue(id);
     }
 
     @Transactional
     public void crearAdmin(){
-        List<Usuario> usuarios = usuarioRepository.findAllByUsername("admin");
+        List<Usuario> usuarios = usuarioRepository.findAllByHabilitadoIsTrueAndUsername("admin");
         System.out.println(usuarios.size() +"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=");
 
 //        System.out.println("usuarios.get(0).getUsername() = " + usuarios.get(0).getUsername());

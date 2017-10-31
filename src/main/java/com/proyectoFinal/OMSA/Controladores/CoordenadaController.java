@@ -123,15 +123,17 @@ public class CoordenadaController {
     @Transactional
     @RequestMapping("/eliminar/{id_ruta}/{id_coordenada}")
     public ModelAndView eliminarCoordenada(@PathVariable("id_ruta")Long id_ruta, @PathVariable("id_coordenada")Long id_coordenada ){
-        List<Coordenada> coordenadas= rutaServices.buscarRutaPorId(id_ruta).getCoordenadas();
-        for(Coordenada coordenada:coordenadas) {
-            if (coordenada.getId().equals(id_coordenada)) {
-                coordenadas.remove(coordenada);
-            }
-        }
-        Ruta ruta =  rutaServices.buscarRutaPorId(id_ruta);
-        ruta.setCoordenadas(coordenadas);
-        rutaServices.guardarRuta(ruta);
+//        List<Coordenada> coordenadas= rutaServices.buscarRutaPorId(id_ruta).getCoordenadas();
+//        for(Coordenada coordenada:coordenadas) {
+//            if (coordenada.getId().equals(id_coordenada)) {
+//                coordenadas.remove(coordenada);
+//            }
+//        }
+//        Ruta ruta =  rutaServices.buscarRutaPorId(id_ruta);
+//        ruta.setCoordenadas(coordenadas);
+//        rutaServices.guardarRuta(ruta);
+        Coordenada coordenada = coordenadaServices.buscarUnaCoordenada(id_coordenada);
+        coordenada.setHabilitado(false);
         return new ModelAndView("redirect:/ruta/listar/coordenadas/"+id_ruta);
     }
 

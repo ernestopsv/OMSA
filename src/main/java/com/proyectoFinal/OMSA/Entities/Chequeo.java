@@ -24,6 +24,7 @@ public class Chequeo implements Serializable {
     private Long fechaRegistrada;
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name="AUTOBUS_ID")
     private Autobus autobus;
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)// to be thought
@@ -34,12 +35,13 @@ public class Chequeo implements Serializable {
     private String paradaNombre;
     private String corredor;
     private String direccionCorredor;
-
     public Chequeo() {
 
     }
 
-    public Chequeo(Long fechaRegistrada, Autobus autobus, Parada parada, Boolean esEntrada, String matriculaAutobus, String paradaNombre, String corredor, String direccionCorredor) {
+    public Chequeo(Long fechaRegistrada, Autobus autobus, Parada parada,
+                   Boolean esEntrada, String matriculaAutobus, String paradaNombre,
+                   String corredor, String direccionCorredor) {
         this.fechaRegistrada = fechaRegistrada;
         this.autobus = autobus;
         this.parada = parada;

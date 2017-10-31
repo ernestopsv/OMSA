@@ -20,30 +20,30 @@ import java.util.List;
 public interface AutobusRepository extends CrudRepository<Autobus,Long> {
 
     //buscar un autobus por id
-    Autobus findAutobusById(Long id);
+    Autobus findAutobusByIdAndHabilitadoIsTrue(Long id);
 
     //buscando la lista de los autobus que hay en un ruta
-    List<Autobus> findAutobusesByRutaId(Long id);
+    List<Autobus> findAutobusesByHabilitadoIsTrueAndRutaId(Long id);
 
     //agregando un autobus en la base de datos
     Autobus save(Autobus autobus);
 
     //leer todos los autobuses
-    List<Autobus> findAll();
+    List<Autobus> findAllByHabilitadoIsTrue();
 
     List<Autobus> findAllByUltimaParadaId(Long id);
 
-    List<Autobus> findAutobusesByRutaId(Long id,  Pageable pagin);
+    List<Autobus> findAutobusesByHabilitadoIsTrueAndRutaId(Long id,  Pageable pagin);
 
     //leer los autobuses nules
-    List<Autobus> findAutobusesByRutaIsNull(Pageable pagin);
-    List<Autobus> findAutobusesByRutaIsNull();
+    List<Autobus> findAutobusesByHabilitadoIsTrueAndRutaIsNull(Pageable pagin);
+    List<Autobus> findAutobusesByHabilitadoIsTrueAndRutaIsNull();
 
     //buscar un autobus por macAddress del raspberry
-    Autobus findAutobusByRaspberryPiNumeroSerial(String numeroSerial);
+    Autobus findAutobusByHabilitadoIsTrueAndRaspberryPiNumeroSerial(String numeroSerial);
 
     //buscar los autobus que son activos
-    List<Autobus> findAllByActivoAndRuta(Boolean esActivo, Ruta ruta);
+    List<Autobus> findAllByHabilitadoIsTrueAndActivoAndRuta(Boolean esActivo, Ruta ruta);
 
     //eliminando un autobus
     void deleteAutobusById(Long id);
