@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Dim_Autobus implements Serializable{
     @Id
     @Column(unique=true, nullable = false, updatable = false)
-    private Long idAutobus;
+    private String idAutobus;
     private String matricula;
     private int precio;
     private int cantidadDeAsientos;
@@ -42,11 +42,11 @@ public class Dim_Autobus implements Serializable{
         this.tieneAireAcondicionado = tieneAireAcondicionado;
     }
 
-    public Long getIdAutobus() {
+    public String getIdAutobus() {
         return idAutobus;
     }
 
-    public void setIdAutobus(Long idAutobus) {
+    public void setIdAutobus(String idAutobus) {
         this.idAutobus = idAutobus;
     }
 

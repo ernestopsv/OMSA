@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class Dim_Ruta implements Serializable {
     @Id
     @Column(unique=true, nullable = false, updatable = false)
-    private long id;
+    private String idRuta;
     private  String ciudad;
     private String direccion;
     private String nombreCorredor;
@@ -23,12 +23,12 @@ public class Dim_Ruta implements Serializable {
     public Dim_Ruta() {
     }
 
-    public long getId() {
-        return id;
+    public String getIdRuta() {
+        return idRuta;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIdRuta(String idRuta) {
+        this.idRuta = idRuta;
     }
 
     public String getCiudad() {

@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Dim_Tiempo implements Serializable {
     @Id
     @Column(unique=true, nullable = false, updatable = false)
-    private int idTiempo;
+    private String idTiempo;
     private String tanda;
     private boolean esTarde;
     private int cuartoDeHora;
@@ -27,11 +27,11 @@ public class Dim_Tiempo implements Serializable {
     public Dim_Tiempo() {
     }
 
-    public int getIdTiempo() {
+    public String getIdTiempo() {
         return idTiempo;
     }
 
-    public void setIdTiempo(int idTiempo) {
+    public void setIdTiempo(String idTiempo) {
         this.idTiempo = idTiempo;
     }
 

@@ -15,7 +15,7 @@ import java.util.Date;
 public class Dim_Fecha implements Serializable {
     @Id
     @Column(unique=true, nullable = false, updatable = false)
-    private long idDia;
+    private String idDia;
     private String anoSemana;
     private String nombreMes;
     private String nombreDiaSemana;
@@ -41,11 +41,11 @@ public class Dim_Fecha implements Serializable {
     public Dim_Fecha() {
     }
 
-    public long getIdDia() {
+    public String getIdDia() {
         return idDia;
     }
 
-    public void setIdDia(long idDia) {
+    public void setIdDia(String idDia) {
         this.idDia = idDia;
     }
 
