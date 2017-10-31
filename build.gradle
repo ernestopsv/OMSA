@@ -50,7 +50,6 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	// https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf
 
-
 	//compile group: 'org.thymeleaf', name: 'thymeleaf', version: '3.0.7.RELEASE'
 	runtime('org.postgresql:postgresql')
 	compile group: 'org.webjars', name: 'jquery', version: '3.2.1'
