@@ -1,5 +1,6 @@
 package com.proyectoFinal.OMSA.DWEntities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,6 +13,7 @@ import java.util.Date;
 @Table(name = "dim_fecha")
 public class Dim_Fecha {
     @Id
+    @Column(unique=true)
     private long idDia;
     private String anoSemana;
     private String nombreMes;

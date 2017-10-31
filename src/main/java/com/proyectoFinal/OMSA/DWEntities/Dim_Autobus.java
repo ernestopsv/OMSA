@@ -1,5 +1,6 @@
 package com.proyectoFinal.OMSA.DWEntities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,6 +13,7 @@ import java.io.Serializable;
 @Table(name = "dim_autobus")
 public class Dim_Autobus implements Serializable{
     @Id
+    @Column(unique=true)
     private Long idAutobus;
     private String matricula;
     private int precio;

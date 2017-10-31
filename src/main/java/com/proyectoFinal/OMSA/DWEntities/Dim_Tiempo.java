@@ -1,9 +1,18 @@
 package com.proyectoFinal.OMSA.DWEntities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Created by Dany on 30/10/2017.
  */
+@Entity
+@Table(name = "dim_tiempo")
 public class Dim_Tiempo {
+    @Id
+    @Column(unique=true)
     private int idTiempo;
     private String tanda;
     private boolean esTarde;

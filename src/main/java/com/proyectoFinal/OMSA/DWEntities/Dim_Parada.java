@@ -1,5 +1,6 @@
 package com.proyectoFinal.OMSA.DWEntities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,6 +12,7 @@ import javax.persistence.Table;
 @Table(name = "dim_parada")
 public class Dim_Parada {
     @Id
+    @Column(unique=true)
     private long id;
     private String nombre;
     private String ruta;

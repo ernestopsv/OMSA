@@ -2,6 +2,7 @@ package com.proyectoFinal.OMSA.DWEntities;
 
 import org.springframework.data.annotation.Id;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -12,6 +13,7 @@ import javax.persistence.Table;
 @Table(name = "dim_ruta")
 public class Dim_Ruta {
     @Id
+    @Column(unique=true)
     private long id;
     private  String ciudad;
     private String direccion;
