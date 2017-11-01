@@ -480,20 +480,23 @@ public class RestApiController {
         if(rutas==null){
             return new ArrayList<>();
         }
-        List<Coordenada>coordenadas = new ArrayList<>();
+//        List<Coordenada>coordenadas = new ArrayList<>();
         int cont =0;
         for (Ruta ruta: rutas){
             if(ruta.getCoordenadas().size()!=0){
-                for(Coordenada coordenada: ruta.getCoordenadas()){
-                    if(coordenada.getHabilitado()){
-                        coordenadas.add(coordenada);
-                        System.out.println("there++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                for(int i=0; i<ruta.getCoordenadas().size(); i++){
+                    if(!ruta.getCoordenadas().get(i).getHabilitado()){
+                       // coordenadas.add(coordenada);
+                        rutas.get(cont).getCoordenadas().remove(i);
+//                        System.out.println("there++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
                     }
                 }
-                rutas.get(cont).setCoordenadas(coordenadas);
-                cont++;
-                coordenadas.clear();
+
             }
+            //System.out.println(coordenadas.size());
+//            rutas.get(cont).setCoordenadas(coordenadas);
+            cont++;
+//            coordenadas.clear();
         }
 
         for(Ruta r:rutas){
@@ -550,7 +553,6 @@ public class RestApiController {
         Ruta ruta = autobus.getRuta();
         ArrayList<Parada> paradas = (ArrayList<Parada>) paradaServices.buscarParadaPorRutaId(ruta.getId());
 
-        System.out.println("+++++++++++++++++++++++++++++"+ paradas.size());
         if(paradas==null){
             return null;
         }

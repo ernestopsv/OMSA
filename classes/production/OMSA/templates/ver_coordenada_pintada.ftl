@@ -84,10 +84,11 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
-                    <div id="map" style="width: 1100px; height: 400px;"></div>
-
+                    <div class="panel-body" style="height: 100%; width:100%;">
+                        <div id="map" style="width: 100%; height: 600px;"></div>
                     </div>
                 </div>
+
             </div>
         </div>
         <!-- /.container-fluid -->

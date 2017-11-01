@@ -73,6 +73,7 @@
                 "#ff00ff",
                 "#ff700f"];
             var coor = [];
+            console.log(data)
             $.each(data, function (key, value) {
                 setParadas(map, value["id"]);
                 $.each(value["coordenadas"], function (k, v) {
