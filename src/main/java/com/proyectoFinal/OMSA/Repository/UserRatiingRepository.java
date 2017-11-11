@@ -4,7 +4,6 @@ import com.proyectoFinal.OMSA.Entities.UserRating;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
-import javax.jnlp.UnavailableServiceException;
 import java.util.ArrayList;
 import java.util.List;
 

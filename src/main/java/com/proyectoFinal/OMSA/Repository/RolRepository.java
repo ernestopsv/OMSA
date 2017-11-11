@@ -1,7 +1,6 @@
 package com.proyectoFinal.OMSA.Repository;
 
 import com.proyectoFinal.OMSA.Entities.Rol;
-import com.proyectoFinal.OMSA.Entities.Usuario;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

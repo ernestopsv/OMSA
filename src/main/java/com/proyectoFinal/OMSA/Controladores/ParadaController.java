@@ -10,18 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import sun.awt.ModalExclude;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
-import java.util.List;
 
 /**
  * Created by anyderre on 31/07/17.
  */
 @Controller
-//@EnableWebMvc
 @RequestMapping("/parada")
 public class ParadaController {
     @Autowired

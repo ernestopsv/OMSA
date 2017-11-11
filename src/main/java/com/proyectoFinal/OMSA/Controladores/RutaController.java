@@ -2,21 +2,14 @@ package com.proyectoFinal.OMSA.Controladores;
 
 import com.proyectoFinal.OMSA.Entities.*;
 import com.proyectoFinal.OMSA.Services.*;
-import com.sun.org.apache.bcel.internal.generic.L2I;
-import com.sun.org.apache.xpath.internal.operations.Mod;
-import org.hibernate.internal.IteratorImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 /**

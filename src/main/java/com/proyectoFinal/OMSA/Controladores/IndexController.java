@@ -1,24 +1,15 @@
 package com.proyectoFinal.OMSA.Controladores;
 
-import com.proyectoFinal.OMSA.Entities.Rol;
 import com.proyectoFinal.OMSA.Entities.Usuario;
 import com.proyectoFinal.OMSA.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.management.relation.Role;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by anyderre on 11/08/17.

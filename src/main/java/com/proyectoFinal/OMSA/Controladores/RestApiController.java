@@ -10,12 +10,9 @@ import org.slf4j.LoggerFactory;
 import com.google.gson.Gson;
 import com.proyectoFinal.OMSA.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.method.P;
 import org.springframework.web.bind.annotation.*;
-
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
