@@ -1,8 +1,11 @@
 package com.proyectoFinal.OMSA.Repository;
 
 import com.proyectoFinal.OMSA.Entities.UserRating;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
+import javax.jnlp.UnavailableServiceException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,8 +15,12 @@ public interface UserRatiingRepository extends CrudRepository<UserRating, Long> 
     List<UserRating> findAll();
     List<UserRating> findAllByFechaPublicadaAfter(Long fecha);
     List<UserRating> findAllByFechaPublicadaBefore(Long fecha);
+    List<UserRating> findAllByFechaPublicadaBetween(Long fecha, Long fecha2);
+    List<UserRating> findUserRatingsByFechaPublicadaIsGreaterThanEqualAndFechaPublicadaIsLessThanEqual(long fecha, long  fecha2);
 
     UserRating save (UserRating userRating);
+
+    ArrayList<UserRating> findAllByIdGreaterThanEqualOrderByFechaPublicadaDesc(Long id, Pageable pageable);
 
     void deleteById(Long id);
 

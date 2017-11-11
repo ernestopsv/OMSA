@@ -42,9 +42,9 @@
                 <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i>Charts</a>
             </li>
 
-            <#--<li>-->
-                <#--<a href="/"><i class="fa fa-fw fa-television"></i>Actividades</a>-->
-            <#--</li>-->
+            <li>
+                <a href="/rating/verComentarios/"><i class="fa fa-fw fa-comments"></i>Ver comentarios</a>
+            </li>
 
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#ruta"><i class="fa fa-fw fa-arrows-v"></i> Ruta <i class="fa fa-fw fa-caret-down"></i></a>

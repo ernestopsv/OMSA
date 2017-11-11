@@ -520,17 +520,7 @@ public class RestApiController {
         }
         autobus.setUltimaParada(parada);
         chequeo.setAutobus(autobus);
-        chequeo.setCorredor(parada.getRuta().getNombreCorredor());
-        chequeo.setMatriculaAutobus(autobus.getMatricula());
-        String direccion;
-        if(parada.getRuta().getEsDireccionSubida()){
-            direccion= "subida";
-        }else {
-            direccion="bajada";
-        }
-        chequeo.setParadaNombre(parada.getNombre());
-        chequeo.setDireccionCorredor(direccion);
-
+        chequeo.setIdRuta(parada.getRuta().getId());
         if(chequeoServices.guardarChequeo(chequeo)==null){
             return new Gson().toJson("No se pudo guardar el chequeo");
         }
@@ -802,12 +792,37 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
     }
 //---------------------------------------------------Rating-----------------------------------------------
 @RequestMapping(value = "/recibir/comentario/", method = RequestMethod.POST, produces = CONTENT_TYPE)
-public Boolean recibirComentario(@RequestBody UserRating userRating){
+public UserRating recibirComentario(@RequestBody UserRating userRating){
+    UserRating userRatingResult= userRatingServices.guardarComentario(userRating);
+    if(userRatingResult!=null){
 
-    if(userRating!=null){
-        userRatingServices.guardarComentario(userRating);
-        return true;
+       return userRatingResult;
     }
-    return false;
+    return new UserRating();
 }
+
+@RequestMapping(value = "/rating/comentarios/", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<UserRating> buscarUserRating (){
+        ArrayList<UserRating> userRatings = (ArrayList<UserRating>) userRatingServices.buscarComentario();
+        if(userRatings==null){
+
+            return new ArrayList<>();
+        }
+
+        return userRatings;
+    }
+    @RequestMapping(value = "/rating/comentarios/{page}/{cant}/", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<UserRating> buscarUserRatingPorPagina (@PathVariable("page")int page, @PathVariable("cant") int cant){
+
+        ArrayList<UserRating> userRatings = userRatingServices.buscarUserRatingPorPagina(cant, page);
+        if(userRatings==null){
+
+            return new ArrayList<>();
+        }
+
+        return userRatings;
+    }
 }
+
+
+

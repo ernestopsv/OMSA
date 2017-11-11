@@ -31,25 +31,25 @@ public class Chequeo implements Serializable {
     private Parada parada;
     @NotNull
     private Boolean esEntrada;
-    private String matriculaAutobus;
-    private String paradaNombre;
-    private String corredor;
-    private String direccionCorredor;
+    private Long idRuta;
     public Chequeo() {
 
     }
 
-    public Chequeo(Long fechaRegistrada, Autobus autobus, Parada parada,
-                   Boolean esEntrada, String matriculaAutobus, String paradaNombre,
-                   String corredor, String direccionCorredor) {
+    public Chequeo(Long fechaRegistrada, Autobus autobus, Parada parada, Boolean esEntrada, Long idRuta) {
         this.fechaRegistrada = fechaRegistrada;
         this.autobus = autobus;
         this.parada = parada;
         this.esEntrada = esEntrada;
-        this.matriculaAutobus = matriculaAutobus;
-        this.paradaNombre = paradaNombre;
-        this.corredor = corredor;
-        this.direccionCorredor = direccionCorredor;
+        this.idRuta = idRuta;
+    }
+
+    public Long getIdRuta() {
+        return idRuta;
+    }
+
+    public void setIdRuta(Long idRuta) {
+        this.idRuta = idRuta;
     }
 
     public BigInteger getId() {
@@ -92,35 +92,5 @@ public class Chequeo implements Serializable {
         this.esEntrada = esEntrada;
     }
 
-    public String getMatriculaAutobus() {
-        return matriculaAutobus;
-    }
 
-    public void setMatriculaAutobus(String matriculaAutobus) {
-        this.matriculaAutobus = matriculaAutobus;
-    }
-
-    public String getParadaNombre() {
-        return paradaNombre;
-    }
-
-    public void setParadaNombre(String paradaNombre) {
-        this.paradaNombre = paradaNombre;
-    }
-
-    public String getCorredor() {
-        return corredor;
-    }
-
-    public void setCorredor(String corredor) {
-        this.corredor = corredor;
-    }
-
-    public String getDireccionCorredor() {
-        return direccionCorredor;
-    }
-
-    public void setDireccionCorredor(String direccionCorredor) {
-        this.direccionCorredor = direccionCorredor;
-    }
 }
