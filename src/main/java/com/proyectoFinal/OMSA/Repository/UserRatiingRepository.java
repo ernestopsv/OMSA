@@ -19,8 +19,9 @@ public interface UserRatiingRepository extends CrudRepository<UserRating, Long> 
 
     UserRating save (UserRating userRating);
 
-    ArrayList<UserRating> findAllByIdGreaterThanEqualOrderByFechaPublicadaDesc(Long id, Pageable pageable);
+    ArrayList <UserRating> findAll(Pageable pageable);
 
+    ArrayList<UserRating> findAllByIdGreaterThanEqualOrderByNumeroDePuntuacionDesc(Long id, Pageable pageable);
     void deleteById(Long id);
 
     void deleteAllByComentario(String comentario);

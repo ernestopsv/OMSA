@@ -6,6 +6,9 @@
 <#include "header.ftl">
 <link rel="stylesheet" href="/css/style.css"/>
 <style>
+    .fa-star{
+        color: lightgray;
+    }
     .checked {
         color: orange;
     }
@@ -154,13 +157,13 @@ $('.selectpicker').selectpicker();
     });
     var lastScrollTop = 0;
     var st = null;
-    var page = 1;
+    var page = 0;
     var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     ];
     var cont =0;
     $.get("/api/rating/comentarios/" + page + "/" + 10 + "/", function (data, status) {
-
+        console.log(data)
         data.forEach(function (doc) {
             ratings["demo"+cont]=doc["numeroDePuntuacion"];
             var fecha = new Date(doc["fechaPublicada"] * 1000);
@@ -240,7 +243,7 @@ $('.selectpicker').selectpicker();
         })
     });
 
-    var page1 = 1;
+    var page1 = 0;
     $('#comentarios').on('scroll', function (e) {
         st = $(this).scrollTop();
 

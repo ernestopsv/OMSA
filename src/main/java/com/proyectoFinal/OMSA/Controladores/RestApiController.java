@@ -816,7 +816,7 @@ public UserRating recibirComentario(@RequestBody UserRating userRating){
 
             return new ArrayList<>();
         }
-
+        System.out.println("-------------------------"+ userRatings.size());
         return userRatings;
     }
 }

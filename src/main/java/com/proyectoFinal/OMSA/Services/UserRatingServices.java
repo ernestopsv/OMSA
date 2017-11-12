@@ -40,7 +40,7 @@ public class UserRatingServices {
     }
     public ArrayList<UserRating> buscarUserRatingPorPagina(int cant, int page){
         Pageable pageable = new PageRequest(page, cant);
-        return userRatiingRepository.findAllByIdGreaterThanEqualOrderByFechaPublicadaDesc((long) 1, pageable);
+        return userRatiingRepository.findAllByIdGreaterThanEqualOrderByNumeroDePuntuacionDesc((long) 1, pageable);
     }
 
     @Transactional
