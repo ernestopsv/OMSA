@@ -24,7 +24,7 @@ public class Usuario {
     @Column(name="enabled", nullable = false, columnDefinition = "int default 1")
     private int enable = 1;
     @NotNull
-    @Size(max=255)
+    @Size(max=30)
     private String password;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Rol> roles;

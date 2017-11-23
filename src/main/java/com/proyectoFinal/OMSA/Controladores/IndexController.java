@@ -42,7 +42,7 @@ public class IndexController {
         usuario.setRoles(rolServices.rolesUsuario(usuario));
         model.addAttribute("usuario", usuario);
 
-        return new ModelAndView("index");
+        return new ModelAndView("charts");
    }
 
 }

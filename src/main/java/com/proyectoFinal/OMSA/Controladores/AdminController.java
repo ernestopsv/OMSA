@@ -30,6 +30,16 @@ public class AdminController {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
+    @RequestMapping("/actividad")
+    public  String verActividades(HttpServletRequest request, Model model){
+        String username = request.getSession().getAttribute("username").toString();
+        Usuario usuario = usuarioServices.buscarUsuarioPorUsername(username);
+        usuario.setRoles(rolServices.rolesUsuario(usuario));
+        model.addAttribute("usuario", usuario);
+        model.addAttribute("user",new Usuario());
+        return "index";
+    }
+
     @RequestMapping("/usuarios")
     public String index(HttpServletRequest request, Model model){
         String username = request.getSession().getAttribute("username").toString();

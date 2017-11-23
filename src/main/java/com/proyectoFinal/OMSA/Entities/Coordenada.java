@@ -27,7 +27,7 @@ public class Coordenada implements Serializable{
     public Coordenada(double latitude, double longitud) {
         this.latitude = latitude;
         this.longitud = longitud;
-        this.habilitado = habilitado;
+
     }
 
     public Boolean getHabilitado() {

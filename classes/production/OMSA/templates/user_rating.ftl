@@ -162,7 +162,7 @@ $('.selectpicker').selectpicker();
         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     ];
     var cont =0;
-    $.get("/api/rating/comentarios/" + page + "/" + 10 + "/", function (data, status) {
+    $.get("/api/rating/comentarios/" + page + "/" + 7 + "/", function (data, status) {
         console.log(data)
         data.forEach(function (doc) {
             ratings["demo"+cont]=doc["numeroDePuntuacion"];
@@ -252,7 +252,7 @@ $('.selectpicker').selectpicker();
             if (st % 100 == 0) {
                 page1 = page1 + 1;
 
-                $.get("/api/rating/comentarios/" + page1 + "/" + 5 + "/", function (data, status) {
+                $.get("/api/rating/comentarios/" + page1 + "/" + 7 + "/", function (data, status) {
                     if (data.length === 0) {
                         var fin = '<article class="timeline-entry begin"><div class="timeline-entry-inner">' +
                                 '<div class="timeline-icon"style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);">' +

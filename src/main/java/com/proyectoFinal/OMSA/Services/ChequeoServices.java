@@ -60,5 +60,35 @@ public class ChequeoServices {
     public void eliminarChequeoDespuesDeUnaFecha(Long fecha){
          chequeoRepository.deleteChequeoByFechaRegistradaGreaterThan(fecha);
     }
+
+
+    public List<Object[]> movimientoMensual(){
+        return chequeoRepository.selectMoviemientoMensual();
+    }
+
+    public List<Object[]> selectMovimientoAnual(){
+        return chequeoRepository.selectMovimientoAnual();
+    }
+
+    public List<Object[]> selectGananciaAyer(){
+        return chequeoRepository.selectGananciaAyer();
+    }
+    public List<Object[]> selectGananciaMensual(){
+        return chequeoRepository.selectGananciaMensual();
+    }
+    public List<Object[]> selectGananciaUltimoMes(){
+        return chequeoRepository.selectGananciaUltimoMes();
+    }
+
+    public List<Object[]> selectMovimientoPorRuta(){
+        return chequeoRepository.selectMoviementoPorRuta();
+    }
+    public List<Object[]> selectGananciaUltimaSemana(){
+        return chequeoRepository.selectGananciaUltimaSemana();
+    }
+
+    public List<Object[]> selectMovimientoPorRutaAnual(){
+        return chequeoRepository.selectMoviementoPorRutaAnual();
+    }
 }
 

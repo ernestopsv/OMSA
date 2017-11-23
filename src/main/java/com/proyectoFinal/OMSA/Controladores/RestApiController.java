@@ -523,7 +523,7 @@ public class RestApiController {
         }
         ArrayList<Parada>paradas = (ArrayList<Parada>) paradaServices.buscarParadaPorRutaId(autobus.getRuta().getId());
 
-        return new Gson().toJson("Chequeo guardado Tamano-> "+paradas.size());
+        return new Gson().toJson("Chequeo guardado");
     }
 
     @RequestMapping(value="/chequeo/buscar/{id_autobus}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
@@ -816,9 +816,131 @@ public UserRating recibirComentario(@RequestBody UserRating userRating){
 
             return new ArrayList<>();
         }
-        System.out.println("-------------------------"+ userRatings.size());
         return userRatings;
     }
+
+
+
+///--------------------------------------------------Estadistica---------------------------------------------------------------------------
+    /** Buscar Ganancia De Ayer
+     * @return
+     */
+    @RequestMapping(value = "/estadistica/gananciaAyer", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Object[]> ganaciaDeAyer (){
+
+    ArrayList<Object[]> ganancias = (ArrayList<Object[]>) chequeoServices.selectGananciaAyer();
+    if(ganancias==null){
+
+        return new ArrayList<>();
+    }
+
+    return ganancias;
+    }
+    /** Buscar movimiento mensual
+     * @return
+     */
+    @RequestMapping(value = "/estadistica/movimientoMensual", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Object[]> movimientoMensual (){
+
+        ArrayList<Object[]> movimiento = (ArrayList<Object[]>) chequeoServices.movimientoMensual();
+        if(movimiento==null){
+
+            return new ArrayList<>();
+        }
+
+        return movimiento;
+    }
+
+    /** Buscar movimiento anual
+     * @return
+     */
+    @RequestMapping(value = "/estadistica/movimientoAnual", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Object[]> movimientoAnual (){
+
+        ArrayList<Object[]> movimiento = (ArrayList<Object[]>) chequeoServices.selectMovimientoAnual();
+        if(movimiento==null){
+
+            return new ArrayList<>();
+        }
+
+        return movimiento;
+    }
+    /** Buscar Ganancia mensual
+     * @return
+     */
+    @RequestMapping(value = "/estadistica/GananciaMensual", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Object[]> gananciaMensual (){
+
+        ArrayList<Object[]> ganancia = (ArrayList<Object[]>) chequeoServices.selectGananciaMensual();
+        if(ganancia==null){
+
+            return new ArrayList<>();
+        }
+
+        return ganancia;
+    }
+
+    /** Buscar Ganancia ultimo mes
+     * @return
+     */
+    @RequestMapping(value = "/estadistica/GananciaUltimoMes", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Object[]> gananciaUltimoMes (){
+
+        ArrayList<Object[]> ganancia = (ArrayList<Object[]>) chequeoServices.selectGananciaUltimoMes();
+        if(ganancia==null){
+
+            return new ArrayList<>();
+        }
+
+        return ganancia;
+    }
+
+    /** Buscar movimiento por Ruta Mensual
+     * @return
+     */
+    @RequestMapping(value = "/estadistica/movimientoPorRuta", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Object[]> movimientoPorRuta(){
+
+        ArrayList<Object[]> movimiento = (ArrayList<Object[]>) chequeoServices.selectMovimientoPorRuta();
+        if(movimiento==null){
+
+            return new ArrayList<>();
+        }
+
+        return movimiento;
+    }
+
+
+    /** Buscar movimiento y ganancia ultimaSemana
+     * @return
+     */
+    @RequestMapping(value = "/estadistica/gananciaUltimaSemana", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Object[]> gananciaPorSemana(){
+
+        ArrayList<Object[]> movimiento = (ArrayList<Object[]>) chequeoServices.selectGananciaUltimaSemana();
+        if(movimiento==null){
+
+            return new ArrayList<>();
+        }
+
+        return movimiento;
+    }
+
+    /** Buscar movimiento por Ruta
+     * @return
+     */
+    @RequestMapping(value = "/estadistica/movimientoPorRutaAnual", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Object[]> movimientoPorRutaAnual(){
+
+        ArrayList<Object[]> movimiento = (ArrayList<Object[]>) chequeoServices.selectMovimientoPorRutaAnual();
+        if(movimiento==null){
+
+            return new ArrayList<>();
+        }
+
+        return movimiento;
+    }
+
 }
 
 
