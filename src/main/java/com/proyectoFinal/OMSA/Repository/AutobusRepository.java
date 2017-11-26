@@ -47,6 +47,7 @@ public interface AutobusRepository extends CrudRepository<Autobus,Long> {
     //eliminando un autobus
     void deleteAutobusById(Long id);
 
+    Integer countByActivoFalse();
     //
 
     //Modificando el estado del autobus

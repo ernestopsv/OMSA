@@ -90,5 +90,9 @@ public class ChequeoServices {
     public List<Object[]> selectMovimientoPorRutaAnual(){
         return chequeoRepository.selectMoviementoPorRutaAnual();
     }
+
+    public List<Object[]> selectMovimientoPorRutaUltimos20Minutos(){
+        return chequeoRepository.selectMoviementoPorRutaUltimos20minutos();
+    }
 }
 

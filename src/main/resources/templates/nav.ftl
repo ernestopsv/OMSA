@@ -39,7 +39,7 @@
                 <a href="/home"><i class="fa fa-fw fa-dashboard"></i>Inicio</a>
             </li>
             <li>
-                <a href="/zonaAdmin/actividad"><i class="fa fa-bus"></i>Actividad</a>
+                <a href="/zonaAdmin/actividad"><i class="fa fa-fw fa-bus"></i> Actividad</a>
             </li>
 
             <li>

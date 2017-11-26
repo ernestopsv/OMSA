@@ -14,10 +14,18 @@
     }
     .gananciaYmovimiento {
         background-color: #F3FBF1;
-        padding: 2px 2px;
+        padding: 10px 20px 3px 20px;
         text-align: center;
         font-family: "Segoe UI";
-
+    }
+    .alert-danger:hover{
+          box-shadow: 10px 10px 5px grey;
+          text-decoration: none;
+          transform: scale(1.01, 1.01);
+      }
+    .gananciaYmovimiento:hover{
+        box-shadow: 3px 3px 3px grey;
+        transform: scale(1.01, 1.01);
     }
 </style>
 <body>
@@ -27,7 +35,11 @@
     <div id="page-wrapper">
 
         <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12" id="activo">
 
+                </div>
+            </div>
             <div class="row">
                 <#--<div class="col-lg-12">-->
                     <div class="col-lg-3">
@@ -83,15 +95,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Movimiento Ultimos 20 minutos</h3>
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="flujos20minutos" width="100" height="100"></canvas>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="col-lg-8">
-                    <div class="panel panel-yellow">
+                <div class="col-lg-4">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Flujo de pasajeros mensual
                                 por ruta</h3>
                         </div>
                         <div class="panel-body">
-                            <div id="flujoPorRuta "></div>
+                            <canvas id="flujoPorRuta" width="100" height="100"></canvas>
                         </div>
                     </div>
                 </div>
@@ -154,10 +176,10 @@
     var ctxMovimientoMensual = document.getElementById("movimientoMensual");
     var ctxGanaciaUltimoMes = document.getElementById("ganaciaUltimoMes");
     var ctxFlujoPorRuta = document.getElementById("flujoPorRuta");
-    var ctxCircle = document.getElementById("ChartCircle");
-    var ctxCircle = document.getElementById("ChartCircle");
+    var ctx20Minutos = document.getElementById("flujos20minutos");
+    var ctxFlujosPorRuta = document.getElementById("flujoPorRuta");
 
-// -----------------------------------------Hecho  Ganancia de Ayer---------------------------------------------------------
+//// -----------------------------------------Hecho  Ganancia de Ayer---------------------------------------------------------
     $.get("/api/estadistica/gananciaAyer", function (data, status) {
         data.forEach(function (doc) {
                 document.getElementById("totalAyer").innerHTML = doc[0];
@@ -167,7 +189,7 @@
                 document.getElementById("gananciaAyer").innerHTML = '$'+doc[1]+" RD"
         });
     });
-//-----------------------------------------Hecho Ganancia Utlima Semana---------------------------------------------------------
+////-----------------------------------------Hecho Ganancia Utlima Semana---------------------------------------------------------
     $.get("/api/estadistica/gananciaUltimaSemana", function (data, status) {
         data.forEach(function (doc) {
             document.getElementById("totalSemana").innerHTML = doc[0]
@@ -179,7 +201,7 @@
         });
     });
 
-//-----------------------------------------Hecho Movimiento Mensual---------------------------------------------------------
+////-----------------------------------------Hecho Movimiento Mensual---------------------------------------------------------
         $.get("/api/estadistica/movimientoMensual", function (data, status) {
             var x = [];
             var y =[];
@@ -193,7 +215,7 @@
                 data: {
                     datasets: [{
                         data: y,
-                        label:'Movimiento de paseajeros mensual',
+                        label:'Movimiento de pasajeros mensual',
                         backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
                                         'rgba(54, 162, 235, 0.2)',
@@ -299,15 +321,138 @@
             });
 
         });
-
-
-//        $.get("/api/estadistica/movimientoAnual", function (data, status) {
-//            console.log("Movimiento Anual "+ data);
-//        });
-
+//
+//
+//-------------------------------------------------------Hecho movimiento de pasajeros Mensual por corredor-------------------------------------------------------
         $.get("/api/estadistica/movimientoPorRuta", function (data, status) {
-            console.log("Movimiento Por Ruta "+ data);
+            var x =[];
+            var y =[];
+            data.forEach(function (doc) {
+
+                x.push(doc[0]);
+                y.push(doc[1]);
+            });
+
+            new Chart(ctxFlujosPorRuta, {
+                type: 'horizontalBar',
+                data: {
+                    labels: y,
+                    datasets: [{
+                        label: 'Movimiento mensual por ruta',
+                        data: x,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    },
+                    animateScale: true
+                }
+            });
         });
+//-------------------------------------------Movimientos Ultimos 20 minutos---------------------------------------------------------
+        $.get("/api/estadistica/movimientoPorRutaUltimos20Minutos", function (data, status) {
+            var x =[];
+            var y =[];
+            data.forEach(function (doc) {
+                x.push(doc[1]);
+                y.push(doc[0]);
+            });
+
+            new Chart(ctx20Minutos, {
+                type: 'polarArea',
+                data: {
+                    labels: x,
+                    datasets: [{
+                        label: 'Movimiento Ultimos 20 Minutos',
+                        data: y,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    animateScale: true
+                }
+            });
+        });
+        setInterval(function(){
+                    $.get("/api/estadistica/movimientoPorRutaUltimos20Minutos", function (data, status) {
+            var x =[];
+            var y =[];
+            data.forEach(function (doc) {
+                x.push(doc[1]);
+                y.push(doc[0]);
+            });
+
+            new Chart(ctx20Minutos, {
+                type: 'polarArea',
+                data: {
+                    labels: x,
+                    datasets: [{
+                        label: 'Movimiento Ultimos 20 Minutos',
+                        data: y,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    animateScale: true
+                }
+            });
+        });
+
+        }, 600000);
 //-----------------------------------------------Hecho Flujo mensual Autobus Por Ruta--------------------------------------------------------------
         $.get("/api/estadistica/movimientoPorRutaAnual", function (data, status) {
             data.forEach(function (doc) {
@@ -320,7 +465,56 @@
             });
 
          });
+//------------------------------------------Hecho chequeor si hay autobuses inactivos------------------------------------------
 
+    setInterval(function(){
+
+        $.get("/api/estadistica/autobusInactivo", function (data, status) {
+            console.log("autobus inactivo"+ data);
+
+            if(data===0 )
+            {
+                if ($('#activo').children().length ===0) {
+                    $('#activo').append(
+                            $('<div>').addClass("alert alert-success").css("height", '40px').append(
+                                    $('<span>').addClass('glyphicon glyphicon-ok')
+                            ).append(
+                                    $('<strong>').append(" Normal ")).append("Todos los Autobus estan Activos")
+                    )
+                }else{
+                    $('#activo.alert').replaceWith(
+                            $('<div>').addClass("alert alert-success").css("height", '40px').append(
+                                    $('<span>').addClass('glyphicon glyphicon-ok')
+                            ).append(
+                                    $('<strong>').append(" Normal ")).append("Todos los Autobus estan Activos")
+                    )
+
+                 }
+            }else{
+
+                if ($('#activo').children().length ===0) {
+                    $('#activo').append(
+                            $('<a>').attr("href", '/zonaAdmin/actividad').append(
+                                    $('<div>').addClass("alert alert-danger").css({"height": '40px'}).append(
+                                            $('<span>').addClass('glyphicon glyphicon-remove')).append(
+                                            $('<strong>').append(" Alerta ")).append("Hay " + data + " autobus inactivos.")
+                            )
+                    )
+                }else {
+                    $('#activo.alert').replaceWith(
+                            $('<a>').attr("href", '/zonaAdmin/actividad').append(
+                                    $('<div>').addClass("alert alert-danger").css({"height": '40px'}).append(
+                                            $('<span>').addClass('glyphicon glyphicon-remove')).append(
+                                            $('<strong>').append(" Alerta ")).append("Hay " + data + " autobus inactivos.")
+                            )
+                    )
+                }
+            }
+
+        });
+
+
+    }, 120000);
 
 </script>
 

@@ -88,4 +88,9 @@ public class AutobusServices {
     public void modificarRutaAutobus(Autobus autobus){
          autobusRepository.modifyRutaActualAutobus(autobus.getRuta(),autobus.getId());
     }
+
+    public Integer contarAutobusInactivo(){
+        return autobusRepository.countByActivoFalse();
+    }
+
 }

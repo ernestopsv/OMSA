@@ -941,6 +941,28 @@ public UserRating recibirComentario(@RequestBody UserRating userRating){
         return movimiento;
     }
 
+    /** Buscar movimiento por Ruta Ultimos 20 minutos
+     * @return
+     */
+    @RequestMapping(value = "/estadistica/movimientoPorRutaUltimos20Minutos", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public ArrayList<Object[]> movimientoPorRutaUltimos20Minutos(){
+
+        ArrayList<Object[]> movimiento = (ArrayList<Object[]>) chequeoServices.selectMovimientoPorRutaUltimos20Minutos();
+        if(movimiento==null){
+
+            return new ArrayList<>();
+        }
+
+        return movimiento;
+    }
+
+    /** Obtener autobus inactivo
+     * @return
+     */
+    @RequestMapping(value = "/estadistica/autobusInactivo", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    public Integer autobus(){
+        return autobusServices.contarAutobusInactivo();
+    }
 }
 
 
