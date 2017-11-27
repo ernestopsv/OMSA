@@ -114,7 +114,7 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/autobus/eliminar/{{autobus.id}}">
+                                    <a href="/autobus/eliminar/{{autobus.id}}" onclick="return confirm('Estas seguro que quieres eliminar el autobus?');">
                                         <p data-placement="top" data-toggle="tooltip" title="Eliminar">
                                             <button class="btn btn-danger btn-xs" data-title="Eliminar"
                                                     data-toggle="modal" data-target="#delete"><span
