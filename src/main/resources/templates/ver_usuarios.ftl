@@ -66,7 +66,7 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/zonaAdmin/eliminar/usuario/{{usuario.id}}" onclick="return confirm('Estas seguro que quieres eliminar este usuario?');">
+                                    <a href="/zonaAdmin/eliminar/usuario/{{usuario.id}}" onclick="return confirm('Estas seguro que quieres eliminar este usuario ?');">
                                         <p data-placement="top" data-toggle="tooltip" title="Eliminar">
                                             <button class="btn btn-danger btn-xs" data-title="Eliminar"
                                                     data-toggle="modal" data-target="#delete"><span

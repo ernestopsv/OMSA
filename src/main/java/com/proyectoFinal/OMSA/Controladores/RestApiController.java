@@ -289,40 +289,29 @@ public class RestApiController {
     public ParadaCercana buscarParadasMasCercanas(@PathVariable("LatOrig") Double latOrig, @PathVariable("LngOrig") Double lngOrig,
                                                   @PathVariable("LatDest") Double latDest, @PathVariable("LngDest") Double lngDest){
         List<Parada> paradas = paradaServices.buscarTodasParadas();
-        System.out.println(latOrig+"/"+lngOrig+"/"+latDest+"/"+lngDest);
         ArrayList<ParadaCercana> listaOrigen  = new ArrayList<>();
         ArrayList<ParadaCercana> listaDestino  = new ArrayList<>();
         Coordenada coordenadaOrig = new Coordenada(latOrig, lngOrig);
         Coordenada coordenadaDest = new Coordenada(latDest, lngDest);
-        System.out.println("Lista de parada Sin ordenar");
         for(Parada parada : paradas){
             double distanciaOrigen = getDistance(parada.getCoordenada(),coordenadaOrig);
             double distanciaDestino = getDistance(parada.getCoordenada(),coordenadaDest);
             listaDestino.add(new ParadaCercana(parada, distanciaDestino, coordenadaDest, null, null));
             listaOrigen.add(new ParadaCercana(parada, distanciaOrigen, coordenadaOrig,null,null));
-           // System.out.println("Parada "+parada.getNombre()+"--Distancia "+distanciaOrigen+"\n");
-
         }
+
         listaDestino = mergeSort(listaDestino);
         listaOrigen = mergeSort(listaOrigen);
-        System.out.println("Lista de parada ordenada");
         for (ParadaCercana paradaOrigen : listaOrigen){
-            System.out.println("Primer for");
-//            System.out.println("Parada "+paradaCercana.getParadaActual().getNombre()+"--Distancia "+paradaCercana.getDistancia()+"\n");
             for(ParadaCercana paradaDestino:listaDestino) {
-                System.out.println("Segundo for");
 
                 if(paradaDestino.getParadaActual().getRuta().getId().equals(paradaOrigen.getParadaActual().getRuta().getId())){
-                    System.out.println("Was there-->"+paradaDestino.getParadaActual().getNombre());
                     paradaDestino.getParadaActual().getRuta().setParadas(null);
                     paradaOrigen.getParadaActual().getRuta().setParadas(null);
                     return new ParadaCercana(null, 0.0, null,paradaOrigen.getParadaActual(),paradaDestino.getParadaActual());
                 }
             }
         }
-        System.out.println("Salio");
-
-
         return new ParadaCercana();
 
     }
@@ -449,22 +438,6 @@ public class RestApiController {
         if(rutas==null){
             return new ArrayList<>();
         }
-//        List<Coordenada>coordenadas = new ArrayList<>();
-//        int cont =0;
-//        for (Ruta ruta: rutas){
-//            if(ruta.getCoordenadas().size()!=0){
-//                for(Coordenada coordenada: ruta.getCoordenadas()){
-//                    if(coordenada.getHabilitado()){
-//                        coordenadas.add(coordenada);
-//                        System.out.println("there++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-//                    }
-//                }
-//                rutas.get(cont).setCoordenadas(coordenadas);
-//                cont++;
-//                coordenadas.clear();
-//            }
-//        }
-
         return (ArrayList<Ruta>) rutas;
     }
 
@@ -477,23 +450,18 @@ public class RestApiController {
         if(rutas==null){
             return new ArrayList<>();
         }
-//        List<Coordenada>coordenadas = new ArrayList<>();
         int cont =0;
         for (Ruta ruta: rutas){
             if(ruta.getCoordenadas().size()!=0){
                 for(int i=0; i<ruta.getCoordenadas().size(); i++){
                     if(!ruta.getCoordenadas().get(i).getHabilitado()){
-                       // coordenadas.add(coordenada);
                         rutas.get(cont).getCoordenadas().remove(i);
-//                        System.out.println("there++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
                     }
                 }
 
             }
-            //System.out.println(coordenadas.size());
-//            rutas.get(cont).setCoordenadas(coordenadas);
+
             cont++;
-//            coordenadas.clear();
         }
 
         for(Ruta r:rutas){
@@ -547,21 +515,17 @@ public class RestApiController {
         double distanciaActual;
         Parada paradaActual= new Parada();
 
-        for(Parada parada:paradas){
-            distanciaActual= Math.sqrt(
-                              Math.pow((parada.getCoordenada().getLatitude()-chequeo.getParada().getCoordenada().getLatitude()),2)
-                            + Math.pow((parada.getCoordenada().getLongitud()-chequeo.getParada().getCoordenada().getLongitud()),2)
+        for(Parada parada:paradas) {
+            distanciaActual = Math.sqrt(
+                    Math.pow((parada.getCoordenada().getLatitude() - chequeo.getParada().getCoordenada().getLatitude()), 2)
+                            + Math.pow((parada.getCoordenada().getLongitud() - chequeo.getParada().getCoordenada().getLongitud()), 2)
             );
-            System.out.println("Distancia Actual-> "+ distanciaActual + "  Parada-> "+ parada.getNombre());
-            if (distanciaActual<max){
-                max =distanciaActual;
+            if (distanciaActual < max) {
+                max = distanciaActual;
                 paradaActual = parada;
-                System.out.println(paradaActual.getNombre());
             }
 
-
         }
-        System.out.println("parada obtenida -> "+ paradaActual.getNombre());
         return paradaActual;
     }
 
@@ -570,9 +534,6 @@ public class RestApiController {
  public List<Usuario> buscarUsuarioPorPaginas(@PathVariable("items")int items, @PathVariable("page")int page){
         ArrayList <Usuario> usuarios = (ArrayList<Usuario>) usuarioServices.buscarUsuarios(page, items);
 
-//        for (int i=0; i<usuarios.size(); i++){
-//            usuarios.get(i).setRoles((ArrayList<Rol>)rolServices.rolesUsuario(usuarios.get(i)));
-//        }
         if (usuarios==null){
             return new ArrayList<>();
         }
@@ -587,7 +548,6 @@ public class RestApiController {
         for(Coordenada coordenada:coordenadas){
             if(coordenada.getHabilitado()){
                 coordenadasTemp.add(coordenada);
-
             }
         }
        if(coordenadasTemp.size()==0){
@@ -604,14 +564,9 @@ public class RestApiController {
     @RequestMapping(value = "/distancia/{id}", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public DistanceAndTime buscarDistanciaYTiempo (@PathVariable("id")Long id){
             Parada paradaSeleccionada = paradaServices.buscarParada(id);
-        System.out.println("Parada solicitada------------------------------------------> "+ paradaSeleccionada.getNombre());
             Autobus autobus = autobosMasCercanoPorParada(paradaSeleccionada);
-
-           // totalTiempoApiGoogle();
             if(autobus!=null){
                 Parada iterador = getParadaMasCerca(autobus);
-                System.out.println("Parada mas cerca-------------------------------------> "+iterador.getNombre());
-
                 return totalTiempoApiGoogle(autobus, paradaSeleccionada, iterador);
             }
 
@@ -625,10 +580,9 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
     double newDurac= 0.0D, newDuracTraf = 0.0D,newDis= 0.0D;
     int durac=0,dis=0, duracTraf=0;
 
-
+    Parada iteradorAnterior;
     while (!iterador.getId().equals(parada.getId())) {
         cont++;
-        System.out.println(cont);
         String cadena = "https://maps.googleapis.com/maps/api/directions/json?origin=";
         if(cont ==1){
             cadena = cadena + iterador.getCoordenada().getLatitude();
@@ -639,23 +593,19 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
             cadena = cadena + ",";
             cadena = cadena + autobus.getCoordenada().getLongitud();
             cadena = cadena + "&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
-            iterador = paradaServices.buscarParada(iterador.getParadaAnterior());
         }else{
-            iterador = paradaServices.buscarParada(iterador.getParadaAnterior());
-            cadena = cadena + iterador.getCoordenada().getLatitude();
+            iteradorAnterior = paradaServices.buscarParada(iterador.getParadaAnterior());
+            cadena = cadena + iteradorAnterior.getCoordenada().getLatitude();
             cadena = cadena + ",";
-            cadena = cadena + iterador.getCoordenada().getLongitud();
+            cadena = cadena + iteradorAnterior.getCoordenada().getLongitud();
             cadena = cadena + "&destination=";
             cadena = cadena + iterador.getCoordenada().getLatitude();
             cadena = cadena + ",";
             cadena = cadena + iterador.getCoordenada().getLongitud();
             cadena = cadena + "&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
-
+            iterador= iteradorAnterior;
         }
 
-       // String cadena2 = "https://maps.googleapis.com/maps/api/directions/json?origin=19.488278,-70.7167&destination=19.4710,-70.6913&departure_time=1541202457&traffic_model=best_guess&key=AIzaSyCIvewpnbMTDZbCR3NGc4VwKRYb2BB3Qrs";
-
-        System.out.println("cadena: " + cadena);
         URL url = null;
 
 
@@ -664,21 +614,13 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
             HttpURLConnection connection = (HttpURLConnection) url.openConnection(); //Abrir la conexión
             connection.setRequestProperty("User-Agent", "Mozilla/5.0" +
                     " (Linux; Android 1.5; es-ES) Ejemplo HTTP");
-            //connection.setHeader("content-type", "application/json");
-
             int respuesta = connection.getResponseCode();
             StringBuilder result = new StringBuilder();
 
             if (respuesta == HttpURLConnection.HTTP_OK) {
-
-
                 InputStream in = new BufferedInputStream(connection.getInputStream());  // preparo la cadena de entrada
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));  // la introduzco en un BufferedReader
-
-                // El siguiente proceso lo hago porque el JSONOBject necesita un String y tengo
-                // que tranformar el BufferedReader a String. Esto lo hago a traves de un
-                // StringBuilder.
 
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -694,47 +636,18 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
                 //---------------------------distance-----------
                 JSONObject distance = jsonArray.getJSONObject(0).getJSONObject("distance");
                  dis = (int) distance.get("value");
-                System.out.println(distance + "<- Distance");
-                System.out.println("valor: " + jsonArray.toString());
 
                 //----------------------------duracion--------------------------
                 JSONObject duracion = jsonArray.getJSONObject(0).getJSONObject("duration");
                  durac = (int) duracion.get("value");
-                System.out.println(duracion + "<- Duracion");
-                System.out.println(durac + "==================================");
-                System.out.println("valor: " + jsonArray.toString());
                 //----------------------------duracion In traffic--------------------------
                 JSONObject duracionTraffic = jsonArray.getJSONObject(0).getJSONObject("duration_in_traffic");
                 duracTraf = (int) duracionTraffic.get("value");
-                System.out.println(duracionTraffic + "Duracion Traffic");
-                System.out.println(duracTraf + "==================================");
-                System.out.println("valor: " + jsonArray.toString());
-                durac =duracTraf-10;
-                if(durac<0){
-                    durac = 0;
-                }
                 newDurac+=durac;
                 newDuracTraf+=duracTraf;
                 newDis+=dis;
 
-
-
-                System.out.println("Total tiempo actual-> "+ newDurac);
-                System.out.println("Total tiempo actual-> "+ newDuracTraf);
-
-//                distanceAndTime.setDistance(newDis);
-//                distanceAndTime.setDuration(newDurac);
-//                distanceAndTime.setDuration_Traffic(newDuracTraf);
-                //Vamos obteniendo todos los campos que nos interesen.
-                //En este caso obtenemos la primera dirección de los resultados.
-                   /* String direccion="SIN DATOS PARA ESA LONGITUD Y LATITUD";
-                    if (resultJSON.length()>0){
-                        direccion = resultJSON.getJSONObject(0).getString("formatted_address");    // dentro del results pasamos a Objeto la seccion formated_address
-                    }
-                    devuelve = "Dirección: " + direccion;   // variable de salida que mandaré al onPostExecute para que actualice la UI
-*/
             }
-            ;
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
@@ -744,7 +657,6 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
     distanceAndTime.setDistance(newDis/1000);
     distanceAndTime.setDuration(newDurac/60);
     distanceAndTime.setDuration_Traffic(newDuracTraf/60);
-    System.out.println("Cantidad"+ cont);
     autobus.getRuta().setParadas(null);
     distanceAndTime.setAutobus(autobus);
     return distanceAndTime;
@@ -776,13 +688,13 @@ private DistanceAndTime totalTiempoApiGoogle(Autobus autobus, Parada parada, Par
             return null;
         }
 
-        Parada iterador = paradaServices.buscarParada(parada.getParadaAnterior());
+        Parada iterador = paradaServices.buscarParada(parada.getParadaSiguiente());
         while(!iterador.getId().equals(parada.getId())){
             for(Autobus autobus: autobuses){
                 if(iterador.getId().equals(autobus.getUltimaParada().getId()))
                     return autobus;
             }
-            iterador = paradaServices.buscarParada(iterador.getParadaAnterior());
+            iterador = paradaServices.buscarParada(iterador.getParadaSiguiente());
 
         }
         return  null;

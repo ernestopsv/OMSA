@@ -128,7 +128,7 @@
                     map: map,
                     icon: image,
                     shape: shape,
-                    title: parada["nombre"],
+                    title: parada["nombre"]+' #'+ parada["id"],
                     zIndex: 1
                 });
             });

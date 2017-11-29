@@ -63,7 +63,7 @@
                                     <p data-placement="top" data-toggle="tooltip" title="Editar"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>
                                 </a></td>
                                 <td>
-                                    <a href="/coordenada/eliminar/${id_ruta}/{{coordenada.id}}">
+                                    <a href="/coordenada/eliminar/${id_ruta}/{{coordenada.id}}" onclick="return confirm('Estas seguro que quieres eliminar esta coordenada?');">
                                         <p data-placement="top" data-toggle="tooltip" title="Eliminar"><button class="btn btn-danger btn-xs" data-title="Eliminar" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>
                                     </a>
                                 </td>

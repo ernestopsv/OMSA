@@ -66,7 +66,7 @@
                                 </a>
                             </td>
                             <td>
-                                <a href="/ruta/eliminar/{{r.id}}">
+                                <a href="/ruta/eliminar/{{r.id}}" onclick="return confirm('Estas seguro que quieres esta ruta?');">
                                     <p data-placement="top" data-toggle="tooltip" title="Eliminar"><button class="btn btn-danger btn-xs" data-title="Eliminar" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>
                                 </a>
                             </td>

@@ -124,7 +124,7 @@ $('.selectpicker').selectpicker();
         }];
 
         data.forEach(function (doc) {
-//                console.log(doc);
+
             arr.push(doc.numeroDePuntuacion);
             var counts = {};
             for (var i = 0; i < arr.length; i++) {
@@ -158,40 +158,39 @@ $('.selectpicker').selectpicker();
     var lastScrollTop = 0;
     var st = null;
     var page = 0;
-    var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-    ];
+
     var cont =0;
     $.get("/api/rating/comentarios/" + page + "/" + 7 + "/", function (data, status) {
-        console.log(data)
+
         data.forEach(function (doc) {
             ratings["demo"+cont]=doc["numeroDePuntuacion"];
             var fecha = new Date(doc["fechaPublicada"] * 1000);
-            var day = fecha.getDay() + " " + monthNames[fecha.getMonth()]+" "+ fecha.getFullYear();
+            var fechaRes = fecha.toLocaleDateString();
+            var tiempoRes = fecha.toLocaleTimeString();
             var containtString = '<article class="timeline-entry">' +
 
                     '<div class="timeline-entry-inner">' +
 
                     '<div class="timeline-icon bg-success">' +
                     '<i class="entypo-feather" style="font-size:9px;">' +
-
                     '</i>' +
                     ' </div>' +
                     '<div class="timeline-label">' +
-                    '<h2>Desconocido</h2>' +
+                    '<h2>Anonimo</h2>' +
                     '<hr>' +
                     '<p>' + doc["comentario"] + '</p>' +
                     '<hr>' +
-                    '<div class="row"><div class="col-md-8" style="font-style: italic">' + day
-                    +'</div><div class="col-md-4" id="demo'+cont+'">'+
-                    '</div>'+
+                    '<div class="row"><div class="col-md-12">'+
+                    '<div class="col-md-8" style="font-style: italic"> '+fechaRes+' </div>'+
+                    '<div class="col-md-4" id="demo'+cont+'"></div>' +
+                    '</div></div>'+
             '</div>' +
             '</div>' +
             '</article>';
 
             $(".timeline-centered").append(containtString)
 
-            if(doc["numeroDePuntuacion"]==1){
+            if(doc["numeroDePuntuacion"]===1){
                         var text =
                         '<span class="fa fa-star checked"></span>'+
                         '<span class="fa fa-star"></span>'+
@@ -200,7 +199,7 @@ $('.selectpicker').selectpicker();
                         '<span class="fa fa-star"></span>'
                 $('#demo'+cont).append(text);
             }
-            else if(doc["numeroDePuntuacion"]==2){
+            else if(doc["numeroDePuntuacion"]===2){
             var text =
                     '<span class="fa fa-star checked"></span>'+
                     '<span class="fa fa-star checked"></span>'+
@@ -209,7 +208,7 @@ $('.selectpicker').selectpicker();
                     '<span class="fa fa-star"></span>'
                 $('#demo'+cont).append(text);
              }
-            else if(doc["numeroDePuntuacion"]==3)
+            else if(doc["numeroDePuntuacion"]===3)
              {
                  var text =
                          '<span class="fa fa-star checked"></span>'+
@@ -219,7 +218,7 @@ $('.selectpicker').selectpicker();
                          '<span class="fa fa-star"></span>'
                  $('#demo'+cont).append(text);
              }
-            else if(doc["numeroDePuntuacion"]==4){
+            else if(doc["numeroDePuntuacion"]===4){
                 var text =
                         '<span class="fa fa-star checked"></span>'+
                         '<span class="fa fa-star checked"></span>'+
@@ -228,7 +227,7 @@ $('.selectpicker').selectpicker();
                         '<span class="fa fa-star"></span>';
                         $('#demo'+cont).append(text);
             }
-            else if (doc["numeroDePuntuacion"]==5){
+            else if (doc["numeroDePuntuacion"]===5){
                     var text =
                             '<span class="fa fa-star checked"></span>'+
                             '<span class="fa fa-star checked"></span>'+
@@ -249,7 +248,7 @@ $('.selectpicker').selectpicker();
 
         if (st >= lastScrollTop) {
 
-            if (st % 100 == 0) {
+            if (st % 100 === 0) {
                 page1 = page1 + 1;
 
                 $.get("/api/rating/comentarios/" + page1 + "/" + 7 + "/", function (data, status) {
@@ -267,8 +266,10 @@ $('.selectpicker').selectpicker();
 
                     }
                     data.forEach(function (doc) {
-                        var fecha = new Date(doc["fechaPublicada"] * 1000);
-                        var day = fecha.getDay() + " " + monthNames[fecha.getMonth()]+" "+ fecha.getFullYear();
+                        var fecha = new Date(doc["fechaPublicada"] * 1000)
+                        var fechaRes = fecha.toLocaleDateString();
+                        var tiempoRes = fecha.toLocaleTimeString();
+
                         var containtString = '<article class="timeline-entry">' +
 
                                 '<div class="timeline-entry-inner">' +
@@ -280,20 +281,20 @@ $('.selectpicker').selectpicker();
                                 ' </div>' +
 
                                 '<div class="timeline-label">' +
-                                '<h2>Desconocido</h2>' +
+                                '<h2>Anonimo</h2>' +
                                 '<hr>' +
                                 '<p>' + doc["comentario"] + '</p>' +
                                 '<hr>' +
-                                '<div class="row"><div class="col-md-8" style="font-style: italic">' + day
+                                '<div class="row"><div class="col-md-12"><div class="col-md-8" style="font-style: italic">' + fechaRes
                                 +'</div><div class="col-md-4" id="demo'+cont+'">' +
-                                '</div></div>'+
+                                '</div></div></div>'+
                                 '</div>' +
                                 '</div>' +
                                 '</article>';
 
                         $(".timeline-centered").append(containtString)
 
-                        if(doc["numeroDePuntuacion"]==1){
+                        if(doc["numeroDePuntuacion"]===1){
                             var text =
                                     '<span class="fa fa-star checked"></span>'+
                                     '<span class="fa fa-star"></span>'+
@@ -302,7 +303,7 @@ $('.selectpicker').selectpicker();
                                     '<span class="fa fa-star"></span>'
                             $('#demo'+cont).append(text);
                         }
-                        else if(doc["numeroDePuntuacion"]==2){
+                        else if(doc["numeroDePuntuacion"]===2){
                         var text =
                                 '<span class="fa fa-star checked"></span>'+
                                 '<span class="fa fa-star checked"></span>'+
@@ -311,7 +312,7 @@ $('.selectpicker').selectpicker();
                                 '<span class="fa fa-star"></span>'
                         $('#demo'+cont).append(text);
                     }
-                    else if(doc["numeroDePuntuacion"]==3)
+                    else if(doc["numeroDePuntuacion"]===3)
                     {
                     var text =
                             '<span class="fa fa-star checked"></span>'+
@@ -321,7 +322,7 @@ $('.selectpicker').selectpicker();
                             '<span class="fa fa-star"></span>'
                     $('#demo'+cont).append(text);
                      }
-                   else if(doc["numeroDePuntuacion"]==4){
+                   else if(doc["numeroDePuntuacion"]===4){
                     var text =
                             '<span class="fa fa-star checked"></span>'+
                             '<span class="fa fa-star checked"></span>'+
@@ -330,7 +331,7 @@ $('.selectpicker').selectpicker();
                             '<span class="fa fa-star"></span>'
                     $('#demo'+cont).append(text);
                 }
-                else if (doc["numeroDePuntuacion"]==5){
+                else if (doc["numeroDePuntuacion"]===5){
         var text =
                 '<span class="fa fa-star checked"></span>'+
                 '<span class="fa fa-star checked"></span>'+

@@ -15,7 +15,7 @@ public class UserRating implements Serializable
     private Long id;
     private Long fechaPublicada;
     private int numeroDePuntuacion;
-    @Lob
+    //@Lob
     private String comentario;
 
     public UserRating() {
