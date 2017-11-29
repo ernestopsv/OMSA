@@ -5,6 +5,7 @@ app.controller("paradaTableController", function ($http, $scope) {
     $scope.itemsPerPage= 10;
 
     $scope.getData = function (pageno, id) {
+        $scope.start= pageno*$scope.itemsPerPage-$scope.itemsPerPage;
         $scope.paradas=[];
                 $http.get("/api/paradas/buscar/"+(pageno-1)+"/"+$scope.itemsPerPage+"/ruta/"+id).then(
                     function (response) {

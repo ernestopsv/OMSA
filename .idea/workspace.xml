@@ -2,25 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/UserRating.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/UserRating.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/RestApiController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Controladores/RestApiController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_autobus.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_autobus.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_autobusSinRutas.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_autobusSinRutas.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_coordenada_pintada.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_coordenada_pintada.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_ruta.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_ruta.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_usuarios.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_usuarios.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/charts.ftl" afterPath="$PROJECT_DIR$/classes/production/OMSA/templates/charts.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/user_rating.ftl" afterPath="$PROJECT_DIR$/classes/production/OMSA/templates/user_rating.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_autobus.ftl" afterPath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_autobus.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_autobusSinRutas.ftl" afterPath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_autobusSinRutas.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_coordenada_pintada.ftl" afterPath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_coordenada_pintada.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_ruta.ftl" afterPath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_ruta.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_usuarios.ftl" afterPath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_usuarios.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/UserRating.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/UserRating.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/index.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/index.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/index.ftl" afterPath="$PROJECT_DIR$/classes/production/OMSA/templates/index.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/css/sb-admin.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/sb-admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/autobusTableController.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/autobusTableController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/emptyAutobusTableControllers.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/emptyAutobusTableControllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/paradaTableController.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/paradaTableController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/rutaTableControllers.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/rutaTableControllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/usuarioTableController.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/usuarioTableController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/charts.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/charts.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -157,41 +153,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RestApiController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java">
+      <file leaf-file-name="charts.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-80">
-              <caret line="133" column="15" lean-forward="true" selection-start-line="133" selection-start-column="15" selection-end-line="133" selection-end-column="15" />
-              <folding>
-                <marker date="1511902786732" expanded="true" signature="7228:7264" ph="..." />
-                <marker date="1511902786732" expanded="true" signature="7640:7665" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_rating.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2952">
-              <caret line="287" column="93" lean-forward="false" selection-start-line="287" selection-start-column="93" selection-end-line="287" selection-end-column="93" />
-              <folding>
-                <marker date="1511891649161" expanded="true" signature="6311:6325" ph="..." />
-                <marker date="1511891649161" expanded="true" signature="6715:6733" ph="..." />
-                <marker date="1511891649161" expanded="true" signature="9920:9986" ph="..." />
-                <marker date="1511891649161" expanded="true" signature="10975:10989" ph="..." />
-                <marker date="1511891649161" expanded="true" signature="11453:11471" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -208,7 +175,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fl</find>
       <find>flo</find>
       <find>floa</find>
       <find>float</find>
@@ -238,6 +204,7 @@
       <find>chequeo</find>
       <find>autobus</find>
       <find>System</find>
+      <find>br</find>
     </findStrings>
     <replaceStrings>
       <replace>Long</replace>
@@ -692,12 +659,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Rol.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/RolServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Ruta.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/OmsaApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/RutaServices.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/emptyAutobusTableControllers.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/editar_autobus.ftl" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Autobus.java" />
@@ -733,16 +694,22 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/nav.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/ChequeoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/ChequeoServices.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/charts.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/UserRating.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/paradaTableController.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/rutaTableControllers.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/usuarioTableController.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/autobusTableController.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/emptyAutobusTableControllers.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/sb-admin.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/charts.ftl" />
       </list>
     </option>
   </component>
@@ -777,9 +744,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -871,9 +835,68 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OMSA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OMSA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-rtl.css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OMSA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OMSA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1491,14 +1514,8 @@
       <workItem from="1511748205617" duration="577000" />
       <workItem from="1511785783219" duration="3474000" />
       <workItem from="1511807367766" duration="1998000" />
-      <workItem from="1511878821125" duration="16027000" />
-    </task>
-    <task id="LOCAL-00059" summary="fixing error in spring security">
-      <created>1505166882103</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1505166882103</updated>
+      <workItem from="1511878821125" duration="17171000" />
+      <workItem from="1511964953365" duration="7038000" />
     </task>
     <task id="LOCAL-00060" summary="fixing error in spring security">
       <created>1505326151923</created>
@@ -1836,11 +1853,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511787259159</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Corrigiendo algoritmo de calculo de tiempo">
+      <created>1511932883535</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1511932885756</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1150797000" />
+    <option name="totallyTimeSpent" value="1158979000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1876,7 +1900,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36878216" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48885077" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20726173" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21028744" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1930,7 +1954,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changing get parada function" />
     <MESSAGE value="finishing with registering entities" />
     <MESSAGE value="getting registration forms ready" />
     <MESSAGE value="adding selectpicker" />
@@ -1955,7 +1978,8 @@
     <MESSAGE value="Trabajando con los comentarios" />
     <MESSAGE value="Dashboar" />
     <MESSAGE value="Adding delete confirmation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding delete confirmation" />
+    <MESSAGE value="Corrigiendo algoritmo de calculo de tiempo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrigiendo algoritmo de calculo de tiempo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1968,64 +1992,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Tiempo.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Autobus.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/star-rating.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="598" column="4" lean-forward="false" selection-start-line="598" selection-start-column="4" selection-end-line="598" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/star-rating.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="188" column="1" lean-forward="false" selection-start-line="188" selection-start-column="1" selection-end-line="188" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/Chart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30416">
-          <caret line="1909" column="20" lean-forward="false" selection-start-line="1909" selection-start-column="19" selection-end-line="1909" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5008">
-          <caret line="313" column="1" lean-forward="false" selection-start-line="313" selection-start-column="1" selection-end-line="313" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/ParadaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/RolRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="43" lean-forward="false" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/RutaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/UsuarioRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/UserRatingController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -2076,14 +2042,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/f89253b9/fe353a8a-cfec-477a-b6cd-59eb86d4cc3a/d343vlcv4s6vh9.public.user_rating">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -2220,14 +2186,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="462" column="17" lean-forward="false" selection-start-line="462" selection-start-column="17" selection-end-line="462" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/ChequeoServices.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
@@ -2251,34 +2209,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/UserRating.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="116" column="79" lean-forward="true" selection-start-line="116" selection-start-column="79" selection-end-line="116" selection-end-column="153" />
+        <state relative-caret-position="16">
+          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-239">
+          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_parada_pintada.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tableControllers/rutaTableControllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-960">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="176">
+          <caret line="11" column="69" lean-forward="false" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tableControllers/usuarioTableController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="69" lean-forward="false" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tableControllers/coordenadaTableController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tableControllers/autobusTableController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="15" column="69" lean-forward="false" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tableControllers/emptyAutobusTableControllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="15" column="69" lean-forward="false" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="86" column="44" lean-forward="false" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="92" column="148" lean-forward="false" selection-start-line="92" selection-start-column="148" selection-end-line="92" selection-end-column="148" />
+        <state relative-caret-position="80">
+          <caret line="62" column="44" lean-forward="false" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tableControllers/paradaTableController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="65" column="170" lean-forward="false" selection-start-line="65" selection-start-column="170" selection-end-line="65" selection-end-column="170" />
+        <state relative-caret-position="112">
+          <caret line="7" column="69" lean-forward="false" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
           <folding />
         </state>
       </provider>
@@ -2286,45 +2291,39 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
-          <caret line="68" column="161" lean-forward="false" selection-start-line="68" selection-start-column="161" selection-end-line="68" selection-end-column="161" />
+          <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="68" column="125" lean-forward="false" selection-start-line="68" selection-start-column="125" selection-end-line="68" selection-end-column="125" />
+        <state relative-caret-position="80">
+          <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/UserRating.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_parada_pintada.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        <state relative-caret-position="-768">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2952">
-          <caret line="287" column="93" lean-forward="false" selection-start-line="287" selection-start-column="93" selection-end-line="287" selection-end-column="93" />
-          <folding>
-            <marker date="1511891649161" expanded="true" signature="6311:6325" ph="..." />
-            <marker date="1511891649161" expanded="true" signature="6715:6733" ph="..." />
-            <marker date="1511891649161" expanded="true" signature="9920:9986" ph="..." />
-            <marker date="1511891649161" expanded="true" signature="10975:10989" ph="..." />
-            <marker date="1511891649161" expanded="true" signature="11453:11471" ph="..." />
-          </folding>
+        <state relative-caret-position="227">
+          <caret line="65" column="170" lean-forward="false" selection-start-line="65" selection-start-column="170" selection-end-line="65" selection-end-column="170" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
-          <caret line="133" column="15" lean-forward="true" selection-start-line="133" selection-start-column="15" selection-end-line="133" selection-end-column="15" />
+        <state relative-caret-position="1408">
+          <caret line="133" column="15" lean-forward="false" selection-start-line="133" selection-start-column="15" selection-end-line="133" selection-end-column="15" />
           <folding>
             <marker date="1511902786732" expanded="true" signature="7228:7264" ph="..." />
             <marker date="1511902786732" expanded="true" signature="7640:7665" ph="..." />
@@ -2332,10 +2331,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap-rtl.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+        <state relative-caret-position="-24109">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap-select.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sb-admin-rtl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sb-admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+          <folding>
+            <marker date="1511968705510" expanded="true" signature="6427:6441" ph="..." />
+            <marker date="1511968705510" expanded="true" signature="6831:6849" ph="..." />
+            <marker date="1511968705510" expanded="true" signature="10036:10102" ph="..." />
+            <marker date="1511968705510" expanded="true" signature="11091:11105" ph="..." />
+            <marker date="1511968705510" expanded="true" signature="11569:11587" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding />
         </state>
       </provider>

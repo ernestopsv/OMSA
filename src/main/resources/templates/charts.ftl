@@ -84,6 +84,41 @@
             </div>
             <div class="row">
                 <div class="col-lg-4">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Ganancia Ultimo Mes</h3>
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="ganaciaUltimoMes" width="100" height="100"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Movimiento mensual</h3>
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="movimientoMensual" width="100" height="100"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Ganancia Mensual</h3>
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="gananciaMensual" width="100" height="100"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+
+
+            <div class="row">
+                <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Flujo Mensual de Pasajeros por Ruta</h3>
@@ -121,39 +156,6 @@
             <!-- /.row -->
 
 
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Ganancia Ultimo Mes</h3>
-                        </div>
-                        <div class="panel-body">
-                            <canvas id="ganaciaUltimoMes" width="100" height="100"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Movimiento mensual</h3>
-                        </div>
-                        <div class="panel-body">
-                            <canvas id="movimientoMensual" width="100" height="100"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Ganancia Mensual</h3>
-                        </div>
-                        <div class="panel-body">
-                            <canvas id="gananciaMensual" width="100" height="100"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.row -->
 
         </div>
         <!-- /.container-fluid -->

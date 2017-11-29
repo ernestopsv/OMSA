@@ -13,10 +13,7 @@ app.controller("emptyAutobusTableController", function ($http, $scope) {
     }
     $scope.getData = function (pageno) {
         $scope.autobuses=[];
-
-        // $http.get("/api/autobus/buscar/size/").then(function (response) {
-        //     $scope.total_count=response.data
-        // });
+        $scope.start= pageno*$scope.itemsPerPage-$scope.itemsPerPage;
 
         $http.get("/api/autobus/sinRuta/buscar/"+(pageno-1)+"/"+$scope.itemsPerPage).then(
             function (response) {
