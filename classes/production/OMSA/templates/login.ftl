@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" ng-app="omsaTracker">
 
-<title>Logear</title>
+<title>Iniciar Sesion</title>
 <#include "header.ftl">
 
 <body >
