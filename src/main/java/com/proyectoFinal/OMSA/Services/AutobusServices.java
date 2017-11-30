@@ -38,7 +38,7 @@ public class AutobusServices {
         return autobusRepository.findAutobusesByHabilitadoIsTrueAndRutaId(id);
     }
 
-    @Transactional
+
     public Autobus guardarAutobus(Autobus autobus){
         return autobusRepository.save(autobus);
     }

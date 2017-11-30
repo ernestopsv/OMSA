@@ -23,8 +23,8 @@ public class Usuario {
     private  Boolean habilitado= true;
     @Column(name="enabled", nullable = false, columnDefinition = "int default 1")
     private int enable = 1;
-    @NotNull
-    @Size(max=30)
+    @NotNull(message="La contrasena es invalida")
+    @Size(max=60)
     private String password;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Rol> roles;
