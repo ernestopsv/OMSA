@@ -63,7 +63,7 @@
                     <div class="col-lg-3">
                         <div class="panel-body">
                         <div class="gananciaYmovimiento">
-                            <h3>Total pasejeros</h3>
+                            <h3>Total pasajeros</h3>
                             <div class="actual" id="totalSemana"></div>
                             <span class="ganancia">Utlima semana</span>
                         </div>
@@ -121,7 +121,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Flujo Mensual de Pasajeros por Ruta</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Flujo de pasajeros de este mes por Ruta</h3>
                         </div>
                         <div class="panel-body">
                             <div id="flujoPorRutaPorMes"><ul id ="list" class="list-group">
@@ -456,7 +456,7 @@
 
         }, 600000);
 //-----------------------------------------------Hecho Flujo mensual Autobus Por Ruta--------------------------------------------------------------
-        $.get("/api/estadistica/movimientoPorRutaAnual", function (data, status) {
+        $.get("/api/estadistica/movimientoEsteMes", function (data, status) {
             data.forEach(function (doc) {
                 $("#list").append(
                     $('<li>').css("background-color", "#e6faff" ).addClass('list-group-item').append(doc[1]).append(

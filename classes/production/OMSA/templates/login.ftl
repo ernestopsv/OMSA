@@ -30,7 +30,7 @@
             <div class="col-lg-offset-2 col-lg-7">
                 <div class="panel panel-green">
                     <div class="panel-heading" style="text-align: center">
-                        <h2 class="panel-title" style="font-weight: bold; font-size: 20px">Login</h2>
+                        <h2 class="panel-title" style="font-weight: bold; font-size: 20px">Iniciar Sesi&oacute;n</h2>
                     </div>
                     <div class="panel-body" style="background-image: url(../images/OMSA.jpg); background-color: rgba(255,255,255,0.6);background-blend-mode: lighten;  ">
 
@@ -67,7 +67,7 @@
                             <div class="row">
                                 <div class="col-lg-offset-3 col-lg-3">
                                     <div class="form-group">
-                                        <button type="Submit" class="btn btn-success form-control" ng-disabled="myForm.username.$dirty && myForm.username.$invalid || myForm.password.$dirty && myForm.password.$invalid">Login</button>
+                                        <button type="Submit" class="btn btn-success form-control" ng-disabled="myForm.username.$dirty && myForm.username.$invalid || myForm.password.$dirty && myForm.password.$invalid">Entrar</button>
                                     </div>
 
                                 </div>

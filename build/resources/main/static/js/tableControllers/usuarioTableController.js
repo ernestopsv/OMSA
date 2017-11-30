@@ -6,9 +6,10 @@ app.controller("usuarioTableController", function ($http, $scope) {
 
     $scope.getData = function (pageno) {
         $scope.usuarios=[];
+        $scope.start= pageno*$scope.itemsPerPage-$scope.itemsPerPage;
         $http.get("/api/usuario/buscar/"+(pageno-1)+"/item/"+$scope.itemsPerPage).then(
             function (response) {
-
+                $scope.start= pageno*$scope.itemsPerPage-$scope.itemsPerPage;
                 $scope.usuarios = response.data;
                 console.log($scope.usuarios);
 

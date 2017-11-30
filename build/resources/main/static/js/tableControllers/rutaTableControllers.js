@@ -9,6 +9,7 @@ app.controller("rutaTableControllers", function ($http, $scope) {
     };
     $scope.getData = function (pageno) {
         $scope.rutas=[];
+        $scope.start= pageno*$scope.itemsPerPage-$scope.itemsPerPage;
         $http.get("/api/ruta/buscar/pagina/"+(pageno-1)+"/item/"+$scope.itemsPerPage).then(
             function (response) {
                 $scope.rutas = response.data;

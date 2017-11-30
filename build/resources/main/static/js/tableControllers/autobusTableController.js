@@ -13,6 +13,7 @@ app.controller("autobusTableController", function ($http, $scope) {
     }
     $scope.getData = function (pageno, id_ruta) {
         $scope.autobuses=[];
+        $scope.start= pageno*$scope.itemsPerPage-$scope.itemsPerPage;
         if(id_ruta===null){
             id_ruta=1;
         }

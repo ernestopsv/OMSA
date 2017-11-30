@@ -60,7 +60,7 @@
                                 <td colspan="15" style="text-align:center;">Leyendo Nuevos Datos!!</td>
                             </tr>
                             <tr dir-paginate="autobus in autobuses|itemsPerPage:itemsPerPage" total-items="total_count">
-                                <td>{{$index+1}}</td>
+                                <td>{{start+$index+1}}</td>
                                 <td>{{autobus.matricula}}</td>
                                 <td>{{autobus.modelo}}</td>
                                 <td>{{autobus.cantidadDeAsientos}}</td>

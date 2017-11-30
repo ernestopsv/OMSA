@@ -49,11 +49,13 @@ public interface ChequeoRepository extends CrudRepository<Chequeo, BigInteger> {
     String q5 = "SELECT (to_char(date(to_timestamp(c.fecha_registrada)),'Mon-dd')) as dia, sum(a.precio) AS precio from chequeo c  inner join autobus a  on a.id = c.autobus_id where c.es_entrada=true and date(to_timestamp(c.fecha_registrada))>= date_trunc('month', current_date - interval '1' month) and date(to_timestamp(c.fecha_registrada))< date_trunc('month', current_date) group by dia order by dia;";
     String q6 = "SELECT count(c.id) as cantidad, r.nombre_corredor as ruta FROM chequeo c  inner join ruta r  on r.id = c.id_ruta WHERE date(to_timestamp(c.fecha_registrada))>= date_trunc('month', current_date - interval '1' month) and date(to_timestamp(c.fecha_registrada))< date_trunc('month', current_date) and c.es_entrada = true GROUP BY ruta order by ruta";
     String q7= "select count(c.id) as cantidad, sum(a.precio) as precio from chequeo c  inner join autobus a  on a.id = c.autobus_id where c.es_entrada=true and  date( to_timestamp(c.fecha_registrada)) >=  date(date_trunc('week', CURRENT_DATE - interval '1 week')) and date( to_timestamp(c.fecha_registrada)) <  date(date_trunc('week', CURRENT_DATE));";
-    String q8 = "SELECT count(c.id) as cantidad, r.nombre_corredor as ruta FROM chequeo c  inner join ruta r  on r.id = c.id_ruta WHERE date(to_timestamp(c.fecha_registrada)) >= date_trunc('month', current_date - interval '1' year) and date(to_timestamp(c.fecha_registrada))< date_trunc('month', current_date) and c.es_entrada = true  \n" +
-            "GROUP BY r.nombre_corredor\n" +
-            "order by  r.nombre_corredor";
+    String q8 = "SELECT count(c.id) as cantidad, r.nombre_corredor as ruta\n" +
+            "FROM chequeo c  inner join ruta r  on r.id = c.id_ruta\n" +
+            "WHERE date(to_timestamp(c.fecha_registrada)) >= date_trunc('month', current_date) and c.es_entrada = true \n" +
+            "GROUP BY ruta\n" +
+            "order by ruta ";
 
-    String q9="SELECT count(c.id) as cantidad, r.nombre_corredor as ruta FROM chequeo c  inner join ruta r  on r.id = c.id_ruta WHERE date(to_timestamp(c.fecha_registrada)) >= current_date - interval '20 minutes' and c.es_entrada = true \n" +
+    String q9="SELECT count(c.id) as cantidad, r.nombre_corredor as ruta FROM chequeo c  inner join ruta r  on r.id = c.id_ruta WHERE date(to_timestamp(c.fecha_registrada)) >= current_timestamp - interval '20 minutes' and c.es_entrada = true \n" +
             "GROUP BY ruta\n" +
             "order by ruta ";
 
@@ -83,7 +85,7 @@ public interface ChequeoRepository extends CrudRepository<Chequeo, BigInteger> {
     @Query(value = q6, nativeQuery = true)
     List<Object[]> selectMoviementoPorRuta();
 
-    //Ruta con mas Actividad
+    //Movimiento este mes
     @Query(value = q8, nativeQuery = true)
     List<Object[]> selectMoviementoPorRutaAnual();
 

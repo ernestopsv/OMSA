@@ -51,7 +51,7 @@
                         <tbody>
                         <tr ng-show="rutas.length <= 0"><td colspan="11" style="text-align:center;">Leyendo Nuevas Rutas!!</td></tr>
                         <tr dir-paginate="r in rutas | itemsPerPage:itemsPerPage" total-items="${size}">
-                            <td>{{$index+1}}</td>
+                            <td>{{start+$index+1}}</td>
                             <td>{{r.nombreCorredor}}</td>
                             <td>{{r.distanciaTotal}}</td>
                             <td>{{r.ciudad}}</td>

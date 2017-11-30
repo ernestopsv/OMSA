@@ -841,7 +841,7 @@ public UserRating recibirComentario(@RequestBody UserRating userRating){
     /** Buscar movimiento por Ruta
      * @return
      */
-    @RequestMapping(value = "/estadistica/movimientoPorRutaAnual", method = RequestMethod.GET, produces = ACCECPT_TYPE)
+    @RequestMapping(value = "/estadistica/movimientoEsteMes", method = RequestMethod.GET, produces = ACCECPT_TYPE)
     public ArrayList<Object[]> movimientoPorRutaAnual(){
 
         ArrayList<Object[]> movimiento = (ArrayList<Object[]>) chequeoServices.selectMovimientoPorRutaAnual();

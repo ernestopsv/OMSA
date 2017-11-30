@@ -12,6 +12,10 @@
     .checked {
         color: orange;
     }
+    .timeline-entry:hover{
+        transform: scale(1.03, 1.03);
+        box-shadow: 10px 10px 5px lightgray;
+    }
 </style>
 <body>
 
@@ -42,7 +46,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="panel panel-default">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
                             <h1> Comentarios</h1>
                         </div>
