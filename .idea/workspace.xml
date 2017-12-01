@@ -2,151 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/application.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/bootstrap-rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/bootstrap-rtl.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/bootstrap-select.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/plugins/morris.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/sb-admin-rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/sb-admin.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/star-rating.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/css/font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/bordered-pulled.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/core.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/fixed-width.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/font-awesome.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/icons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/larger.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/list.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/path.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/rotated-flipped.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/spinning.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/stacked.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/variables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_bordered-pulled.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_core.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_fixed-width.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_icons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_larger.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_list.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_mixins.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_path.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_rotated-flipped.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_spinning.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_stacked.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/font-awesome.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/OMSA.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/active.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/busActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/busInactive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/inactive.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/login.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/paradas.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/Chart.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/angular.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/appTable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/demo/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/less/bootstrap-select.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/src/bootstrap-select.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/phantom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/select.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/controllers/autobusController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/controllers/paradaController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/controllers/rutaController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/controllers/usuarioController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/dirPagination.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/excanvas.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/flot-data.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/jquery.flot.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/jquery.flot.pie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/jquery.flot.resize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/jquery.flot.tooltip.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/morris/morris-data.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/morris/morris.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/morris/morris.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/morris/raphael.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/star-rating.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/autobusTableController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/coordenadaTableController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/emptyAutobusTableControllers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/paradaTableController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/rutaTableControllers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/usuarioTableController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-fa/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-fa/theme.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-fa/theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-fa/theme.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-svg/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-svg/theme.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-svg/theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-svg/theme.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-uni/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-uni/theme.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-uni/theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-uni/theme.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/charts.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/crear_autobus.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/crear_coordenada.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/crear_parada.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/crear_ruta.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/crear_usuarios.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/editar_autobus.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/editar_coordenada.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/editar_parada.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/editar_ruta.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/editar_usuario.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/header.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/index.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/login.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/nav.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/user_rating.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_autobus.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_autobusSinRutas.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_coordenada_pintada.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_parada_pintada.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_ruta.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_usuarios.ftl" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Usuario.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Entities/Usuario.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/AutobusServices.class" afterPath="$PROJECT_DIR$/build/classes/main/com/proyectoFinal/OMSA/Services/AutobusServices.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Usuario.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Usuario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/AutobusServices.java" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/AutobusServices.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/templates/index.ftl" afterPath="$PROJECT_DIR$/build/resources/main/templates/index.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -283,95 +143,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="charts.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
+      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1040">
-              <caret line="65" column="42" lean-forward="false" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RestApiController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13232">
-              <caret line="843" column="59" lean-forward="false" selection-start-line="843" selection-start-column="59" selection-end-line="843" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChequeoRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/ChequeoRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Autobus.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Usuario.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Usuario.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioServices.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UsuarioServices.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-685">
-              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutobusServices.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/AutobusServices.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="80">
+              <caret line="77" column="45" lean-forward="true" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
               <folding>
-                <element signature="e#3332#3333#0" expanded="true" />
-                <element signature="e#3393#3394#0" expanded="true" />
+                <marker date="1512158160100" expanded="true" signature="7469:7505" ph="..." />
+                <marker date="1512158160100" expanded="true" signature="7857:7882" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutobusController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/AutobusController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -906,7 +686,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/UserRating.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/paradaTableController.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/rutaTableControllers.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/usuarioTableController.js" />
@@ -923,6 +702,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/ChequeoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/AutobusServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Usuario.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
       </list>
     </option>
   </component>
@@ -938,7 +718,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1378" />
     <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -957,8 +737,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -985,101 +764,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OMSA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OMSA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OMSA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OMSA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OMSA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OMSA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OMSA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OMSA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controladores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1702,14 +1390,9 @@
       <workItem from="1512009531200" duration="1294000" />
       <workItem from="1512013423307" duration="3243000" />
       <workItem from="1512055221668" duration="1525000" />
-      <workItem from="1512078186555" duration="2887000" />
-    </task>
-    <task id="LOCAL-00063" summary="fixing error in spring security">
-      <created>1505334848903</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1505334848903</updated>
+      <workItem from="1512078186555" duration="3576000" />
+      <workItem from="1512134879117" duration="1201000" />
+      <workItem from="1512154257442" duration="3621000" />
     </task>
     <task id="LOCAL-00064" summary="fixing error in spring security">
       <created>1505335037715</created>
@@ -2047,11 +1730,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512056476278</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="arreglando bugs">
+      <created>1512081981723</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1512081981725</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1168274000" />
+    <option name="totallyTimeSpent" value="1173785000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2063,7 +1753,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -2084,10 +1774,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36878216" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36772045" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48885077" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22239032" sideWeight="0.48918918" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22913505" sideWeight="0.48918918" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2141,7 +1831,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding selectpicker" />
     <MESSAGE value="fixing autobus modification" />
     <MESSAGE value="fixing edit entities" />
     <MESSAGE value="showing autobus in real time" />
@@ -2166,7 +1855,8 @@
     <MESSAGE value="Corrigiendo algoritmo de calculo de tiempo" />
     <MESSAGE value="arrglando dashboard y otros vistas" />
     <MESSAGE value="ultimando dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="ultimando dashboard" />
+    <MESSAGE value="arreglando bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="arreglando bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2429,13 +2119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1408">
-          <caret line="133" column="15" lean-forward="false" selection-start-line="133" selection-start-column="15" selection-end-line="133" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap-rtl.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-24109">
@@ -2475,7 +2158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1040">
           <caret line="65" column="42" lean-forward="false" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2483,39 +2165,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13232">
           <caret line="843" column="59" lean-forward="false" selection-start-line="843" selection-start-column="59" selection-end-line="843" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/ChequeoRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="768">
           <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="464">
           <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/AutobusController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2523,34 +2186,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="516" column="0" lean-forward="false" selection-start-line="516" selection-start-column="0" selection-end-line="516" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UsuarioServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-685">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/AutobusServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#3332#3333#0" expanded="true" />
-            <element signature="e#3393#3394#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="16">
+          <caret line="28" column="41" lean-forward="false" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UsuarioServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/AutobusServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/AutobusController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="77" column="45" lean-forward="true" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
+          <folding>
+            <marker date="1512158160100" expanded="true" signature="7469:7505" ph="..." />
+            <marker date="1512158160100" expanded="true" signature="7857:7882" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
