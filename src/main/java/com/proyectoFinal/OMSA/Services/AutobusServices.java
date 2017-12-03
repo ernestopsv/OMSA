@@ -48,11 +48,12 @@ public class AutobusServices {
     @Transactional
     public void modificarAutobus(){
         ArrayList<Autobus> autobuses = autobusRepository.findAllByHabilitadoIsTrueAndActivoIsTrue();
+        System.out.println(autobuses.size());
         for(Autobus autobus: autobuses){
             autobus.setUltimaFechaModificada(new Date().getTime());
             autobus.setActivo(false);
-           // autobus.setUltimaParada(null);
-           // autobus.setCantidadDePasajerosActual(0);
+            autobus.setUltimaParada(null);
+            autobus.setCantidadDePasajerosActual(0);
             autobusRepository.save(autobus);
         }
 

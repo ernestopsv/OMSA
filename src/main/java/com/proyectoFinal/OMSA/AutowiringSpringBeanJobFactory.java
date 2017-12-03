@@ -12,7 +12,7 @@ import org.springframework.scheduling.quartz.SpringBeanJobFactory;
 /**
  * Created by anyderre on 03/12/17.
  */
-public class AutowiringSpringBeanJobFactory extends SpringBeanJobFactory
+public final class AutowiringSpringBeanJobFactory extends SpringBeanJobFactory
         implements ApplicationContextAware {
     private final Logger logger = LoggerFactory.getLogger(AutowireCapableBeanFactory.class);
     private transient AutowireCapableBeanFactory beanFactory;
@@ -26,6 +26,7 @@ public class AutowiringSpringBeanJobFactory extends SpringBeanJobFactory
     protected Object createJobInstance(TriggerFiredBundle bundle) throws Exception {
         final Object job = super.createJobInstance(bundle);
         logger.info("create job instance");
+        beanFactory.autowireBean(job);
         return job;
     }
 }
