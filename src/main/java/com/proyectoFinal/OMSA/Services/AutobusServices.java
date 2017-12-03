@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -41,6 +43,19 @@ public class AutobusServices {
 
     public Autobus guardarAutobus(Autobus autobus){
         return autobusRepository.save(autobus);
+    }
+
+    @Transactional
+    public void modificarAutobus(){
+        ArrayList<Autobus> autobuses = autobusRepository.findAllByHabilitadoIsTrueAndActivoIsTrue();
+        for(Autobus autobus: autobuses){
+            autobus.setUltimaFechaModificada(new Date().getTime());
+            autobus.setActivo(false);
+           // autobus.setUltimaParada(null);
+           // autobus.setCantidadDePasajerosActual(0);
+            autobusRepository.save(autobus);
+        }
+
     }
 
     public Autobus buscarAutobusPorId(Long id){

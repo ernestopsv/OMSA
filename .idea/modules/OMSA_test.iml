@@ -29,6 +29,7 @@
     <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-web:4.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.json:json:20090211" level="project" />
+    <orderEntry type="library" name="Gradle: org.quartz-scheduler:quartz:2.3.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:1.5.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:1.5.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.freemarker:freemarker:2.3.26-incubating" level="project" />
@@ -57,6 +58,9 @@
     <orderEntry type="library" name="Gradle: org.springframework:spring-core:4.3.9.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-expression:4.3.9.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Gradle: com.mchange:c3p0:0.9.5.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.mchange:mchange-commons-java:0.2.11" level="project" />
+    <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP-java6:2.3.13" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test:1.5.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:1.5.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: com.jayway.jsonpath:json-path:2.2.0" level="project" />
