@@ -165,7 +165,7 @@
             var marker = [];
             setMapOnAll(null);
             markers = [];
-     //       console.log(data.length)
+
             for (var i=0; i<data.length; i++){
                  console.log(i);
                 var conductor=data[i]["conductor"];
@@ -216,7 +216,6 @@
                     }
 
                 }
-                //'<span class="sr-only">40% Complete (success)</span> </div> '
                 var contentString =
                         '<div style="border:1px solid gray; padding:10px;">'+
                         '<h1>Autobus: '+matricula+'</h1>'+
@@ -240,78 +239,6 @@
                     infowindow.open(map, marker);
                 });
             }
-
-     //       $.each(data, function (key, autobus) {
-//               // console.log(key)
-//                var conductor=autobus["conductor"];
-//                var matricula = autobus["matricula"];
-//                var porcentajePas=(autobus["cantidadDePasajerosActual"]/autobus["cantidadDeAsientos"])*100;
-//                var tieneAire=autobus["tieneAireAcondicionado"];
-//                var precio=autobus["precio"];
-//                var activo=autobus["activo"];
-//                var estado=function (p) {
-//                    if(p<60){
-//                        return "success";
-//                    }else if (p >=60 && p<=100){
-//                        return "warning"
-//                    }else{
-//                        return "danger"
-//                    }
-//                };
-//                if (autobus["activo"]) {
-//
-//                    marker = new google.maps.Marker({
-//                        position: {
-//                            lat: autobus.coordenada.latitude,
-//                            lng: autobus.coordenada.longitud
-//                        },
-//                        map: map,
-//                        icon: active,
-//                        shape: shape,
-//                        title: autobus["modelo"] +' '+autobus["matricula"],
-//                        zIndex: 1
-//                    });
-//                    markers.push(marker);
-//                } else {
-//                   // console.log(autobus)
-//                    marker = new google.maps.Marker({
-//                        position: {
-//                            lat: autobus.coordenada.latitude,
-//                            lng: autobus.coordenada.longitud
-//                        },
-//                        map: map,
-//                        icon: inactive,
-//                        shape: shape,
-//                        title: autobus["nombre"]+' '+ autobus["matricula"],
-//                        zIndex: 1
-//                    });
-//                    markers.push(marker);
-//                }
-//                //'<span class="sr-only">40% Complete (success)</span> </div> '
-//                var contentString =
-//                        '<div style="border:1px solid gray; padding:10px;">'+
-//                            '<h1>Autobus: '+matricula+'</h1>'+
-//                            '<div class="progress">'+
-//                                '<div class="progress-bar progress-bar-'+estado(porcentajePas)+' progress-bar-striped"' +
-//                                ' role="progressbar" aria-valuenow="'+porcentajePas+'" aria-valuemin="0" aria-valuemax="100" style="width:'+porcentajePas+'%;">' +
-//                                '</div>' +
-//                            '</div>'+
-//                            '<ul class="list-group">' +
-//                                '<li class="list-group-item">Conductor : <span class="badge">'+conductor+'</span></li>' +
-//                                '<li class="list-group-item">Precio :<span class="badge">'+precio+'</span></li> ' +
-//                                '<li class="list-group-item">Tiene Aire :<span class="badge">'+tieneAire+'</span></li> ' +
-//                                '<li class="list-group-item">Activo :<span class="badge">'+activo+'</span></li> ' +
-//                            '</ul> '+
-//                        '</div>';
-//                var infowindow = new google.maps.InfoWindow({
-//                    content: contentString
-//                });
-//
-//                marker.addListener('click', function () {
-//                    infowindow.open(map, marker);
-//                });
-        //    });
-
 
         });
 

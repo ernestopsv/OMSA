@@ -54,6 +54,7 @@ public class AutobusServices {
             autobus.setActivo(false);
             autobus.setUltimaParada(null);
             autobus.setCantidadDePasajerosActual(0);
+            autobus.setRuta(null);
             autobusRepository.save(autobus);
         }
 
