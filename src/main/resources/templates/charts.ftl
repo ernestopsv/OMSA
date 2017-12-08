@@ -86,7 +86,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Ganancia Ultimo Mes</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Ganancia Ultimo Mes por Dia</h3>
                         </div>
                         <div class="panel-body">
                             <canvas id="ganaciaUltimoMes" width="100" height="100"></canvas>
@@ -96,7 +96,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-red">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Movimiento mensual</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Cantidad de pasajeros por mes</h3>
                         </div>
                         <div class="panel-body">
                             <canvas id="movimientoMensual" width="100" height="100"></canvas>
@@ -106,7 +106,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Ganancia Mensual</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Total ingreso por mes </h3>
                         </div>
                         <div class="panel-body">
                             <canvas id="gananciaMensual" width="100" height="100"></canvas>
@@ -121,7 +121,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Flujo de pasajeros de este mes por Ruta</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Cantidad de pasajeros por ruta de este mes</h3>
                         </div>
                         <div class="panel-body">
                             <div id="flujoPorRutaPorMes"><ul id ="list" class="list-group">
@@ -133,7 +133,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Movimiento Ultimos 20 minutos</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Cantidad de pasajeros por ruta los ultimos 20 minutos</h3>
                         </div>
                         <div class="panel-body">
                             <canvas id="flujos20minutos" width="100" height="100"></canvas>
@@ -144,8 +144,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Flujo de pasajeros mensual
-                                por ruta</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Cantidad de pasajeros por ruta del ultimo mes
                         </div>
                         <div class="panel-body">
                             <canvas id="flujoPorRuta" width="100" height="100"></canvas>
