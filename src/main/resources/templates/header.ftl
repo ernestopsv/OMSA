@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="/css/bootstrap-select.min.css">
 
     <script type="text/javascript" src="/js/angular.js"></script>
+	
+	
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
 
 
 
