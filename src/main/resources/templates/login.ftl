@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <#--<a class="navbar-brand" href="index.ftl">TapTap</a>-->
-                <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo">
+                <a class="navbar-brand" href="/"><img src="/images/logo1.png" alt="logo">
                 </a>
             </div>
             <!-- /.navbar-collapse -->
