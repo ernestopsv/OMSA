@@ -5,9 +5,6 @@ import com.proyectoFinal.TapTap.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by anyderre on 01/07/17.
- */
 @Service
 public class CoordenadaServices {
     @Autowired

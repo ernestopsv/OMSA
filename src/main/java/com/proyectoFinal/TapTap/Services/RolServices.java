@@ -9,9 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by Dany on 07/09/2017.
- */
 @Service
 public class RolServices {
     //Inyectando el repositorio

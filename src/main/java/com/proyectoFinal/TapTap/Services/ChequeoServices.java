@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 
-/**
- * Created by anyderre on 01/07/17.
- */
 @Service
 public class ChequeoServices {
     @Autowired

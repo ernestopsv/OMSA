@@ -7,9 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Dany on 06/10/2017.
- */
 public interface UserRatiingRepository extends CrudRepository<UserRating, Long> {
     List<UserRating> findAll();
     List<UserRating> findAllByFechaPublicadaAfter(Long fecha);

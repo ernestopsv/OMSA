@@ -11,9 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by anyderre on 01/07/17.
- */
 @Service
 public class ParadaServices {
     @Autowired

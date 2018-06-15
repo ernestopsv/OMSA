@@ -13,9 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by anyderre on 11/08/17.
- */
 @Service
 public class UsuarioServices {
     @Autowired

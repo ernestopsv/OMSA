@@ -1,6 +1,5 @@
 package com.proyectoFinal.TapTap;
 
-
 import com.proyectoFinal.TapTap.Services.UsuarioServices;
 import com.proyectoFinal.TapTap.config.SchedulerConfig;
 import org.springframework.boot.SpringApplication;
@@ -12,17 +11,17 @@ import org.springframework.context.annotation.Import;
 
 @Import({SchedulerConfig.class})
 @SpringBootApplication
-public class OmsaApplication extends SpringBootServletInitializer{
+public class TapTapApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
-		ApplicationContext appContext = SpringApplication.run(OmsaApplication.class, args);
+		ApplicationContext appContext = SpringApplication.run(TapTapApplication.class, args);
 
 		UsuarioServices usuarioServices = (UsuarioServices)appContext.getBean("usuarioServices");
 		usuarioServices.crearAdmin();
 	}
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(OmsaApplication.class);
+		return application.sources(TapTapApplication.class);
 	}
 
 }

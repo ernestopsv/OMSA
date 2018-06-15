@@ -11,9 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Dany on 06/10/2017.
- */
 @Service
 public class UserRatingServices {
     @Autowired

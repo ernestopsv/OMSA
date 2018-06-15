@@ -10,9 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by anyderre on 30/06/17.
- */
 @Repository
 public interface RutaRepository extends CrudRepository<Ruta, Long> {
     //Encontrar ruta por nombre Corredor

@@ -12,9 +12,6 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by anyderre on 01/07/17.
- */
 @Service
 public class RutaServices {
     @Autowired

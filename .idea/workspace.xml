@@ -2,201 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="Terminando con quartz">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/OMSA_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/OMSA_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/OMSA_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/OMSA_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OMSA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OMSA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/quartz.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/bootstrap-rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/bootstrap-rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/bootstrap-select.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/plugins/morris.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/sb-admin-rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/sb-admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/star-rating.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/css/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/bordered-pulled.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/core.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/fixed-width.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/font-awesome.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/icons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/larger.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/list.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/path.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/rotated-flipped.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/spinning.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/stacked.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/less/variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_core.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_fixed-width.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_icons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_larger.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_list.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_path.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_spinning.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_stacked.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/font-awesome/scss/font-awesome.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/OMSA.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/active.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/busActive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/busInactive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/inactive.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/login.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/images/paradas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/Chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/angular.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/appTable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/demo/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/less/bootstrap-select.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/src/bootstrap-select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/phantom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/dropdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap-select.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/controllers/autobusController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/controllers/paradaController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/controllers/rutaController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/controllers/usuarioController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/dirPagination.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/excanvas.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/flot-data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/jquery.flot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/jquery.flot.pie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/jquery.flot.resize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/flot/jquery.flot.tooltip.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/morris/morris-data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/morris/morris.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/morris/morris.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/plugins/morris/raphael.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/star-rating.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/autobusTableController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/coordenadaTableController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/emptyAutobusTableControllers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/paradaTableController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/rutaTableControllers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/js/tableControllers/usuarioTableController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-fa/theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-fa/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-fa/theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-fa/theme.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-svg/theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-svg/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-svg/theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-svg/theme.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-uni/theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-uni/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-uni/theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/static/themes/krajee-uni/theme.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/charts.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/crear_autobus.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/crear_coordenada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/crear_parada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/crear_ruta.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/crear_usuarios.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/editar_autobus.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/editar_coordenada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/editar_parada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/editar_ruta.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/editar_usuario.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/header.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/index.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/login.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/nav.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/user_rating.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_autobus.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_autobusSinRutas.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_coordenada_pintada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_parada_pintada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_ruta.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/OMSA/templates/ver_usuarios.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/AutowiringSpringBeanJobFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/AutowiringSpringBeanJobFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/AutobusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/AutobusController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/ChequeoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/ChequeoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/CoordenadaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/CoordenadaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/ParadaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/ParadaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/RestApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RutaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/RutaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/UserRatingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/UserRatingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Autobus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Chequeo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Coordenada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Coordenada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/DistanceAndTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/DistanceAndTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Parada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Parada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/ParadaCercana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/ParadaCercana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Rol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Ruta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/UserRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/UserRating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Jobs/AutobusJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Jobs/AutobusJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/OmsaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/OmsaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/AutobusRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/AutobusRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/ChequeoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ChequeoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/CoordenadaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/CoordenadaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/ParadaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ParadaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/RolRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RolRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/RutaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RutaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/UserRatiingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UserRatiingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/AutobusServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/AutobusServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/ChequeoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ChequeoServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/CoordenadaServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/CoordenadaServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/ParadaServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/RolServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RolServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/RutaServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RutaServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UserRatingServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UserRatingServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UsuarioServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UsuarioServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/ConfiguracionDeSeguridad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/config/ConfiguracionDeSeguridad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/config/CustomAuthenticationSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/SchedulerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/config/SchedulerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/OMSA.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/AutobusController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/AutobusController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/ChequeoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/ChequeoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/CoordenadaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/CoordenadaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/ParadaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/ParadaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/RestApiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/RestApiController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/RutaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/RutaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/UserRatingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/UserRatingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Autobus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Autobus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Chequeo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Chequeo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Coordenada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Coordenada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/DistanceAndTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/DistanceAndTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Parada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Parada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/ParadaCercana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/ParadaCercana.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Rol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Rol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Ruta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Ruta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/UserRating.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/UserRating.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/OmsaApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/AutobusRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/AutobusRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/ChequeoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/ChequeoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/CoordenadaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/CoordenadaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/ParadaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/ParadaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/RutaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/RutaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/UserRatiingRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/UserRatiingRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/UsuarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/UsuarioRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/AutobusServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/AutobusServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/ChequeoServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/ChequeoServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/CoordenadaServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/CoordenadaServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/ParadaServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/ParadaServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/RolServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/RolServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/RutaServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/RutaServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/UserRatingServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/UserRatingServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/UsuarioServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/UsuarioServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/config/ConfiguracionDeSeguridad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/config/ConfiguracionDeSeguridad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/config/CustomAuthenticationSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/config/CustomAuthenticationSuccessHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/config/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/config/WebMvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/OmsaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/TapTapApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/AutobusRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/AutobusRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ChequeoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ChequeoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/CoordenadaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/CoordenadaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ParadaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ParadaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RolRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RolRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RutaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RutaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UserRatiingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UserRatiingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/AutobusServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/AutobusServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ChequeoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ChequeoServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/CoordenadaServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/CoordenadaServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ParadaServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ParadaServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RolServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RolServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RutaServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RutaServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UserRatingServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UserRatingServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UsuarioServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UsuarioServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -338,11 +202,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Usuario.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Usuario.java">
+      <file leaf-file-name="TapTapApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/TapTapApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+            <state relative-caret-position="187">
+              <caret line="18" column="87" lean-forward="true" selection-start-line="18" selection-start-column="87" selection-end-line="18" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsuarioServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UsuarioServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/header.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -359,7 +241,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>floa</find>
       <find>float</find>
       <find>Boolean</find>
       <find>b</find>
@@ -389,6 +270,7 @@
       <find>System</find>
       <find>br</find>
       <find>\/\*\*\n \* Created by anyderre on 03\/12\/17\n \*\/\n</find>
+      <find>omsa</find>
     </findStrings>
     <replaceStrings>
       <replace>Long</replace>
@@ -846,25 +728,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/ChequeoServices.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/UserRating.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/paradaTableController.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/rutaTableControllers.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/usuarioTableController.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/autobusTableController.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/emptyAutobusTableControllers.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/sb-admin.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/login.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/ChequeoRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Usuario.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/quartz.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/SchedulerConfig.java" />
@@ -897,6 +760,25 @@
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Ruta.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/UserRating.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Usuario.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UsuarioRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/CoordenadaRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ChequeoRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/AutobusRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ParadaRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RolRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RutaRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UserRatiingRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ParadaServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/CoordenadaServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ChequeoServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/AutobusServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RolServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RutaServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UserRatingServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UsuarioServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/OmsaApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/TapTapApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/header.ftl" />
       </list>
     </option>
   </component>
@@ -966,9 +848,15 @@
               <item name="OMSA" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="TapTap" type="462c0819:PsiDirectoryNode" />
-              <item name="Entities" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OMSA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OMSA" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1112,7 +1000,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="OmsaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="TapTapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="OMSA_main" />
       <extension name="coverage">
         <pattern>
@@ -1120,7 +1008,7 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.proyectoFinal.TapTap.OmsaApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.proyectoFinal.TapTap.TapTapApplication" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1369,7 +1257,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.OmsaApplication" />
+        <item itemvalue="Spring Boot.TapTapApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -1560,7 +1448,7 @@
       <workItem from="1512761341878" duration="1182000" />
       <workItem from="1512763264925" duration="990000" />
       <workItem from="1512764362875" duration="97000" />
-      <workItem from="1529078716372" duration="2902000" />
+      <workItem from="1529078716372" duration="4208000" />
     </task>
     <task id="LOCAL-00067" summary="fixing error in spring security">
       <created>1505364165100</created>
@@ -1909,7 +1797,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1193559000" />
+    <option name="totallyTimeSpent" value="1194865000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1922,7 +1810,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="8" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.506135" side_tool="true" weight="0.2607204" />
@@ -2041,107 +1928,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tableControllers/emptyAutobusTableControllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="86" column="44" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="62" column="44" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tableControllers/paradaTableController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_parada_pintada.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-768" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="65" column="170" selection-start-line="65" selection-start-column="170" selection-end-line="65" selection-end-column="170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap-rtl.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24109" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap-select.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sb-admin-rtl.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sb-admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ChequeoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/4.3.9.RELEASE/4be64b379925a2c3d9b21ff21f0c976d5492d633/spring-orm-4.3.9.RELEASE-sources.jar!/org/springframework/orm/jpa/JpaTransactionManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UsuarioServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.quartz-scheduler/quartz/2.3.0/5f4aa836b09f44d586550fa7a7629273c16c0f17/quartz-2.3.0-sources.jar!/org/quartz/core/JobRunShell.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.quartz-scheduler/quartz/2.3.0/5f4aa836b09f44d586550fa7a7629273c16c0f17/quartz-2.3.0-sources.jar!/org/quartz/simpl/SimpleThreadPool.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/quartz.properties">
@@ -2165,27 +1951,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/AutowiringSpringBeanJobFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Jobs/AutobusJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -2197,13 +1966,6 @@
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/AutobusServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
@@ -2370,8 +2132,151 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="-9">
           <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/CoordenadaRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ChequeoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/AutobusRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Jobs/AutobusJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ParadaRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RolRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RutaRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UserRatiingRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UsuarioRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ParadaServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/CoordenadaServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ChequeoServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/AutobusServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RolServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RutaServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UserRatingServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/AutowiringSpringBeanJobFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/TapTapApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="87" lean-forward="true" selection-start-line="18" selection-start-column="87" selection-end-line="18" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UsuarioServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/header.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
         </state>
       </provider>
     </entry>

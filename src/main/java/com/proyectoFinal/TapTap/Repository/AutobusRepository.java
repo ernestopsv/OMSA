@@ -13,9 +13,6 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by anyderre on 29/06/17.
- */
 @Repository
 public interface AutobusRepository extends CrudRepository<Autobus,Long> {
 
