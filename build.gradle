@@ -16,7 +16,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'application'
 
 archivesBaseName = "app"
-mainClassName = 'com.proyectoFinal.OMSA.OmsaApplication'
+mainClassName = 'com.proyectoFinal.TapTap.OmsaApplication'
 applicationName = 'app'
 defaultTasks = ['stage']
 

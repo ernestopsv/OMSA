@@ -13,6 +13,7 @@
         <enabled>false</enabled>
         <user>mlbhvrkpgwgxob</user>
         <use-password>true</use-password>
+        <auth-type>PASSWORD</auth-type>
       </ssh-properties>
     </data-source>
   </component>
