@@ -18,7 +18,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <#--<a class="navbar-brand" href="index.ftl">OMSA</a>-->
+                <#--<a class="navbar-brand" href="index.ftl">TapTap</a>-->
                 <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo">
                 </a>
             </div>
@@ -32,7 +32,7 @@
                     <div class="panel-heading" style="text-align: center">
                         <h2 class="panel-title" style="font-weight: bold; font-size: 20px">Iniciar Sesi&oacute;n</h2>
                     </div>
-                    <div class="panel-body" style="background-image: url(../images/OMSA.jpg); background-color: rgba(255,255,255,0.6);background-blend-mode: lighten;  ">
+                    <div class="panel-body" style="background-image: url(../images/background.jpg); background-color: rgba(255,255,255,0.6);background-blend-mode: lighten;  ">
 
                         <form role="form" action="/login" method="post" class="form-signin name="myForm">
                             <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
