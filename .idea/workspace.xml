@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="Terminando con quartz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -155,8 +156,17 @@
       <file leaf-file-name="charts.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="179" column="66" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
+            <state relative-caret-position="204">
+              <caret line="165" column="18" lean-forward="true" selection-start-line="165" selection-start-column="18" selection-end-line="165" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/nav.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -164,17 +174,17 @@
       <file leaf-file-name="CustomAuthenticationSuccessHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="40" column="49" lean-forward="true" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+            <state relative-caret-position="197">
+              <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crear_coordenada.ftl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="crear_coordenada.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="126">
+              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -209,8 +219,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>float</find>
-      <find>Boolean</find>
       <find>b</find>
       <find>bo</find>
       <find>boo</find>
@@ -239,6 +247,8 @@
       <find>br</find>
       <find>omsa1</find>
       <find>home</find>
+      <find>holamundo</find>
+      <find>autobus/c</find>
     </findStrings>
     <replaceStrings>
       <replace>Long</replace>
@@ -691,7 +701,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Ruta.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Tiempo.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/star-rating.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/star-rating.css" />
@@ -742,6 +751,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/AutobusServices.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/charts.ftl" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java" />
       </list>
     </option>
   </component>
@@ -814,6 +824,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OMSA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OMSA" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1406,7 +1424,7 @@
       <workItem from="1512764362875" duration="97000" />
       <workItem from="1529619128048" duration="680000" />
       <workItem from="1530302764124" duration="68000" />
-      <workItem from="1530302898061" duration="755000" />
+      <workItem from="1530302898061" duration="1255000" />
     </task>
     <task id="LOCAL-00067" summary="fixing error in spring security">
       <created>1505364165100</created>
@@ -1755,7 +1773,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1192160000" />
+    <option name="totallyTimeSpent" value="1192660000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1773,74 +1791,40 @@
       <window_info anchor="right" id="Palette" order="8" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.506135" side_tool="true" weight="0.2607204" />
       <window_info anchor="right" id="Maven Projects" order="0" weight="0.32924962" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info id="Capture Tool" order="0" />
       <window_info id="Designer" order="1" />
       <window_info anchor="right" id="Database" order="4" weight="0.3220859" />
-      <window_info id="Structure" order="8" side_tool="true" weight="0.24980605" />
+      <window_info id="Structure" order="9" side_tool="true" weight="0.24980605" />
       <window_info anchor="right" id="Ant Build" order="10" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.49386504" weight="0.2428115" />
-      <window_info anchor="bottom" id="TODO" order="10" weight="0.32820514" />
+      <window_info anchor="bottom" id="TODO" order="12" weight="0.32820514" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3243243" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info id="Image Layers" order="3" />
+      <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.3672496" />
+      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.3672496" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32820514" />
-      <window_info id="Spring" order="4" side_tool="true" weight="0.3290735" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.48885077" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.48918918" visible="true" weight="0.23792094" />
+      <window_info id="Spring" order="5" side_tool="true" weight="0.3290735" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.48885077" />
+      <window_info active="true" content_ui="combo" id="Project" order="8" sideWeight="0.48918918" visible="true" weight="0.23792094" />
       <window_info anchor="right" id="Bean Validation" order="5" weight="0.32924962" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.327787" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.327454" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info id="Favorites" order="5" sideWeight="0.5108108" side_tool="true" weight="0.22239032" />
-      <window_info id="Web" order="2" side_tool="true" />
+      <window_info id="Favorites" order="6" sideWeight="0.5108108" side_tool="true" weight="0.22239032" />
+      <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="right" id="Commander" order="9" weight="0.4" />
-      <window_info id="Nl-Palette" order="6" />
+      <window_info id="Nl-Palette" order="7" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="right" id="Properties" order="1" />
-      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="bottom" id="Java Enterprise" order="8" />
       <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32971296" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="1" />
-      <window_info anchor="right" id="Palette" order="8" />
-      <window_info id="Spring" order="4" side_tool="true" weight="0.3290735" />
-      <window_info id="Image Layers" order="3" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.36772045" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="10" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Properties" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.48885077" />
-      <window_info id="Capture Tool" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Commander" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.506135" side_tool="true" weight="0.2607204" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32590052" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="11" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.48918918" visible="true" weight="0.23273855" />
-      <window_info id="Favorites" order="5" sideWeight="0.5108108" side_tool="true" weight="0.22239032" />
-      <window_info anchor="bottom" id="Version Control" order="1" weight="0.32820514" />
-      <window_info id="Nl-Palette" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="0" weight="0.32924962" />
-      <window_info anchor="right" id="Gradle" order="6" weight="0.327454" />
-      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="right" id="Database" order="4" weight="0.3220859" />
-      <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="TODO" order="10" weight="0.32820514" />
-      <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info id="Structure" order="8" weight="0.24980605" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.327787" />
-      <window_info anchor="right" id="Bean Validation" order="5" weight="0.32924962" />
-      <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.49386504" visible="true" weight="0.38338658" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1905,13 +1889,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/CoordenadaRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/AutobusRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/ChequeoServices.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/nav.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="41" column="65" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/UserRating.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tableControllers/rutaTableControllers.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -2067,13 +2044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="179" column="66" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -2081,17 +2051,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="40" column="49" lean-forward="true" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+        <state relative-caret-position="126">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state relative-caret-position="204">
+          <caret line="165" column="18" lean-forward="true" selection-start-line="165" selection-start-column="18" selection-end-line="165" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/nav.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
         </state>
       </provider>
     </entry>
