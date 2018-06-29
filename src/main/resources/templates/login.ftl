@@ -28,7 +28,7 @@
         <div class="row" style="margin-top: 140px" ng-controller="usuarioController">
 
             <div class="col-lg-offset-2 col-lg-7">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading" style="text-align: center">
                         <h2 class="panel-title" style="font-weight: bold; font-size: 20px">Iniciar Sesi&oacute;n</h2>
                     </div>
