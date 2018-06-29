@@ -6,7 +6,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
+	
+	<!--Icono de pestaña-->
+	<link rel="icon" href="/images/favicon.png" type="image/png">
+	
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
