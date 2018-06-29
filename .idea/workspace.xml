@@ -2,8 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="Terminando con quartz">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/crear_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/crear_autobus.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/crear_coordenada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/crear_coordenada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/crear_parada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/crear_parada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/crear_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/crear_ruta.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/crear_usuarios.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/crear_usuarios.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/editar_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/editar_autobus.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/editar_coordenada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/editar_coordenada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/editar_parada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/editar_parada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/editar_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/editar_ruta.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/user_rating.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/user_rating.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/ver_autobus.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_autobusSinRutas.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/ver_autobusSinRutas.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_coordenada_pintada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/ver_coordenada_pintada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_parada_pintada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/ver_parada_pintada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/ver_ruta.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_usuarios.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/ver_usuarios.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_autobus.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_parada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_parada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_ruta.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_usuarios.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_usuarios.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editar_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editar_autobus.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editar_coordenada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editar_coordenada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editar_parada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editar_parada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editar_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editar_ruta.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_parada_pintada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_parada_pintada.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -144,15 +173,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="77" column="45" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="charts.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
           <provider selected="true" editor-type-id="text-editor">
@@ -173,7 +193,29 @@
       </file>
       <file leaf-file-name="crear_autobus.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_autobus.ftl">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="23" column="68" lean-forward="true" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editar_usuario.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/editar_usuario.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crear_parada.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_parada.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="AutobusController.java" pinned="false" current-in-tab="false">
@@ -201,20 +243,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crear_coordenada.ftl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="crear_coordenada.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="27" column="28" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="27" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quartz.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/quartz.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="245">
+              <caret line="21" column="84" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -240,9 +273,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>boo</find>
-      <find>bool</find>
-      <find>boolen</find>
       <find>boole</find>
       <find>boolea</find>
       <find>boolean</find>
@@ -270,6 +300,9 @@
       <find>autobus/c</find>
       <find>bread</find>
       <find>matricula</find>
+      <find>breadcrumb</find>
+      <find>&quot;&gt;</find>
+      <find>&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;</find>
     </findStrings>
     <replaceStrings>
       <replace>Long</replace>
@@ -722,9 +755,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/star-rating.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user-rating.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Chequeo.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/ParadaController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/RolRepository.java" />
@@ -773,6 +803,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/nav.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/crear_parada.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/crear_autobus.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/editar_usuario.ftl" />
       </list>
     </option>
   </component>
@@ -1454,7 +1487,7 @@
       <workItem from="1512764362875" duration="97000" />
       <workItem from="1529619128048" duration="680000" />
       <workItem from="1530302764124" duration="68000" />
-      <workItem from="1530302898061" duration="3042000" />
+      <workItem from="1530302898061" duration="4112000" />
     </task>
     <task id="LOCAL-00067" summary="fixing error in spring security">
       <created>1505364165100</created>
@@ -1803,7 +1836,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1194447000" />
+    <option name="totallyTimeSpent" value="1195517000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1838,7 +1871,7 @@
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32820514" />
       <window_info id="Spring" order="5" side_tool="true" weight="0.3290735" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.4880763" />
-      <window_info content_ui="combo" id="Project" order="8" sideWeight="0.48918918" visible="true" weight="0.23792094" />
+      <window_info active="true" content_ui="combo" id="Project" order="8" sideWeight="0.48918918" visible="true" weight="0.23792094" />
       <window_info anchor="right" id="Bean Validation" order="5" weight="0.32924962" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.327787" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.327454" />
@@ -1900,8 +1933,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UserRatingServices.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Parada.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Ruta.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Coordenada.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Chequeo.java" />
@@ -2093,9 +2124,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_autobus.ftl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/AutobusController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1236" />
@@ -2110,8 +2138,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="27" column="28" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="27" selection-end-column="28" />
+        <state relative-caret-position="245">
+          <caret line="21" column="84" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_autobus.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="23" column="68" lean-forward="true" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/editar_usuario.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_parada.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
         </state>
       </provider>
     </entry>
