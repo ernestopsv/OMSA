@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="Terminando con quartz">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -162,11 +162,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.ftl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nav.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/nav.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+            <state relative-caret-position="136">
+              <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crear_autobus.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_autobus.ftl">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="AutobusController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/AutobusController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1236" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Autobus.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="37" column="28" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -180,11 +201,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crear_coordenada.ftl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="crear_coordenada.ftl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="320">
+              <caret line="27" column="28" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="27" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -219,8 +240,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>b</find>
-      <find>bo</find>
       <find>boo</find>
       <find>bool</find>
       <find>boolen</find>
@@ -249,6 +268,8 @@
       <find>home</find>
       <find>holamundo</find>
       <find>autobus/c</find>
+      <find>bread</find>
+      <find>matricula</find>
     </findStrings>
     <replaceStrings>
       <replace>Long</replace>
@@ -701,8 +722,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/DWEntities/Dim_Tiempo.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/star-rating.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/star-rating.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user-rating.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Chequeo.java" />
@@ -723,7 +742,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/CoordenadaRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/AutobusRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/nav.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/ChequeoServices.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl" />
@@ -752,6 +770,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/charts.ftl" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/nav.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl" />
       </list>
     </option>
   </component>
@@ -817,6 +838,15 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="OMSA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OMSA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OMSA" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="OMSA" type="462c0819:PsiDirectoryNode" />
+              <item name="Entities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OMSA" type="b2602c69:ProjectViewProjectNode" />
@@ -1424,7 +1454,7 @@
       <workItem from="1512764362875" duration="97000" />
       <workItem from="1529619128048" duration="680000" />
       <workItem from="1530302764124" duration="68000" />
-      <workItem from="1530302898061" duration="1255000" />
+      <workItem from="1530302898061" duration="3042000" />
     </task>
     <task id="LOCAL-00067" summary="fixing error in spring security">
       <created>1505364165100</created>
@@ -1773,7 +1803,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1192660000" />
+    <option name="totallyTimeSpent" value="1194447000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1804,11 +1834,11 @@
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.3672496" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.3672496" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32820514" />
       <window_info id="Spring" order="5" side_tool="true" weight="0.3290735" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.48885077" />
-      <window_info active="true" content_ui="combo" id="Project" order="8" sideWeight="0.48918918" visible="true" weight="0.23792094" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.4880763" />
+      <window_info content_ui="combo" id="Project" order="8" sideWeight="0.48918918" visible="true" weight="0.23792094" />
       <window_info anchor="right" id="Bean Validation" order="5" weight="0.32924962" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.327787" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.327454" />
@@ -1870,13 +1900,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3043">
-          <caret line="179" column="66" lean-forward="true" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UserRatingServices.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Parada.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Ruta.java" />
@@ -1993,11 +2016,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/ChequeoRepository.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/4.3.9.RELEASE/4be64b379925a2c3d9b21ff21f0c976d5492d633/spring-orm-4.3.9.RELEASE-sources.jar!/org/springframework/orm/jpa/JpaTransactionManager.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Usuario.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UsuarioServices.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/AutobusController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -2051,13 +2072,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -2074,8 +2088,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/nav.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+        <state relative-caret-position="136">
+          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_autobus.ftl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/AutobusController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1236" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="27" column="28" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="27" selection-end-column="28" />
         </state>
       </provider>
     </entry>

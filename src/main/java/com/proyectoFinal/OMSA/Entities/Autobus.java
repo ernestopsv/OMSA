@@ -8,9 +8,7 @@ import java.sql.Date;
 
 //import javax.persistence.*;
 
-/**
- * Created by anyderre on 28/06/17.
- */
+
 @Entity
 @Table(name = "autobus")
 public class Autobus implements  Serializable {
