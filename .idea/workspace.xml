@@ -2,604 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a11ef23-6d10-479c-88f5-867cd2d0ac9b" name="Default" comment="Terminando con quartz">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fe353a8a-cfec-477a-b6cd-59eb86d4cc3a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fe353a8a-cfec-477a-b6cd-59eb86d4cc3a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fe353a8a-cfec-477a-b6cd-59eb86d4cc3a/storage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fe353a8a-cfec-477a-b6cd-59eb86d4cc3a/storage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__aopalliance_aopalliance_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__aopalliance_aopalliance_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_classic_1_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_classic_1_1_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_core_1_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_core_1_1_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_classmate_1_3_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_classmate_1_3_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_8_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_8_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_8_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_8_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jayway_jsonpath_json_path_2_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jayway_jsonpath_json_path_2_2_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mchange_c3p0_0_9_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mchange_c3p0_0_9_5_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mchange_mchange_commons_java_0_2_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_mchange_mchange_commons_java_0_2_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_zaxxer_HikariCP_java6_2_3_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_zaxxer_HikariCP_java6_2_3_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__dom4j_dom4j_1_6_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__dom4j_dom4j_1_6_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_transaction_javax_transaction_api_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_transaction_javax_transaction_api_1_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_validation_validation_api_1_1_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_validation_validation_api_1_1_0_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_minidev_accessors_smart_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_minidev_accessors_smart_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_minidev_json_smart_2_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_minidev_json_smart_2_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__nz_net_ultraq_thymeleaf_thymeleaf_layout_dialect_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__nz_net_ultraq_thymeleaf_thymeleaf_layout_dialect_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__ognl_ognl_3_0_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__ognl_ognl_3_0_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_embed_tomcat_embed_core_8_5_15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_embed_tomcat_embed_core_8_5_15.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_embed_tomcat_embed_el_8_5_15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_embed_tomcat_embed_el_8_5_15.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_15.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_tomcat_jdbc_8_5_15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_tomcat_jdbc_8_5_15.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_tomcat_juli_8_5_15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_tomcat_juli_8_5_15.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_aspectj_aspectjweaver_1_8_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_aspectj_aspectjweaver_1_8_10.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_assertj_assertj_core_2_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_assertj_assertj_core_2_6_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_codehaus_groovy_groovy_2_4_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_codehaus_groovy_groovy_2_4_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_freemarker_freemarker_2_3_26_incubating.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_freemarker_freemarker_2_3_26_incubating.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_core_5_0_12_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_core_5_0_12_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_entitymanager_5_0_12_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_entitymanager_5_0_12_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_validator_5_3_5_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_validator_5_3_5_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_javassist_javassist_3_21_0_GA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_javassist_javassist_3_21_0_GA.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_jandex_2_0_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_jandex_2_0_0_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_logging_jboss_logging_3_3_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_logging_jboss_logging_3_3_1_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_json_json_20090211.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_json_json_20090211.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jsoup_jsoup_1_9_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jsoup_jsoup_1_9_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_1_10_19.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_1_10_19.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_objenesis_objenesis_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_objenesis_objenesis_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_ow2_asm_asm_5_0_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_ow2_asm_asm_5_0_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_postgresql_postgresql_9_4_1211.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_postgresql_postgresql_9_4_1211.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_quartz_scheduler_quartz_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_quartz_scheduler_quartz_2_3_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_skyscreamer_jsonassert_1_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_skyscreamer_jsonassert_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_jcl_over_slf4j_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_jcl_over_slf4j_1_7_25.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_jul_to_slf4j_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_log4j_over_slf4j_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_log4j_over_slf4j_1_7_25.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_autoconfigure_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_autoconfigure_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_devtools_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_devtools_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_aop_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_aop_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_data_jpa_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_data_jpa_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_freemarker_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_freemarker_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_jdbc_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_jdbc_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_logging_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_logging_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_test_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_test_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_thymeleaf_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_thymeleaf_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_tomcat_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_tomcat_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_web_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_web_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_test_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_test_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_test_autoconfigure_1_5_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_test_autoconfigure_1_5_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_data_spring_data_commons_1_13_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_data_spring_data_commons_1_13_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_data_spring_data_jpa_1_11_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_data_spring_data_jpa_1_11_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_config_4_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_config_4_2_3_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_core_4_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_core_4_2_3_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_web_4_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_web_4_2_3_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_aop_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_aop_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_aspects_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_aspects_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_beans_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_beans_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_context_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_context_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_context_support_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_context_support_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_core_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_core_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_expression_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_expression_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_jdbc_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_jdbc_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_orm_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_orm_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_test_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_test_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_tx_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_tx_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_web_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_web_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_webmvc_4_3_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_webmvc_4_3_9_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_thymeleaf_extras_thymeleaf_extras_springsecurity4_3_0_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_thymeleaf_extras_thymeleaf_extras_springsecurity4_3_0_2_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_thymeleaf_thymeleaf_2_1_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_thymeleaf_thymeleaf_2_1_5_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_thymeleaf_thymeleaf_spring4_2_1_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_thymeleaf_thymeleaf_spring4_2_1_5_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_unbescape_unbescape_1_1_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_unbescape_unbescape_1_1_0_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_webjars_bootstrap_3_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_webjars_bootstrap_3_2_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_webjars_jquery_3_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_webjars_jquery_3_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_yaml_snakeyaml_1_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_yaml_snakeyaml_1_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/OMSA_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/OMSA_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/OMSA_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/OMSA_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OMSA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OMSA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/quartz.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/quartz.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/bootstrap-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/bootstrap-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/bootstrap-rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/bootstrap-rtl.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/bootstrap-select.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/bootstrap-select.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/plugins/morris.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/plugins/morris.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/sb-admin-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/sb-admin-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/sb-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/sb-admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/star-rating.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/star-rating.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/bordered-pulled.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/bordered-pulled.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/core.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/core.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/fixed-width.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/fixed-width.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/font-awesome.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/font-awesome.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/icons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/larger.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/larger.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/list.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/list.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/mixins.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/path.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/path.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/rotated-flipped.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/rotated-flipped.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/spinning.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/spinning.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/stacked.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/stacked.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/less/variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_core.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_fixed-width.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_fixed-width.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_larger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_larger.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_path.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_path.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_spinning.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_spinning.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_stacked.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_stacked.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/font-awesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/font-awesome/scss/font-awesome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/Chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/Chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/angular.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/Gruntfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/bower.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/demo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/demo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/less/bootstrap-select.less" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/less/bootstrap-select.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/src/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/src/bootstrap-select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/phantom.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/phantom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap-select.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/controllers/paradaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/controllers/paradaController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/controllers/rutaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/controllers/rutaController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/controllers/usuarioController.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/controllers/usuarioController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/dirPagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/dirPagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/plugins/flot/flot-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/plugins/flot/flot-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/plugins/flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/plugins/flot/jquery.flot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/plugins/flot/jquery.flot.pie.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/plugins/flot/jquery.flot.pie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/plugins/flot/jquery.flot.resize.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/plugins/flot/jquery.flot.resize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/plugins/flot/jquery.flot.tooltip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/plugins/flot/jquery.flot.tooltip.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/plugins/morris/morris-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/plugins/morris/morris-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/plugins/morris/morris.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/plugins/morris/morris.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/plugins/morris/morris.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/plugins/morris/morris.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/plugins/morris/raphael.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/plugins/morris/raphael.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/star-rating.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/star-rating.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/autobusTableController.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/autobusTableController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/coordenadaTableController.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/coordenadaTableController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/emptyAutobusTableControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/emptyAutobusTableControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/paradaTableController.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/paradaTableController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/rutaTableControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/rutaTableControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/usuarioTableController.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/tableControllers/usuarioTableController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-fa/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-fa/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-fa/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-fa/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-fa/theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-fa/theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-fa/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-fa/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-svg/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-svg/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-svg/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-svg/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-svg/theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-svg/theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-svg/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-svg/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-uni/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-uni/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-uni/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-uni/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-uni/theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-uni/theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-uni/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/themes/krajee-uni/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/charts.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/charts.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/crear_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/crear_autobus.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/crear_coordenada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/crear_coordenada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/crear_parada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/crear_parada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/crear_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/crear_ruta.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/crear_usuarios.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/crear_usuarios.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/editar_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/editar_autobus.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/editar_coordenada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/editar_coordenada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/editar_parada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/editar_parada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/editar_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/editar_ruta.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/editar_usuario.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/editar_usuario.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/header.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/header.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/index.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/login.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/nav.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/nav.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/user_rating.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/user_rating.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_autobus.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_autobusSinRutas.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_autobusSinRutas.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_coordenada_pintada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_coordenada_pintada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_parada_pintada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_parada_pintada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_ruta.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/ver_usuarios.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/ver_usuarios.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ProyectoFinalServer/exploded/app-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ProyectoFinalServer/exploded/app-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/AutowiringSpringBeanJobFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/AdminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/AutobusController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/ChequeoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/CoordenadaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/IndexController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/ParadaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/RestApiController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/RutaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Controladores/UserRatingController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Autobus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Chequeo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Coordenada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/DistanceAndTime.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Parada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/ParadaCercana.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Rol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Ruta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/UserRating.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Entities/Usuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Jobs/AutobusJob.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/AutobusRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/ChequeoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/CoordenadaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/ParadaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/RolRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/RutaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/UserRatiingRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Repository/UsuarioRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/AutobusServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/ChequeoServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/CoordenadaServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/ParadaServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/RolServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/RutaServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/UserRatingServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/Services/UsuarioServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/TapTapApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/config/ConfiguracionDeSeguridad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/config/CustomAuthenticationSuccessHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/config/SchedulerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proyectoFinal/TapTap/config/WebMvcConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/quartz.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/bootstrap-rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/bootstrap-rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/bootstrap-select.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/plugins/morris.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/sb-admin-rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/sb-admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/star-rating.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/css/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/bordered-pulled.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/core.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/fixed-width.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/font-awesome.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/icons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/larger.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/list.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/path.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/rotated-flipped.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/spinning.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/stacked.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/less/variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_core.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_fixed-width.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_icons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_larger.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_list.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_path.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_spinning.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_stacked.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/font-awesome/scss/font-awesome.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/images/active.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/images/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/images/busActive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/images/busInactive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/images/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/images/favicon1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/images/inactive.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/images/login.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/images/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/images/paradas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/Chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/angular.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/appTable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/demo/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/less/bootstrap-select.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/src/bootstrap-select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/phantom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/dropdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/controllers/autobusController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/controllers/paradaController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/controllers/rutaController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/controllers/usuarioController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/dirPagination.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/plugins/flot/excanvas.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/plugins/flot/flot-data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/plugins/flot/jquery.flot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/plugins/flot/jquery.flot.pie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/plugins/flot/jquery.flot.resize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/plugins/flot/jquery.flot.tooltip.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/plugins/morris/morris-data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/plugins/morris/morris.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/plugins/morris/morris.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/plugins/morris/raphael.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/star-rating.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/tableControllers/autobusTableController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/tableControllers/coordenadaTableController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/tableControllers/emptyAutobusTableControllers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/tableControllers/paradaTableController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/tableControllers/rutaTableControllers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/tableControllers/usuarioTableController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-fa/theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-fa/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-fa/theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-fa/theme.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-svg/theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-svg/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-svg/theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-svg/theme.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-uni/theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-uni/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-uni/theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/themes/krajee-uni/theme.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/charts.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/crear_autobus.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/crear_coordenada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/crear_parada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/crear_ruta.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/crear_usuarios.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/editar_autobus.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/editar_coordenada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/editar_parada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/editar_ruta.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/editar_usuario.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/header.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/index.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/login.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/nav.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/user_rating.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_autobus.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_autobusSinRutas.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_coordenada_pintada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_parada_pintada.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_ruta.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/ver_usuarios.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/ArielDaniel/Practica11ApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/AutowiringSpringBeanJobFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/AutobusController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/ChequeoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/CoordenadaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/IndexController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/ParadaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/RestApiController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/RutaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Controladores/UserRatingController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Autobus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Chequeo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Coordenada.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/DistanceAndTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Parada.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/ParadaCercana.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Rol.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Ruta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/UserRating.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Entities/Usuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Jobs/AutobusJob.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/OmsaApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/AutobusRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ChequeoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/CoordenadaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/ParadaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RolRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/RutaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UserRatiingRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Repository/UsuarioRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/AutobusServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ChequeoServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/CoordenadaServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/ParadaServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RolServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/RutaServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UserRatingServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/Services/UsuarioServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/config/ConfiguracionDeSeguridad.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/config/CustomAuthenticationSuccessHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/config/SchedulerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyectoFinal/TapTap/config/WebMvcConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/quartz.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/quartz.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-rtl.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-select.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-select.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/plugins/morris.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/plugins/morris.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/sb-admin-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/sb-admin-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/sb-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/sb-admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/star-rating.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/star-rating.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/bordered-pulled.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/bordered-pulled.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/core.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/core.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/fixed-width.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/fixed-width.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/font-awesome.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/font-awesome.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/icons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/larger.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/larger.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/list.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/list.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/mixins.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/path.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/path.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/rotated-flipped.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/rotated-flipped.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/spinning.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/spinning.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/stacked.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/stacked.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/less/variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_core.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_fixed-width.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_fixed-width.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_larger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_larger.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_path.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_path.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_spinning.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_spinning.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_stacked.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_stacked.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/font-awesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/font-awesome/scss/font-awesome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/favicon1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/favicon2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/angular.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/Gruntfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/bower.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/css/bootstrap-select.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/demo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/demo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/js/bootstrap-select.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/less/bootstrap-select.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/less/bootstrap-select.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/src/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/src/bootstrap-select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/phantom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/phantom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/unit/select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/tests/vendor/qunit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/controllers/paradaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/controllers/paradaController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/controllers/rutaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/controllers/rutaController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/controllers/usuarioController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/controllers/usuarioController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/dirPagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/dirPagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/plugins/flot/flot-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugins/flot/flot-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/plugins/flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugins/flot/jquery.flot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/plugins/flot/jquery.flot.pie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugins/flot/jquery.flot.pie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/plugins/flot/jquery.flot.resize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugins/flot/jquery.flot.resize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/plugins/flot/jquery.flot.tooltip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugins/flot/jquery.flot.tooltip.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/plugins/morris/morris-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugins/morris/morris-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/plugins/morris/morris.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugins/morris/morris.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/plugins/morris/morris.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugins/morris/morris.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/plugins/morris/raphael.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugins/morris/raphael.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/star-rating.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/star-rating.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/autobusTableController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/autobusTableController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/coordenadaTableController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/coordenadaTableController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/emptyAutobusTableControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/emptyAutobusTableControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/paradaTableController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/paradaTableController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/rutaTableControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/rutaTableControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/usuarioTableController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tableControllers/usuarioTableController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-fa/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-fa/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-fa/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-fa/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-fa/theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-fa/theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-fa/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-fa/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-svg/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-svg/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-svg/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-svg/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-svg/theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-svg/theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-svg/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-svg/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-uni/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-uni/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-uni/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-uni/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-uni/theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-uni/theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-uni/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/themes/krajee-uni/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/charts.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/charts.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_autobus.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_parada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_parada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_ruta.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crear_usuarios.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crear_usuarios.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editar_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editar_autobus.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editar_coordenada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editar_coordenada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editar_parada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editar_parada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editar_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editar_ruta.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editar_usuario.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editar_usuario.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/nav.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/nav.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_rating.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_autobus.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_autobusSinRutas.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_coordenada_pintada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_parada_pintada.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_parada_pintada.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_ruta.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ver_usuarios.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bca/Practica11ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bca/Practica11ApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -743,17 +146,35 @@
       <file leaf-file-name="index.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="1309">
               <caret line="77" column="45" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="charts.ftl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="charts.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="179" column="66" lean-forward="true" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
+              <caret line="179" column="66" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomAuthenticationSuccessHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="40" column="49" lean-forward="true" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crear_coordenada.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -770,8 +191,8 @@
       <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+            <state relative-caret-position="102">
+              <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -788,7 +209,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>floa</find>
       <find>float</find>
       <find>Boolean</find>
       <find>b</find>
@@ -818,6 +238,7 @@
       <find>System</find>
       <find>br</find>
       <find>omsa1</find>
+      <find>home</find>
     </findStrings>
     <replaceStrings>
       <replace>Long</replace>
@@ -1099,9 +520,9 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4555148146164" />
+        <entry key="$PROJECT_DIR$" value="4590891775635" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="1464661883" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="164401658" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1979977391" />
       </map>
     </option>
@@ -1335,10 +756,11 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/out/production/resources/static/js/bootstrap-select-master/bootstrap-select-master/package.json" />
       <path value="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-select-master/bootstrap-select-master/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="34" />
     <option name="y" value="-11" />
     <option name="width" value="1300" />
@@ -1350,9 +772,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1386,6 +808,13 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="OMSA" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="OMSA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OMSA" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -1393,17 +822,17 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="plugin&#9;ACTION&#9;WelcomeScreen.Plugins" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Practica12JMS/Practica12JMS/build.gradle" />
-    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
-    <property name="add_unversioned_files" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="plugin&#9;ACTION&#9;WelcomeScreen.Plugins" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1976,6 +1405,8 @@
       <workItem from="1512763264925" duration="990000" />
       <workItem from="1512764362875" duration="97000" />
       <workItem from="1529619128048" duration="680000" />
+      <workItem from="1530302764124" duration="68000" />
+      <workItem from="1530302898061" duration="755000" />
     </task>
     <task id="LOCAL-00067" summary="fixing error in spring security">
       <created>1505364165100</created>
@@ -2324,7 +1755,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1191337000" />
+    <option name="totallyTimeSpent" value="1192160000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2336,12 +1767,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="34" y="-11" width="1300" height="780" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="8" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.506135" side_tool="true" weight="0.2607204" />
       <window_info anchor="right" id="Maven Projects" order="0" weight="0.32924962" />
-      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info id="Capture Tool" order="0" />
       <window_info id="Designer" order="1" />
       <window_info anchor="right" id="Database" order="4" weight="0.3220859" />
@@ -2350,38 +1782,37 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.49386504" weight="0.2428115" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32820514" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3243243" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.3672496" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32820514" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.36741215" />
       <window_info id="Spring" order="4" side_tool="true" weight="0.3290735" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.48885077" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.48918918" visible="true" weight="0.23831776" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.48918918" visible="true" weight="0.23792094" />
       <window_info anchor="right" id="Bean Validation" order="5" weight="0.32924962" />
-      <window_info id="Web" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.327787" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.327454" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" sideWeight="0.5108108" side_tool="true" weight="0.22239032" />
-      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32971296" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32590052" />
+      <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Commander" order="9" weight="0.4" />
       <window_info id="Nl-Palette" order="6" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="right" id="Properties" order="1" />
       <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="right" id="Properties" order="1" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32971296" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="1" />
       <window_info anchor="right" id="Palette" order="8" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.36772045" />
       <window_info id="Spring" order="4" side_tool="true" weight="0.3290735" />
       <window_info id="Image Layers" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.327787" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.36772045" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="10" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -2406,8 +1837,9 @@
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="8" weight="0.24980605" />
-      <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.49386504" visible="true" weight="0.38338658" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.327787" />
       <window_info anchor="right" id="Bean Validation" order="5" weight="0.32924962" />
+      <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.49386504" visible="true" weight="0.38338658" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2454,6 +1886,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3043">
+          <caret line="179" column="66" lean-forward="true" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UserRatingServices.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Parada.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Ruta.java" />
@@ -2464,9 +1903,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/IndexController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/ParadaRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/CoordenadaRepository.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/header.ftl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/AutobusRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/ChequeoServices.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/nav.ftl">
@@ -2564,12 +2000,6 @@
         <state relative-caret-position="-24109" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap-select.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sb-admin-rtl.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/sb-admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -2587,13 +2017,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/RestApiController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Repository/ChequeoRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Autobus.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/4.3.9.RELEASE/4be64b379925a2c3d9b21ff21f0c976d5492d633/spring-orm-4.3.9.RELEASE-sources.jar!/org/springframework/orm/jpa/JpaTransactionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="516" selection-start-line="516" selection-end-line="516" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/4.3.9.RELEASE/4be64b379925a2c3d9b21ff21f0c976d5492d633/spring-orm-4.3.9.RELEASE-sources.jar!/org/springframework/orm/jpa/JpaTransactionManager.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Entities/Usuario.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Services/UsuarioServices.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/Controladores/AutobusController.java" />
@@ -2629,16 +2053,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="1309">
           <caret line="77" column="45" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
         </state>
       </provider>
@@ -2653,7 +2070,28 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/charts.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="179" column="66" lean-forward="true" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
+          <caret line="179" column="66" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proyectoFinal/OMSA/config/CustomAuthenticationSuccessHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="40" column="49" lean-forward="true" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/crear_coordenada.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
