@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-        <a class="navbar-brand" href="/home"><img src="/images/logo.png" alt="logo"></a>
+        <a class="navbar-brand" href="/home"><img src="/images/logo2.png" alt="logo"></a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
@@ -35,16 +35,16 @@
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-            <li class="active">
+            <#--<li class="active">
                 <a href="/home"><i class="fa fa-fw fa-dashboard"></i>Inicio</a>
-            </li>
-            <li>
+            </li>-->
+            <#--<li>
                 <a href="/zonaAdmin/actividad"><i class="fa fa-fw fa-bus"></i> Actividad</a>
-            </li>
+            </li>-->
 
-            <li>
+            <#--<li>
                 <a href="/rating/verComentarios/"><i class="fa fa-fw fa-comments"></i>Ver comentarios</a>
-            </li>
+            </li>-->
 
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#ruta"><i class="fa fa-fw fa-arrows-v"></i> Ruta <i class="fa fa-fw fa-caret-down"></i></a>

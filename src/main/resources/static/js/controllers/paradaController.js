@@ -1,4 +1,4 @@
-angular.module("omsaTracker").controller("paradaController", function ($scope,$http) {
+angular.module("taptapTracker").controller("paradaController", function ($scope,$http) {
      $scope.getParadas= function(id) {
 
         $http.get("/api/paradas/ruta/"+id).then(function (response) {

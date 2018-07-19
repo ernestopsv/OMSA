@@ -1,3 +1,3 @@
-angular.module("omsaTracker").controller("usuarioController", function ($scope) {
+angular.module("taptapTracker").controller("usuarioController", function ($scope) {
 
 });

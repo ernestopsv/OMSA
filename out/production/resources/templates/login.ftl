@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" ng-app="omsaTracker">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" ng-app="taptapTracker">
 
 <title>Iniciar Sesion</title>
 <#include "header.ftl">
@@ -18,8 +18,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <#--<a class="navbar-brand" href="index.ftl">OMSA</a>-->
-                <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo">
+                <#--<a class="navbar-brand" href="index.ftl">TapTap</a>-->
+                <a class="navbar-brand" href="/"><img src="/images/logo2.png" alt="logo">
                 </a>
             </div>
             <!-- /.navbar-collapse -->
@@ -28,11 +28,11 @@
         <div class="row" style="margin-top: 140px" ng-controller="usuarioController">
 
             <div class="col-lg-offset-2 col-lg-7">
-                <div class="panel panel-green">
+                <div class="panel panel-primary">
                     <div class="panel-heading" style="text-align: center">
                         <h2 class="panel-title" style="font-weight: bold; font-size: 20px">Iniciar Sesi&oacute;n</h2>
                     </div>
-                    <div class="panel-body" style="background-image: url(../images/OMSA.jpg); background-color: rgba(255,255,255,0.6);background-blend-mode: lighten;  ">
+                    <div class="panel-body" style="background-image: url(../images/background.jpg); background-color: rgba(255,255,255,0.6);background-blend-mode: lighten;  ">
 
                         <form role="form" action="/login" method="post" class="form-signin name="myForm">
                             <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
@@ -67,7 +67,7 @@
                             <div class="row">
                                 <div class="col-lg-offset-3 col-lg-3">
                                     <div class="form-group">
-                                        <button type="Submit" class="btn btn-success form-control" ng-disabled="myForm.username.$dirty && myForm.username.$invalid || myForm.password.$dirty && myForm.password.$invalid">Entrar</button>
+                                        <button type="Submit" class="btn btn-primary form-control" ng-disabled="myForm.username.$dirty && myForm.username.$invalid || myForm.password.$dirty && myForm.password.$invalid">Entrar</button>
                                     </div>
 
                                 </div>

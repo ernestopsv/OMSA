@@ -1,1 +1,1 @@
-var app = angular.module("omsaTracker", [])
+var app = angular.module("taptapTracker", [])
